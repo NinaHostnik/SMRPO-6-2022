@@ -29,7 +29,7 @@ $allowed_ips = array(
 
 
 );
-$allowed = false;
+$allowed = true;
 
 $headers = apache_request_headers();
 
