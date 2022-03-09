@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5fc6f2f8-288b-42b4-becb-1f4061c6b5c6" name="Default Changelist" comment="" />
+    <list default="true" id="5fc6f2f8-288b-42b4-becb-1f4061c6b5c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controllers/UsersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/UserModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/admin/userCreate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/templates/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/templates/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/validation/UserRules.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/Validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Home.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
@@ -28,8 +44,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/validation" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\smrpo\app\validation" />
+      <recent name="C:\xampp\htdocs\smrpo\app\Views\templates" />
+      <recent name="C:\xampp\htdocs\smrpo" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -43,6 +67,11 @@
       <workItem from="1646657927072" duration="31000" />
       <workItem from="1646682572407" duration="2812000" />
       <workItem from="1646734282369" duration="547000" />
+      <workItem from="1646734841302" duration="1352000" />
+      <workItem from="1646825815926" duration="355000" />
+      <workItem from="1646826194444" duration="6014000" />
+      <workItem from="1646833701808" duration="2374000" />
+      <workItem from="1646851300052" duration="2086000" />
     </task>
     <servers />
   </component>
