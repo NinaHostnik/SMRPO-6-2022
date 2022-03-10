@@ -18,9 +18,8 @@ class UsersController extends BaseController
 
             if (!$this->validate($rules)) {
                 $data['validation'] = $this->validator;
-                echo view('templates/header', $data);
-                echo view('register', $data);
-                echo view('templates/footer', $data);
+                $this->render_page("register",$data);
+
 
             } else {
                 $model = new UserModel();
@@ -39,9 +38,7 @@ class UsersController extends BaseController
             $data = [
 
             ];
-            echo view('templates/header', $data);
-            echo view('admin/userCreate', $data);
-            echo view('templates/footer', $data);
+            $this->render_page("admin/userCreate",$data);
 
         }
 
@@ -66,10 +63,9 @@ class UsersController extends BaseController
 
                 if (!$this->validate($rules, $errors)) {
                     $data['validation'] = $this->validator;
-                    //echo view('templates/header', $data);
-                    //echo view('login', $data);
-                    //echo view('templates/footer', $data);
-                    echo view('login', $data);
+
+                    $this->render_page("login",$data);
+
 
                 } else {
                     $model = new UserModel();
@@ -85,10 +81,8 @@ class UsersController extends BaseController
                 $data = [
 
                 ];
-                echo view('templates/header', $data);
-                //echo view('navbar');
-                echo view('login', $data);
-                echo view('templates/footer', $data);
+
+                $this->render_page("login",$data);
             }
 
 
