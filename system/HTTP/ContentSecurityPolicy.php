@@ -255,7 +255,7 @@ class ContentSecurityPolicy
      * Adds a new valid endpoint for a form's action. Can be either
      * a URI class or a simple string.
      *
-     * child-src lists the URLs for workers and embedded frame contents.
+     * child-src lists the URLs for workers and embedded Frame contents.
      * For example: child-src https://youtube.com would enable embedding
      * videos from YouTube but not from other origins.
      *
@@ -350,7 +350,7 @@ class ContentSecurityPolicy
 
     /**
      * Adds a new resource that should allow embedding the resource using
-     * <frame>, <iframe>, <object>, <embed>, or <applet>
+     * <Frame>, <iframe>, <object>, <embed>, or <applet>
      *
      * @see http://www.w3.org/TR/CSP/#directive-frame-ancestors
      *
@@ -366,7 +366,7 @@ class ContentSecurityPolicy
     }
 
     /**
-     * Adds a new valid endpoint for valid frame sources. Can be either
+     * Adds a new valid endpoint for valid Frame sources. Can be either
      * a URI class or a simple string.
      *
      * @see http://www.w3.org/TR/CSP/#directive-frame-src
@@ -631,8 +631,8 @@ class ContentSecurityPolicy
             'default-src'     => 'defaultSrc',
             'font-src'        => 'fontSrc',
             'form-action'     => 'formAction',
-            'frame-ancestors' => 'frameAncestors',
-            'frame-src'       => 'frameSrc',
+            'Frame-ancestors' => 'frameAncestors',
+            'Frame-src'       => 'frameSrc',
             'img-src'         => 'imageSrc',
             'media-src'       => 'mediaSrc',
             'object-src'      => 'objectSrc',

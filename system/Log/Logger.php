@@ -372,7 +372,7 @@ class Logger implements LoggerInterface
     /**
      * Determines the file and line that the logging call
      * was made from by analyzing the backtrace.
-     * Find the earliest stack frame that is part of our logging system.
+     * Find the earliest stack Frame that is part of our logging system.
      */
     public function determineFile(): array
     {

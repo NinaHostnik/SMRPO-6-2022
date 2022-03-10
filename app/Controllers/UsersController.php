@@ -66,9 +66,10 @@ class UsersController extends BaseController
 
                 if (!$this->validate($rules, $errors)) {
                     $data['validation'] = $this->validator;
-                    echo view('templates/header', $data);
+                    //echo view('templates/header', $data);
+                    //echo view('login', $data);
+                    //echo view('templates/footer', $data);
                     echo view('login', $data);
-                    echo view('templates/footer', $data);
 
                 } else {
                     $model = new UserModel();
@@ -84,9 +85,10 @@ class UsersController extends BaseController
                 $data = [
 
                 ];
-                echo view('templates/header', $data);
+                //echo view('templates/header', $data);
+                //echo view('navbar');
                 echo view('login', $data);
-                echo view('templates/footer', $data);
+               // echo view('templates/footer', $data);
             }
 
 

@@ -1,0 +1,91 @@
+CRITICAL - 2022-03-10 09:41:08 --> Invalid file: app\Views\Frame\frame.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('app\\Views\\Frame...')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(226): CodeIgniter\View\View->render('app\\Views\\Frame...', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#3 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(89): view('login', Array)
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-10 09:43:26 --> Invalid file: frame.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('frame.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(226): CodeIgniter\View\View->render('frame', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#3 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(89): view('login', Array)
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-10 09:48:02 --> Invalid file: navbar.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('navbar.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('navbar', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(89): view('navbar', Array)
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-10 09:50:48 --> Invalid file: navbar.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('navbar.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('navbar', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(89): view('navbar', Array)
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-10 09:50:56 --> Invalid file: navbar.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('navbar.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('navbar', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(89): view('navbar', Array)
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-10 09:51:13 --> Invalid file: frame.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('frame.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(226): CodeIgniter\View\View->render('frame', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#3 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(89): view('login', Array)
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-10 09:54:03 --> Invalid file: frame.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('frame.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(226): CodeIgniter\View\View->render('frame', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#3 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(89): view('login', Array)
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-10 10:39:10 --> Undefined property: CodeIgniter\View\View::$load
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\frame.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(226): CodeIgniter\View\View->render('frame', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#5 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('login', Array)
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#8 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-03-10 10:39:42 --> Undefined property: CodeIgniter\View\View::$load
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\frame.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(226): CodeIgniter\View\View->render('frame', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#5 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('login', Array)
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#8 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}

@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fc6f2f8-288b-42b4-becb-1f4061c6b5c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Controllers/UsersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/UserModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Views/admin/userCreate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Views/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Views/templates/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Views/templates/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/validation/UserRules.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/frame.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/navbar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Config/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Config/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Config/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Config/Validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Home.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/ContentSecurityPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/ContentSecurityPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/DocTypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/DocTypes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/HTTP/ContentSecurityPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/HTTP/ContentSecurityPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/Helpers/html_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/Helpers/html_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/Log/Logger.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/Log/Logger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/ThirdParty/Kint/Kint.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/ThirdParty/Kint/Kint.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1646853434.json" beforeDir="false" afterPath="$PROJECT_DIR$/writable/debugbar/debugbar_1646853434.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1646854577.json" beforeDir="false" afterPath="$PROJECT_DIR$/writable/debugbar/debugbar_1646854577.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1646854581.json" beforeDir="false" afterPath="$PROJECT_DIR$/writable/debugbar/debugbar_1646854581.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="261fiYrkAKommqCYGcHnoUclB3v" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,6 +45,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -53,6 +58,10 @@
       <recent name="C:\xampp\htdocs\smrpo\app\validation" />
       <recent name="C:\xampp\htdocs\smrpo\app\Views\templates" />
       <recent name="C:\xampp\htdocs\smrpo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\SMRPO-6-2022\app\Views" />
+      <recent name="C:\xampp\htdocs\SMRPO-6-2022\app\Views\templates" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -72,6 +81,8 @@
       <workItem from="1646826194444" duration="6014000" />
       <workItem from="1646833701808" duration="2374000" />
       <workItem from="1646851300052" duration="2086000" />
+      <workItem from="1646914581860" duration="2355000" />
+      <workItem from="1646925612424" duration="4797000" />
     </task>
     <servers />
   </component>
@@ -88,6 +99,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
