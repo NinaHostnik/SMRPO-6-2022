@@ -31,12 +31,10 @@
                 echo $validation->listErrors();
             }
             ?>
-<?= $this->endSection() ?>
-
-
-
 
         </div>
     </div>
 </div>
 </div>
+
+<?= $this->endSection() ?>

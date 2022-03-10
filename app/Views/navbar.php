@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<?= $this->extend('frame') ?>
+
 
 <?= $this->section('navbar') ?>
     <nav class="navbar bg-dark">
