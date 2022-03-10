@@ -48,5 +48,15 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+
+
+
+    }
+
+    protected function render_page($view,$data)
+    {
+        echo view('templates/header', $data);
+        echo view($view, $data);
+        echo view('templates/footer', $data);
     }
 }

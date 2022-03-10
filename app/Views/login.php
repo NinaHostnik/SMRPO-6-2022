@@ -1,4 +1,4 @@
-<?= $this->extend('frame') ?>
+<?= $this->extend('layouts/frame'); ?>
 
 <?= $this->section('content') ?>
 
