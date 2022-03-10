@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?= $this->extend('frame') ?>
 
 <?= $this->section('navbar') ?>
@@ -8,3 +9,4 @@
         </div>
     </nav>
 <?= $this->endSection() ?>
+
