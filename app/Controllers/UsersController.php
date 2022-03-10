@@ -85,10 +85,10 @@ class UsersController extends BaseController
                 $data = [
 
                 ];
-                //echo view('templates/header', $data);
+                echo view('templates/header', $data);
                 //echo view('navbar');
                 echo view('login', $data);
-               // echo view('templates/footer', $data);
+                echo view('templates/footer', $data);
             }
 
 
