@@ -1,67 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5fc6f2f8-288b-42b4-becb-1f4061c6b5c6" name="Default Changelist" comment="&quot;base framework hopefully works now&quot;">
+    <list default="true" id="25470c8a-6061-4c19-8c80-4b0afaac40d9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/Views/layouts/frame.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/layouts/frame.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.php" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/Views/frame.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/frame.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/navbar.php" afterDir="false" />
+>>>>>>> 0485f84fefa84d0f5b8386fbdc39f5efe65d74ce
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
+=======
+  <component name="ComposerSettings">
+>>>>>>> 0485f84fefa84d0f5b8386fbdc39f5efe65d74ce
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="261fiYrkAKommqCYGcHnoUclB3v" />
+  <component name="ProjectId" id="26C4AEGlxQnd2WXxJbVxPY4eDsy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/validation" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\smrpo\app\validation" />
-      <recent name="C:\xampp\htdocs\smrpo\app\Views\templates" />
-      <recent name="C:\xampp\htdocs\smrpo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\smrpo\app\Views\layouts" />
-      <recent name="C:\xampp\htdocs\smrpo\app\Views" />
-      <recent name="C:\xampp\htdocs\SMRPO-6-2022\app\Views" />
-      <recent name="C:\xampp\htdocs\SMRPO-6-2022\app\Views\templates" />
-    </key>
+  <component name="RunManager">
+    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
+      <option name="pathToComposerJson" value="$PROJECT_DIR$/composer.json" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5fc6f2f8-288b-42b4-becb-1f4061c6b5c6" name="Default Changelist" comment="" />
-      <created>1646596140669</created>
+      <changelist id="25470c8a-6061-4c19-8c80-4b0afaac40d9" name="Changes" comment="" />
+      <created>1646914103833</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1646596140669</updated>
       <workItem from="1646596141895" duration="7251000" />
       <workItem from="1646657927072" duration="31000" />
@@ -76,6 +74,10 @@
       <workItem from="1646925612424" duration="4797000" />
       <workItem from="1646986963882" duration="1454000" />
       <workItem from="1646989373497" duration="1493000" />
+=======
+      <updated>1646914103833</updated>
+      <workItem from="1646914109238" duration="350000" />
+>>>>>>> 0485f84fefa84d0f5b8386fbdc39f5efe65d74ce
     </task>
     <servers />
   </component>
