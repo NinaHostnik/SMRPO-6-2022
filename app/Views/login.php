@@ -12,16 +12,16 @@
                 <form class="" action="/" method="post">
 
                     <div class="form-group">
-                        <?php echo view("formInput",["label"=>"username"])?>
+                        <?php echo view("partials/formInput",["label"=>"username", 'type'=>'text'])?>
 
                     </div>
                     <div class="form-group">
-                        <?php echo view("formInput",["label"=>"password"])?>
+                        <?php echo view("partials/formInput",["label"=>"password", 'type'=>'password'])?>
 
                     </div>
                     <div class="row">
                         <div class="col-12 col-sm-4">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <?php echo view('partials/formButton', ["name"=>'Log in']) ?>
                         </div>
 
                 </form>
