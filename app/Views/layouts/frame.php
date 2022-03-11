@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <?= $this->include('navbar') ?>
+    <?= $this->include('partials/navbar') ?>
     <?= $this->renderSection('content') ?>
 
 <!-- Bootstrap 5 -->
