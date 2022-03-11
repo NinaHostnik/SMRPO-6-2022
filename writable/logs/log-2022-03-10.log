@@ -1,0 +1,42 @@
+CRITICAL - 2022-03-10 13:00:44 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\public\index.php(28): require('C:\\Users\\Lenovo...')
+#4 {main}
+CRITICAL - 2022-03-10 06:04:55 --> Invalid file: login.php
+#0 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+#1 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\app\Controllers\UsersController.php(88): view('login', Array)
+#3 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-10 06:06:38 --> Invalid file: login.php
+#0 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+#1 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\app\Controllers\UsersController.php(88): view('login', Array)
+#3 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-10 06:18:11 --> Invalid file: login.php
+#0 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+#1 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\app\Controllers\UsersController.php(88): view('login', Array)
+#3 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-10 06:18:31 --> Invalid file: login.php
+#0 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+#1 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\app\Controllers\UsersController.php(88): view('login', Array)
+#3 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\PhpstormProjects\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
