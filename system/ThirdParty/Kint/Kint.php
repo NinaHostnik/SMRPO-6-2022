@@ -654,9 +654,9 @@ class Kint
     }
 
     /**
-     * Returns specific function call info from a stack trace frame, or null if no match could be found.
+     * Returns specific function call info from a stack trace Frame, or null if no match could be found.
      *
-     * @param array $frame The stack trace frame in question
+     * @param array $frame The stack trace Frame in question
      * @param int   $argc  The amount of arguments received
      *
      * @return null|array{parameters:array, modifiers:array} params and modifiers, or null if a specific call could not be determined

@@ -86,7 +86,7 @@ class ContentSecurityPolicy extends BaseConfig
     public $baseURI;
 
     /**
-     * Lists the URLs for workers and embedded frame contents
+     * Lists the URLs for workers and embedded Frame contents
      *
      * @var string|string[]
      */
@@ -116,7 +116,7 @@ class ContentSecurityPolicy extends BaseConfig
 
     /**
      * Specifies the sources that can embed the current page.
-     * This directive applies to `<frame>`, `<iframe>`, `<embed>`,
+     * This directive applies to `<Frame>`, `<iframe>`, `<embed>`,
      * and `<applet>` tags. This directive can't be used in
      * `<meta>` tags and applies only to non-HTML resources.
      *
@@ -125,7 +125,7 @@ class ContentSecurityPolicy extends BaseConfig
     public $frameAncestors;
 
     /**
-     * The frame-src directive restricts the URLs which may
+     * The Frame-src directive restricts the URLs which may
      * be loaded into nested browsing contexts.
      *
      * @var array|string|null
