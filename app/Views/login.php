@@ -11,18 +11,20 @@
                 <hr>
                 <form class="" action="/" method="post">
 
-                    <div class="form-group">
                         <?php echo view("partials/formInput",['label'=>'username', "id"=>"username", 'type'=>'text'])?>
 
-                    </div>
-                    <div class="form-group">
+
                         <?php echo view("partials/formInput",['label'=>'password', "id"=>"password", 'type'=>'password'])?>
 
-                    </div>
+                    <?php
+                    if(uri_string() == "admin/createUser"){
+
+                    }
+                    ?>
+
                     <div class="row">
-                        <div class="col-12 col-sm-4">
                             <?php echo view('partials/formButton', ["name"=>'Log in']) ?>
-                        </div>
+                    </div>
 
                 </form>
             </div>

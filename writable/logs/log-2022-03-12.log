@@ -1,0 +1,49 @@
+CRITICAL - 2022-03-12 15:17:41 --> syntax error, unexpected ';', expecting ')'
+#0 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(90): view('login', Array)
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-12 15:18:29 --> Undefined property: CodeIgniter\View\View::$uri
+#0 C:\xampp\htdocs\smrpo\app\Views\login.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#4 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(90): view('login', Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-12 15:18:56 --> Call to a member function getSegment() on string
+#0 C:\xampp\htdocs\smrpo\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#3 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(90): view('login', Array)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-12 15:20:53 --> syntax error, unexpected ';', expecting ')'
+#0 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(90): view('login', Array)
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-12 15:26:37 --> required  is not a valid rule.
+#0 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('required ')
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('username', 'username', 'test', Array, Array)
+#2 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(25): CodeIgniter\Controller->validate(Array, Array)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->createUser()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

@@ -11,14 +11,20 @@ class UsersController extends BaseController
     {
         if ($this->request->getMethod() == 'post') {
             $rules = [
-                'username' => 'required',
+                'username' => 'required|doesntExist[username]',
                 'permissions' => 'required',
                 'password' => 'required',
             ];
 
-            if (!$this->validate($rules)) {
+            $errors = [
+                'username' => [
+                    'doesntExist' => 'User already exists'
+                ]
+            ];
+
+            if (!$this->validate($rules, $errors)) {
                 $data['validation'] = $this->validator;
-                $this->render_page("register",$data);
+                echo view("register", $data);
 
 
             } else {
@@ -38,7 +44,7 @@ class UsersController extends BaseController
             $data = [
 
             ];
-            $this->render_page("admin/userCreate",$data);
+            echo view("register", $data);
 
         }
 
@@ -64,7 +70,7 @@ class UsersController extends BaseController
                 if (!$this->validate($rules, $errors)) {
                     $data['validation'] = $this->validator;
 
-                    $this->render_page("login",$data);
+                    echo view('login', $data);
 
 
                 } else {
