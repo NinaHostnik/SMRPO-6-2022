@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => '83.212.127.54',
+        'hostname' => 'localhost',
         'username' => 'root',
-        'password' => 'fXaU6&BH',
-        'database' => 'scrumDB',
+        'password' => 'root',
+        'database' => '',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

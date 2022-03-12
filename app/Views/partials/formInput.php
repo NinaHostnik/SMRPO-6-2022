@@ -1,2 +1,2 @@
-<label for="<?php echo $label ?>"><?php echo $label ?></label>
-<input type="<?php echo $type ?>" class="form-control" name="<?php echo $label ?>" id="<?php echo $label ?>" value="">
+<label for="<?php echo $id ?>"><?php echo $label ?></label>
+<input type="<?php echo $type ?>" class="form-control" name="<?php echo $id ?>" id="<?php echo $id ?>" value="">
