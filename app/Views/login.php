@@ -12,11 +12,11 @@
                 <form class="" action="/" method="post">
 
                     <div class="form-group">
-                        <?php echo view("partials/formInput",["label"=>"username", 'type'=>'text'])?>
+                        <?php echo view("partials/formInput",['label'=>'username', "id"=>"username", 'type'=>'text'])?>
 
                     </div>
                     <div class="form-group">
-                        <?php echo view("partials/formInput",["label"=>"password", 'type'=>'password'])?>
+                        <?php echo view("partials/formInput",['label'=>'password', "id"=>"password", 'type'=>'password'])?>
 
                     </div>
                     <div class="row">
