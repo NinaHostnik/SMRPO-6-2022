@@ -32,7 +32,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-sm-4">
-                            <?php echo view('partials/formButton', ["name"=>'Log in']) ?>
+                            <?php echo view('partials/formButton', ["name"=>'Ustvari projekt']) ?>
                         </div>
                     </div>
                 </form>
