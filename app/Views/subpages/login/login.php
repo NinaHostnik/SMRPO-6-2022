@@ -2,42 +2,29 @@
 
 <?= $this->section('content') ?>
 
-
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white border1 from-wrapper">
-            <div class="container">
-                <h3>Login</h3>
-                <hr>
-                <form class="" action="/" method="post">
+    <form class="form-control" action="/" method="post">
+        <h5><?php echo $heading ?></h5>
+        <hr>
+        <!-- Username input -->
+        <?php echo view('partials/formInput', ['type'=>$usernameInput['type'], 'id'=>$usernameInput['id'], 'label'=>$usernameInput['label']]) ?>
+        <!-- Password input -->
+        <?php echo view('partials/formInput', ['type'=>$usernameInput['type'], 'id'=>$usernameInput['id'], 'label'=>$usernameInput['label']]) ?>
+        <!-- Submit button -->
+        <?php echo view('partials/formButton', ['name'=>$name]) ?>
 
-                        <?php echo view("partials/formInput",['label'=>'username', "id"=>"username", 'type'=>'text'])?>
+        <?php
+        if(uri_string() == "subpages/ustvarjanjeUporabnika/createUser"){
 
+        }
+        ?>
+    </form>
 
-                        <?php echo view("partials/formInput",['label'=>'password', "id"=>"password", 'type'=>'password'])?>
-
-                    <?php
-                    if(uri_string() == "admin/createUser"){
-
-                    }
-                    ?>
-
-                    <div class="row">
-                            <?php echo view('partials/formButton', ["name"=>'Log in']) ?>
-                    </div>
-
-                </form>
-            </div>
-
-            <?php
-            if (isset($validation)){
-                echo $validation->listErrors();
-            }
-            ?>
-
-        </div>
-    </div>
-</div>
+    <?php
+    if (isset($validation)){
+        echo $validation->listErrors();
+    }
+    ?>
 </div>
 
 <?= $this->endSection() ?>
