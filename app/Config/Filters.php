@@ -2,6 +2,10 @@
 
 namespace Config;
 
+use App\Filters\IsAdminAuth;
+use App\Filters\IsLoginAuth;
+use App\Filters\LoginAuth;
+use App\Filters\NoAuth;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -23,6 +27,12 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'LoginAuth'     =>IsLoginAuth::class,
+        'NoAuth'        =>NoAuth::class,
+        'AdminAuth'     => [
+            IsAdminAuth::class,
+            IsLoginAuth::class
+        ]
     ];
 
     /**
