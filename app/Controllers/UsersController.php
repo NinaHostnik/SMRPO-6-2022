@@ -24,7 +24,7 @@ class UsersController extends BaseController
 
             if (!$this->validate($rules, $errors)) {
                 $data['validation'] = $this->validator;
-                echo view("register", $data);
+                echo view('subpages/ustvarjanjeUporabnika/userCreate', $data);
 
 
             } else {
@@ -41,10 +41,13 @@ class UsersController extends BaseController
             }
         } else {
 
-            $data = [
-
-            ];
-            echo view("register", $data);
+            // Utility variables - needed for building the page
+            $data['heading'] = 'Registracija uporabnika';
+            $data['usernameInput'] = array('type' => 'text', 'id' => 'username', 'label' => 'Uporabniško ime');
+            $data['permissionsInput'] = array('type'=>'text', 'id'=>'permissions',  'label'=>'Dovoljenja');
+            $data['passwordInput'] = array('type' => 'password', 'id' => 'password', 'label' => 'Geslo');
+            $data['name'] = 'Registriraj';
+            echo view('subpages/ustvarjanjeUporabnika/userCreate', $data);
 
         }
 

@@ -1,42 +1,25 @@
+<?= $this->extend('layouts/frame') ?>
 
-
+<?= $this->section('content') ?>
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white border1 from-wrapper">
-            <div class="container">
-                <h3>Register</h3>
-                <hr>
-                <form class="" action="/admin/createUser" method="post">
+    <form class="form-control" action="UserController::createUser" method="post">
+        <h5><?php echo $header ?></h5>
+        <hr>
+        <!-- Name input -->
+        <?php echo view('partials/formInput', ['type'=>$usernameInput['type'], 'id'=>$usernameInput['id'], 'label'=>$usernameInput['label']])?>
+        <!-- Permissions input -->
+        <?php echo view('partials/formInput', ['type'=>$permissionsInput['type'], 'id'=>$permissionsInput['id'], 'label'=>$permissionsInput['label']])?>
+        <!-- Password input -->
+        <?php echo view('partials/formInput', ['type'=>$passwordInput['type'], 'id'=>$passwordInput['id'], 'label'=>$passwordInput['label']]) ?>
+        <!-- Submit button -->
+        <?php view('partials/formButton', ['name'=> $name]) ?>
+    </form>
 
-                    <div class="form-group">
-                        <label for="username">username</label>
-                        <input type="text" class="form-control" name="username" id="username" value="">
-                    </div>
+    <?php
+    if (isset($validation)){
+        echo $validation->listErrors();
+    }
+    ?>
 
-                    <div class="form-group">
-                        <label for="permissions">permissions</label>
-                        <input type="text" class="form-control" name="permissions" id="permissions" value="">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="text" class="form-control" name="password" id="password" value="">
-                    </div>
-
-                    <?php
-                    if (isset($validation)){
-                        echo $validation->listErrors();
-                    }
-                    ?>
-
-                    <div class="row">
-                        <div class="col-12 col-sm-4">
-                            <button type="submit" class="btn btn-primary">Register</button>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
 </div>
+<?= $this->endSection() ?>
