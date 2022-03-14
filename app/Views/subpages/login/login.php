@@ -14,7 +14,7 @@
         <?php echo view('partials/formButton', ['name'=>$name]) ?>
 
         <?php
-        if(uri_string() == "subpages/ustvarjanjeUporabnika/createUser"){
+        if(uri_string() == "subpages/ustvarjanjeUporabnika/userCreate"){
 
         }
         ?>
