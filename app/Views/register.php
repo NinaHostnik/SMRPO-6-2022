@@ -10,13 +10,13 @@
                 <hr>
                 <form class="" action="/admin/createUser" method="post">
 
-                    <?php echo view("partials/formInput",['label'=>'username', "id"=>"username", 'type'=>'text'])?>
+                    <?php echo view("partials/formInput",['label'=>'username', "id"=>"username", 'type'=>'text', 'value'=>''])?>
 
 
-                    <?php echo view("partials/formInput",['label'=>'permissions', "id"=>"permissions", 'type'=>'text'])?>
+                    <?php echo view("partials/formInput",['label'=>'permissions', "id"=>"permissions", 'type'=>'text', 'value'=>''])?>
 
 
-                    <?php echo view("partials/formInput",['label'=>'password', "id"=>"password", 'type'=>'text'])?>
+                    <?php echo view("partials/formInput",['label'=>'password', "id"=>"password", 'type'=>'text', 'value'=>''])?>
 
 
                     <?php

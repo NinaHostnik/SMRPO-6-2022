@@ -9,9 +9,9 @@
                 <h5><?php echo $heading ?></h5>
                 <hr>
                 <!-- Username input -->
-                <?php echo view('partials/formInput', ['type'=>$usernameInput['type'], 'id'=>$usernameInput['id'], 'label'=>$usernameInput['label']]) ?>
+                <?php echo view('partials/formInput', ['type'=>$usernameInput['type'], 'id'=>$usernameInput['id'], 'label'=>$usernameInput['label'], 'value'=>''])?>
                 <!-- Password input -->
-                <?php echo view('partials/formInput', ['type'=>$passwordInput['type'], 'id'=>$passwordInput['id'], 'label'=>$passwordInput['label']]) ?>
+                <?php echo view('partials/formInput', ['type'=>$passwordInput['type'], 'id'=>$passwordInput['id'], 'label'=>$passwordInput['label'], 'value'=>''])?>
                 <!-- Submit button -->
                 <?php echo view('partials/formButton', ['name'=>$name]) ?>
 

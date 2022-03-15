@@ -12,13 +12,13 @@
                     <form class="" action="/profile" method="post">
                         <?php echo view("partials/formInput",['label'=>'', "id"=>"username", 'type'=>'hidden', 'value'=>session()->get("username")])?>
 
-                        <?php echo view("partials/formInput",['label'=>'New Username', "id"=>"newusername", 'type'=>'text'])?>
+                        <?php echo view("partials/formInput",['label'=>'New Username', "id"=>"newusername", 'type'=>'text', 'value'=>''])?>
 
-                        <?php echo view("partials/formInput",['label'=>'Password', "id"=>"password", 'type'=>'password'])?>
+                        <?php echo view("partials/formInput",['label'=>'Password', "id"=>"password", 'type'=>'password','value'=>''])?>
 
-                        <?php echo view("partials/formInput",['label'=>'New Password', "id"=>"newpass", 'type'=>'password'])?>
+                        <?php echo view("partials/formInput",['label'=>'New Password', "id"=>"newpass", 'type'=>'password','value'=>''])?>
 
-                        <?php echo view("partials/formInput",['label'=>'Repeat Password', "id"=>"repass", 'type'=>'password'])?>
+                        <?php echo view("partials/formInput",['label'=>'Repeat Password', "id"=>"repass", 'type'=>'password','value'=>''])?>
 
 
 
