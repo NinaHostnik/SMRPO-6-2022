@@ -11,28 +11,28 @@
                 <form class="" action="/" method="post">
 
                     <div class="form-group">
-                        <?php echo view("partials/formInput",["label"=>"Ime", 'type'=>'text'])?>
+                        <?php echo view("partials/formInput",["label"=>"Ime projekta", 'id'=>'projectName', 'type'=>'text'])?>
 
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <select class="form-select">
                                 <option value="" hidden selected disabled>Izberite uporabnika</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <?php foreach ($data as $option): ?>
+                                    <option value=<?php  $option["id"] ?>><?php  echo $option["username"] ?></option>
+                                <?php endforeach; ?>
                             </select>
                             <select class="form-select">
                                 <option value="" hidden selected disabled>Izberite vlogo</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <?php foreach ($roleList as $option): ?>
+                                    <option value=<?php  $option["id"] ?>><?php  echo $option["vloga"] ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 col-sm-4">
-                            <?php echo view('partials/formButton', ["name"=>'Log in']) ?>
+                            <?php echo view('partials/formButton', ["name"=>'Dodaj projekt']) ?>
                         </div>
                     </div>
                 </form>
