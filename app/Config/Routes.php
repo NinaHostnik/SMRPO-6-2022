@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->match(['get','post'],'/', 'UsersController::login',['filter' => 'NoAuth']);
-$routes->match(['get','post'],'/admin/createUser', 'UsersController::createUser',['filter' => 'AdminAuth']);
+$routes->match(['get','post'],'/subpages/dodajanjeUporabnika/userCreate', 'UsersController::createUser',['filter' => 'AdminAuth']);
 
 
 /*
