@@ -35,7 +35,7 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ['url'];
 
     /**
      * Constructor.
@@ -58,5 +58,17 @@ class BaseController extends Controller
         echo view('templates/header', $data);
         echo view($view, $data);
         echo view('templates/footer', $data);
+    }
+
+    protected function setUserSession($user)
+    {
+        $data = [
+            'id' => $user['id'],
+            'username' => $user['username'],
+            'permissions' => $user['permissions'],
+        ];
+
+        session()->set($data);
+        return true;
     }
 }

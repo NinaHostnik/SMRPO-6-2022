@@ -11,14 +11,20 @@ class UsersController extends BaseController
     {
         if ($this->request->getMethod() == 'post') {
             $rules = [
-                'username' => 'required',
+                'username' => 'required|doesntExist[username]',
                 'permissions' => 'required',
-                'password' => 'required',
+                'password' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
             ];
 
-            if (!$this->validate($rules)) {
+            $errors = [
+                'username' => [
+                    'doesntExist' => 'User already exists'
+                ]
+            ];
+
+            if (!$this->validate($rules, $errors)) {
                 $data['validation'] = $this->validator;
-                $this->render_page("register",$data);
+                echo view('subpages/ustvarjanjeUporabnika/userCreate', $data);
 
 
             } else {
@@ -35,10 +41,13 @@ class UsersController extends BaseController
             }
         } else {
 
-            $data = [
-
-            ];
-            $this->render_page("admin/userCreate",$data);
+            // Utility variables - needed for building the page
+            $data['heading'] = 'Registracija uporabnika';
+            $data['usernameInput'] = array('type' => 'text', 'id' => 'username', 'label' => 'Uporabniško ime');
+            $data['permissionsInput'] = array('type'=>'text', 'id'=>'permissions',  'label'=>'Dovoljenja');
+            $data['passwordInput'] = array('type' => 'password', 'id' => 'password', 'label' => 'Geslo');
+            $data['name'] = 'Registriraj';
+            echo view('subpages/ustvarjanjeUporabnika/userCreate', $data);
 
         }
 
@@ -64,7 +73,7 @@ class UsersController extends BaseController
                 if (!$this->validate($rules, $errors)) {
                     $data['validation'] = $this->validator;
 
-                    $this->render_page("login",$data);
+                    echo view('subpages/login/login', $data);
 
 
                 } else {
@@ -78,25 +87,68 @@ class UsersController extends BaseController
                 }
 
             } else {
-                $data = [
-
-                ];
-                echo view('login', $data);
-                //$this->render_page("login",$data);
+                // Utility variables - needed for building the page
+                $data['heading'] = 'Vpis';
+                $data['usernameInput'] = array('type' => 'text', 'id' => 'username', 'label' => 'Uporabniško ime');
+                $data['passwordInput'] = array('type' => 'password', 'id' => 'password', 'label' => 'Geslo');
+                $data['name'] = 'Vpiši se';
+                echo view('subpages/login/login', $data);
             }
 
 
     }
-    private function setUserSession($user)
-    {
-        $data = [
-            'id' => $user['id'],
-            'username' => $user['username'],
-            'permissions' => $user['permissions'],
-        ];
 
-        session()->set($data);
-        return true;
+    public function update_user(){
+        helper(['form']);
+
+        if ($this->request->getMethod() == 'post') {
+
+            $rules = [
+                'username' => 'required',
+                'newusername' => 'required',
+                'password' => 'required|validateUser[username,password]',
+                'newpass' => 'required',
+                'repass' => 'required|matches[newpass]',
+
+            ];
+
+            $errors = [
+                'password' => [
+                    'validateUser' => 'Username or Password do not match'
+                ]
+            ];
+
+            if (!$this->validate($rules, $errors)) {
+                $data['validation'] = $this->validator;
+
+                echo view('user_update', $data);
+
+
+            } else {
+                $model = new UserModel();
+
+                $newprofile = [
+                    'id' => session()->get("id"),
+                    'username' => $this->request->getPost('newusername'),
+                    'password' => $this->request->getPost('newpass'),
+                ];
+
+                $model->update(session()->get("id"), $newprofile);
+
+                $newprofile["permissions"] = session()->get("permissions");
+                $this->setUserSession($newprofile);
+
+                return redirect()->to('/profile');
+            }
+
+        } else {
+            $data = [
+            ];
+            echo view('user_update', $data);
+        }
+
     }
+
+
 
 }
