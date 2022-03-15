@@ -1,0 +1,137 @@
+CRITICAL - 2022-03-14 05:44:40 --> Invalid file: login.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('login', Array)
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-14 05:45:38 --> Invalid file: login.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('login', Array)
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-14 05:45:51 --> Invalid file: login.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('login', Array)
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-14 05:47:31 --> Invalid file: login.php
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('login', Array)
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-14 06:09:38 --> view(): Argument #2 ($data) must be of type array, string given, called in C:\xampp\htdocs\SMRPO-6-2022\app\Views\subpages\login\login.php on line 14
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\subpages\login\login.php(14): view('partials/formBu...', 'Vpi\xC5\xA1i se')
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('subpages/login/...', Array)
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-14 06:29:44 --> Undefined variable $id
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\partials\formInput.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 2)
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('partials/formIn...', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\app\Views\subpages\login\login.php(10): view('partials/formIn...', Array)
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#8 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('subpages/login/...', Array)
+#9 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#10 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#11 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-03-14 06:37:47 --> Undefined variable $array
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\subpages\login\login.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11)
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('subpages/login/...', Array)
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-14 06:38:07 --> Undefined variable $array
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\subpages\login\login.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11)
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('subpages/login/...', Array)
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-14 06:39:42 --> Undefined variable $array
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\subpages\login\login.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 10)
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('subpages/login/...', Array)
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-14 07:07:19 --> Undefined constant "type"
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#3 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('subpages/login/...', Array)
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-14 07:08:01 --> Undefined array key 1
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\subpages\login\login.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 10)
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('subpages/login/...', Array)
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-14 07:08:19 --> Undefined constant "id"
+#0 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#3 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(90): view('subpages/login/...', Array)
+#4 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-14 11:00:17 --> Undefined variable $heading
+#0 C:\xampp\htdocs\SMRPO-6-2022\app\Views\subpages\login\login.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7)
+#1 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SMRPO-6-2022\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\SMRPO-6-2022\system\Common.php(1089): CodeIgniter\View\View->render('subpages/login/...', Array, true)
+#4 C:\xampp\htdocs\SMRPO-6-2022\app\Controllers\UsersController.php(73): view('subpages/login/...', Array)
+#5 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#6 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\SMRPO-6-2022\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\SMRPO-6-2022\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
