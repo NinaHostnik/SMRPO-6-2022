@@ -13,7 +13,7 @@ class UsersController extends BaseController
             $rules = [
                 'username' => 'required|doesntExist[username]',
                 'permissions' => 'required',
-                'password' => 'required',
+                'password' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
             ];
 
             $errors = [
@@ -93,16 +93,58 @@ class UsersController extends BaseController
 
 
     }
-    private function setUserSession($user)
-    {
-        $data = [
-            'id' => $user['id'],
-            'username' => $user['username'],
-            'permissions' => $user['permissions'],
-        ];
 
-        session()->set($data);
-        return true;
+    public function update_user(){
+        helper(['form']);
+
+        if ($this->request->getMethod() == 'post') {
+
+            $rules = [
+                'username' => 'required',
+                'newusername' => 'required',
+                'password' => 'required|validateUser[username,password]',
+                'newpass' => 'required',
+                'repass' => 'required|matches[newpass]',
+
+            ];
+
+            $errors = [
+                'password' => [
+                    'validateUser' => 'Username or Password do not match'
+                ]
+            ];
+
+            if (!$this->validate($rules, $errors)) {
+                $data['validation'] = $this->validator;
+
+                echo view('user_update', $data);
+
+
+            } else {
+                $model = new UserModel();
+
+                $newprofile = [
+                    'id' => session()->get("id"),
+                    'username' => $this->request->getPost('newusername'),
+                    'password' => $this->request->getPost('newpass'),
+                ];
+
+                $model->update(session()->get("id"), $newprofile);
+
+                $newprofile["permissions"] = session()->get("permissions");
+                $this->setUserSession($newprofile);
+
+                return redirect()->to('/profile');
+            }
+
+        } else {
+            $data = [
+            ];
+            echo view('user_update', $data);
+        }
+
     }
+
+
 
 }

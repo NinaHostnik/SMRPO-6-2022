@@ -71,9 +71,17 @@ class Rules
      */
     public function greater_than_equal_to(?string $str, string $min): bool
     {
-        return is_numeric($str) && $str >= $min;
+        if (!is_numeric($str)){
+            return strlen($str) >= $min;
+        }
+        else{
+            return $str >= $min;
+        }
     }
-
+    public function greater_than_equal_to_str(?string $str, string $min): bool
+    {
+        return strlen($str) >= $min;
+    }
     /**
      * Checks the database to see if the given value exist.
      * Can ignore records by field/value to filter (currently
@@ -153,10 +161,20 @@ class Rules
     /**
      * Equal to or Less than
      */
+    public function less_than_equal_to_str(?string $str, string $max): bool
+    {
+        return strlen($str) <= $max;
+    }
+
+
     public function less_than_equal_to(?string $str, string $max): bool
     {
-        return is_numeric($str) && $str <= $max;
-    }
+        if (!is_numeric($str)){
+            return strlen($str) <= $max;
+        }
+        else{
+            return $str <= $max;
+        }    }
 
     /**
      * Matches the value of another field in $data.

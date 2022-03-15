@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->match(['get','post'],'/', 'UsersController::login',['filter' => 'NoAuth']);
 $routes->match(['get','post'],'/admin/createUser', 'UsersController::createUser',['filter' => 'AdminAuth']);
-
+$routes->match(['get','post'],'/profile', 'UsersController::update_user');
 
 /*
  * --------------------------------------------------------------------

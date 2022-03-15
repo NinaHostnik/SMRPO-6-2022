@@ -59,4 +59,16 @@ class BaseController extends Controller
         echo view($view, $data);
         echo view('templates/footer', $data);
     }
+
+    protected function setUserSession($user)
+    {
+        $data = [
+            'id' => $user['id'],
+            'username' => $user['username'],
+            'permissions' => $user['permissions'],
+        ];
+
+        session()->set($data);
+        return true;
+    }
 }
