@@ -20,7 +20,7 @@ class NewProjectController extends BaseController
             } else {
                 $userList = json_decode($this->request->getVar('userList'),true);
 
-                echo $userList;
+                echo $this->request->getVar('userList');
             }
         } else {
 
