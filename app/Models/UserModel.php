@@ -31,6 +31,11 @@ class UserModel extends Model{
         return $data;
     }
 
+    public function readLookup(): array
+    {
+        $query = $this->db->query("SELECT * FROM users");
 
+        return $query->getResultArray();
+    }
 
 }

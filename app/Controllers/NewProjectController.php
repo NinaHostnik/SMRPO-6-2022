@@ -16,7 +16,7 @@ class NewProjectController extends BaseController
 
             if (!$this->validate($rules)) {
                 $data['validation'] = $this->validator;
-                $this->render_page("dodajanje", $data);
+                echo view("subpages/dodajanjeProjekta/dodajanje", $data);
 
 
             } else {
@@ -33,11 +33,13 @@ class NewProjectController extends BaseController
             }
         } else {
 
-            $query = $this->db->query("SELECT * FROM users");
+            $model = new UserModel();
 
-            $data = $query->getResultArray();
-            $this->render_page("admin/userCreate", $data);
-
+            $data['data'] = $model->readLookup();
+            $data['roleList'] = array(array('id' => 'V', 'vloga' => 'produktni vodja'),
+                                array('id' => 'S', 'vloga' => 'skrbnik metodologije'),
+                                array('id' => 'C', 'vloga' => 'član razvojne skupine'));
+            echo view("subpages/dodajanjeProjekta/dodajanje", $data);
         }
     }
 }
