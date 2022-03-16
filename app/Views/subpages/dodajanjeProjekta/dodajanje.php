@@ -8,7 +8,7 @@
             <div class="container">
                 <h3>Dodajanje projekta</h3>
                 <hr>
-                <form class="" action="/" method="post">
+                <form class="form-control" action="NewProjectController::createProject" method="post">
                     <input hidden type="text" id="userList" name="userList">
                     <div class="form-group">
                         <?php echo view("partials/formInput",["label"=>"Ime projekta", 'id'=>'projectName', 'type'=>'text',  'value'=>''])?>

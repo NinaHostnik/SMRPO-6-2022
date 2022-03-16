@@ -10,26 +10,17 @@ class NewProjectController extends BaseController
         if ($this->request->getMethod() == 'post') {
             $rules = [
                 'projectName' => 'required',
-                'projectMembers' => 'required',
-                'memberRoles' => 'required',
+                'userList' => 'required'
             ];
 
             if (!$this->validate($rules)) {
                 $data['validation'] = $this->validator;
                 echo view("subpages/dodajanjeProjekta/dodajanje", $data);
 
-
             } else {
-                $model = new UserModel();
+                $userList = json_decode($this->request->getVar('userList'),true);
 
-                $newdata = [
-                    'username' => $this->request->getVar('username'),
-                    'permissions' => $this->request->getVar('permissions'),
-                    'password' => $this->request->getVar('password'),
-                ];
-                $model->save($newdata);
-
-                return redirect()->to('/');
+                echo $userList;
             }
         } else {
 
@@ -39,6 +30,7 @@ class NewProjectController extends BaseController
             $data['roleList'] = array(array('id' => 'V', 'vloga' => 'produktni vodja'),
                                 array('id' => 'S', 'vloga' => 'skrbnik metodologije'),
                                 array('id' => 'C', 'vloga' => 'član razvojne skupine'));
+
             echo view("subpages/dodajanjeProjekta/dodajanje", $data);
         }
     }
