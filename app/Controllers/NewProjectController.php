@@ -14,8 +14,7 @@ class NewProjectController extends BaseController
             ];
 
             if (!$this->validate($rules)) {
-                $data['validation'] = $this->validator;
-                echo view("subpages/dodajanjeProjekta/dodajanje", $data);
+                // TODO: dodaj error
 
             } else {
                 $model = new ProjectModel();
@@ -32,6 +31,8 @@ class NewProjectController extends BaseController
             $model = new UserModel();
 
             $data['data'] = $model->readLookup();
+
+            // TODO: move this stuff to db
             $data['roleList'] = array(array('id' => 'V', 'vloga' => 'produktni vodja'),
                                 array('id' => 'S', 'vloga' => 'skrbnik metodologije'),
                                 array('id' => 'C', 'vloga' => 'član razvojne skupine'));
