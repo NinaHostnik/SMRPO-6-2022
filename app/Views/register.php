@@ -12,12 +12,9 @@
 
                     <?php echo view("partials/formInput",['label'=>'username', "id"=>"username", 'type'=>'text', 'value'=>''])?>
 
-
                     <?php echo view("partials/formInput",['label'=>'permissions', "id"=>"permissions", 'type'=>'text', 'value'=>''])?>
 
-
                     <?php echo view("partials/formInput",['label'=>'password', "id"=>"password", 'type'=>'text', 'value'=>''])?>
-
 
                     <?php
                     if (isset($validation)){
@@ -36,5 +33,8 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('name').outerHTML = <?php echo $text ?>
+</script>
 
 <?= $this->endSection() ?>
