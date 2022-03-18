@@ -10,15 +10,20 @@
                     <h3><?php echo session()->get("username") ?></h3>
                     <hr>
                     <form class="" action="/profile" method="post">
+                        <?php echo view("partials/formInput",['label'=>'Tvoje geslo', "id"=>"password", 'type'=>'password','value'=>''])?>
+                        <span style="font-weight: lighter; font-size: small;">Za zaščito svojega računa vpiši trenutno geslo v zgornjo polje, da potrdiš svojo identiteto.</span>
+                        <br><br>
+                        <h5>Uporabniški podatki</h5>
+                        <hr>
+
+                        <?php echo view("partials/formInput",['label'=>'Novo uporabniško ime', "id"=>"newusername", 'type'=>'text', 'value'=>''])?>
                         <?php echo view("partials/formInput",['label'=>'', "id"=>"username", 'type'=>'hidden', 'value'=>session()->get("username")])?>
 
-                        <?php echo view("partials/formInput",['label'=>'New Username', "id"=>"newusername", 'type'=>'text', 'value'=>''])?>
+                        <h5>Spremembna gesla</h5>
+                        <hr>
+                        <?php echo view("partials/password",['label'=>'Novo geslo', "id"=>"newpass", 'type'=>'password','value'=>''])?>
 
-                        <?php echo view("partials/formInput",['label'=>'Password', "id"=>"password", 'type'=>'password','value'=>''])?>
-
-                        <?php echo view("partials/formInput",['label'=>'New Password', "id"=>"newpass", 'type'=>'password','value'=>''])?>
-
-                        <?php echo view("partials/formInput",['label'=>'Repeat Password', "id"=>"repass", 'type'=>'password','value'=>''])?>
+                        <?php echo view("partials/formInput",['label'=>'Ponovi geslo', "id"=>"repass", 'type'=>'password','value'=>''])?>
 
 
 
@@ -29,7 +34,7 @@
                         ?>
 
                         <div class="row">
-                            <?php echo view('partials/formButton', ["name"=>'Submit']) ?>
+                            <?php echo view('partials/formButton', ["name"=>'Shrani nastavitve']) ?>
                         </div>
 
                     </form>

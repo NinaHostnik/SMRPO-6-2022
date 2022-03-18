@@ -36,6 +36,7 @@ $routes->match(['get','post'],'/', 'UsersController::login',['filter' => 'NoAuth
 $routes->match(['get','post'],'/admin/createUser', 'UsersController::createUser',['filter' => 'AdminAuth']);
 $routes->match(['get','post'],'/profile', 'UsersController::update_user');
 $routes->match(['get','post'],'/subpages/dodajanjeUporabnika/userCreate', 'UsersController::createUser',['filter' => 'AdminAuth']);
+$routes->match(['get','post'],'/dodajanjeProjekta', 'NewProjectController::createProject');
 
 /*
  * --------------------------------------------------------------------
