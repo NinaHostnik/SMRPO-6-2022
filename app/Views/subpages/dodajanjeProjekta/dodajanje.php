@@ -88,8 +88,10 @@
             var vlogaId = vlogeSelect.value;
             if (Object.keys(addedUsers).includes(izbraniId)) {
                 alert("Izbrani uporabnik je že bil dodan.");
-            } else if (izbranaVloga.includes('produktni vodja') && Object.values(addedUsers).includes('produktni vodja')) {
-                alert("V projektu lahko obstaja le en projektni vodja.");
+            } else if (izbranaVloga.includes('produktni vodja') && exists(addedUsers, 'produktni vodja')) {
+                alert("V projektu lahko obstaja le en produktni vodja.");
+            } else if (izbranaVloga.includes('skrbnik metodologije') && exists(addedUsers, 'skrbnik metodologije')) {
+                alert("V projektu lahko obstaja le en skrbnik metodologije.");
             } else {
                 addedUsers[izbraniId] = {izbraniUporabnik, izbranaVloga, vlogaId};
                 hiddenList.value = JSON.stringify(addedUsers);
@@ -103,10 +105,20 @@
     }
 
     function odstraniUporabnika(id) {
-        var vrstica = document.getElementById(id);
+        let vrstica = document.getElementById(id);
         vrstica.parentNode.removeChild(vrstica);
         delete addedUsers[id];
         hiddenList.value = JSON.stringify(addedUsers);
+    }
+
+    function exists(arr, search) {
+        let value = false;
+        Object.keys(arr).forEach((key) => {
+            if (Object.values(arr[key]).includes(search)) {
+                value = true;
+            }
+        });
+        return value;
     }
 </script>
 

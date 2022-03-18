@@ -27,7 +27,7 @@ class ProjectModel extends Model{
 
     public function readRoles(): array
     {
-        $query = $this->db->query("SELECT id, name AS vloga FROM roles");
+        $query = $this->db->query("SELECT id, name AS vloga FROM roles ORDER BY id DESC");
 
         return $query->getResultArray();
     }
