@@ -13,6 +13,9 @@
                     <div class="form-group">
                         <?php echo view("partials/formInput",["label"=>"Ime projekta", 'id'=>'projectName', 'type'=>'text',  'value'=>''])?>
                     </div>
+                    <div class="form-group">
+                        <?php echo view("partials/formTextarea",["label"=>"Opis projekta", 'id'=>'projectDescription', 'rows'=>'5', 'maxlength'=>'3000'])?>
+                    </div>
                     <div class="row">
                         <div class="col-12 col-sm-5">
                             <select class="form-select" id="uporabnikiSelect">

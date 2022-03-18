@@ -23,8 +23,9 @@ class NewProjectController extends BaseController
                 $users = implode(',', array_keys($userList));
                 $roles = implode(',', array_column($userList, 'vlogaId'));
                 $projectName = $this->request->getVar('projectName');
+                $projectDescription = $this->request->getVar('projectDescription');
 
-                echo $model->callStoringProcedure($projectName, $users, $roles);
+                echo $model->callStoringProcedure($projectName, $projectDescription, $users, $roles);
             }
         } else {
 
