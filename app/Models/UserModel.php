@@ -4,12 +4,13 @@ use CodeIgniter\Model;
 
 class UserModel extends Model{
 
-    protected  $table = 'users';
+    protected $table = 'users';
     protected $allowedFields = ['username', 'password', 'permissions'];
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
 
     protected function beforeInsert(array $data){
+        var_dump($data);
         //hash password
         $data = $this->passwordHash($data);
 

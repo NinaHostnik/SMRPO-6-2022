@@ -16,6 +16,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * Router Setup
  * --------------------------------------------------------------------
  */
+
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('UserController');
 $routes->setDefaultMethod('login');
@@ -28,9 +29,9 @@ $routes->setAutoRoute(true);
  * Route Definitions
  * --------------------------------------------------------------------
  */
-
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
 $routes->match(['get','post'],'/', 'UsersController::login',['filter' => 'NoAuth']);
 $routes->match(['get','post'],'/admin/createUser', 'UsersController::createUser',['filter' => 'AdminAuth']);
 $routes->match(['get','post'],'/profile', 'UsersController::update_user');
@@ -50,6 +51,7 @@ $routes->match(['get','post'],'/dodajanjeProjekta', 'NewProjectController::creat
  * You will have access to the $routes object within that file without
  * needing to reload it.
  */
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

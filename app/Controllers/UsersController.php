@@ -29,24 +29,21 @@ class UsersController extends BaseController
 
             } else {
                 $model = new UserModel();
-
+                $pass = $this->request->getVar('password');
+                $pass = str_replace(' ','&nbsp;',$pass);
                 $newdata = [
                     'username' => $this->request->getVar('username'),
                     'permissions' => $this->request->getVar('permissions'),
-                    'password' => $this->request->getVar('password'),
+                    'password' => $pass,
                 ];
+                //var_dump($newdata);
                 $model->save($newdata);
 
-                return redirect()->to('/');
+                return redirect()->to('/profile');
             }
         } else {
+            $data = [];
 
-            // Utility variables - needed for building the page
-            $data['heading'] = 'Registracija uporabnika';
-            $data['usernameInput'] = array('type' => 'text', 'id' => 'username', 'label' => 'Uporabniško ime');
-            $data['permissionsInput'] = array('type'=>'text', 'id'=>'permissions',  'label'=>'Dovoljenja');
-            $data['passwordInput'] = array('type' => 'password', 'id' => 'password', 'label' => 'Geslo');
-            $data['name'] = 'Registriraj';
             echo view('subpages/ustvarjanjeUporabnika/userCreate', $data);
 
         }
@@ -87,11 +84,7 @@ class UsersController extends BaseController
                 }
 
             } else {
-                // Utility variables - needed for building the page
-                $data['heading'] = 'Vpis';
-                $data['usernameInput'] = array('type' => 'text', 'id' => 'username', 'label' => 'Uporabniško ime');
-                $data['passwordInput'] = array('type' => 'password', 'id' => 'password', 'label' => 'Geslo');
-                $data['name'] = 'Vpiši se';
+                $data = [];
                 echo view('subpages/login/login', $data);
             }
 
@@ -107,7 +100,7 @@ class UsersController extends BaseController
                 'username' => 'required',
                 'newusername' => 'required',
                 'password' => 'required|validateUser[username,password]',
-                'newpass' => 'required',
+                'newpass' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
                 'repass' => 'required|matches[newpass]',
 
             ];
