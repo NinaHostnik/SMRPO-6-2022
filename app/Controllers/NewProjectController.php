@@ -30,13 +30,11 @@ class NewProjectController extends BaseController
         } else {
 
             $model = new UserModel();
+            $pmodel = new ProjectModel();
 
             $data['data'] = $model->readLookup();
-
-            // TODO: move this stuff to db
-            $data['roleList'] = array(array('id' => 'V', 'vloga' => 'produktni vodja'),
-                                array('id' => 'S', 'vloga' => 'skrbnik metodologije'),
-                                array('id' => 'C', 'vloga' => 'član razvojne skupine'));
+            $data['projectName'] = $pmodel->getProjectName();
+            $data['roleList'] = $pmodel->readRoles();
 
             echo view("subpages/dodajanjeProjekta/dodajanje", $data);
         }
