@@ -20,8 +20,8 @@ class NewProjectController extends BaseController
                 $model = new ProjectModel();
 
                 $userList = json_decode($this->request->getVar('userList'),true);
-                $users = implode(',', array_column($userList, 'izbraniUporabnik'));
-                $roles = implode(',', array_column($userList, 'izbranaVloga'));
+                $users = implode(',', array_keys($userList));
+                $roles = implode(',', array_column($userList, 'vlogaId'));
                 $projectName = $this->request->getVar('projectName');
 
                 echo $model->callStoringProcedure($projectName, $users, $roles);

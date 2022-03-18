@@ -18,7 +18,7 @@
                             <select class="form-select" id="uporabnikiSelect">
                                 <option value="" hidden selected disabled>Izberite uporabnika</option>
                                 <?php foreach ($data as $option): ?>
-                                    <option value=<?php  $option["id"] ?>><?php  echo $option["username"] ?></option>
+                                    <option value=<?php  echo $option["id"] ?>><?php  echo $option["username"] ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -26,7 +26,7 @@
                             <select class="form-select" id="vlogeSelect">
                                 <option value="" hidden selected disabled>Izberite vlogo</option>
                                 <?php foreach ($roleList as $option): ?>
-                                    <option value=<?php  $option["id"] ?>><?php  echo $option["vloga"] ?></option>
+                                    <option value=<?php  echo $option["id"] ?>><?php  echo $option["vloga"] ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -66,8 +66,7 @@
 </div>
 
 <script>
-    var addedUsers = new Object();
-    var counter = 1;
+    var addedUsers = {};
     var hiddenList = document.getElementById('userList');
 
     function dodajUporabnika() {
@@ -78,14 +77,21 @@
         } else {
             var izbraniUporabnik = uporabnikiSelect.selectedOptions[0].outerText;
             var izbranaVloga = vlogeSelect.selectedOptions[0].outerText;
-            addedUsers[counter] = {izbraniUporabnik, izbranaVloga};
-            hiddenList.value = JSON.stringify(addedUsers);
-            document.getElementById('seznamUporabnikov').innerHTML += '<tr id=' + counter + '><td>' + izbraniUporabnik + '</td>' +
-                '<td>' + izbranaVloga + '</td>' +
-                '<td><button type="button" class="btn btn-primary" onclick="odstraniUporabnika(' + counter + ')">Odstrani</button></td></tr>';
-            uporabnikiSelect.selectedIndex = 0;
-            vlogeSelect.selectedIndex = 0;
-            counter++;
+            var izbraniId = uporabnikiSelect.value;
+            var vlogaId = vlogeSelect.value;
+            if (Object.keys(addedUsers).includes(izbraniId)) {
+                alert("Izbrani uporabnik je že bil dodan.");
+            } else if (izbranaVloga.includes('produktni vodja') && Object.values(addedUsers).includes('produktni vodja')) {
+                alert("V projektu lahko obstaja le en projektni vodja.");
+            } else {
+                addedUsers[izbraniId] = {izbraniUporabnik, izbranaVloga, vlogaId};
+                hiddenList.value = JSON.stringify(addedUsers);
+                document.getElementById('seznamUporabnikov').innerHTML += '<tr id=' + izbraniId + '><td>' + izbraniUporabnik + '</td>' +
+                    '<td>' + izbranaVloga + '</td>' +
+                    '<td><button type="button" class="btn btn-primary" onclick="odstraniUporabnika(' + izbraniId + ')">Odstrani</button></td></tr>';
+                uporabnikiSelect.selectedIndex = 0;
+                vlogeSelect.selectedIndex = 0;
+            }
         }
     }
 

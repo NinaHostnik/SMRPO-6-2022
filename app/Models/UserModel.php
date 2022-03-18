@@ -33,7 +33,7 @@ class UserModel extends Model{
 
     public function readLookup(): array
     {
-        $query = $this->db->query("SELECT * FROM users");
+        $query = $this->db->query("SELECT id, username FROM users");
 
         return $query->getResultArray();
     }

@@ -8,7 +8,10 @@ class ProjectModel extends Model{
     protected $subtable = 'project_members';
 
     public function callStoringProcedure($ime, $userList, $roleList) {
-        $query = $this->db->query("CALL save_project('". $ime. "','". $userList. "','". $roleList. "')");
-        return $query->result();
+        $result = $this->db->query("CALL save_project('". $ime. "','". $userList. "','". $roleList. "')");
+        if ($result !== NULL) {
+            return TRUE;
+        }
+        return FALSE;
     }
 }
