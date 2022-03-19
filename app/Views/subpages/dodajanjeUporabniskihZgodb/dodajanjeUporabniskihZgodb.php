@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <div class="container">
-    <form class="form-control" action="/dodajanjeUporabniskihZgodb" method="post">
+    <form class="form-control" action="/dodajanjeUporabniskihZgodbController/dodajanjeZgodbe" method="post">
         <h5>Dodaj uporabniških zgodb</h5>
         <hr>
         <!-- Name input -->

@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-class DodajanjeUporabniskihZgodb extends BaseController
+class DodajanjeUporabniskihZgodbController extends BaseController
 {
     public function index(){
         echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb');
@@ -17,13 +17,18 @@ class DodajanjeUporabniskihZgodb extends BaseController
             $prioriteta=$this->request->getVar('prioriteta');
             $sprejemniTesti=$this->request->getVar('sprejemniTesti');
             $poslovnaVrednost=$this->request->getVar('poslovnaVrednost');
+            $url = $_SERVER['HTTP_REFERER'];
+            $components = parse_url($url);
+            parse_str($components['query'], $results);
             $zgodba=[
                 'ime' => $ime,
                 'besedilo' => $besedilo,
                 'prioriteta' => $prioriteta,
                 'sprejemniTesti' => $sprejemniTesti,
                 'poslovnaVrednost' => $poslovnaVrednost,
+                'projekt' => $results['id'],
             ];
+
             echo(json_encode($zgodba));
         } else {
             $data = [];
