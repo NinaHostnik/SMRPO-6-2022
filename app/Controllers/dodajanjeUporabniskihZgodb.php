@@ -9,4 +9,7 @@ class DodajanjeUporabniskihZgodb extends BaseController
     public function login(){
         echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb');
     }
+    public function dodajanjeZgodbe(){
+        echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb');
+    }
 }

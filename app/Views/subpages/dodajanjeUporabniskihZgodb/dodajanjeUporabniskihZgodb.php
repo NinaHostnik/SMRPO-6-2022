@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <div class="container">
-    <form class="form-control" action="/admin/dodajanjeUporabniskihZgodb" method="post">
+    <form class="form-control" action="/dodajanjeUporabniskihZgodb" method="post">
         <h5>Dodaj uporabniških zgodb</h5>
         <hr>
         <!-- Name input -->
@@ -23,7 +23,8 @@
         <!-- Poslovna Vrednost input -->
         <?php echo view("partials/formInput",['label'=>'Poslovna vrednost', "id"=>"poslovnaVrednost", 'type'=>'number','value'=>''])?>
         <!-- Submit button -->
-        <?php echo view('partials/formButton', ['name'=>'Dodaj Zgodbo']) ?>
+        <?php echo view('partials/formButton', ['name'=>'Dodaj Zgodbo']) ?> 
+
     </form>
 </div>
 <?= $this->endSection() ?>
