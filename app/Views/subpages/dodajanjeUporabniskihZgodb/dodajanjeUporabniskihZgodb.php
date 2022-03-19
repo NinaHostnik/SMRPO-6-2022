@@ -9,7 +9,7 @@
         <!-- Name input -->
         <?php echo view("partials/formInput",['label'=>'Ime zgodbe', "id"=>"zgodbaIme", 'type'=>'text', 'value'=>''])?>
         <!-- Besedilo input -->
-        <?php echo view("partials/formTextarea",['name'=>'Besedilo', "id"=>"zgodbaBesedilo", 'rows'=>'10', 'maxlength'=>'5000'])?>
+        <?php echo view("partials/formTextarea",['label'=>'Besedilo zgodbe','name'=>'Besedilo', "id"=>"zgodbaBesedilo", 'rows'=>'10', 'maxlength'=>'8000'])?>
         <!-- Sprejemni testi input -->
         <?php echo view("partials/formInput",['label'=>'Sprejemni Testi', "id"=>"sprejemniTesti", 'type'=>'text','value'=>''])?>
         <!-- Prioriteta input -->

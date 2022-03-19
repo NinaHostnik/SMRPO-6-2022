@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+use App\Models\UporabniskeZgodbeModel;
 
 class DodajanjeUporabniskihZgodbController extends BaseController
 {
@@ -20,6 +21,9 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $url = $_SERVER['HTTP_REFERER'];
             $components = parse_url($url);
             parse_str($components['query'], $results);
+            $model=new UporabniskeZgodbeModel();
+            $idZgodbe=$model->pridobiMaxIdZgodbe()+1;
+            $zeIme=$model->preveriCeJeZeIme($ime);
             $zgodba=[
                 'ime' => $ime,
                 'besedilo' => $besedilo,
@@ -27,14 +31,16 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                 'sprejemniTesti' => $sprejemniTesti,
                 'poslovnaVrednost' => $poslovnaVrednost,
                 'projekt' => $results['id'],
+                'idZgodbe'=> $idZgodbe,
             ];
+            if($zeIme){
 
-            echo(json_encode($zgodba));
+            }
+            else{
+                echo $model->zapisiVBazo($zgodba);
+            }
         } else {
-            $data = [];
-
             echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb');
-
         }
     }       
 }
