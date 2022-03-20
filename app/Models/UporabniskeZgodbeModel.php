@@ -33,4 +33,22 @@ class UporabniskeZgodbeModel extends Model{
         }
         return true;
     }
+    function preveriStatusUporabnika(int $uporabnik, int $projektId){
+        $table='project_members';
+        $query=$this->db-> query("SELECT * FROM ".$table." WHERE user_id=". $uporabnik." and project_id=".$projektId." and role='V'");
+        $id = $query->getResultArray();
+        if($id==NULL){
+            $query=$this->db-> query("SELECT * FROM ".$table." WHERE user_id=". $uporabnik." and role='S'");
+            $id=$query->getResultArray();
+            if($id==NULL){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else{
+            return true;
+        }
+    }
 }
