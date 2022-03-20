@@ -16,6 +16,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
         $data["wontHave"]=NULL;
         $data["idProjekta"]=7;
         $data["idOsebe"]=69;
+        $data["opozorilo"]=NULL;
         echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
     }
     public function login(){
@@ -30,6 +31,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
         $data["wontHave"]=NULL;
         $data["idProjekta"]=7;
         $data["idOsebe"]=69;
+        $data["opozorilo"]=NULL;
         echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
     }
     public function dodajanjeZgodbe(){
@@ -61,6 +63,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                 $data["poslovnaVrednost"]=$poslovnaVrednost;
                 $data["idProjekta"]=$idProjekta;
                 $data["idOsebe"]=$idOsebe;
+                $data["opozorilo"]="Preverite če so vsa polja izpolnjena in poskusite ponovno";
                 if(strcmp($prioriteta, "MustHave")==0){
                     $data["default"]=NULL;
                     $data["mustHave"]="selected";
@@ -96,7 +99,6 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                     $data["couldHave"]=NULL;
                     $data["wontHave"]=NULL;
                 }
-                echo("kle se ustav");
                 echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
             }
             else{
@@ -106,7 +108,8 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                     $data["sprejemniTesti"]=$sprejemniTesti;
                     $data["poslovnaVrednost"]=$poslovnaVrednost;
                     $data["idProjekta"]=$idProjekta;
-                    $data["idOsebe"]=65;
+                    $data["idOsebe"]=$idOsebe;
+                    $data["opozorilo"]="Ime uporabniške zgodbe že obstaja, prosimo, da ga spremenite";
                     if(strcmp($prioriteta, "MustHave")==0){
                         $data["default"]=NULL;
                         $data["mustHave"]="selected";
@@ -167,6 +170,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $data["wontHave"]=NULL;
             $data["idProjekta"]=7;
             $data["idOsebe"]=69;
+            $data["opozorilo"]=NULL;
             echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
         }
     }       

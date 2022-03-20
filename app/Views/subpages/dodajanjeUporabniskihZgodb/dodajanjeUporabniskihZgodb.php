@@ -4,7 +4,8 @@
 
 <div class="container">
     <form class="form-control" action="/dodajanjeUporabniskihZgodbController/dodajanjeZgodbe" method="post">
-        <h5>Dodaj uporabniških zgodb</h5>
+        <?php echo $opozorilo?>
+        <h5>Dodaj uporabniško zgodbo</h5>
         <hr>
         <!-- Name input -->
         <?php echo view("partials/formInput",['label'=>'Ime zgodbe', "id"=>"zgodbaIme", 'type'=>'text', 'value'=>$ime])?>
