@@ -1,3 +1,9 @@
 .text-blue {
     color: #0066ff;
 }
+.project_card {
+    border-width: 4px;
+    border-color: #5BC0DE ;
+    border-style: solid;
+    margin-bottom: 10px;
+}

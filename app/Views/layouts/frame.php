@@ -16,7 +16,6 @@
 
 </head>
 <body>
-
     <?= $this->include('partials/navbar') ?>
     <?= $this->renderSection('content') ?>
 

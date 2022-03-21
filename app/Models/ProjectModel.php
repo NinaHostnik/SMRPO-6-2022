@@ -31,4 +31,17 @@ class ProjectModel extends Model{
 
         return $query->getResultArray();
     }
+
+    public function getUsersProjects($userId): array
+    {
+        $query = $this->db->query("
+            SELECT project.id, project.ime, project.opis
+            FROM project
+            LEFT JOIN project_members
+            ON project_members.project_id = project.id
+            WHERE project_members.user_id = ?
+        ",array($userId));
+
+        return $query->getResultArray();
+    }
 }

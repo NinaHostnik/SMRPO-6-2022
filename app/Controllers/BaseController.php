@@ -58,6 +58,7 @@ class BaseController extends Controller
         echo view('templates/header', $data);
         echo view($view, $data);
         echo view('templates/footer', $data);
+
     }
 
     protected function setUserSession($user)

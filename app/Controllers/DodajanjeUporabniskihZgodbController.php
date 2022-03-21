@@ -4,6 +4,7 @@ use App\Models\UporabniskeZgodbeModel;
 
 class DodajanjeUporabniskihZgodbController extends BaseController
 {
+    /*
     public function index(){
         $data["ime"]=NULL;
         $data["besedilo"]=NULL;
@@ -34,6 +35,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
         $data["opozorilo"]=NULL;
         echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
     }
+    */
     public function dodajanjeZgodbe(){
 
         if ($this->request->getMethod() == 'post') {
