@@ -170,8 +170,8 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $data["shouldHave"]=NULL;
             $data["couldHave"]=NULL;
             $data["wontHave"]=NULL;
-            $data["idProjekta"]=7;
-            $data["idOsebe"]=69;
+            $data["idProjekta"]=$this->request->getVar('idProjekta');
+            $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
             echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
         }

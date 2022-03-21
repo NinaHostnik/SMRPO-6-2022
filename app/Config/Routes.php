@@ -34,11 +34,11 @@ $routes->setAutoRoute(true);
 
 $routes->match(['get','post'],'/', 'UsersController::login',['filter' => 'NoAuth']);
 $routes->match(['get','post'],'/admin/createUser', 'UsersController::createUser',['filter' => 'AdminAuth']);
-$routes->match(['get','post'],'/profile', 'UsersController::update_user');
-$routes->match(['get','post'],'/subpages/dodajanjeUporabnika/userCreate', 'UsersController::createUser',['filter' => 'AdminAuth']);
-$routes->match(['get','post'],'/dodajanjeProjekta', 'NewProjectController::createProject');
-$routes->match(['get','post'],'/dodajanjeUporabniskihZgodb', 'DodajanjeUporabniskihZgodbController::dodajanjeZgodbe');
-$routes->match(['get','post'],'/projekti', 'ProjectsController::allProjects');
+$routes->match(['get','post'],'/profile', 'UsersController::update_user',['filter' => 'LoginAuth']);
+$routes->match(['get','post'],'/dodajanjeProjekta', 'NewProjectController::createProject',['filter' => 'LoginAuth']);
+$routes->match(['get','post'],'/dodajanjeUporabniskihZgodb', 'DodajanjeUporabniskihZgodbController::dodajanjeZgodbe',['filter' => 'LoginAuth']);
+$routes->match(['get','post'],'/projekti', 'ProjectsController::allProjects',['filter' => 'LoginAuth']);
+$routes->match(['get','post'],'/home', 'HomeController::home',['filter' => 'LoginAuth']);
 
 /*
  * --------------------------------------------------------------------
