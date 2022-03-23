@@ -1,5 +1,5 @@
 <?php
-namespace app\Controllers;
+namespace App\Controllers;
 
 use App\Models\ProjectModel;
 use App\Models\UserModel;

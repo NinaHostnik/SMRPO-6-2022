@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 
-$routes->setDefaultNamespace('app\Controllers');
+$routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('UserController');
 $routes->setDefaultMethod('login');
 $routes->setTranslateURIDashes(false);

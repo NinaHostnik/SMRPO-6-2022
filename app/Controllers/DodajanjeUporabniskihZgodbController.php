@@ -1,6 +1,6 @@
 <?php
-namespace app\Controllers;
-use app\Models\UporabniskeZgodbeModel;
+namespace App\Controllers;
+use App\Models\UporabniskeZgodbeModel;
 
 class DodajanjeUporabniskihZgodbController extends BaseController
 {

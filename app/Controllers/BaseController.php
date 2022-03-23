@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Controllers;
+namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;

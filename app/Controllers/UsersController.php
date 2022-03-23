@@ -1,8 +1,8 @@
 <?php
 
-namespace app\Controllers;
+namespace App\Controllers;
 
-use app\Models\UserModel;
+use App\Models\UserModel;
 
 class UsersController extends BaseController
 {
