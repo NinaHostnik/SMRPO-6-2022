@@ -12,7 +12,13 @@
 
                     <?php echo view("partials/formInput",['label'=>'username', "id"=>"username", 'type'=>'text', 'value'=>''])?>
 
-                    <?php echo view("partials/formInput",['label'=>'permissions', "id"=>"permissions", 'type'=>'text', 'value'=>''])?>
+                    <div class="form-group mb-3">
+                        <label for="permissions">Dovoljenja</label>
+                        <select class="form-control" name="permissions" id="permissions">
+                            <option value="0">Adminisrator</option>
+                            <option value="1">Uporabnik</option>
+                        </select>
+                    </div>
 
                     <?php echo view("partials/formInput",['label'=>'password', "id"=>"password", 'type'=>'text', 'value'=>''])?>
 

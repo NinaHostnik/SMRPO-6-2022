@@ -39,7 +39,7 @@ class UsersController extends BaseController
                 //var_dump($newdata);
                 $model->save($newdata);
 
-                return redirect()->to('/profile');
+                return redirect()->to('/home');
             }
         } else {
             $data = [];
@@ -85,7 +85,6 @@ class UsersController extends BaseController
 
             } else {
                 $data = [];
-                echo(true);
                 echo view('subpages/login/login', $data);
             }
 
