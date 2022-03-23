@@ -1,5 +1,5 @@
 <?php
-namespace App\Controllers;
+namespace app\Controllers;
 use App\Models\UporabniskeZgodbeModel;
 
 class DodajanjeSprintovController extends BaseController
