@@ -1,6 +1,6 @@
 <?php
 namespace App\Controllers;
-use App\Models\UporabniskeZgodbeModel;
+use App\Models\SprintiModel;
 
 class DodajanjeSprintovController extends BaseController
 {
@@ -22,13 +22,6 @@ class DodajanjeSprintovController extends BaseController
     }*/
     public function login(){
         $data["datum"]=date("Y-m-d");
-        $data["besedilo"]=NULL;
-        $data["sprejemniTesti"]=NULL;
-        $data["poslovnaVrednost"]=NULL;
-        $data["default"]="selected";
-        $data["mustHave"]=NULL;
-        $data["shouldHave"]=NULL;
-        $data["couldHave"]=NULL;
         $data["idOsebe"]=NULL;
         $data["idProjekta"]=7;
         $data["hitrostSprinta"]=69;
@@ -46,7 +39,7 @@ class DodajanjeSprintovController extends BaseController
             $idOsebe=$this->request->getVar('idOsebe');
             $model=new SprintiModel();
             $idSprinta=$model->pridobiMaxIdSprinta()+1;
-            #$zeIme=$model->preveriCeJeZeIme($ime);
+            $prekrivanje=$model->preveriZaPrekrivanje($start, $idProjekta);
             $sprint=[
                 'speed' => $speed,
                 'start' => $start,
@@ -55,51 +48,71 @@ class DodajanjeSprintovController extends BaseController
                 'idSprinta'=> $idSprinta,
             ];
             if(empty($speed) || empty($start) || empty($end) || empty($idProjekta)){
-                $data["ime"]=$ime;
-                $data["besedilo"]=$zgodba['besedilo'];
-                $data["sprejemniTesti"]=$sprejemniTesti;
-                $data["poslovnaVrednost"]=$poslovnaVrednost;
+                $data["speed"]=$speed;
+                $data["start"]=$start;
+                $data["end"]=$end;
                 $data["idProjekta"]=$idProjekta;
                 $data["idOsebe"]=$idOsebe;
+                $data["datum"]=date("Y-m-d");
                 $data["opozorilo"]="Preverite če so vsa polja izpolnjena in poskusite ponovno";
-                echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
+                echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
             }
             else{
-                if($zeIme){
-                    $data["ime"]=$ime;
-                    $data["besedilo"]=$besedilo;
-                    $data["sprejemniTesti"]=$sprejemniTesti;
-                    $data["poslovnaVrednost"]=$poslovnaVrednost;
+                if($prekrivanje){
+                    $data["speed"]=$speed;
+                    $data["start"]=$start;
+                    $data["end"]=$end;
                     $data["idProjekta"]=$idProjekta;
                     $data["idOsebe"]=$idOsebe;
-                    $data["opozorilo"]="Ime uporabniške zgodbe že obstaja, prosimo, da ga spremenite";
-                    echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
+                    $data["datum"]=date("Y-m-d");
+                    $data["opozorilo"]="Začetek sprinta, ki ste ga vnesli se prikriva z drugim sprintom";
+                    echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
                 }
                 else{
-                    $lahkoZapise=$model->preveriStatusUporabnika($idOsebe, $idProjekta);
-                    if($lahkoZapise){
-                        #echo $model->zapisiVBazo($zgodba);
-                        echo("Dela");
+                    if($start<$end){
+                        if($speed>0){
+                            $lahkoZapise=$model->preveriStatusUporabnika($idOsebe);
+                            if($lahkoZapise){
+                                echo $model->zapisiVBazo($sprint);
+                                echo("Dela");
+                            }
+                            else{
+                                echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");
+                            }
+                        }
+                        else{
+                            $data["speed"]=$speed;
+                            $data["start"]=$start;
+                            $data["end"]=$end;
+                            $data["idProjekta"]=$idProjekta;
+                            $data["idOsebe"]=$idOsebe;
+                            $data["datum"]=date("Y-m-d");
+                            $data["opozorilo"]="Vrednost hitrosti sprinta more biti večja od 0";
+                            echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
+                        }
                     }
                     else{
-                        echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");
+                        $data["speed"]=$speed;
+                        $data["start"]=$start;
+                        $data["end"]=$end;
+                        $data["idProjekta"]=$idProjekta;
+                        $data["idOsebe"]=$idOsebe;
+                        $data["datum"]=date("Y-m-d");
+                        $data["opozorilo"]="Konec sprinta je pred začetkom";
+                        echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
                     }
+                    
                 }
             }
         } else {
-            $data["ime"]=NULL;
-            $data["besedilo"]=NULL;
-            $data["sprejemniTesti"]=NULL;
-            $data["poslovnaVrednost"]=NULL;
-            $data["default"]="selected";
-            $data["mustHave"]=NULL;
-            $data["shouldHave"]=NULL;
-            $data["couldHave"]=NULL;
-            $data["wontHave"]=NULL;
-            $data["idProjekta"]=7;
-            $data["idOsebe"]=69;
+            $data["speed"]=NULL;
+            $data["start"]=NULL;
+            $data["end"]=NULL;
+            $data["idProjekta"]=6;
+            $data["idOsebe"]=6;
             $data["opozorilo"]=NULL;
-            echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
+            $data["datum"]=date("Y-m-d");
+            echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
         }
     }       
 }
