@@ -1673,7 +1673,7 @@ class Email
     /**
      * Validate email for shell
      *
-     * Applies stricter, shell-safe validation to email addresses.
+     * Applies stricter, shell-safe Validation to email addresses.
      * Introduced to prevent RCE via sendmail's -f option.
      *
      * @see     https://github.com/codeigniter4/CodeIgniter/issues/4963

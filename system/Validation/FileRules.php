@@ -16,7 +16,7 @@ use Config\Mimes;
 use Config\Services;
 
 /**
- * File validation rules
+ * File Validation rules
  */
 class FileRules
 {

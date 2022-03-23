@@ -91,8 +91,8 @@ class RedirectResponse extends Response
             'post' => $_POST ?? [],
         ]);
 
-        // If the validation has any errors, transmit those back
-        // so they can be displayed when the validation is handled
+        // If the Validation has any errors, transmit those back
+        // so they can be displayed when the Validation is handled
         // within a method different than displaying the form.
         $validation = Services::validation();
 

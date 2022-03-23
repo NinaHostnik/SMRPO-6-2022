@@ -26,7 +26,7 @@ return [
             'migration'  => 'Migration class name',
             'model'      => 'Model class name',
             'seeder'     => 'Seeder class name',
-            'validation' => 'Validation class name',
+            'Validation' => 'Validation class name',
         ],
         'commandType'      => 'Command type',
         'databaseGroup'    => 'Database group',

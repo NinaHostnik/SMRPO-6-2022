@@ -60,7 +60,7 @@ class Controller
     protected $forceHTTPS = 0;
 
     /**
-     * Once validation has been run, will hold the Validation instance.
+     * Once Validation has been run, will hold the Validation instance.
      *
      * @var Validation
      */
@@ -128,7 +128,7 @@ class Controller
     }
 
     /**
-     * A shortcut to performing validation on input data. If validation
+     * A shortcut to performing Validation on input data. If Validation
      * is not successful, a $errors property will be set on this class.
      *
      * @param array|string $rules
