@@ -1,7 +1,7 @@
 
-<nav class="navbar bg-dark">
+<nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href=""><b>SMRPO</b></a>
-        <button class="btn">Log-in</button>
+        <a class="navbar-brand" href="HomeController::home"><b>SMRPO</b></a>
+        <button class="btn btn-primary">Username</button>
     </div>
 </nav>

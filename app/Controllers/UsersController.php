@@ -85,7 +85,6 @@ class UsersController extends BaseController
 
             } else {
                 $data = [];
-                echo(true);
                 echo view('subpages/login/login', $data);
             }
 
