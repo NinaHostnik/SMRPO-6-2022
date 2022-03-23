@@ -6,14 +6,12 @@ class SprintiModel extends Model{
 
     function zapisiVBazo(array $data){
         $table = 'sprinti';
-        $ime=$data['ime'];
-        $besedilo=$data['besedilo'];
-        $prioriteta=$data['prioriteta'];
-        $poslovnaVrednost=$data['poslovnaVrednost'];
-        $sprejemniTesti=$data['sprejemniTesti'];
+        $speed=$data['speed'];
+        $start=$data['start'];
+        $end=$data['end'];
         $projekt=$data['projekt'];
-        $idZgodbe=$data['idZgodbe'];
-        $query = $this->db-> query("INSERT INTO ". $table." (naslov, besedilo, prioriteta, poslovnaVrednost, sprejemniTesti, idProjekta, idZgodbe, statusZgodbe) VALUES ('". $ime."', '". $besedilo."', '". $prioriteta."', '". $poslovnaVrednost."', '". $sprejemniTesti."', '". $projekt."', '".$idZgodbe."', 'backlog')");
+        $idSprinta=$data['idSprinta'];
+        $query = $this->db-> query("INSERT INTO ". $table." (idProjekta, zacetniDatum, koncniDatum, hitrost, trenutniStatus, idSprinta) VALUES ('". $projekt."', '". $start."', '". $end."', '". $speed."', 'vpisana', '". $idSprinta."')");
         return $query;
     }
 
@@ -24,28 +22,26 @@ class SprintiModel extends Model{
         return $id;
     }
 
-    function preveriCeJeZeIme(string $naslov){  #ce je ze ime v bazi vrne true
+    function preveriZaPrekrivanje(string $zacetniDatum, string $idProjekta){  #ce je ze ime v bazi vrne true
         $table = 'sprinti';
-        $query=$this->db-> query("SELECT * FROM ".$table." WHERE naslov='". $naslov."'");
+        $query=$this->db-> query("SELECT * FROM ".$table." WHERE idProjekta='". $idProjekta."'");
         $id = $query->getResultArray();
         if($id==NULL){
             return false;
         }
-        return true;
-    }
-    function preveriStatusUporabnika(int $uporabnik, int $projektId){
-        $table='sprinti';
-        $query=$this->db-> query("SELECT * FROM ".$table." WHERE user_id=". $uporabnik." and project_id=".$projektId." and role='V'");
-        $id = $query->getResultArray();
-        if($id==NULL){
-            $query=$this->db-> query("SELECT * FROM ".$table." WHERE user_id=". $uporabnik." and role='S'");
-            $id=$query->getResultArray();
-            if($id==NULL){
-                return false;
-            }
-            else{
+        foreach($id as $koncniDatum){
+            if($zacetniDatum<$koncniDatum['koncniDatum']){
                 return true;
             }
+        }
+        return false;
+    }
+    function preveriStatusUporabnika(int $uporabnik){
+        $table='project_members';
+        $query=$this->db-> query("SELECT * FROM ".$table." WHERE user_id=". $uporabnik." and role='S'");
+        $id=$query->getResultArray();
+        if($id==NULL){
+            return false;
         }
         else{
             return true;
