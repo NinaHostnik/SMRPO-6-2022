@@ -13,7 +13,32 @@
 
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="<?php echo "/styles/style.css"; ?>">
+    <!--<link rel="stylesheet" href="<?php echo "/styles/login.css"; ?>">-->
+    <style>
+        .gradient-custom-2 {
+            /* fallback for old browsers */
+            background: deepskyblue;
 
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, #76e7ff, #668dff, #804aff, #b846ff);
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, #76e7ff, #668dff, #804aff, #b846ff);
+            /*background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);*/
+        }
+
+        @media (min-width: 768px) {
+            .gradient-form {
+                height: 100vh !important;
+            }
+        }
+        @media (min-width: 769px) {
+            .gradient-custom-2 {
+                border-top-right-radius: .3rem;
+                border-bottom-right-radius: .3rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -27,41 +52,35 @@
                             <div class="card-body p-md-5 mx-md-4">
 
                                 <div class="text-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo">
-                                    <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                                    <h4 class="mt-1 mb-5 pb-1"><b>SMRPO</b></h4>
                                 </div>
 
-                                <form>
-                                    <p>Please login to your account</p>
+                                <form action="/" method="post">
+                                    <p>Prosim vpišite se z uporabniškim računom</p>
 
-                                    <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example11" class="form-control" placeholder="Phone number or email address"/>
-                                        <label class="form-label" for="form2Example11">Username</label>
-                                    </div>
+                                    <!-- Username -->
+                                    <?php echo view("partials/formInput", ['label'=>'Uporabniško ime', "id"=>"username", 'type'=>'text', 'value'=>'']) ?>
 
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example22" class="form-control" />
-                                        <label class="form-label" for="form2Example22">Password</label>
-                                    </div>
+                                    <!-- Password -->
+                                    <?php echo view("partials/passwordInput", ['label'=>'Geslo', "id"=>"password", 'type'=>'password','value'=>'']) ?>
 
                                     <div class="text-center pt-1 mb-5 pb-1">
-                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log in</button>
-                                        <a class="text-muted" href="#!">Forgot password?</a>
+                                        <button class="btn btn-primary col-12 fa-lg gradient-custom-2 mb-3" type="submit">Prijava</button>
                                     </div>
 
-                                    <div class="d-flex align-items-center justify-content-center pb-4">
-                                        <p class="mb-0 me-2">Don't have an account?</p>
-                                        <button type="button" class="btn btn-outline-danger">Create new</button>
-                                    </div>
-
+                                    <?php if(uri_string() == "subpages/ustvarjanjeUporabnika/userCreate"){} ?>
                                 </form>
-
+                                <?php
+                                if (isset($validation)){
+                                    echo $validation->listErrors();
+                                }
+                                ?>
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                             <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                <h4 class="mb-4">We are more than just a company</h4>
-                                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <h4 class="mb-4">Nimate uporabniškega računa?</h4>
+                                <p class="small mb-0">Uporabniške račune lahko dodeli le admin organizacije. Če uporabniškega računa nimate, prosim govorite s projektno vodjo ali adminom vaše organizacije.</p>
                             </div>
                         </div>
                     </div>
