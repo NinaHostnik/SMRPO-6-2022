@@ -9,7 +9,6 @@ Options All -Indexes
 # FollowSymLinks must be enabled for this to work.
 <IfModule mod_rewrite.c>
 	Options +FollowSymlinks
-	RewriteBase /smrpo/
 	RewriteEngine On
 
 	# If you installed CodeIgniter in a subfolder, you will need to
