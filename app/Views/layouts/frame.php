@@ -13,9 +13,11 @@
 
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="<?php echo "/styles/style.css"; ?>">
-
+    <link rel="stylesheet" href="<?php echo "/styles/login.css"; ?>">
 </head>
 <body>
+
+
     <?= $this->include('partials/navbar') ?>
     <?= $this->renderSection('content') ?>
 

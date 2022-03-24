@@ -13,32 +13,7 @@
 
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="<?php echo "/styles/style.css"; ?>">
-    <!--<link rel="stylesheet" href="<?php echo "/styles/login.css"; ?>">-->
-    <style>
-        .gradient-custom-2 {
-            /* fallback for old browsers */
-            background: deepskyblue;
-
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: -webkit-linear-gradient(to right, #76e7ff, #668dff, #804aff, #b846ff);
-
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background: linear-gradient(to right, #76e7ff, #668dff, #804aff, #b846ff);
-            /*background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);*/
-        }
-
-        @media (min-width: 768px) {
-            .gradient-form {
-                height: 100vh !important;
-            }
-        }
-        @media (min-width: 769px) {
-            .gradient-custom-2 {
-                border-top-right-radius: .3rem;
-                border-bottom-right-radius: .3rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="<?php echo "/styles/login.css"; ?>">
 </head>
 <body>
 
@@ -64,9 +39,11 @@
                                     <!-- Password -->
                                     <?php echo view("partials/passwordInput", ['label'=>'Geslo', "id"=>"password", 'type'=>'password','value'=>'']) ?>
 
-                                    <div class="text-center pt-1 mb-5 pb-1">
+                                    <!-- Button -->
+                                    <?php echo view("partials/formButton", ['name'=>'Prijava']) ?>
+                                    <!--<div class="text-center pt-1 mb-5 pb-1">
                                         <button class="btn btn-primary col-12 fa-lg gradient-custom-2 mb-3" type="submit">Prijava</button>
-                                    </div>
+                                    </div>-->
 
                                     <?php if(uri_string() == "subpages/ustvarjanjeUporabnika/userCreate"){} ?>
                                 </form>

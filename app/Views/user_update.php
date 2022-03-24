@@ -21,7 +21,7 @@
 
                         <h5>Spremembna gesla</h5>
                         <hr>
-                        <?php echo view("partials/password",['label'=>'Novo geslo', "id"=>"newpass", 'type'=>'password','value'=>''])?>
+                        <?php echo view("partials/passwordInput",['label'=>'Novo geslo', "id"=>"newpass", 'type'=>'password','value'=>''])?>
 
                         <?php echo view("partials/formInput",['label'=>'Ponovi geslo', "id"=>"repass", 'type'=>'password','value'=>''])?>
 
