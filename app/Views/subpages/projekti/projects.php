@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/frame'); ?>
 
 <?= $this->section('content') ?>
-<div class="container">
+<div class="container content-box">
 
 <h1>Projekti</h1>
 Projekti, ki se trenutno izvajajo:

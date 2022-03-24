@@ -39,6 +39,7 @@ $routes->match(['get','post'],'/dodajanjeProjekta', 'NewProjectController::creat
 $routes->match(['get','post'],'/dodajanjeUporabniskihZgodb', 'DodajanjeUporabniskihZgodbController::dodajanjeZgodbe',['filter' => 'LoginAuth']);
 $routes->match(['get','post'],'/projekti', 'ProjectsController::allProjects',['filter' => 'LoginAuth']);
 $routes->match(['get','post'],'/home', 'HomeController::home',['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/cardTable', 'CardTableController::cardTable', ['filter' => 'LoginAuth']);
 
 /*
  * --------------------------------------------------------------------

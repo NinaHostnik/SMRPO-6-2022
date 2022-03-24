@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="container">
+<div class="container content-box">
     <div class="row">
         <div class="col-4">
             <a href="/admin/createUser/" class="btn btn-info" role="button">Ustvari uporabnika</a>

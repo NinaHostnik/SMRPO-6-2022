@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="container">
+<div class="container content-box">
     <form class="form-control" action="/dodajanjeSprintovController/dodajanjeSprinta" method="post">
         <?php echo $opozorilo?>
         <h5>Dodaj sprint</h5>
