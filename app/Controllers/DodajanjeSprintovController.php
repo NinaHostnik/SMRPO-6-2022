@@ -19,15 +19,15 @@ class DodajanjeSprintovController extends BaseController
         $data["idOsebe"]=69;
         $data["opozorilo"]=NULL;
         echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
-    }*/
+    }
     public function login(){
         $data["datum"]=date("Y-m-d");
         $data["idOsebe"]=NULL;
         $data["idProjekta"]=7;
-        $data["hitrostSprinta"]=69;
+        $data["hitrostSprinta"]=NULL;
         $data["opozorilo"]=NULL;
         echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
-    }
+    }*/
     
     public function dodajanjeSprinta(){
 
@@ -72,7 +72,7 @@ class DodajanjeSprintovController extends BaseController
                             $lahkoZapise=$model->preveriStatusUporabnika($idOsebe);
                             if($lahkoZapise){
                                 echo $model->zapisiVBazo($sprint);
-                                echo("Dela");
+                                return redirect()->to('/cardTable?id='.$idProjekta);
                             }
                             else{
                                 echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");
@@ -106,8 +106,9 @@ class DodajanjeSprintovController extends BaseController
             $data["speed"]=NULL;
             $data["start"]=NULL;
             $data["end"]=NULL;
-            $data["idProjekta"]=6;
-            $data["idOsebe"]=6;
+            $data["idProjekta"]=$this->request->getVar('idProjekta');
+            #$data["idProjekta"]=6;
+            $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
             $data["datum"]=date("Y-m-d");
             echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
