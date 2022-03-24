@@ -25,7 +25,8 @@ class NewProjectController extends BaseController
                 $projectName = $this->request->getVar('projectName');
                 $projectDescription = $this->request->getVar('projectDescription');
 
-                echo $model->callStoringProcedure($projectName, $projectDescription, $users, $roles);
+                $model->callStoringProcedure($projectName, $projectDescription, $users, $roles);
+                (new ProjectsController)->allProjects();
             }
         } else {
 
