@@ -13,7 +13,7 @@ class UporabniskeZgodbeModel extends Model{
         $sprejemniTesti=$data['sprejemniTesti'];
         $projekt=$data['projekt'];
         $idZgodbe=$data['idZgodbe'];
-        $query = $this->db-> query("INSERT INTO ". $table." (naslov, besedilo, prioriteta, poslovnaVrednost, sprejemniTesti, idProjekta, idZgodbe, statusZgodbe) VALUES ('". $ime."', '". $besedilo."', '". $prioriteta."', '". $poslovnaVrednost."', '". $sprejemniTesti."', '". $projekt."', '".$idZgodbe."', 'backlog')");
+        $query = $this->db-> query("INSERT INTO ". $table." (naslov, besedilo, prioriteta, poslovnaVrednost, sprejemniTesti, idProjekta, statusZgodbe) VALUES ('". $ime."', '". $besedilo."', '". $prioriteta."', '". $poslovnaVrednost."', '". $sprejemniTesti."', '". $projekt.", 'backlog')");
         return $query;
     }
 
