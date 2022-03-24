@@ -11,7 +11,7 @@ class SprintiModel extends Model{
         $end=$data['end'];
         $projekt=$data['projekt'];
         $idSprinta=$data['idSprinta'];
-        $query = $this->db-> query("INSERT INTO ". $table." (idProjekta, zacetniDatum, koncniDatum, hitrost, trenutniStatus, idSprinta) VALUES ('". $projekt."', '". $start."', '". $end."', '". $speed."', 'vpisana', '". $idSprinta."')");
+        $query = $this->db-> query("INSERT INTO ". $table." (idProjekta, zacetniDatum, koncniDatum, hitrost, trenutniStatus) VALUES ('". $projekt."', '". $start."', '". $end."', '". $speed."', 'vpisana')");
         return $query;
     }
 

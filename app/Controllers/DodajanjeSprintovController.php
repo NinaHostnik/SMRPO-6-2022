@@ -38,14 +38,12 @@ class DodajanjeSprintovController extends BaseController
             $idProjekta=$this->request->getVar('idProjekta');
             $idOsebe=$this->request->getVar('idOsebe');
             $model=new SprintiModel();
-            $idSprinta=$model->pridobiMaxIdSprinta()+1;
             $prekrivanje=$model->preveriZaPrekrivanje($start, $idProjekta);
             $sprint=[
                 'speed' => $speed,
                 'start' => $start,
                 'end' => $end,
                 'projekt' => $idProjekta,
-                'idSprinta'=> $idSprinta,
             ];
             if(empty($speed) || empty($start) || empty($end) || empty($idProjekta)){
                 $data["speed"]=$speed;

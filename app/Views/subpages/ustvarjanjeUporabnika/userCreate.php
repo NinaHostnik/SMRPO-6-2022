@@ -16,7 +16,7 @@
                 <option value="1">Uporabnik</option>
             </select>
         </div>        <!-- Password input -->
-        <?php echo view("partials/password",['label'=>'Geslo', "id"=>"password", 'type'=>'password','value'=>''])?>
+        <?php echo view("partials/passwordInput",['label'=>'Geslo', "id"=>"password", 'type'=>'password','value'=>''])?>
         <!-- Submit button -->
         <?php echo view('partials/formButton', ['name'=>'Dodaj Uporabnika']) ?>
     </form>

@@ -47,7 +47,6 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $idProjekta=$this->request->getVar('idProjekta');
             $idOsebe=$this->request->getVar('idOsebe');
             $model=new UporabniskeZgodbeModel();
-            $idZgodbe=$model->pridobiMaxIdZgodbe()+1;
             $zeIme=$model->preveriCeJeZeIme($ime);
             $zgodba=[
                 'ime' => $ime,
@@ -56,7 +55,6 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                 'sprejemniTesti' => $sprejemniTesti,
                 'poslovnaVrednost' => $poslovnaVrednost,
                 'projekt' => $idProjekta,
-                'idZgodbe'=> $idZgodbe,
             ];
             if(empty($ime) || empty($besedilo) || empty($prioriteta) || empty($sprejemniTesti) || empty($poslovnaVrednost) || empty($idProjekta)){
                 $data["ime"]=$ime;
