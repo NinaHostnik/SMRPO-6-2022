@@ -39,7 +39,7 @@ class UsersController extends BaseController
                 //var_dump($newdata);
                 $model->save($newdata);
 
-                return redirect()->to('/home');
+                return redirect()->to('/projekti');
             }
         } else {
             $data = [];
@@ -80,12 +80,11 @@ class UsersController extends BaseController
                         ->first();
 
                     $this->setUserSession($user);
-                    return redirect()->to('/home');
+                    return redirect()->to('/projekti');
                 }
 
             } else {
                 $data = [];
-                echo(true);
                 echo view('subpages/login/login', $data);
             }
 
