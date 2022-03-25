@@ -122,7 +122,7 @@ use Config\View as ConfigView;
  * @method static Toolbar toolbar(ConfigToolbar $config = null, $getShared = true)
  * @method static Typography typography($getShared = true)
  * @method static URI uri($uri = null, $getShared = true)
- * @method static Validation validation(ConfigValidation $config = null, $getShared = true)
+ * @method static Validation Validation(ConfigValidation $config = null, $getShared = true)
  * @method static Cell viewcell($getShared = true)
  */
 class BaseService

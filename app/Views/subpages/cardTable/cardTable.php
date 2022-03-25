@@ -17,8 +17,6 @@
         <?php echo view('partials/formButton', ["name"=>'Dodaj sprint']) ?>
     </form>
 
-
-    <a role="button" class="btn btn-outline-light gradient-custom-2" href="/dodajanjeUporabniskihZgodb">Dodaj zgodbo</a>
     <div class="table-responsive">
         <table class="table table-bordered w-100">
             <thead class="text-center">

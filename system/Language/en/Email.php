@@ -11,7 +11,7 @@
 
 // Email language settings
 return [
-    'mustBeArray'          => 'The email validation method must be passed an array.',
+    'mustBeArray'          => 'The email Validation method must be passed an array.',
     'invalidAddress'       => 'Invalid email address: {0}',
     'attachmentMissing'    => 'Unable to locate the following email attachment: {0}',
     'attachmentUnreadable' => 'Unable to open this attachment: {0}',

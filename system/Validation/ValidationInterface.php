@@ -19,8 +19,8 @@ use CodeIgniter\HTTP\RequestInterface;
 interface ValidationInterface
 {
     /**
-     * Runs the validation process, returning true/false determining whether
-     * or not validation was successful.
+     * Runs the Validation process, returning true/false determining whether
+     * or not Validation was successful.
      *
      * @param array  $data  The array of data to validate.
      * @param string $group The pre-defined group of rules to apply.
@@ -28,10 +28,10 @@ interface ValidationInterface
     public function run(?array $data = null, ?string $group = null): bool;
 
     /**
-     * Check; runs the validation process, returning true or false
-     * determining whether or not validation was successful.
+     * Check; runs the Validation process, returning true or false
+     * determining whether or not Validation was successful.
      *
-     * @param mixed    $value  Value to validation.
+     * @param mixed    $value  Value to Validation.
      * @param string   $rule   Rule.
      * @param string[] $errors Errors.
      *
@@ -74,7 +74,7 @@ interface ValidationInterface
     public function getErrors(): array;
 
     /**
-     * Sets the error for a specific field. Used by custom validation methods.
+     * Sets the error for a specific field. Used by custom Validation methods.
      */
     public function setError(string $alias, string $error): ValidationInterface;
 

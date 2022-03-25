@@ -33,21 +33,21 @@ class ValidationGenerator extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'make:validation';
+    protected $name = 'make:Validation';
 
     /**
      * The Command's Description
      *
      * @var string
      */
-    protected $description = 'Generates a new validation file.';
+    protected $description = 'Generates a new Validation file.';
 
     /**
      * The Command's Usage
      *
      * @var string
      */
-    protected $usage = 'make:validation <name> [options]';
+    protected $usage = 'make:Validation <name> [options]';
 
     /**
      * The Command's Arguments
@@ -55,7 +55,7 @@ class ValidationGenerator extends BaseCommand
      * @var array
      */
     protected $arguments = [
-        'name' => 'The validation class name.',
+        'name' => 'The Validation class name.',
     ];
 
     /**
@@ -76,9 +76,9 @@ class ValidationGenerator extends BaseCommand
     {
         $this->component = 'Validation';
         $this->directory = 'Validation';
-        $this->template  = 'validation.tpl.php';
+        $this->template  = 'Validation.tpl.php';
 
-        $this->classNameLang = 'CLI.generator.className.validation';
+        $this->classNameLang = 'CLI.generator.className.Validation';
         $this->execute($params);
     }
 }

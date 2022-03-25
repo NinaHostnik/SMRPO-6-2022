@@ -38,7 +38,7 @@ use stdClass;
  *      - allow specifying the return type (array, object, etc) with each call
  *      - automatically set and update timestamps
  *      - handle soft deletes
- *      - ensure validation is run against objects when saving items
+ *      - ensure Validation is run against objects when saving items
  *      - process various callbacks
  *      - allow intermingling calls to the db connection
  */
@@ -173,15 +173,15 @@ abstract class BaseModel
 
     /**
      * Contains any custom error messages to be
-     * used during data validation.
+     * used during data Validation.
      *
      * @var array
      */
     protected $validationMessages = [];
 
     /**
-     * Skip the model's validation. Used in conjunction with skipValidation()
-     * to skip data validation for any future calls.
+     * Skip the model's Validation. Used in conjunction with skipValidation()
+     * to skip data Validation for any future calls.
      *
      * @var bool
      */
@@ -1045,13 +1045,13 @@ abstract class BaseModel
      * The return array should be in the following format:
      *  ['source' => 'message']
      *
-     * @param bool $forceDB Always grab the db error, not validation
+     * @param bool $forceDB Always grab the db error, not Validation
      *
      * @return array<string,string>
      */
     public function errors(bool $forceDB = false)
     {
-        // Do we have validation errors?
+        // Do we have Validation errors?
         if (! $forceDB && ! $this->skipValidation && ($errors = $this->validation->getErrors())) {
             return $errors;
         }
@@ -1241,7 +1241,7 @@ abstract class BaseModel
     }
 
     /**
-     * Allows to set validation messages.
+     * Allows to set Validation messages.
      * It could be used when you have to change default or override current validate messages.
      *
      * @param array $validationMessages Value
@@ -1256,7 +1256,7 @@ abstract class BaseModel
     }
 
     /**
-     * Allows to set field wise validation message.
+     * Allows to set field wise Validation message.
      * It could be used when you have to change default or override current validate messages.
      *
      * @param string $field         Field Name
@@ -1272,7 +1272,7 @@ abstract class BaseModel
     }
 
     /**
-     * Allows to set validation rules.
+     * Allows to set Validation rules.
      * It could be used when you have to change default or override current validate rules.
      *
      * @param array $validationRules Value
@@ -1287,7 +1287,7 @@ abstract class BaseModel
     }
 
     /**
-     * Allows to set field wise validation rules.
+     * Allows to set field wise Validation rules.
      * It could be used when you have to change default or override current validate rules.
      *
      * @param string       $field      Field Name
@@ -1303,7 +1303,7 @@ abstract class BaseModel
     }
 
     /**
-     * Should validation rules be removed before saving?
+     * Should Validation rules be removed before saving?
      * Most handy when doing updates.
      *
      * @param bool $choice Value
@@ -1318,7 +1318,7 @@ abstract class BaseModel
     }
 
     /**
-     * Validate the data against the validation rules (or the validation group)
+     * Validate the data against the Validation rules (or the Validation group)
      * specified in the class property, $validationRules.
      *
      * @param array|object $data Data
@@ -1338,7 +1338,7 @@ abstract class BaseModel
 
         $rules = $this->cleanValidationRules ? $this->cleanValidationRules($rules, $data) : $rules;
 
-        // If no data existed that needs validation
+        // If no data existed that needs Validation
         // our job is done here.
         if (empty($rules)) {
             return true;
@@ -1348,7 +1348,7 @@ abstract class BaseModel
     }
 
     /**
-     * Returns the model's defined validation rules so that they
+     * Returns the model's defined Validation rules so that they
      * can be used elsewhere, if needed.
      *
      * @param array $options Options
@@ -1373,7 +1373,7 @@ abstract class BaseModel
     }
 
     /**
-     * Returns the model's define validation messages so they
+     * Returns the model's define Validation messages so they
      * can be used elsewhere, if needed.
      */
     public function getValidationMessages(): array

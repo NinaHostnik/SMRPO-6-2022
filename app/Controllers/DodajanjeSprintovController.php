@@ -72,7 +72,7 @@ class DodajanjeSprintovController extends BaseController
                             $lahkoZapise=$model->preveriStatusUporabnika($idOsebe);
                             if($lahkoZapise){
                                 echo $model->zapisiVBazo($sprint);
-                                return redirect()->to('/cardTable?id='.$idProjekta);
+                                return redirect()->to('/cardTable/'.$idProjekta);
                             }
                             else{
                                 echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");

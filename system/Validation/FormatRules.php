@@ -14,7 +14,7 @@ namespace CodeIgniter\Validation;
 use DateTime;
 
 /**
- * Format validation Rules.
+ * Format Validation Rules.
  */
 class FormatRules
 {
