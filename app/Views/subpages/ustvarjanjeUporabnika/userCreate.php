@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="container">
+<div class="container content-box">
     <form class="form-control" action="/admin/createUser" method="post">
         <h5>Dodaj uporabnika</h5>
         <hr>
