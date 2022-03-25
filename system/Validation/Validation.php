@@ -24,14 +24,14 @@ use InvalidArgumentException;
 class Validation implements ValidationInterface
 {
     /**
-     * Files to load with validation functions.
+     * Files to load with Validation functions.
      *
      * @var array
      */
     protected $ruleSetFiles;
 
     /**
-     * The loaded instances of our validation files.
+     * The loaded instances of our Validation files.
      *
      * @var array
      */
@@ -54,7 +54,7 @@ class Validation implements ValidationInterface
     protected $data = [];
 
     /**
-     * Any generated errors during validation.
+     * Any generated errors during Validation.
      * 'key' is the alias, 'value' is the message.
      *
      * @var array
@@ -63,7 +63,7 @@ class Validation implements ValidationInterface
 
     /**
      * Stores custom error message to use
-     * during validation. Where 'key' is the alias.
+     * during Validation. Where 'key' is the alias.
      *
      * @var array
      */
@@ -77,7 +77,7 @@ class Validation implements ValidationInterface
     protected $config;
 
     /**
-     * The view renderer used to render validation messages.
+     * The view renderer used to render Validation messages.
      *
      * @var RendererInterface
      */
@@ -98,8 +98,8 @@ class Validation implements ValidationInterface
     }
 
     /**
-     * Runs the validation process, returning true/false determining whether
-     * validation was successful or not.
+     * Runs the Validation process, returning true/false determining whether
+     * Validation was successful or not.
      *
      * @param array|null  $data    The array of data to validate.
      * @param string|null $group   The predefined group of rules to apply.
@@ -125,7 +125,7 @@ class Validation implements ValidationInterface
         // the value found in $data, if any.
         $this->rules = $this->fillPlaceholders($this->rules, $data);
 
-        // Need this for searching arrays in validation.
+        // Need this for searching arrays in Validation.
         helper('array');
 
         // Run through each rule. If we have any field set for
@@ -162,8 +162,8 @@ class Validation implements ValidationInterface
     }
 
     /**
-     * Runs the validation process, returning true or false
-     * determining whether validation was successful or not.
+     * Runs the Validation process, returning true or false
+     * determining whether Validation was successful or not.
      *
      * @param mixed    $value
      * @param string[] $errors
@@ -653,7 +653,7 @@ class Validation implements ValidationInterface
     }
 
     /**
-     * Sets the error for a specific field. Used by custom validation methods.
+     * Sets the error for a specific field. Used by custom Validation methods.
      */
     public function setError(string $field, string $error): ValidationInterface
     {
@@ -665,7 +665,7 @@ class Validation implements ValidationInterface
     /**
      * Attempts to find the appropriate error message
      *
-     * @param string|null $value The value that caused the validation to fail.
+     * @param string|null $value The value that caused the Validation to fail.
      */
     protected function getErrorMessage(string $rule, string $field, ?string $label = null, ?string $param = null, ?string $value = null): string
     {

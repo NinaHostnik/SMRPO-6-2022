@@ -2,8 +2,21 @@
 
 <?= $this->section('content') ?>
 
+
+
 <div class="container content-box" style="width: 100%">
-    <a role="button" class="btn btn-outline-light gradient-custom-2" href="/dodajanjeUporabniskihZgodb">Dodaj zgodbo</a>
+
+
+    <form class="" action="/dodajanjeUporabniskihZgodb" method="get">
+        <?php echo view("partials/formInput",['label'=>'', "id"=>"idProjekta", 'type'=>'hidden', 'value'=>$id])?>
+        <?php echo view('partials/formButton', ["name"=>'Dodaj uporabniško zgodbo']) ?>
+    </form>
+
+    <form class="" action="/dodajanjeSprintov" method="get">
+        <?php echo view("partials/formInput",['label'=>'', "id"=>"idProjekta", 'type'=>'hidden', 'value'=>$id])?>
+        <?php echo view('partials/formButton', ["name"=>'Dodaj sprint']) ?>
+    </form>
+
     <div class="table-responsive">
         <table class="table table-bordered w-100">
             <thead class="text-center">

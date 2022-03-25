@@ -23,7 +23,7 @@ class UsersController extends BaseController
             ];
 
             if (!$this->validate($rules, $errors)) {
-                $data['validation'] = $this->validator;
+                $data['Validation'] = $this->validator;
                 echo view('subpages/ustvarjanjeUporabnika/userCreate', $data);
 
 
@@ -68,7 +68,7 @@ class UsersController extends BaseController
                 ];
 
                 if (!$this->validate($rules, $errors)) {
-                    $data['validation'] = $this->validator;
+                    $data['Validation'] = $this->validator;
 
                     echo view('subpages/login/login', $data);
 
@@ -112,7 +112,7 @@ class UsersController extends BaseController
             ];
 
             if (!$this->validate($rules, $errors)) {
-                $data['validation'] = $this->validator;
+                $data['Validation'] = $this->validator;
 
                 echo view('user_update', $data);
 

@@ -151,7 +151,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                     $lahkoZapise=$model->preveriStatusUporabnika($idOsebe, $idProjekta);
                     if($lahkoZapise){
                         echo $model->zapisiVBazo($zgodba);
-                        echo("Dela");
+                        return redirect()->to('/cardTable/'.$idProjekta);
                     }
                     else{
                         echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");
@@ -169,6 +169,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $data["couldHave"]=NULL;
             $data["wontHave"]=NULL;
             $data["idProjekta"]=$this->request->getVar('idProjekta');
+            #$data["idProjekta"]=7;
             $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
             echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
