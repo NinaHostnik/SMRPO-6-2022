@@ -25,7 +25,6 @@
                         <a class="dropdown-item" href="/odjava">Odjava</a>
                     </li>
                 </ul>
-
             </li>
         </ul>
     </div>

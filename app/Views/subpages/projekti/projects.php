@@ -2,21 +2,22 @@
 
 <?= $this->section('content') ?>
 <div class="container content-box">
-
-<h1>Projekti</h1>
-Projekti, ki se trenutno izvajajo:
-<hr>
-
+<br>
+<div class="container d-flex flex-row">
+    <h4 class="me-4">Moji projekti</h4>
+    <?php if (session()->get('permissions') == 0) { ?>
+    <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeProjekta">Dodaj projekt</a>
+    <?php } ?>
+</div>
+<br>
 <?php
+    foreach ($projekti as $projekt) {
 
-foreach ($projekti as $projekt) {
+     echo view("partials/projectCard", ['project_name' => $projekt['ime'], "project_desc" => $projekt['opis'],"project_id" => $projekt['id']]);
 
- echo view("partials/projectCard", ['project_name' => $projekt['ime'], "project_desc" => $projekt['opis'],"project_id" => $projekt['id']]);
-
-}
+    }
 ?>
-    <hr>
-    <a href="/dodajanjeProjekta" class="btn btn-info" role="button">Dodaj projekt</a>
+
 </div>
 
 
