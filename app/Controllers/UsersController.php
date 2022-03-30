@@ -93,10 +93,9 @@ class UsersController extends BaseController
 
                     $projectsmodel = new ProjectMembersModel();
                     $userroles = $projectsmodel->getrole($user['id']);
-                    $this->setUserSession($user);
-                    $this->setUserSessionRoles($userroles);
-
-                    #return redirect()->to('/projekti');
+                    $this->setUserSession($user,$userroles);
+                    #echo session()->get('roles')[14];
+                    return redirect()->to('/projekti');
                 }
 
             } else {

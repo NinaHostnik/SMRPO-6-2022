@@ -13,7 +13,7 @@ class ProjectMembersModel extends Model{
     {
         $query = $this->db->query(" SELECT project_id as project, role
                                         FROM project_members 
-                                        WHERE project_members.user_id = 2",array($user));
+                                        WHERE project_members.user_id = ?",array($user));
 
         return $query->getResultArray();
     }

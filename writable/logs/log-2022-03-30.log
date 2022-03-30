@@ -1,0 +1,26 @@
+CRITICAL - 2022-03-30 08:57:02 --> Array to string conversion
+#0 C:\xampp\htdocs\smrpo\app\Controllers\BaseController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 89, Array)
+#1 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(97): App\Controllers\BaseController->setUserSessionRoles(Array)
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-30 09:00:03 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\smrpo\app\Views\subpages\projekti\projects.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 17, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/projek...', Array, true)
+#4 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(17): view('subpages/projek...', Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->allProjects()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-30 09:18:21 --> Too few arguments to function App\Controllers\BaseController::setUserSession(), 1 passed in C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php on line 96 and exactly 2 expected
+#0 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(96): App\Controllers\BaseController->setUserSession(Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
