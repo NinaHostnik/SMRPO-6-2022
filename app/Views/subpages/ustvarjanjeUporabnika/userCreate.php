@@ -21,6 +21,7 @@
             </select>
         </div>
         <!-- Password input -->
+        <span style="font-weight: lighter; font-size: small;">Geslo mora biti dolgo vsaj 12 znakov.</span>
         <?php echo view("partials/passwordInput",['label'=>'Geslo', "id"=>"password", 'type'=>'password','value'=>''])?>
         <?php echo view('partials/passwordInput', ['label'=>'Ponovi geslo', 'id'=>'Ponovi_geslo', 'type'=>'password', 'value'=>''])?>
         <!-- Submit button -->
