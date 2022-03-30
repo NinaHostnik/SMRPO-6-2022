@@ -128,13 +128,14 @@ class UsersController extends BaseController
                 'username' => 'required',
                 'newusername' => 'required',
                 'password' => 'required|validateUser[username,password]',
-                'newpass' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
+                'newpass' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]|ni_prejsnje[newpass]',
                 'repass' => 'required|matches[newpass]',
             ];
 
             $errors = [
                 'password' => [
-                    'validateUser' => 'Username or Password do not match'
+                    'validateUser' => 'Uporabniško ime in geslo se ne ujemata',
+                    'ni_prejsnje' => 'Geslo se ne sme ujemati z prejšnjim geslom'
                 ]
             ];
 

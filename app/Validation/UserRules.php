@@ -30,6 +30,12 @@ class UserRules{
 
         return false;
     }
+
+    public function ni_prejsnje(string $str, string $fields, array $data){
+        $passhash = session()->get('password');
+
+        return !password_verify($data['password'],$passhash);
+    }
 }
 
 ?>
