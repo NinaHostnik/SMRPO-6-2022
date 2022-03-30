@@ -19,6 +19,7 @@ class UsersController extends BaseController
                 'mail' => 'required|doesntExist[mail]',
                 'permissions' => 'required',
                 'password' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
+                'Ponovi geslo' => 'required|matches[password]'
             ];
 
             $errors = [
@@ -144,6 +145,7 @@ class UsersController extends BaseController
                 $model->update(session()->get("id"), $newprofile);
 
                 $newprofile["permissions"] = session()->get("permissions");
+
                 $this->setUserSession($newprofile);
 
                 return redirect()->to('/profile');
@@ -155,6 +157,12 @@ class UsersController extends BaseController
             echo view('user_update', $data);
         }
 
+    }
+
+    public function odjava()
+    {
+        session()->destroy();
+        return redirect()->to('/');
     }
 
 
