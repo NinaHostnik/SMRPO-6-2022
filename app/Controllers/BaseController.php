@@ -72,4 +72,15 @@ class BaseController extends Controller
         session()->set($data);
         return true;
     }
+
+    protected function setUserSessionRoles($roles){
+
+        $data = [];
+        foreach ($roles as $role):
+            session()->set(strval($role['project']), $role['role']);
+            $data['roles'] = array($role['project'] => $role['role']);
+        endforeach;
+        session()->set($data);
+        return true;
+    }
 }
