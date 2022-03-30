@@ -14,9 +14,11 @@ foreach ($projekti as $projekt) {
  echo view("partials/projectCard", ['project_name' => $projekt['ime'], "project_desc" => $projekt['opis'],"project_id" => $projekt['id']]);
 
 }
+echo session()->get('roles')[14];
 ?>
     <hr>
     <a href="/dodajanjeProjekta" class="btn btn-info" role="button">Dodaj projekt</a>
+
 </div>
 
 

@@ -1,0 +1,52 @@
+CRITICAL - 2022-03-29 14:36:00 --> Object of class CodeIgniter\Session\Session could not be converted to string
+#0 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-29 14:38:43 --> syntax error, unexpected 'var_dump' (T_STRING), expecting ';' or ','
+#0 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-29 14:38:50 --> Use of undefined constant sadssssssssssssssssssss - assumed 'sadssssssssssssssssssss' (this will throw an Error in a future version of PHP)
+#0 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\xampp\\htdocs...', 17, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->allProjects()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 14:50:59 --> syntax error, unexpected ')', expecting ']'
+#0 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(9): spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(264): include_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#7 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#8 [internal function]: spl_autoload_call('App\\Controllers...')
+#9 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#10 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#11 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-03-29 15:17:33 --> Too few arguments to function App\Controllers\BaseController::setUserSession(), 1 passed in C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php on line 84 and exactly 2 expected
+#0 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(84): App\Controllers\BaseController->setUserSession(Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-29 15:18:06 --> Too few arguments to function App\Controllers\BaseController::setUserSession(), 1 passed in C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php on line 88 and exactly 2 expected
+#0 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(88): App\Controllers\BaseController->setUserSession(Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->login()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

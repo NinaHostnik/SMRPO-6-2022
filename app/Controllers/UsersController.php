@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\ProjectMembersModel;
+use App\Models\ProjectModel;
 use App\Models\UserModel;
 
 class UsersController extends BaseController
@@ -88,7 +90,11 @@ class UsersController extends BaseController
                     $user = $model->where('username', $this->request->getVar('username'))
                         ->first();
 
-                    $this->setUserSession($user);
+
+                    $projectsmodel = new ProjectMembersModel();
+                    $userroles = $projectsmodel->getrole($user['id']);
+                    $this->setUserSession($user,$userroles);
+                    #echo session()->get('roles')[14];
                     return redirect()->to('/projekti');
                 }
 

@@ -14,7 +14,6 @@ class ProjectsController extends BaseController
     $data = [
         'projekti'=>$projects,
     ];
-
     echo view('subpages/projekti/projects', $data);
     }
 
