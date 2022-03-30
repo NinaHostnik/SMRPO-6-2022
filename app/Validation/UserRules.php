@@ -8,6 +8,10 @@ class UserRules{
     public function validateUser(string $str, string $fields, array $data){
         $model = new UserModel();
 
+        if(!isset($data['username'])){
+            $data['username'] = session()->get('username');
+        }
+
         $user = $model->where('username', $data['username'])
                       ->first();
 

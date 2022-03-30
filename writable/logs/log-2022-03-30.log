@@ -115,3 +115,25 @@ CRITICAL - 2022-03-30 16:21:47 --> syntax error, unexpected end of file
 #10 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #11 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #12 {main}
+CRITICAL - 2022-03-30 17:03:08 --> Undefined index: username
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->validateUser('jjadmin12345', 'username,passwo...', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('password', 'password', 'jjadmin12345', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(142): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->update_user()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-30 17:04:45 --> Undefined index: username
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->validateUser('jjadmin12345', 'username,passwo...', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('password', 'password', 'jjadmin12345', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(142): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->update_user()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

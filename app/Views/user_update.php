@@ -21,6 +21,8 @@
                         <hr>
                         <h5>Uporabniški podatki</h5>
                         <!-- First and last name -->
+                        <?php echo view('partials/formInput', ['type' => 'text', 'id' => 'firstName', 'value'=>'', 'label'=>'Ime'])?>
+
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">

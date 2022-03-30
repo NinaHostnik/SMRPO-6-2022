@@ -125,11 +125,10 @@ class UsersController extends BaseController
         if ($this->request->getMethod() == 'post') {
 
             $rules = [
-                'username' => 'required',
                 'newusername' => 'required',
                 'password' => 'required|validateUser[username,password]',
-                'newpass' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]|ni_prejsnje[newpass]',
-                'repass' => 'required|matches[newpass]',
+                'passwordNew' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]|ni_prejsnje[passwordNew]',
+                'passwordCheck' => 'required|matches[passwordNew]',
             ];
 
             $errors = [
