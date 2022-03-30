@@ -19,7 +19,7 @@ class UsersController extends BaseController
                 'mail' => 'required|doesntExist[mail]',
                 'permissions' => 'required',
                 'password' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
-                'Ponovi geslo' => 'required|matches[password]'
+                'Ponovi_geslo' => 'required|matches[password]'
             ];
 
             $errors = [
@@ -48,10 +48,13 @@ class UsersController extends BaseController
                     'permissions' => $this->request->getVar('permissions'),
                     'password' => $pass,
                 ];
-                //var_dump($newdata);
+                var_dump($newdata);
                 $model->save($newdata);
 
-                return redirect()->to('/projekti');
+                $popupdata = ['popup' => 'Uporabnik je bil uspešno narejen.'];
+                $data = [];
+                echo view('partials/popup',$popupdata);
+                echo view('subpages/ustvarjanjeUporabnika/userCreate', $data);
             }
         } else {
             $data = [];
@@ -102,6 +105,7 @@ class UsersController extends BaseController
             } else {
                 $data = [];
                 echo view('subpages/login/login', $data);
+
             }
 
 
@@ -146,9 +150,15 @@ class UsersController extends BaseController
 
                 $newprofile["permissions"] = session()->get("permissions");
 
-                $this->setUserSession($newprofile);
+                session()->set('username', $this->request->getPost('newusername'));
+                session()->set('password', $this->request->getPost('newpass'));
 
-                return redirect()->to('/profile');
+                $popupdata = ['popup' => 'Uporabnik je bil uspešno spremenjen.'];
+                $data = [];
+
+
+                echo view('partials/popup',$popupdata);
+                echo view('user_update', $data);
             }
 
         } else {
