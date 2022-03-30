@@ -82,9 +82,9 @@
         } else {
             var izbraniUporabnik = uporabnikiSelect.selectedOptions[0].outerText;
             var izbranaVloga = vlogeSelect.selectedOptions[0].outerText;
-            var izbraniId = uporabnikiSelect.value;
             var vlogaId = vlogeSelect.value;
-            if (Object.keys(addedUsers).includes(izbraniId)) {
+            var izbraniId = vlogaId === 'V' ? uporabnikiSelect.value : uporabnikiSelect.value + '/' + vlogaId;
+            if (!check(vlogaId, uporabnikiSelect.value, izbraniId)) {
                 alert("Izbrani uporabnik je že bil dodan.");
             } else if (izbranaVloga.includes('produktni vodja') && exists(addedUsers, 'produktni vodja')) {
                 alert("V projektu lahko obstaja le en produktni vodja.");
@@ -117,6 +117,20 @@
             }
         });
         return value;
+    }
+
+    function check(vloga, id, key) {
+        var keys = Object.keys(addedUsers);
+        if (vloga !== 'V') {
+            if (keys.includes(id) || keys.includes(key)) {
+                return false;
+            }
+        } else if (vloga === 'V') {
+            if (keys.includes(id + '/C') || keys.includes('/M') || keys.includes(id)) {
+                return false;
+            }
+        }
+        return true;
     }
 </script>
 

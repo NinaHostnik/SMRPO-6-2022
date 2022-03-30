@@ -20,7 +20,11 @@ class NewProjectController extends BaseController
                 $model = new ProjectModel();
 
                 $userList = json_decode($this->request->getVar('userList'),true);
-                $users = implode(',', array_keys($userList));
+                $keys = array();
+                foreach (array_keys($userList) as $user) {
+                    $keys[] = explode('/', $user)[0];
+                }
+                $users = implode(',', $keys);
                 $roles = implode(',', array_column($userList, 'vlogaId'));
                 $projectName = $this->request->getVar('projectName');
                 $projectDescription = $this->request->getVar('projectDescription');

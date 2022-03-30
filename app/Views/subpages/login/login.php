@@ -47,6 +47,7 @@
 
                                     <?php if(uri_string() == "subpages/ustvarjanjeUporabnika/userCreate"){} ?>
                                 </form>
+
                                 <?php
                                 if (isset($validation)){
                                     echo $validation->listErrors();
