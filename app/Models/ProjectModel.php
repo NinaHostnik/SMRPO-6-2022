@@ -35,7 +35,7 @@ class ProjectModel extends Model{
     public function getUsersProjects($userId): array
     {
         $query = $this->db->query("
-            SELECT project.id, project.ime, project.opis
+            SELECT DISTINCT project.id, project.ime, project.opis
             FROM project
             LEFT JOIN project_members
             ON project_members.project_id = project.id
