@@ -35,10 +35,9 @@ class UserRules{
         return false;
     }
 
-    public function ni_prejsnje(string $str, string $fields, array $data){
+    public function niPrejsnje(string $str, string $fields, array $data){
         $passhash = session()->get('password');
-
-        return !password_verify($data['password'],$passhash);
+        return !password_verify($data['passwordNew'],$passhash);
     }
 }
 

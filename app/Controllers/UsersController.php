@@ -28,7 +28,7 @@ class UsersController extends BaseController
                 ],
                 'mail' => [
                     'doesntExist' => 'Uporabnik z vpisanim mailom že obstaja.'
-                ]
+                ],
             ];
 
             if (!$this->validate($rules, $errors)) {
@@ -42,8 +42,8 @@ class UsersController extends BaseController
                 $pass = str_replace(' ','&nbsp;',$pass);
                 $newdata = [
                     'username' => $this->request->getVar('username'),
-                    'name' => $this->request->getVar('name'),
-                    'surname' => $this->request->getVar('surname'),
+                    'ime' => $this->request->getVar('name'),
+                    'priimek' => $this->request->getVar('surname'),
                     'mail' => $this->request->getVar('mail'),
                     'permissions' => $this->request->getVar('permissions'),
                     'password' => $pass,
@@ -126,15 +126,20 @@ class UsersController extends BaseController
 
             $rules = [
                 'newusername' => 'required',
+                'firstName' => 'required',
+                'lastName' => 'required',
+                'email' => 'required',
                 'password' => 'required|validateUser[username,password]',
-                'passwordNew' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]|ni_prejsnje[passwordNew]',
+                'passwordNew' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]|niPrejsnje[passwordNew]',
                 'passwordCheck' => 'required|matches[passwordNew]',
             ];
 
             $errors = [
                 'password' => [
-                    'validateUser' => 'Uporabniško ime in geslo se ne ujemata',
-                    'ni_prejsnje' => 'Geslo se ne sme ujemati z prejšnjim geslom'
+                    'validateUser' => 'Uporabniško ime in geslo se ne ujemata'
+                ],
+                'passwordNew'=>[
+                    'niPrejsnje' => 'Geslo se ne sme ujemati z prejšnjim geslom'
                 ]
             ];
 
@@ -150,14 +155,14 @@ class UsersController extends BaseController
                 $newprofile = [
                     'id' => session()->get("id"),
                     'username' => $this->request->getPost('newusername'),
-                    'password' => $this->request->getPost('newpass'),
+                    'password' => $this->request->getPost('passwordNew'),
                 ];
 
                 $model->update(session()->get("id"), $newprofile);
 
 
                 session()->set('username', $this->request->getPost('newusername'));
-                session()->set('password', $this->request->getPost('newpass'));
+                session()->set('password', $this->request->getPost('passwordNew'));
 
                 $popupdata = ['popup' => 'Uporabnik je bil uspešno spremenjen.'];
                 $data = [];
@@ -187,13 +192,16 @@ class UsersController extends BaseController
         if ($this->request->getMethod() == 'post') {
 
             $rules = [
-                'newpass' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
+                'newpass' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]|niPrejsnje[newpass]',
                 'repass' => 'required|matches[newpass]',
             ];
 
             $errors = [
                 'password' => [
                     'validateUser' => 'Uporabniško ime ali geslo se ne ujemata'
+                ],
+                'newpass'=>[
+                    'niPrejsnje' => 'Geslo se ne sme ujemati z prejšnjim geslom'
                 ]
             ];
 

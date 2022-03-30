@@ -21,25 +21,23 @@
                         <hr>
                         <h5>Uporabniški podatki</h5>
                         <!-- First and last name -->
-                        <?php echo view('partials/formInput', ['type' => 'text', 'id' => 'firstName', 'value'=>'', 'label'=>'Ime'])?>
-
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <?php echo view('partials/formInput', ['type' => 'text', 'id' => 'firstName', 'value'=>'', 'label'=>'Ime'])?>
+                                    <?php echo view('partials/formInput', ['type' => 'text', 'id' => 'firstName', 'value'=>session()->get('ime'), 'label'=>'Ime'])?>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <?php echo view('partials/formInput', ['type' => 'text', 'id' => 'lastName', 'value'=>'', 'label'=>'Priimek'])?>
+                                    <?php echo view('partials/formInput', ['type' => 'text', 'id' => 'lastName', 'value'=>session()->get('priimek'), 'label'=>'Priimek'])?>
                                 </div>
                             </div>
                         </div>
                         <!-- Username -->
-                        <?php echo view("partials/formInput",['label'=>'Novo uporabniško ime', "id"=>"newusername", 'type'=>'text', 'value'=>''])?>
+                        <?php echo view("partials/formInput",['label'=>'Novo uporabniško ime', "id"=>"newusername", 'type'=>'text', 'value'=>session()->get('username')])?>
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <?php echo view('partials/formInput', ['type' => 'email', 'id' => 'email', 'value'=>'', 'label'=>'Email'])?>
+                            <?php echo view('partials/formInput', ['type' => 'email', 'id' => 'email', 'value'=>session()->get('mail'), 'label'=>'Email'])?>
                         </div>
                         <hr>
                         <h5>Spremeba gesla</h5>

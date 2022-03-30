@@ -65,6 +65,7 @@ class BaseController extends Controller
     {
         $data = [
             'id' => $user['id'],
+            'password' => $user['password'],
             'username' => $user['username'],
             'permissions' => $user['permissions'],
             'lastLogin' => $user['lastLogin'],
