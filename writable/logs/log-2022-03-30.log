@@ -101,3 +101,17 @@ CRITICAL - 2022-03-30 15:39:23 --> date_format() expects parameter 1 to be DateT
 #13 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #14 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #15 {main}
+CRITICAL - 2022-03-30 16:21:47 --> syntax error, unexpected end of file
+#0 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(424): CodeIgniter\View\View->render('partials/navbar', NULL, true)
+#2 C:\xampp\htdocs\smrpo\app\Views\layouts\frame.php(21): CodeIgniter\View\View->include('partials/navbar')
+#3 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp\htdocs\smrpo\system\View\View.php(226): CodeIgniter\View\View->render('layouts/frame', Array, true)
+#6 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/ustvar...', Array, true)
+#7 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(62): view('subpages/ustvar...', Array)
+#8 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->createUser()
+#9 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#10 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
