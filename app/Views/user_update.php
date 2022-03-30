@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
     <div class="container content-box">
-        <div class="container py-5 h-100">
+        <div class="container py-3 h-100">
             <div class="card rounded-3 text-black">
                 <div class="card-header">
                     <h4><?php echo session()->get('username')?></h4>
@@ -35,12 +35,15 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Username -->
+                        <?php echo view("partials/formInput",['label'=>'Novo uporabniško ime', "id"=>"newusername", 'type'=>'text', 'value'=>''])?>
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <?php echo view('partials/formInput', ['type' => 'email', 'id' => 'email', 'value'=>'', 'label'=>'Email'])?>
                         </div>
                         <hr>
                         <h5>Spremeba gesla</h5>
+                        <span style="font-weight: lighter; font-size: small;">Geslo mora biti dolgo vsaj 12 znakov.</span>
                         <!-- New password input -->
                         <div class="form-outline mb-4">
                             <?php echo view('partials/passwordInput', ['type' => 'password', 'id'=>'passwordNew', 'value'=>'', 'label'=>'Novo geslo'])?>

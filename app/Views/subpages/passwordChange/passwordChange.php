@@ -11,9 +11,10 @@
                     <hr>
                     <form class="" action="/ponastavitevGesa" method="post">
 
-                        <h5>Ponastavitev geslo</h5>
+                        <h5>Ponastavitev gesla</h5>
                         <p>Administrator je zahteval ponastavitev gesla. Prosimo nastavite si novo geslo:</p>
                         <hr>
+                        <span style="font-weight: lighter; font-size: small;">Geslo mora biti dolgo vsaj 12 znakov.</span>
                         <?php echo view("partials/passwordInput",['label'=>'Novo geslo', "id"=>"newpass", 'type'=>'password','value'=>''])?>
 
                         <?php echo view("partials/formInput",['label'=>'Ponovi geslo', "id"=>"repass", 'type'=>'password','value'=>''])?>
