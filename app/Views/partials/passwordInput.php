@@ -4,14 +4,14 @@
     <label for="<?php echo $id ?>"><?php echo $label ?></label>
     <!-- An element to toggle between password visibility -->
     <div class="float-end">
-        <input type="checkbox" id="showpass" onclick="togglepass()">
+        <input type="checkbox" id="showpass" onclick="<?php echo 'togglepass'.$id; ?>()">
         <label for="showpass">Pokaži geslo</label>
     </div>
 
 </div>
 
 <script>
-    function togglepass() {
+    function <?php echo 'togglepass'.$id; ?>() {
         var x = document.getElementById("<?php echo $id ?>");
         if (x.type === "password") {
             x.type = "text";
