@@ -4,17 +4,22 @@
     <div class="container content-box">
         <div class="container py-5 h-100">
             <div class="card rounded-3 text-black">
+                <div class="card-header">
+                    <h4><?php echo session()->get('username')?></h4>
+                    <h5><?php if (session()->get('permissions') == 0) {
+                            echo 'admin';
+                    } else {
+                            echo 'uporabnik';
+                    }?>
+                    </h5>
+                </div>
                 <div class="card-body p-md-5 mx-md-4">
                     <form action="/profile" method="post">
+                        <!-- Security check -->
+                        <span style="font-weight: lighter; font-size: small;">Za zaščito svojega računa vpiši trenutno geslo v spodnje polje, da potrdiš svojo identiteto.</span>
+                        <?php echo view("partials/formInput",['label'=>'Trenutno geslo', "id"=>"password", 'type'=>'password','value'=>''])?>
+                        <hr>
                         <h5>Uporabniški podatki</h5>
-                        <!-- Username -->
-                        <div class="form-outline mb-4">
-                            <?php echo view('partials/formInput', ['type' => 'text', 'id' => 'username', 'value'=>'', 'label'=>'Uporabniško ime'])?>
-                        </div>
-                        <!-- Password input -->
-                        <div class="form-outline mb-4">
-                            <?php echo view('partials/passwordInput', ['type' => 'password', 'id'=>'password', 'value'=>'', 'label'=>'Trenutno geslo'])?>
-                        </div>
                         <!-- First and last name -->
                         <div class="row">
                             <div class="col-md-6 mb-4">
