@@ -18,7 +18,7 @@
     </form>-->
 
     <div class="table-responsive" style="overflow: scroll; position: absolute; left: 2%">
-        <table class="table table-bordered w-100">
+        <table class="table table-bordered h-100 w-100">
             <thead class="text-center" style="vertical-align: middle">
             <tr>
                 <th id="backlog" colspan="1" style="top: 43px; background-color: #5BC0DE"></th>
@@ -71,13 +71,11 @@
                 </th>
             </tr>
             </thead>
-            <tbody>
+            <tbody style="background-color: #eee">
             <tr>
                 <td id="backlog-body">
                     <ul class="list-group">
                         <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45'])?>
-                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
-                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
                     </ul>
                 </td>
                 <td id="requested-body-product">
