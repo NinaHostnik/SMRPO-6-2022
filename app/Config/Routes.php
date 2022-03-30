@@ -42,6 +42,9 @@ $routes->match(['get','post'],'/home', 'HomeController::home',['filter' => 'Logi
 $routes->match(['get','post'], '/cardTable/(:num)', 'CardTableController::cardTable', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/dodajanjeSprintov', 'DodajanjeSprintovController::dodajanjeSprinta', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/odjava', 'UsersController::odjava', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/ponastavitevGesa', 'UsersController::ponastavitev', ['filter' => 'LoginAuth']);
+
+
 
 /*
  * --------------------------------------------------------------------

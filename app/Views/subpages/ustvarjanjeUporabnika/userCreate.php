@@ -22,7 +22,7 @@
         </div>
         <!-- Password input -->
         <?php echo view("partials/passwordInput",['label'=>'Geslo', "id"=>"password", 'type'=>'password','value'=>''])?>
-        <?php echo view('partials/passwordInput', ['label'=>'Ponovi geslo', 'id'=>'Ponovi geslo', 'type'=>'password', 'value'=>''])?>
+        <?php echo view('partials/passwordInput', ['label'=>'Ponovi geslo', 'id'=>'Ponovi_geslo', 'type'=>'password', 'value'=>''])?>
         <!-- Submit button -->
         <?php echo view('partials/formButton', ['name'=>'Dodaj Uporabnika']) ?>
     </form>
