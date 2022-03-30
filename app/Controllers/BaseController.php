@@ -67,6 +67,11 @@ class BaseController extends Controller
             'id' => $user['id'],
             'username' => $user['username'],
             'permissions' => $user['permissions'],
+            'lastLogin' => $user['lastLogin'],
+            'pas_change' => $user['pas_change'],
+            'ime' => $user['ime'],
+            'priimek' => $user['priimek'],
+            'mail' => $user['mail'],
         ];
 
         foreach ($roles as $role):

@@ -1,8 +1,13 @@
+<?php
+$date = new DateTime();
+$date->setTimezone(new DateTimeZone('Europe/Ljubljana'));
+$date->setTimestamp(session()->get('lastLogin'));
+?>
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/projekti"><b>SMRPO</b></a>
-        <span class="navbar-text">Zadnja prijava: 30.3.2022 ob 13:25</span>
+        <span class="navbar-text"><?php echo $date->format('d/m/Y H:i:s')  ?></span>
         <ul class="nav nav-justify-content-end">
             <li class="nav-item px-2 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

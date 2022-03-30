@@ -1,13 +1,13 @@
 # DONE: mora biti vidna vloga
 # TODO: mora biti viden zadnji datum in ura prijave
-# TODO: dodaj feedback formam (potrditev, opozorilo) - make timed alerts !!!
+# DONE: dodaj feedback formam (potrditev, opozorilo) - make timed alerts !!!
 # DONE: naredi add user hidden za navadne uporabnike
 # DONE: razlike za UI za različne uporabniške vloge !!!
-# TODO: dodaj logout !!!
-# TODO: dodaj atribute dodajanju uporabnika: ime, priimek, email
-# TODO: potrditev gesla (+ pokaži zahteve gesla)
+# DONE: dodaj logout !!!
+# DONE: dodaj atribute dodajanju uporabnika: ime, priimek, email
+# DONE: potrditev gesla (+ pokaži zahteve gesla)
 # TODO: ustvarjanje projekta: član razvojne skupine je lahko tudi scrum master
-# TODO: testni uporabniki morajo imeti prava imena
+# DONE: testni uporabniki morajo imeti prava imena
 # TODO: prikaži napako, če se ime projekta podvaja
 # TODO: dodaj zahtevo, da si uporabnik ob prvi prijavi spremeni geslo (ali pa ga sam naredi)
 # TODO: dodajanje zgodbe: šifra zgodbe se doda avtomatsko (#N)

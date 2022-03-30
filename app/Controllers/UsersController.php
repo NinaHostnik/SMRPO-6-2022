@@ -94,13 +94,15 @@ class UsersController extends BaseController
                     $user = $model->where('username', $this->request->getVar('username'))
                         ->first();
 
-
                     $projectsmodel = new ProjectMembersModel();
                     $userroles = $projectsmodel->getrole($user['id']);
                     $this->setUserSession($user,$userroles);
-                    #echo session()->get('roles')[14];
 
-                    var_dump($user);
+                    $newprofile = [
+                        'lastLogin' => time(),
+                    ];
+                    $model->update(session()->get("id"), $newprofile);
+
                     if ($user['pas_change'] == 1){
                         return redirect()->to('/ponastavitevGesa');
                     }
