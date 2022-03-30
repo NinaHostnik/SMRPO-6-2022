@@ -12,13 +12,19 @@ class UsersController extends BaseController
         if ($this->request->getMethod() == 'post') {
             $rules = [
                 'username' => 'required|doesntExist[username]',
+                'name' => 'required',
+                'surname' => 'required',
+                'mail' => 'required|doesntExist[mail]',
                 'permissions' => 'required',
                 'password' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
             ];
 
             $errors = [
                 'username' => [
-                    'doesntExist' => 'User already exists'
+                    'doesntExist' => 'Uporabnik z vpisanim uporabniškim imenom že obstaja.'
+                ],
+                'mail' => [
+                    'doesntExist' => 'Uporabnik z vpisanim mailom že obstaja.'
                 ]
             ];
 
@@ -33,6 +39,9 @@ class UsersController extends BaseController
                 $pass = str_replace(' ','&nbsp;',$pass);
                 $newdata = [
                     'username' => $this->request->getVar('username'),
+                    'name' => $this->request->getVar('name'),
+                    'surname' => $this->request->getVar('surname'),
+                    'mail' => $this->request->getVar('mail'),
                     'permissions' => $this->request->getVar('permissions'),
                     'password' => $pass,
                 ];
