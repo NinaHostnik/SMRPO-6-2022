@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <div class="container content-box">
-    <form class="form-control" action="/dodajanjeSprintovController/dodajanjeSprinta" method="post">
+    <form class="form-control" method="post">
         <?php echo $opozorilo?>
         <h5>Dodaj sprint</h5>
         <hr>
@@ -17,7 +17,7 @@
         <input type="date" id="start" name="start"
         min=<?php echo $datum?> max="2030-12-31">
         <!-- KoncniDatum datum -->
-        <label for="end">Začetni datum:</label>
+        <label for="end">Končni datum:</label>
         <input type="date" id="end" name="end"
         min=<?php echo $datum?> max="2030-12-31">
         <!--hidden input field za id projekta -->

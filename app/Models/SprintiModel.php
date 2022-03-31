@@ -21,6 +21,23 @@ class SprintiModel extends Model{
         return $id;
     }
 
+    function getFirstAvailableDate(string $idProjekta) {
+        $table = 'sprinti';
+        $query = $this->db-> query("SELECT MAX(koncniDatum) AS kd FROM ".$table." WHERE idProjekta=".$idProjekta);
+        $row = $query->getResultArray();
+        $returnDate = date("Y-m-d");
+        if ($row != NULL) {
+            $returnDate = date("Y-m-d", strtotime($row[0]['kd'].'+1 day'));
+        }
+        // preveri ce je nedelja here
+        var_dump(date('l', strtotime($returnDate)));
+        if (date('l', strtotime($returnDate)) == 'Sunday') {
+            $returnDate = date("Y-m-d", strtotime($returnDate.'+1 day'));
+        }
+
+        return $returnDate;
+    }
+
     function preveriZaPrekrivanje(string $zacetniDatum, string $idProjekta){  #ce je ze ime v bazi vrne true
         $table = 'sprinti';
         $query=$this->db-> query("SELECT * FROM ".$table." WHERE idProjekta='". $idProjekta."'");
@@ -29,7 +46,7 @@ class SprintiModel extends Model{
             return false;
         }
         foreach($id as $koncniDatum){
-            if($zacetniDatum<=$koncniDatum['koncniDatum']){
+            if($zacetniDatum<$koncniDatum['koncniDatum']){
                 return true;
             }
         }
