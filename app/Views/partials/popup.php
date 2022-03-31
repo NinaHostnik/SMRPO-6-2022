@@ -5,9 +5,9 @@
         top: 0;
         left: 42%;
         transform: scale(0);
-        border: 1px solid black;
+        border: 3px solid forestgreen;
         z-index: 9999;
-        background-color: forestgreen;
+        background-color: whitesmoke;
         width: 200px;
         max-width: 20%;
     }
