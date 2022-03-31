@@ -1,5 +1,5 @@
 <style>
-    .popup{
+    .errpopup{
         position: fixed;
         transition: 200ms ease-in-out;
         top: 0;
@@ -7,17 +7,17 @@
         transform: scale(0);
         border: 1px solid black;
         z-index: 9999;
-        background-color: forestgreen;
+        background-color: darkred;
         width: 200px;
         max-width: 20%;
     }
 
-    .popup.active{
+    .errpopup.active{
         transform: scale(1);
         margin: 20px;
     }
 
-    .popup_header{
+    .errpopup_header{
         padding: 10px 15px;
         display: flex;
         justify-content: space-between;
@@ -25,7 +25,7 @@
         border-bottom: 1px solid black;
     }
 
-    .popup_body{
+    .errpopup_body{
         padding: 10px 15px;
     }
 
@@ -48,9 +48,9 @@
 
 
 
-<div class="popup active" id="popup">
-    <div class="popup_body">
-        <?php echo $popup ?>
+<div class="errpopup active" id="errpopup">
+    <div class="errpopup_body">
+        <?php echo $errpopup ?>
     </div>
 </div>
 <div id="overlay" class="active"></div>
@@ -60,15 +60,15 @@
 
     overlay.addEventListener('click',() => {
         console.log('clicked')
-        const popup = document.querySelectorAll('.popup.active')
-        popup.forEach(popup=>{
-            closePopup(popup)
+        const popup = document.querySelectorAll('.errpopup.active')
+        popup.forEach(errpopup=>{
+            closePopup(errpopup)
         })
     })
 
-    function closePopup(popup){
-        if (popup != null){
-            popup.classList.remove('active')
+    function closePopup(errpopup){
+        if (errpopup != null){
+            errpopup.classList.remove('active')
             overlay.classList.remove('active')
         }
     }
