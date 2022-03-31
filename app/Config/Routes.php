@@ -40,6 +40,7 @@ $routes->match(['get','post'],'/dodajanjeUporabniskihZgodb/(:num)', 'DodajanjeUp
 $routes->match(['get','post'],'/projekti', 'ProjectsController::allProjects',['filter' => 'LoginAuth']);
 $routes->match(['get','post'],'/home', 'HomeController::home',['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/cardTable/(:num)', 'CardTableController::cardTable', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/cardTable/(:num)/(:num)', 'CardTableController::successAlert', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/dodajanjeSprintov/(:num)', 'DodajanjeSprintovController::dodajanjeSprinta', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/odjava', 'UsersController::odjava', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ponastavitevGesa', 'UsersController::ponastavitev', ['filter' => 'LoginAuth']);

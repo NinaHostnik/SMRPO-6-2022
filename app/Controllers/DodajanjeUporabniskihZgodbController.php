@@ -151,7 +151,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                     $lahkoZapise=$model->preveriStatusUporabnika($idOsebe, $idProjekta);
                     if($lahkoZapise){
                         echo $model->zapisiVBazo($zgodba);
-                        return redirect()->to('/cardTable/'.$idProjekta);
+                        return redirect()->to('/cardTable/'.$idProjekta.'/1');
                     }
                     else{
                         echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");
