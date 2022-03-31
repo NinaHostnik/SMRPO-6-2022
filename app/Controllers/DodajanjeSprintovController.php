@@ -103,10 +103,11 @@ class DodajanjeSprintovController extends BaseController
                 }
             }
         } else {
+            $uri = service('uri');
             $data["speed"]=NULL;
             $data["start"]=NULL;
             $data["end"]=NULL;
-            $data["idProjekta"]=$this->request->getVar('idProjekta');
+            $data["idProjekta"]=$uri->getSegment('2');;
             #$data["idProjekta"]=6;
             $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
