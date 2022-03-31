@@ -37,17 +37,17 @@ class DodajanjeUporabniskihZgodbController extends BaseController
     }
     */
     public function dodajanjeZgodbe(){
-
+        $uri = service('uri');
         if ($this->request->getMethod() == 'post') {
             $ime=$this->request->getVar('zgodbaIme');
             $besedilo=$this->request->getVar('zgodbaBesedilo');
             $prioriteta=$this->request->getVar('prioriteta');
             $sprejemniTesti=$this->request->getVar('sprejemniTesti');
             $poslovnaVrednost=$this->request->getVar('poslovnaVrednost');
-            $idProjekta=$this->request->getVar('idProjekta');
+            $idProjekta=$uri->getSegment('2');
             $idOsebe=$this->request->getVar('idOsebe');
             $model=new UporabniskeZgodbeModel();
-            $zeIme=$model->preveriCeJeZeIme($ime);
+            $zeIme=$model->preveriCeJeZeIme($ime, $idProjekta);
             $zgodba=[
                 'ime' => $ime,
                 'besedilo' => $besedilo,
@@ -151,7 +151,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                     $lahkoZapise=$model->preveriStatusUporabnika($idOsebe, $idProjekta);
                     if($lahkoZapise){
                         echo $model->zapisiVBazo($zgodba);
-                        return redirect()->to('/cardTable/'.$idProjekta);
+                        return redirect()->to('/cardTable/'.$idProjekta.'/1');
                     }
                     else{
                         echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");
@@ -168,7 +168,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $data["shouldHave"]=NULL;
             $data["couldHave"]=NULL;
             $data["wontHave"]=NULL;
-            $data["idProjekta"]=$this->request->getVar('idProjekta');
+            $data["idProjekta"] = $uri->getSegment('2');
             #$data["idProjekta"]=7;
             $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
