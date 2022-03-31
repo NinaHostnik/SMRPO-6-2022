@@ -10,6 +10,7 @@ class ProjectModel extends Model{
 
     public function callStoringProcedure($ime, $description, $userList, $roleList) {
         $result = $this->db->query("CALL save_project('". $ime. "','". $description. "','". $userList. "','". $roleList. "')");
+        var_dump($this->db->error());
         if ($result !== NULL) {
             return TRUE;
         }

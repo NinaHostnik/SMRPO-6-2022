@@ -16,25 +16,16 @@ class CardTableController extends BaseController
             'id'=>$id
         ];
 
-        echo view('subpages/cardTable/cardTable', $data);
-    }
+        $feedbackAlert = session()->get('feedback');
 
-    public function successAlert(){
-
-        $uri = service('uri');
-        $id = $uri->getSegment('2');
-        $data = [
-            'id'=>$id
-        ];
-
-        $alert = $uri->getSegment('3');
-        if ($alert == 1) {
-            echo '<script type="text/javascript">alert("Zgodba je bila dodana.");</script>';
-        } else if ($alert == 2) {
-            echo '<script type="text/javascript">alert("Sprint je bila dodan.");</script>';
+        if ($feedbackAlert == 'zgodba') {
+            $popupdata = ['popup' => 'Zgodba je bila dodana'];
+            echo view('partials/popup', $popupdata);
+        } else if ($feedbackAlert == 'sprint') {
+            $popupdata = ['popup' => 'Sprint je bil dodan.'];
+            echo view('partials/popup', $popupdata);
         }
+
         echo view('subpages/cardTable/cardTable', $data);
-
     }
-
 }

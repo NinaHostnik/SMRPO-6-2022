@@ -73,8 +73,7 @@ class DodajanjeSprintovController extends BaseController
                             $lahkoZapise=$model->preveriStatusUporabnika($idOsebe);
                             if($lahkoZapise){
                                 echo $model->zapisiVBazo($sprint);
-                                $popupdata = ['popup' => 'Sprint je bil uspešno dodan.'];
-                                echo view('partials/popup', $popupdata);
+                                session()->setFlashdata(['feedback' => 'sprint']);
                                 return redirect()->to('/cardTable/'.$idProjekta);
                             }
                             else{
