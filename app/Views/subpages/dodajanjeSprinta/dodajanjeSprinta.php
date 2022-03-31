@@ -8,7 +8,10 @@
         <h5>Dodaj sprint</h5>
         <hr>
         <!-- Hitrost sprinta -->
-        <?php echo view("partials/formInput",['label'=>'Hitrost Sprinta', "id"=>"speed", 'type'=>'number','value'=>$speed])?>
+        <input type="number" class="form-control" name="speed" id="speed" value="<?php echo $speed?>" min="0" required>
+        <label for="speed">Hitrost sprinta (v točkah)</label>
+        <br>
+        <br>
         <!-- Zacetni datum -->
         <label for="start">Začetni datum:</label>
         <input type="date" id="start" name="start"
@@ -23,7 +26,7 @@
         <input type="hidden" id="idOsebe" name="idOsebe" value=<?php echo $idOsebe?>>
         <!-- Submit button -->
         <br>
-        <?php echo view('partials/formButton', ['name'=>'Dodaj Zgodbo']) ?> 
+        <?php echo view('partials/formButton', ['name'=>'Dodaj sprint']) ?>
 
     </form>
 </div>

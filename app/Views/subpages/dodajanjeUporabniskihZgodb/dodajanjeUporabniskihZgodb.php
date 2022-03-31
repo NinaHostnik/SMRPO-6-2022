@@ -24,8 +24,11 @@
             <option value="CouldHave" <?php echo $couldHave?>>Could have</option>
             <option value="WontHave" <?php echo $wontHave?>>Won't have this time</option>
         </select>
+        <br>
+        <br>
         <!-- Poslovna Vrednost input -->
-        <?php echo view("partials/formInput",['label'=>'Poslovna vrednost', "id"=>"poslovnaVrednost", 'type'=>'number','value'=>$poslovnaVrednost])?>
+        <input type="number" class="form-control" name="poslovnaVrednost" id="poslovnaVrednost" value="<?php echo $poslovnaVrednost?>" min="0" max="10" required>
+        <label for="poslovnaVrednost">Poslovna vrednost</label>
         <!--hidden input field za id projekta -->
         <input type="hidden" id="idProjekta" name="idProjekta" value=<?php echo $idProjekta?>>
         <!--hidden input field za id osebe -->

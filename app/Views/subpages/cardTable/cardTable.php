@@ -6,16 +6,14 @@
 
 <div class="container content-box" style="width: 100%">
 
-
-    <!--<form class="" action="/dodajanjeUporabniskihZgodb" method="get">
-        <?//php echo view("partials/formInput",['label'=>'', "id"=>"idProjekta", 'type'=>'hidden', 'value'=>$id])?>
-        <?//php echo view('partials/formButton', ["name"=>'Dodaj uporabniško zgodbo']) ?>
-    </form>
-
-    <form class="" action="/dodajanjeSprintov" method="get">
-        <?//php echo view("partials/formInput",['label'=>'', "id"=>"idProjekta", 'type'=>'hidden', 'value'=>$id])?>
-        <?//php echo view('partials/formButton', ["name"=>'Dodaj sprint']) ?>
-    </form>-->
+    <br>
+    <div class="container d-flex flex-row mb-2">
+        <h4 class="me-4">Ime projekta</h4>
+        <?php if (session()->get('permissions') == 0) { ?>
+            <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeSprintov">Dodaj sprint</a>
+        <?php } ?>
+        <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeUporabniskihZgodb">Dodaj zgodbo</a>
+    </div>
 
     <div class="table-responsive" style="overflow: scroll; position: absolute; left: 2%">
         <table class="table table-bordered h-100 w-100">

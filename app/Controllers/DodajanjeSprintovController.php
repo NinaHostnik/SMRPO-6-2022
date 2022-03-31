@@ -51,7 +51,7 @@ class DodajanjeSprintovController extends BaseController
                 $data["end"]=$end;
                 $data["idProjekta"]=$idProjekta;
                 $data["idOsebe"]=$idOsebe;
-                $data["datum"]=date("Y-m-d");
+                $data["datum"]=date("Y.m.d");
                 $data["opozorilo"]="Preverite če so vsa polja izpolnjena in poskusite ponovno";
                 echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
             }
@@ -62,7 +62,7 @@ class DodajanjeSprintovController extends BaseController
                     $data["end"]=$end;
                     $data["idProjekta"]=$idProjekta;
                     $data["idOsebe"]=$idOsebe;
-                    $data["datum"]=date("Y-m-d");
+                    $data["datum"]=date("Y.m.d");
                     $data["opozorilo"]="Začetek sprinta, ki ste ga vnesli se prikriva z drugim sprintom";
                     echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
                 }
