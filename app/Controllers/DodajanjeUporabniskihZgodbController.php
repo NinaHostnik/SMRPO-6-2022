@@ -38,6 +38,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
     */
     public function dodajanjeZgodbe(){
         $uri = service('uri');
+        $model=new UporabniskeZgodbeModel();
         if ($this->request->getMethod() == 'post') {
             $ime=$this->request->getVar('zgodbaIme');
             $besedilo=$this->request->getVar('zgodbaBesedilo');
@@ -46,7 +47,6 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $poslovnaVrednost=$this->request->getVar('poslovnaVrednost');
             $idProjekta=$uri->getSegment('2');
             $idOsebe=$this->request->getVar('idOsebe');
-            $model=new UporabniskeZgodbeModel();
             $zeIme=$model->preveriCeJeZeIme($ime, $idProjekta);
             $zgodba=[
                 'ime' => $ime,
@@ -160,7 +160,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                 }
             }
         } else {
-            $data["ime"]=NULL;
+            $data["ime"]= '#'.$model->pridobiZaporednoSt($uri->getSegment('2')).':';
             $data["besedilo"]=NULL;
             $data["sprejemniTesti"]=NULL;
             $data["poslovnaVrednost"]=NULL;

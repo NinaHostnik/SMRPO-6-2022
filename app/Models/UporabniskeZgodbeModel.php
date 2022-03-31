@@ -50,4 +50,10 @@ class UporabniskeZgodbeModel extends Model{
             return true;
         }
     }
+
+    function pridobiZaporednoSt($idProjekta){
+        $query = $this->db-> query("SELECT COUNT(*) + 1 AS c from uporabniskeZgodbe WHERE idProjekta = ".$idProjekta);
+        $result = $query->getResultArray()[0]['c'];
+        return $result;
+    }
 }
