@@ -7,6 +7,9 @@ use App\Models\UserModel;
 class NewProjectController extends BaseController
 {
     public function createProject() {
+        $model = new UserModel();
+        $pmodel = new ProjectModel();
+
         if ($this->request->getMethod() == 'post') {
             $rules = [
                 'projectName' => 'required',
@@ -14,10 +17,8 @@ class NewProjectController extends BaseController
             ];
 
             if (!$this->validate($rules)) {
-                // TODO: dodaj error
-
+                $this->stuffWentWrong('Ime projekta mora biti izpolnjeno in uporabniki dodani.');
             } else {
-                $model = new ProjectModel();
 
                 $userList = json_decode($this->request->getVar('userList'),true);
                 $keys = array();
@@ -28,20 +29,37 @@ class NewProjectController extends BaseController
                 $roles = implode(',', array_column($userList, 'vlogaId'));
                 $projectName = $this->request->getVar('projectName');
                 $projectDescription = $this->request->getVar('projectDescription');
-
-                $model->callStoringProcedure($projectName, $projectDescription, $users, $roles);
-                (new ProjectsController)->allProjects();
+                $error = $pmodel->callStoringProcedure($projectName, $projectDescription, $users, $roles);
+                if (!$error) {
+                    session()->setFlashdata(['feedback' => 'projekt']);
+                    (new ProjectsController)->allProjects();
+                } else {
+                    $this->stuffWentWrong($error);
+                }
             }
         } else {
-
-            $model = new UserModel();
-            $pmodel = new ProjectModel();
 
             $data['data'] = $model->readLookup();
             $data['projectName'] = $pmodel->getProjectName();
             $data['roleList'] = $pmodel->readRoles();
+            $data['projectDescription'] = false;
 
             echo view("subpages/dodajanjeProjekta/dodajanje", $data);
         }
+    }
+
+    public function stuffWentWrong($error) {
+        $model = new UserModel();
+        $pmodel = new ProjectModel();
+
+        $popupdata = ['errpopup' => $error];
+        echo view('partials/errpopup', $popupdata);
+
+        $data['data'] = $model->readLookup();
+        $data['projectName'] = $this->request->getVar('projectName');
+        $data['roleList'] = $pmodel->readRoles();
+        $data['projectDescription'] = $this->request->getVar('projectDescription');
+
+        echo view("subpages/dodajanjeProjekta/dodajanje", $data);
     }
 }

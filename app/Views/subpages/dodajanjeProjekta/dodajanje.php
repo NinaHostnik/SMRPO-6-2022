@@ -8,7 +8,7 @@
             <div class="container">
                 <h3>Dodajanje projekta</h3>
                 <hr>
-                <form class="form-control" action="/dodajanjeProjekta" method="post">
+                <form class="form-control" method="post">
                     <input hidden type="text" id="userList" name="userList">
                     <div class="form-group">
                         <?php echo view("partials/formInput",["label"=>"Ime projekta", 'id'=>'projectName', 'type'=>'text',  'value'=>''])?>
@@ -71,8 +71,12 @@
 <script>
     var addedUsers = {};
     var hiddenList = document.getElementById('userList');
+    var desc = '<?php echo $projectDescription ?>';
 
     document.getElementById('projectName').defaultValue = "<?php echo $projectName ?>";
+    if (desc) {
+        document.getElementById('projectDescription').defaultValue = desc;
+    }
 
     function dodajUporabnika() {
         var uporabnikiSelect = document.querySelector('#uporabnikiSelect');
@@ -126,7 +130,7 @@
                 return false;
             }
         } else if (vloga === 'V') {
-            if (keys.includes(id + '/C') || keys.includes('/M') || keys.includes(id)) {
+            if (keys.includes(id + '/C') || keys.includes('/S') || keys.includes(id)) {
                 return false;
             }
         }

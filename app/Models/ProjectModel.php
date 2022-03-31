@@ -9,10 +9,11 @@ class ProjectModel extends Model{
     protected $subtableRoles = 'roles';
 
     public function callStoringProcedure($ime, $description, $userList, $roleList) {
-        $result = $this->db->query("CALL save_project('". $ime. "','". $description. "','". $userList. "','". $roleList. "')");
-        var_dump($this->db->error());
-        if ($result !== NULL) {
-            return TRUE;
+        $rs = $this->db->query("CALL save_project('". $ime. "','". $description. "','". $userList. "','". $roleList. "', @error)");
+        $result = $this->db->query("SELECT @error AS errorMessage");
+        $row = $result->getResultArray();
+        if ($row) {
+            return $row[0]['errorMessage'];
         }
         return FALSE;
     }
