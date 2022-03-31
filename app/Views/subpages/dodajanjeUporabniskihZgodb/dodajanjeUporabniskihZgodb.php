@@ -27,7 +27,7 @@
         <br>
         <br>
         <!-- Poslovna Vrednost input -->
-        <input type="number" class="form-control" name="poslovnaVrednost" id="poslovnaVrednost" value="<?php echo $poslovnaVrednost?>" min="0" max="10" required>
+        <input type="number" class="form-control" name="poslovnaVrednost" id="poslovnaVrednost" value="<?php echo $poslovnaVrednost?>" min="1" max="10" required>
         <label for="poslovnaVrednost">Poslovna vrednost</label>
         <!--hidden input field za id projekta -->
         <input type="hidden" id="idProjekta" name="idProjekta" value=<?php echo $idProjekta?>>
