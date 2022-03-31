@@ -29,7 +29,7 @@ class SprintiModel extends Model{
             return false;
         }
         foreach($id as $koncniDatum){
-            if($zacetniDatum<$koncniDatum['koncniDatum']){
+            if($zacetniDatum<=$koncniDatum['koncniDatum']){
                 return true;
             }
         }
