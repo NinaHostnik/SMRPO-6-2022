@@ -36,11 +36,11 @@ $routes->match(['get','post'],'/', 'UsersController::login',['filter' => 'NoAuth
 $routes->match(['get','post'],'/admin/createUser', 'UsersController::createUser',['filter' => 'AdminAuth']);
 $routes->match(['get','post'],'/profile', 'UsersController::update_user',['filter' => 'LoginAuth']);
 $routes->match(['get','post'],'/dodajanjeProjekta', 'NewProjectController::createProject',['filter' => 'LoginAuth']);
-$routes->match(['get','post'],'/dodajanjeUporabniskihZgodb', 'DodajanjeUporabniskihZgodbController::dodajanjeZgodbe',['filter' => 'LoginAuth']);
+$routes->match(['get','post'],'/dodajanjeUporabniskihZgodb/(:num)', 'DodajanjeUporabniskihZgodbController::dodajanjeZgodbe',['filter' => 'LoginAuth']);
 $routes->match(['get','post'],'/projekti', 'ProjectsController::allProjects',['filter' => 'LoginAuth']);
 $routes->match(['get','post'],'/home', 'HomeController::home',['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/cardTable/(:num)', 'CardTableController::cardTable', ['filter' => 'LoginAuth']);
-$routes->match(['get','post'], '/dodajanjeSprintov', 'DodajanjeSprintovController::dodajanjeSprinta', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/dodajanjeSprintov/(:num)', 'DodajanjeSprintovController::dodajanjeSprinta', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/odjava', 'UsersController::odjava', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ponastavitevGesa', 'UsersController::ponastavitev', ['filter' => 'LoginAuth']);
 
