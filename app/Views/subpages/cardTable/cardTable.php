@@ -12,7 +12,7 @@
         <?php if (session()->get('permissions') == 0) { ?>
             <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href=<?php echo "/dodajanjeSprintov/".$id; ?>>Dodaj sprint</a>
         <?php } ?>
-            <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href=<?php echo "/dodajanjeUporabniskihZgodb".$id; ?>>Dodaj zgodbo</a>
+            <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href=<?php echo "/dodajanjeUporabniskihZgodb/".$id; ?>>Dodaj zgodbo</a>
     </div>
 
     <div class="table-responsive" style="overflow: scroll; position: absolute; left: 2%">
