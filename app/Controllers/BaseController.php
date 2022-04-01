@@ -79,7 +79,7 @@ class BaseController extends Controller
             $data['roles'][$role['project']] = $role['role'];
         endforeach;
 
-        var_dump($data['roles']);
+        #var_dump($data['roles']);
         session()->set($data);
         return true;
     }

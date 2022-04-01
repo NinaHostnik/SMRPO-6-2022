@@ -107,7 +107,7 @@ class UsersController extends BaseController
                         return redirect()->to('/ponastavitevGesa');
                     }
 
-                    //return redirect()->to('/projekti');
+                    return redirect()->to('/projekti');
                 }
 
             } else {
