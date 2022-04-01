@@ -8,7 +8,7 @@
             <div class="container">
                 <h3>Dodajanje projekta</h3>
                 <hr>
-                <form class="form-control" action="/dodajanjeProjekta" method="post">
+                <form class="form-control" method="post">
                     <input hidden type="text" id="userList" name="userList">
                     <div class="form-group">
                         <?php echo view("partials/formInput",["label"=>"Ime projekta", 'id'=>'projectName', 'type'=>'text',  'value'=>''])?>
@@ -71,8 +71,12 @@
 <script>
     var addedUsers = {};
     var hiddenList = document.getElementById('userList');
+    var desc = '<?php echo $projectDescription ?>';
 
     document.getElementById('projectName').defaultValue = "<?php echo $projectName ?>";
+    if (desc) {
+        document.getElementById('projectDescription').defaultValue = desc;
+    }
 
     function dodajUporabnika() {
         var uporabnikiSelect = document.querySelector('#uporabnikiSelect');
@@ -82,9 +86,9 @@
         } else {
             var izbraniUporabnik = uporabnikiSelect.selectedOptions[0].outerText;
             var izbranaVloga = vlogeSelect.selectedOptions[0].outerText;
-            var izbraniId = uporabnikiSelect.value;
             var vlogaId = vlogeSelect.value;
-            if (Object.keys(addedUsers).includes(izbraniId)) {
+            var izbraniId = vlogaId === 'V' ? uporabnikiSelect.value : uporabnikiSelect.value + '/' + vlogaId;
+            if (!check(vlogaId, uporabnikiSelect.value, izbraniId)) {
                 alert("Izbrani uporabnik je že bil dodan.");
             } else if (izbranaVloga.includes('produktni vodja') && exists(addedUsers, 'produktni vodja')) {
                 alert("V projektu lahko obstaja le en produktni vodja.");
@@ -117,6 +121,20 @@
             }
         });
         return value;
+    }
+
+    function check(vloga, id, key) {
+        var keys = Object.keys(addedUsers);
+        if (vloga !== 'V') {
+            if (keys.includes(id) || keys.includes(key)) {
+                return false;
+            }
+        } else if (vloga === 'V') {
+            if (keys.includes(id + '/C') || keys.includes('/S') || keys.includes(id)) {
+                return false;
+            }
+        }
+        return true;
     }
 </script>
 

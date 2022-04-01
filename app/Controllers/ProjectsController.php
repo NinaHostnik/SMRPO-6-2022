@@ -9,13 +9,18 @@ class ProjectsController extends BaseController
 {
 
     public function allProjects(){
-    $model = new ProjectModel();
-    $projects = $model->getUsersProjects(session()->get('id'));
-    $data = [
-        'projekti'=>$projects,
-    ];
+        $model = new ProjectModel();
+        $projects = $model->getUsersProjects(session()->get('id'));
+        $data = [
+            'projekti'=>$projects,
+        ];
+        $feedbackAlert = session()->get('feedback');
+        if ($feedbackAlert == 'projekt') {
+            $popupdata = ['popup' => 'Projekt je bil dodan.'];
+            echo view('partials/popup', $popupdata);
+        }
 
-    echo view('subpages/projekti/projects', $data);
+        echo view('subpages/projekti/projects', $data);
     }
 
 }

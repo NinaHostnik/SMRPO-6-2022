@@ -30,14 +30,15 @@ class DodajanjeSprintovController extends BaseController
     }*/
     
     public function dodajanjeSprinta(){
-
+        $model=new SprintiModel();
+        $uri = service('uri');
         if ($this->request->getMethod() == 'post') {
             $speed=$this->request->getVar('speed');
             $start=$this->request->getVar('start');
             $end=$this->request->getVar('end');
-            $idProjekta=$this->request->getVar('idProjekta');
+            $idProjekta=$uri->getSegment('2');
             $idOsebe=$this->request->getVar('idOsebe');
-            $model=new SprintiModel();
+
             $prekrivanje=$model->preveriZaPrekrivanje($start, $idProjekta);
             $sprint=[
                 'speed' => $speed,
@@ -51,8 +52,8 @@ class DodajanjeSprintovController extends BaseController
                 $data["end"]=$end;
                 $data["idProjekta"]=$idProjekta;
                 $data["idOsebe"]=$idOsebe;
-                $data["datum"]=date("Y-m-d");
-                $data["opozorilo"]="Preverite če so vsa polja izpolnjena in poskusite ponovno";
+                $data["datum"]=$model->getFirstAvailableDate($idProjekta);
+                $data["opozorilo"]="Preverite, če so vsa polja izpolnjena in poskusite znova";
                 echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
             }
             else{
@@ -62,8 +63,8 @@ class DodajanjeSprintovController extends BaseController
                     $data["end"]=$end;
                     $data["idProjekta"]=$idProjekta;
                     $data["idOsebe"]=$idOsebe;
-                    $data["datum"]=date("Y-m-d");
-                    $data["opozorilo"]="Začetek sprinta, ki ste ga vnesli se prikriva z drugim sprintom";
+                    $data["datum"]=$model->getFirstAvailableDate($idProjekta);
+                    $data["opozorilo"]="Začetek sprinta, ki ste ga vnesli, se prikriva z drugim sprintom";
                     echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
                 }
                 else{
@@ -72,6 +73,7 @@ class DodajanjeSprintovController extends BaseController
                             $lahkoZapise=$model->preveriStatusUporabnika($idOsebe);
                             if($lahkoZapise){
                                 echo $model->zapisiVBazo($sprint);
+                                session()->setFlashdata(['feedback' => 'sprint']);
                                 return redirect()->to('/cardTable/'.$idProjekta);
                             }
                             else{
@@ -84,7 +86,7 @@ class DodajanjeSprintovController extends BaseController
                             $data["end"]=$end;
                             $data["idProjekta"]=$idProjekta;
                             $data["idOsebe"]=$idOsebe;
-                            $data["datum"]=date("Y-m-d");
+                            $data["datum"]=$model->getFirstAvailableDate($idProjekta);
                             $data["opozorilo"]="Vrednost hitrosti sprinta more biti večja od 0";
                             echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
                         }
@@ -95,7 +97,7 @@ class DodajanjeSprintovController extends BaseController
                         $data["end"]=$end;
                         $data["idProjekta"]=$idProjekta;
                         $data["idOsebe"]=$idOsebe;
-                        $data["datum"]=date("Y-m-d");
+                        $data["datum"]=$model->getFirstAvailableDate($idProjekta);
                         $data["opozorilo"]="Konec sprinta je pred začetkom";
                         echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
                     }
@@ -106,11 +108,11 @@ class DodajanjeSprintovController extends BaseController
             $data["speed"]=NULL;
             $data["start"]=NULL;
             $data["end"]=NULL;
-            $data["idProjekta"]=$this->request->getVar('idProjekta');
+            $data["idProjekta"]=$uri->getSegment('2');
             #$data["idProjekta"]=6;
             $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
-            $data["datum"]=date("Y-m-d");
+            $data["datum"]= $model->getFirstAvailableDate($uri->getSegment('2'));
             echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
         }
     }       

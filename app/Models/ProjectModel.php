@@ -9,9 +9,11 @@ class ProjectModel extends Model{
     protected $subtableRoles = 'roles';
 
     public function callStoringProcedure($ime, $description, $userList, $roleList) {
-        $result = $this->db->query("CALL save_project('". $ime. "','". $description. "','". $userList. "','". $roleList. "')");
-        if ($result !== NULL) {
-            return TRUE;
+        $rs = $this->db->query("CALL save_project('". $ime. "','". $description. "','". $userList. "','". $roleList. "', @error)");
+        $result = $this->db->query("SELECT @error AS errorMessage");
+        $row = $result->getResultArray();
+        if ($row) {
+            return $row[0]['errorMessage'];
         }
         return FALSE;
     }
@@ -35,7 +37,7 @@ class ProjectModel extends Model{
     public function getUsersProjects($userId): array
     {
         $query = $this->db->query("
-            SELECT project.id, project.ime, project.opis
+            SELECT DISTINCT project.id, project.ime, project.opis
             FROM project
             LEFT JOIN project_members
             ON project_members.project_id = project.id

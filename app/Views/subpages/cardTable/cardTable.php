@@ -6,20 +6,18 @@
 
 <div class="container content-box" style="width: 100%">
 
+    <br>
+    <div class="container d-flex flex-row mb-2">
+        <h4 class="me-4">Ime projekta</h4>
+        <?php if (session()->get('permissions') == 0) { ?>
+            <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href=<?php echo "/dodajanjeSprintov/".$id; ?>>Dodaj sprint</a>
+        <?php } ?>
+            <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href=<?php echo "/dodajanjeUporabniskihZgodb/".$id; ?>>Dodaj zgodbo</a>
+    </div>
 
-    <form class="" action="/dodajanjeUporabniskihZgodb" method="get">
-        <?php echo view("partials/formInput",['label'=>'', "id"=>"idProjekta", 'type'=>'hidden', 'value'=>$id])?>
-        <?php echo view('partials/formButton', ["name"=>'Dodaj uporabniško zgodbo']) ?>
-    </form>
-
-    <form class="" action="/dodajanjeSprintov" method="get">
-        <?php echo view("partials/formInput",['label'=>'', "id"=>"idProjekta", 'type'=>'hidden', 'value'=>$id])?>
-        <?php echo view('partials/formButton', ["name"=>'Dodaj sprint']) ?>
-    </form>
-
-    <div class="table-responsive">
-        <table class="table table-bordered w-100">
-            <thead class="text-center">
+    <div class="table-responsive" style="overflow: scroll; position: absolute; left: 2%">
+        <table class="table table-bordered h-100 w-100">
+            <thead class="text-center" style="vertical-align: middle">
             <tr>
                 <th id="backlog" colspan="1" style="top: 43px; background-color: #5BC0DE"></th>
                 <th id="requested" colspan="2" style="top: 43px; background-color: #0092db"></th>
@@ -71,9 +69,9 @@
                 </th>
             </tr>
             </thead>
-            <tbody>
+            <tbody style="background-color: #eee">
             <tr>
-                <td id="backlog-body" data-cards-per-row="3">
+                <td id="backlog-body">
                     <ul class="list-group">
                         <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45'])?>
                     </ul>
@@ -81,37 +79,62 @@
                 <td id="requested-body-product">
                     <ul class="list-group">
                         <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
                     </ul>
                 </td>
                 <td id="requested-body-sprint">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="progress-body-analysis&design">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="progress-body-coding">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="progress-body-testing">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="progress-body-integration">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="progress-body-documentation">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="done-body-acceptance-ready">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="done-body-acceptance">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="done-body-done">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
                 <td id="archive-body">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        <?php echo view('partials/storyCardMini', ['storyTitle'=>'Zgodba', 'storyPriority'=>'45']) ?>
+                    </ul>
                 </td>
             </tr>
             </tbody>

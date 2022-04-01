@@ -61,15 +61,38 @@ class BaseController extends Controller
 
     }
 
-    protected function setUserSession($user)
+    protected function setUserSession($user,$roles)
     {
         $data = [
             'id' => $user['id'],
+            'password' => $user['password'],
             'username' => $user['username'],
             'permissions' => $user['permissions'],
+            'lastLogin' => $user['lastLogin'],
+            'pas_change' => $user['pas_change'],
+            'ime' => $user['ime'],
+            'priimek' => $user['priimek'],
+            'mail' => $user['mail'],
         ];
 
+        foreach ($roles as $role):
+            $data['roles'] = array($role['project'] => $role['role']);
+        endforeach;
+
+        var_dump($data);
         session()->set($data);
+        return true;
+    }
+
+    protected function setUserSessionRoles($roles){
+
+        #var_dump($roles);
+        $data = [];
+        foreach ($roles as $role):
+            #session()->set(strval($role['project']), $role['role']);
+            $data['roles'] = array($role['project'] => $role['role']);
+        endforeach;
+
         return true;
     }
 }

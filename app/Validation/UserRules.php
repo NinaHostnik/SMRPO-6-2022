@@ -8,6 +8,10 @@ class UserRules{
     public function validateUser(string $str, string $fields, array $data){
         $model = new UserModel();
 
+        if(!isset($data['username'])){
+            $data['username'] = session()->get('username');
+        }
+
         $user = $model->where('username', $data['username'])
                       ->first();
 
@@ -29,6 +33,11 @@ class UserRules{
         }
 
         return false;
+    }
+
+    public function niPrejsnje(string $str, string $fields, array $data){
+        $passhash = session()->get('password');
+        return !password_verify($data['passwordNew'],$passhash);
     }
 }
 
