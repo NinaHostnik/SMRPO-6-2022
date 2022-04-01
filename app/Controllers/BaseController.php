@@ -76,10 +76,10 @@ class BaseController extends Controller
         ];
 
         foreach ($roles as $role):
-            $data['roles'] = array($role['project'] => $role['role']);
+            $data['roles'][$role['project']] = $role['role'];
         endforeach;
 
-        var_dump($data);
+        var_dump($data['roles']);
         session()->set($data);
         return true;
     }

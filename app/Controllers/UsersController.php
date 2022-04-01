@@ -107,7 +107,7 @@ class UsersController extends BaseController
                         return redirect()->to('/ponastavitevGesa');
                     }
 
-                    return redirect()->to('/projekti');
+                    //return redirect()->to('/projekti');
                 }
 
             } else {
@@ -167,7 +167,7 @@ class UsersController extends BaseController
                 $popupdata = ['popup' => 'Uporabnik je bil uspešno spremenjen.'];
                 $data = [];
 
-                
+
                 echo view('partials/popup',$popupdata);
                 echo view('user_update', $data);
             }
