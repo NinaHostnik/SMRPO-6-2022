@@ -9,7 +9,7 @@
     <br>
     <div class="container d-flex flex-row mb-2">
         <h4 class="me-4">Ime projekta</h4>
-        <?php if (session()->get('permissions') == 0) { ?>
+        <?php if (strpos(session()->get('roles')[$id], 'V') > -1 || strpos(session()->get('roles')[$id], 'S') > -1) { ?>
             <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href=<?php echo "/dodajanjeSprintov/".$id; ?>>Dodaj sprint</a>
         <?php } ?>
             <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href=<?php echo "/dodajanjeUporabniskihZgodb/".$id; ?>>Dodaj zgodbo</a>
