@@ -98,6 +98,8 @@ class UsersController extends BaseController
                     $userroles = $projectsmodel->getrole($user['id']);
                     $this->setUserSession($user,$userroles);
 
+
+
                     $newprofile = [
                         'lastLogin' => time(),
                     ];
