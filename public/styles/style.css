@@ -2,6 +2,10 @@
     padding-top: 70px;
 }
 
+.bg-gray{
+    background-color: #2b2c2e; !important;
+}
+
 .project_card{
     box-shadow: 0px 0px 8px rgba(0,0,0,.9) !important;
     transition: 0.3s;
