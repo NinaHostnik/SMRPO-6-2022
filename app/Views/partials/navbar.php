@@ -45,10 +45,10 @@ if(session()->get('lastLogin')!=null) {
                 <span class="navbar-brand">Project name</span>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="#"><b>Project backlog</b></a>
+                        <a class="nav-link text-secondary" href="Pbacklog"><b>Project backlog</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="#"><b>Sprint backlog</b></a>
+                        <a class="nav-link text-secondary" href="Sbacklog"><b>Sprint backlog</b></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-secondary" href="#"><b>My tasks</b></a>

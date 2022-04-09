@@ -56,4 +56,9 @@ class UporabniskeZgodbeModel extends Model{
         $result = $query->getResultArray()[0]['c'];
         return $result;
     }
+
+    function pridobiZgodbe($idProjekta){
+        $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE idProjekta = ".$idProjekta);
+        return $query->getResultArray();
+    }
 }
