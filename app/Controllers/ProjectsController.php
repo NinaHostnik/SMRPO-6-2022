@@ -27,9 +27,9 @@ class ProjectsController extends BaseController
     public function backlog(){
         $model = new UporabniskeZgodbeModel();
         #var_dump(session()->get("projectId"));
-        $naloge = $model->pridobiZgodbe(session()->get("projectId"));
+        $zgodbe = $model->pridobiZgodbe(session()->get("projectId"));
         $data = [
-            'naloge'=>$naloge,
+            'zgodbe'=>$zgodbe,
         ];
         #var_dump($data);
         echo view('subpages/projekti/backlog',$data);

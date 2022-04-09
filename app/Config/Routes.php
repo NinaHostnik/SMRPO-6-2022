@@ -44,6 +44,8 @@ $routes->match(['get','post'], '/dodajanjeSprintov/(:num)', 'DodajanjeSprintovCo
 $routes->match(['get','post'], '/odjava', 'UsersController::odjava', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ponastavitevGesa', 'UsersController::ponastavitev', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Pbacklog', 'ProjectsController::backlog', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/sprint/dodajzgodbo', 'SprintController::dodajZgodbo', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/sprint', 'SprintController::backlog', ['filter' => 'LoginAuth']);
 
 
 

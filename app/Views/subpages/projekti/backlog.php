@@ -3,17 +3,21 @@
 <?= $this->section('content') ?>
 <div class="container content-box">
 
-<?php foreach ($naloge as $naloga): ?>
+<?php foreach ($zgodbe as $zgodba): ?>
 
 <div>
-    <h2><?php echo $naloga['naslov']?></h2>
-    <p><?php echo $naloga['besedilo'] ?></p>
-    <p><?php echo $naloga['prioriteta'] ?></p>
-    <p><?php echo $naloga['poslovnaVrednost'] ?></p>
-    <p><?php echo $naloga['statusZgodbe'] ?></p>
-    <p><?php echo $naloga['casovnaZahtevnost'] ?></p>
-    <p><?php echo $naloga['sprejemniTesti'] ?></p>
+    <h2><?php echo $zgodba['naslov']?></h2>
+    <p><?php echo $zgodba['besedilo'] ?></p>
+    <p><?php echo $zgodba['prioriteta'] ?></p>
+    <p><?php echo $zgodba['poslovnaVrednost'] ?></p>
+    <p><?php echo $zgodba['statusZgodbe'] ?></p>
+    <p><?php echo $zgodba['casovnaZahtevnost'] ?></p>
+    <p><?php echo $zgodba['sprejemniTesti'] ?></p>
     <hr>
+    <form action="/sprint/dodajzgodbo" method="post">
+        <?php echo view('partials/formInput', ['type' => 'hidden', 'id' => $zgodba['idZgodbe'], 'value'=>'', 'label'=>''])?>
+        <?php echo view('partials/formButton', ['name'=>'Dodaj v sprint'])?>
+    </form>
 
 
 </div>
