@@ -5,21 +5,24 @@
 
     <h1>Sprint: <?php echo $sprint['zacetniDatum'].' - '.$sprint['koncniDatum'].'('.$sprint['trenutniStatus'].')' ?></h1>
     <br>
-    <?php foreach ($zgodbe as $zgodba): ?>
-
-        <div>
-            <h2><?php echo $zgodba['naslov'] ?></h2>
-            <p><?php echo $zgodba['besedilo'] ?></p>
-            <p><?php echo $zgodba['prioriteta'] ?></p>
-            <p><?php echo $zgodba['poslovnaVrednost'] ?></p>
-            <p><?php echo $zgodba['statusZgodbe'] ?></p>
-            <p><?php echo $zgodba['casovnaZahtevnost'] ?></p>
-            <p><?php echo $zgodba['sprejemniTesti'] ?></p>
-            <hr>
-
+    <div class="row">
+        <div class="col-lg-6 card card-body">
+            <?php foreach ($zgodbe as $zgodba): ?>
+                <?php echo view('partials/storyCard',
+                    ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
+                        'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
+                        'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost']]) ?>
+            <?php endforeach; ?>
         </div>
-
-    <?php endforeach ?>
+        <div class="col-lg-6 card card-body">
+            <?php foreach ($zgodbe as $zgodba): ?>
+                <?php echo view('partials/storyCard',
+                    ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
+                        'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
+                        'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost']]) ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
 </div>
 
 
