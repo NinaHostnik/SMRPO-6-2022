@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/frame'); ?>
 
 <?= $this->section('content') ?>
-<div class="container content-box">
+<div class="container project-box">
 
 <?php foreach ($zgodbe as $zgodba): ?>
 

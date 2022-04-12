@@ -39,19 +39,22 @@ if(session()->get('lastLogin')!=null) {
         </div>
     </ul>
 <?php // only show this part if we're in a project
-    if (service('uri')->getSegment('2') != null) { ?>
-        <ul class="navbar navbar-light bg-light mt-0">
+    if (session()->get('projectId') != null) { ?>
+        <ul class="navbar navbar-light bg-secondary mt-0">
             <div class="container-fluid justify-content-start">
-                <span class="navbar-brand">Project name</span>
+                <span class="navbar-brand">Ime projekta</span>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="Pbacklog"><b>Project backlog</b></a>
+                        <a class="nav-link text-dark" href="Pbacklog"><b>Seznam zahtev</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="Sbacklog"><b>Sprint backlog</b></a>
+                        <a class="nav-link text-dark" href="Sbacklog"><b>Sprint</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="#"><b>My tasks</b></a>
+                        <a class="nav-link text-dark" href="MyTasks"><b>Moje zgodbe</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#"><b>Burn-Down</b></a>
                     </li>
                 </ul>
             </div>
