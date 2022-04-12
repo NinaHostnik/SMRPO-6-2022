@@ -42,7 +42,7 @@ if(session()->get('lastLogin')!=null) {
     if (session()->get('projectId') != null) { ?>
         <ul class="navbar navbar-light bg-secondary mt-0">
             <div class="container-fluid justify-content-start">
-                <span class="navbar-brand">Ime projekta</span>
+                <span class="navbar-brand"><?php echo session()->get('projectName') ?></span>
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="Pbacklog"><b>Seznam zahtev</b></a>
@@ -59,7 +59,8 @@ if(session()->get('lastLogin')!=null) {
                 </ul>
             </div>
         </ul>
-<?php   } ?>
+<?php   }
+    ?>
 </nav>
 
 

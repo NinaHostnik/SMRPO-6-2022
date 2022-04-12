@@ -3,7 +3,8 @@
     <div class="card-header d-flex justify-content-between align-items-center" style="background: lightskyblue">
         <div>
             <div class="card-title"><b><?php echo $naslov?> (<?php echo $statusZgodbe ?>)</b></div>
-            <div class="card-subtitle text-muted"><b>Odgovorna oseba: Janez Novak</b></div>
+            <div class="card-subtitle text-muted"><b>Odgovorna oseba: <?php echo session()->get('username') ?></b></div>
+            <div class="card-subtitle text-muted"><b>Vloga osebe: <?php echo session()->get('roles')[session()->get('projectId')] ?></b></div>
             <div class="card-subtitle text-muted"><b>Prioriteta: <?php echo $prioriteta ?> | Poslovna vrednost: <?php echo $poslovnaVrednost ?></b></div>
         </div>
         <?php echo view('partials/formInput', ['type' => 'hidden', 'id' => $idZgodbe, 'value'=>'', 'label'=>''])?>
