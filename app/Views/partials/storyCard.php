@@ -1,22 +1,49 @@
 
-<card class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
+<card class="card mb-1">
+    <div class="card-header d-flex justify-content-between align-items-center" style="background: lightskyblue">
         <div>
-            <div class="card-title"><b>Story name</b></div>
-            <div class="card-subtitle text-muted"><b>Priority: Must have | Business value: 5</b></div>
+            <div class="card-title"><b><?php echo $naslov?> (<?php echo $statusZgodbe ?>)</b></div>
+            <div class="card-subtitle text-muted"><b>Odgovorna oseba: Janez Novak</b></div>
+            <div class="card-subtitle text-muted"><b>Prioriteta: <?php echo $prioriteta ?> | Poslovna vrednost: <?php echo $poslovnaVrednost ?></b></div>
         </div>
-        <button class="btn btn-sm btn-outline-primary">Edit</button>
+        <?php echo view('partials/formInput', ['type' => 'hidden', 'id' => $idZgodbe, 'value'=>'', 'label'=>''])?>
+        <div>
+            <button class="btn btn-sm btn-outline-dark"><b>Uredi</b></button>
+            <form action="/sprint/dodajzgodbo" method="post">
+                <button class="btn btn-sm btn-outline-dark" ><b>Dodaj v sprint</b></button>
+            </form>
+        </div>
+
     </div>
-    <div class="card-body">
-        <div class="card-text">This is where the description of the card is written.</div>
-        <hr>
-        <div class="card-text">
-            # Test 1 <br>
-            # Test 2 <br>
-            # Test 3 <br>
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs" role="tablist" id="navtab">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-main" type="button" role="tab">Splošno</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-tasks" type="button" role="tab">Naloge</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body tab-content" id="tabContent">
+        <div class="tab-pane fade show active" id="nav-main" role="tabpanel">
+            <p><?php echo $besedilo ?></p>
+            <ul style="list-style-type:none;">
+            <!-- Sprejemni testi -->
+                <li style="color: mediumblue"># <?php echo $sprejemniTesti?></li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="nav-tasks" role="tabpanel">
+            <ul class="list-group">
+                <li class="list-group-item">Task 1</li>
+                <li class="list-group-item">Task 2</li>
+                <li class="list-group-item"><b>Dodaj nalogo</b></li>
+            </ul>
         </div>
     </div>
     <div class="card-footer">
-        <div class="card-subtitle"><b>Tasks</b> (all/completed): <b> 3/0 | Work</b> (spent/remaining): <b>0h / 18h</b></div>
+        <div class="card-subtitle"><b>Sprint: </b></div>
+        <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </div>
+        <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></div>
     </div>
 </card>
