@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 <div class="container project-box">
-
+<!-- Fuck this -->
     <div class="row">
         <div class="col-lg-6 card card-header">
             <div class="d-flex justify-content-between align-items-center">
