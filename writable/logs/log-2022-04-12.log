@@ -85,3 +85,33 @@ CRITICAL - 2022-04-12 13:50:58 --> Call to a member function getResultArray() on
 #3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2022-04-12 14:06:59 --> Array to string conversion
+#0 C:\xampp\htdocs\smrpo\app\Views\partials\storyCard.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('partials/storyC...', Array, true)
+#4 C:\xampp\htdocs\smrpo\app\Views\subpages\projekti\backlog.php(26): view('partials/storyC...', Array)
+#5 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/projek...', Array, true)
+#8 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(35): view('subpages/projek...', Array)
+#9 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->backlog()
+#10 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#11 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-04-12 14:07:32 --> Undefined index: 
+#0 C:\xampp\htdocs\smrpo\app\Views\partials\storyCard.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('partials/storyC...', Array, true)
+#4 C:\xampp\htdocs\smrpo\app\Views\subpages\projekti\backlog.php(26): view('partials/storyC...', Array)
+#5 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/projek...', Array, true)
+#8 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(35): view('subpages/projek...', Array)
+#9 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->backlog()
+#10 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#11 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
