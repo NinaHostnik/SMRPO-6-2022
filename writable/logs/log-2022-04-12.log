@@ -1,0 +1,87 @@
+CRITICAL - 2022-04-12 12:11:59 --> Undefined variable: data
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-12 12:12:57 --> Undefined variable: data
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-12 12:13:27 --> Undefined variable: data
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-12 12:15:54 --> Undefined variable: data
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-12 12:16:05 --> Undefined variable: data
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-12 13:41:48 --> Undefined variable: zgodbe
+#0 C:\xampp\htdocs\smrpo\app\Views\subpages\sprint\backlog.php(6): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/sprint...', Array, true)
+#4 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(52): view('subpages/sprint...', Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-12 13:48:12 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\smrpo\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\smrpo\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(48): CodeIgniter\Model->__call('pridobiZgodbeSp...', Array)
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-04-12 13:49:03 --> Unknown column 'idSprinta' in 'where clause'
+CRITICAL - 2022-04-12 13:49:03 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(48): App\Models\UporabniskeZgodbeModel->pridobiZgodbeSprinta('4')
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-04-12 13:50:05 --> Unknown column 'idSprinta' in 'where clause'
+CRITICAL - 2022-04-12 13:50:05 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(48): App\Models\UporabniskeZgodbeModel->pridobiZgodbeSprinta('4')
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-04-12 13:50:45 --> Unknown column 'idSprinta' in 'where clause'
+CRITICAL - 2022-04-12 13:50:45 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(48): App\Models\UporabniskeZgodbeModel->pridobiZgodbeSprinta('4')
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-04-12 13:50:58 --> Unknown column 'idSprinta' in 'where clause'
+CRITICAL - 2022-04-12 13:50:58 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(49): App\Models\UporabniskeZgodbeModel->pridobiZgodbeSprinta('4')
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

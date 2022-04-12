@@ -12,8 +12,11 @@ class CardTableController extends BaseController
 
         $uri = service('uri');
         $id = $uri->getSegment('2');
+        $model = new ProjectModel();
+        $project = $model->find($id);
         $data = [
-            'projectId'=>$id
+            'projectId'=>$id,
+            'projectName'=>$project['ime']
         ];
         session()->set($data);
 

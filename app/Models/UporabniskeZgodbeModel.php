@@ -61,4 +61,10 @@ class UporabniskeZgodbeModel extends Model{
         $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE idProjekta = ".$idProjekta);
         return $query->getResultArray();
     }
+
+    function pridobiZgodbeSprinta($idSprinta){
+        $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE sprint = ".$idSprinta);
+        var_dump($query);
+        return $query->getResultArray();
+    }
 }
