@@ -34,7 +34,6 @@ class SprintController extends BaseController
                 break;
             }
         endforeach;
-        var_dump($trenutnisprint);
         $zgodbemodel = new UporabniskeZgodbeModel();
         if($nezakjucensprint == null){
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($trenutnisprint['idSprinta']);
@@ -43,6 +42,10 @@ class SprintController extends BaseController
                 'nezakjucen'=>false,
                 'zgodbe'=>$zgodbe,
             ];
+            if(session()->has('popup')){
+                $popupdata = ['popup' => session()->getFlashdata('popup')];
+                echo view('partials/popup',$popupdata);
+            }
             echo view('subpages/sprint/backlog', $data);        }
         else{
             var_dump($nezakjucensprint['idSprinta']);
@@ -63,6 +66,54 @@ class SprintController extends BaseController
     }
 
     public function dodajZgodbo(){
+        $idZgodbe = $this->request->getVar('surname');
+        $model = new SprintiModel();
+        $sprints = $model->getSprints(session()->get("projectId"));
+        $trenutnisprint = null;
+        $nezakjucensprint = null;
+
+        $date_now = new DateTime();
+        #var_dump($sprints);
+        foreach ($sprints as $sprint):
+            $sprintstart = new DateTime($sprint['zacetniDatum']);
+            $sprintend = new DateTime($sprint['koncniDatum']);
+
+            if($sprintend<$date_now && $sprint['trenutniStatus']!='zakjucen'){
+                $nezakjucensprint = $sprint;
+                break;
+            }
+
+            if($sprintend>$date_now && $sprintstart<=$date_now){
+                $trenutnisprint=$sprint;
+                break;
+            }
+        endforeach;
+        $zgodbemodel = new UporabniskeZgodbeModel();
+        if($nezakjucensprint == null){
+            $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($trenutnisprint['idSprinta']);
+
+            $prabljencas = 0;
+            foreach ($zgodbe as $zgodba):
+                $prabljencas=$prabljencas+$zgodba['casovnaZahtevnost'];
+            endforeach;
+            $dodanazgodba = $zgodbemodel->find($idZgodbe);
+            if($prabljencas+$dodanazgodba['casovnaZahtevnost'] <= $trenutnisprint['hitrost']){
+                $zgodbemodel->update(['sprint'=>$trenutnisprint['idSprinta']]);
+                session()->setFlashdata(['popup'=>'uspešno']);
+                return redirect()->to('/uspesno');
+
+            }
+            else{
+                session()->setFlashdata(['popup'=>'hitrost sprinta premajhna']);
+                return redirect()->to('/Sbacklog');
+
+            }
+
+
+        }
+        else{
+            return redirect()->to('/Sbacklog');
+        }
 
     }
 }
