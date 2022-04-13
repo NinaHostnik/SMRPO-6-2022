@@ -26,8 +26,8 @@ class UporabniskeZgodbeModel extends Model{
     function preveriCeJeZeIme(string $naslov, $idProjekta){  #ce je ze ime v bazi vrne true
         $table = 'uporabniskeZgodbe';
         $query=$this->db-> query("SELECT * FROM ".$table." WHERE UPPER(naslov)=UPPER('". $naslov."') AND idProjekta = ".$idProjekta);
-        $id = $query->getResultArray();
-        if($id==NULL){
+        $rezultatiQuery = $query->getResultArray();
+        if($rezultatiQuery==NULL){
             return false;
         }
         return true;
