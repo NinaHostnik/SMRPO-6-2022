@@ -7,7 +7,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h4>Nerealizirane zgodbe</h4>
                 <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'V') > -1 || strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
-                <button class="btn btn-outline-light gradient-custom-2">Nova zgodba</button>
+                    <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeUporabniskihZgodb">Nova zgodba</a>
                 <?php } ?>
             </div>
         </div>
