@@ -37,10 +37,12 @@ class SprintController extends BaseController
         $zgodbemodel = new UporabniskeZgodbeModel();
         if($nezakjucensprint == null){
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($trenutnisprint['idSprinta']);
+            $zgodberework = $this->pridobizgodbe($zgodbe);
+
             $data = [
                 'sprint'=>$trenutnisprint,
                 'nezakjucen'=>false,
-                'zgodbe'=>$zgodbe,
+                'zgodbe'=>$zgodberework,
             ];
             if(session()->has('popup')){
                 $popupdata = ['popup' => session()->getFlashdata('popup')];
@@ -50,10 +52,12 @@ class SprintController extends BaseController
         else{
             var_dump($nezakjucensprint['idSprinta']);
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($nezakjucensprint['idSprinta']);
+            $zgodberework = $this->pridobizgodbe($zgodbe);
+
             $data = [
                 'sprint'=>$nezakjucensprint,
                 'nezakjucen'=>true,
-                'zgodbe'=>$zgodbe,
+                'zgodbe'=>$zgodberework,
             ];
             $popupdata = ['popup' => 'Zakjučite sprint preden začete novega'];
             echo view('partials/popup',$popupdata);
