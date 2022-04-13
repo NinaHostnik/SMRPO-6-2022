@@ -39,3 +39,29 @@
     </form>
 </div>
 <?= $this->endSection() ?>
+
+<script>
+    var addedTests = {};
+
+    function dodajTest() {
+            var izbraniUporabnik = uporabnikiSelect.selectedOptions[0].outerText;
+            var izbranaVloga = vlogeSelect.selectedOptions[0].outerText;
+            var vlogaId = vlogeSelect.value;
+            var izbraniId = vlogaId === 'V' ? uporabnikiSelect.value : uporabnikiSelect.value + '/' + vlogaId;
+            if (!check(vlogaId, uporabnikiSelect.value, izbraniId)) {
+                alert("Izbrani uporabnik je že bil dodan.");
+            } else if (izbranaVloga.includes('produktni vodja') && exists(addedUsers, 'produktni vodja')) {
+                alert("V projektu lahko obstaja le en produktni vodja.");
+            } else if (izbranaVloga.includes('skrbnik metodologije') && exists(addedUsers, 'skrbnik metodologije')) {
+                alert("V projektu lahko obstaja le en skrbnik metodologije.");
+            } else {
+                addedUsers[izbraniId] = {izbraniUporabnik, izbranaVloga, vlogaId};
+                hiddenList.value = JSON.stringify(addedUsers);
+                document.getElementById('seznamUporabnikov').innerHTML += '<tr id=' + izbraniId + '><td>' + izbraniUporabnik + '</td>' +
+                    '<td>' + izbranaVloga + '</td>' +
+                    '<td><button type="button" class="btn btn-primary" onclick="odstraniUporabnika(' + izbraniId + ')">Odstrani</button></td></tr>';
+                uporabnikiSelect.selectedIndex = 0;
+                vlogeSelect.selectedIndex = 0;
+            }
+    }
+</script>

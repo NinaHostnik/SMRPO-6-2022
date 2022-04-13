@@ -45,7 +45,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $prioriteta=$this->request->getVar('prioriteta');
             $sprejemniTesti=$this->request->getVar('sprejemniTesti');
             $poslovnaVrednost=$this->request->getVar('poslovnaVrednost');
-            $idProjekta=$uri->getSegment('2');
+            $idProjekta=session()->get('projectId');
             $idOsebe=$this->request->getVar('idOsebe');
             $zeIme=$model->preveriCeJeZeIme($ime, $idProjekta);
             $zgodba=[
@@ -152,7 +152,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                     if($lahkoZapise){
                         echo $model->zapisiVBazo($zgodba);
                         session()->setFlashdata(['feedback' => 'zgodba']);
-                        return redirect()->to('/cardTable/'.$idProjekta);
+                        return redirect()->to('/Pbacklog');
                     }
                     else{
                         echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");
@@ -160,7 +160,8 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                 }
             }
         } else {
-            $data["ime"]= '#'.$model->pridobiZaporednoSt($uri->getSegment('2')).':';
+            #$data["ime"]= '#'.$model->pridobiZaporednoSt($uri->getSegment('2')).':';
+            $data["ime"]=NULL;
             $data["besedilo"]=NULL;
             $data["sprejemniTesti"]=NULL;
             $data["poslovnaVrednost"]=NULL;
@@ -169,7 +170,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $data["shouldHave"]=NULL;
             $data["couldHave"]=NULL;
             $data["wontHave"]=NULL;
-            $data["idProjekta"] = $uri->getSegment('2');
+            $data["idProjekta"] = session()->get('projectId');
             #$data["idProjekta"]=7;
             $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
