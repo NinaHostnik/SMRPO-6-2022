@@ -78,19 +78,25 @@
         <div class="tab-pane fade" id="nav-tasks-<?php echo $idZgodbe?>" role="tabpanel">
             <ul class="list-group">
                 <!-- TODO: Write out current tasks. -->
-                <!-- TODO: Add modal with task information onclick. -->
-                <!-- TODO: Write designated member. -->
-                <!-- TODO: Add edit task button. (includes delete and assign) -->
-                <!-- TODO: Add an accept/reject task button. -->
+                <?php foreach ($naloge as $naloga):?>
+
                 <li class="list-group-item">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="card-text">Task 1</h6>
-                            <p class="card-text text-primary">Some name</p>
+                            <h6 class="card-text"><?php echo $naloga['opis_naloge'] ?></h6>
+                            <p class="card-text text-primary"><?php echo $naloga['clan_ekipe_name'] ?></p>
                         </div>
                         <button class="btn btn-sm btn-outline-dark float-end">Uredi</button>
                     </div>
                 </li>
+
+                <?php endforeach;?>
+
+                <!-- TODO: Add modal with task information onclick. -->
+                <!-- TODO: Write designated member. -->
+                <!-- TODO: Add edit task button. (includes delete and assign) -->
+                <!-- TODO: Add an accept/reject task button. -->
+
                 <!-- TODO: 'Dodaj nalogo' opens a modal form for adding a task when clicked on -->
                 <li id="addTask" class="list-group-item" data-bs-toggle="modal" data-bs-target="#addTask-<?php echo $idZgodbe ?>">
                     <b>(+) Dodaj nalogo</b>

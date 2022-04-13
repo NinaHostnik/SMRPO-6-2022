@@ -26,8 +26,34 @@ class ProjectsController extends BaseController
 
     public function backlog(){
         $model = new UporabniskeZgodbeModel();
+        $modelnaloge = new NalogeModel();
+        $modelusers = new UserModel();
+
+        $users = $modelusers->findAll();
         #var_dump(session()->get("projectId"));
         $zgodbe = $model->pridobiZgodbe(session()->get("projectId"));
+        $i = 0;
+        foreach ($zgodbe as $zgodba){
+            $naloge = $modelnaloge->pridobiNalogeZgodbe($zgodbe[$i]['idZgodbe']);
+            #var_dump($naloge);
+            #echo '<br>';
+
+            if($naloge != null){
+                $indexnaloge = 0;
+                foreach ($naloge as $naloga){
+                    if(isset($naloge[$i]['clan_ekipe'])){
+                        $naloge[$indexnaloge]['clan_ekipe_name'] = ($modelusers->find($naloge[$indexnaloge]['clan_ekipe']))['username'];
+                    }
+                    $indexnaloge = $indexnaloge +1;
+                }
+                $zgodbe[$i]["naloge"] = $naloge;
+            }
+            else{
+                $zgodbe[$i]["naloge"] = [];
+            }
+            $i = $i+1;
+        }
+        #var_dump($zgodbe);
         $data = [
             'zgodbe'=>$zgodbe,
         ];
@@ -50,6 +76,8 @@ class ProjectsController extends BaseController
             'potrjen' => 'N',
         ];
         $model->save($newdata);
+        session()->setFlashdata(['popup'=>'naloga uspešno dodana']);
+        return redirect()->to('/Pbacklog');
 
     }
 
