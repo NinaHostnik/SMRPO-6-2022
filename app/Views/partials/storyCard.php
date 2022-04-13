@@ -6,10 +6,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/Pbacklog/dodajzgodbo" method="post">
+                    <?php echo view('partials/formInput', ['type'=>'hidden', 'id'=>'idZgodbe', 'value'=>$idZgodbe, 'label'=>'Naloga']) ?>
                     <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskName', 'value'=>'', 'label'=>'Naloga']) ?>
+                    <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskTime', 'value'=>'', 'label'=>'Časovna zahtevnost']) ?>
+                    <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskMember', 'value'=>'', 'label'=>'Zadolženi član']) ?>
                     <!-- TODO: Add select to assign a team member -->
-
                     <?php echo view('partials/formButton', ['name'=>'Dodaj nalogo']) ?>
                 </form>
             </div>

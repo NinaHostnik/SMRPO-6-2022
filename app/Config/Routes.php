@@ -48,6 +48,7 @@ $routes->match(['get','post'], '/sprint/dodajzgodbo', 'SprintController::dodajZg
 $routes->match(['get','post'], '/sprint', 'SprintController::backlog', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/MyTasks', 'MyTasksController::myTasks', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Sbacklog', 'SprintController::backlog', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/Pbacklog/dodajzgodbo', 'ProjectsController::dodajZgodbo', ['filter' => 'LoginAuth']);
 
 
 
