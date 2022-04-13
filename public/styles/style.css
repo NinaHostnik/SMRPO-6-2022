@@ -10,8 +10,8 @@
     background-color: #2b2c2e; !important;
 }
 
-.inSprint{
-    background: lightskyblue; !important;
+#addTask:hover {
+    background-color: #cccccc;
 }
 
 .project_card{
