@@ -98,6 +98,8 @@ class UsersController extends BaseController
                     $userroles = $projectsmodel->getrole($user['id']);
                     $this->setUserSession($user,$userroles);
 
+
+
                     $newprofile = [
                         'lastLogin' => time(),
                     ];
@@ -107,7 +109,7 @@ class UsersController extends BaseController
                         return redirect()->to('/ponastavitevGesa');
                     }
 
-                    //return redirect()->to('/projekti');
+                    return redirect()->to('/projekti');
                 }
 
             } else {

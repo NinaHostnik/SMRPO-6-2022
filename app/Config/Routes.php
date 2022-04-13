@@ -43,6 +43,11 @@ $routes->match(['get','post'], '/cardTable/(:num)', 'CardTableController::cardTa
 $routes->match(['get','post'], '/dodajanjeSprintov/(:num)', 'DodajanjeSprintovController::dodajanjeSprinta', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/odjava', 'UsersController::odjava', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ponastavitevGesa', 'UsersController::ponastavitev', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/Pbacklog', 'ProjectsController::backlog', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/sprint/dodajzgodbo', 'SprintController::dodajZgodbo', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/sprint', 'SprintController::backlog', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/MyTasks', 'MyTasksController::myTasks', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/Sbacklog', 'SprintController::backlog', ['filter' => 'LoginAuth']);
 
 
 

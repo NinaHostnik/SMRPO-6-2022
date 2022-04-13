@@ -63,4 +63,17 @@ class SprintiModel extends Model{
             return true;
         }
     }
+
+    public function getSprints($projectId): array
+    {
+        $query = $this->db->query("
+            SELECT *
+            FROM sprinti
+            WHERE idProjekta = ?
+        ",array($projectId));
+
+        return $query->getResultArray();
+    }
+
+
 }

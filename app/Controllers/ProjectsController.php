@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ProjectModel;
+use App\Models\UporabniskeZgodbeModel;
 use App\Models\UserModel;
 
 class ProjectsController extends BaseController
@@ -21,6 +22,17 @@ class ProjectsController extends BaseController
         }
 
         echo view('subpages/projekti/projects', $data);
+    }
+
+    public function backlog(){
+        $model = new UporabniskeZgodbeModel();
+        #var_dump(session()->get("projectId"));
+        $zgodbe = $model->pridobiZgodbe(session()->get("projectId"));
+        $data = [
+            'zgodbe'=>$zgodbe,
+        ];
+        #var_dump($data);
+        echo view('subpages/projekti/backlog',$data);
     }
 
 }
