@@ -36,6 +36,16 @@ class DodajanjeUporabniskihZgodbController extends BaseController
         echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
     }
     */
+    public function preberiSprejemne($stTestov){
+        $izhodniString=$this->request->getVar('sprejemniTest0');
+        for ($i=1; $i<=$stTestov; $i++){
+            $test=$this->request->getVar('sprejemniTest'.$i);
+            if($test!=NULL){
+                $izhodniString=$izhodniString.' ;'.$test;
+            } 
+        }
+        return $izhodniString;
+    } 
     public function dodajanjeZgodbe(){
         $uri = service('uri');
         $model=new UporabniskeZgodbeModel();
@@ -43,7 +53,8 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $ime=$this->request->getVar('zgodbaIme');
             $besedilo=$this->request->getVar('zgodbaBesedilo');
             $prioriteta=$this->request->getVar('prioriteta');
-            $sprejemniTesti=$this->request->getVar('sprejemniTesti');
+            $stSprejemnihTestov=$this->request->getVar('stSprejemnihTestov');
+            $sprejemniTesti=$this->preberiSprejemne($stSprejemnihTestov);
             $poslovnaVrednost=$this->request->getVar('poslovnaVrednost');
             $idProjekta=session()->get('projectId');
             $idOsebe=$this->request->getVar('idOsebe');
@@ -176,5 +187,5 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $data["opozorilo"]=NULL;
             echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
         }
-    }       
+    }      
 }
