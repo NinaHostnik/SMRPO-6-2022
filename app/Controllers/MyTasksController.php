@@ -2,10 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\UporabniskeZgodbeModel;
+
 class MyTasksController extends BaseController
 {
     public function myTasks() {
-        $data = [];
-        echo view('subpages/projekti/myTasks', $data);
+        $model = new UporabniskeZgodbeModel();
+        $zgodbe = $model->pridobiZgodbe(session()->get("projectId"));
+        $zgodberework = $this->pridobizgodbe($zgodbe);
+        $data = [
+            'zgodbe'=>$zgodberework,
+        ];
+        echo view('subpages/projekti/myTasks',$data);
     }
 }

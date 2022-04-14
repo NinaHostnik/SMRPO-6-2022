@@ -22,19 +22,22 @@
         <div class="col-lg-6 card card-body">
             <!-- TODO: Write only stories that are not marked as 'done' -->
             <?php foreach ($zgodbe as $zgodba): ?>
+            <?php if ($zgodba['statusZgodbe'] != 'zakljucen') { ?>
             <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
                      'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
                      'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'] ]) ?>
+            <?php } ?>
             <?php endforeach; ?>
         </div>
         <div class="col-lg-6 card card-body">
-            <!-- TODO: Write only stories that are marked as 'done' -->
             <?php foreach ($zgodbe as $zgodba): ?>
+                <?php if ($zgodba['statusZgodbe'] == 'zakljucen') { ?>
                 <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
                      'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
                      'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'] ]) ?>
+                <?php } ?>
             <?php endforeach; ?>
         </div>
     </div>
