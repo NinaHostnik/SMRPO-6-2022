@@ -43,6 +43,7 @@ class SprintController extends BaseController
                 'sprint'=>$trenutnisprint,
                 'nezakjucen'=>false,
                 'zgodbe'=>$zgodberework,
+                'uporabniki'=>$this->pridobiUporabnike(),
             ];
             if(session()->has('popup')){
                 $popupdata = ['popup' => session()->getFlashdata('popup')];
@@ -58,6 +59,7 @@ class SprintController extends BaseController
                 'sprint'=>$nezakjucensprint,
                 'nezakjucen'=>true,
                 'zgodbe'=>$zgodberework,
+                'uporabniki'=>$this->pridobiUporabnike(),
             ];
             $popupdata = ['popup' => 'Zakjučite sprint preden začete novega'];
             echo view('partials/popup',$popupdata);

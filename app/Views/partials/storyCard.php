@@ -10,8 +10,15 @@
                     <?php echo view('partials/formInput', ['type'=>'hidden', 'id'=>'idZgodbe', 'value'=>$idZgodbe, 'label'=>'']) ?>
                     <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskName', 'value'=>'', 'label'=>'Naloga']) ?>
                     <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskTime', 'value'=>'', 'label'=>'Časovna zahtevnost']) ?>
-                    <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskMember', 'value'=>'', 'label'=>'Zadolženi član']) ?>
                     <!-- TODO: Add select to assign a team member -->
+                    <div class="form-outline mb-4">
+                        <select class="form-control" name="taskMember" id="taskMember">
+                        <?php foreach ($uporabniki as $uporabnik): ?>
+                            <option value=<?php echo $uporabnik['id'] ?>><?php echo $uporabnik['username'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
+                        <label for="taskMember">Zadolžen član</label>
+                    </div>
                     <?php echo view('partials/formButton', ['name'=>'Dodaj nalogo']) ?>
                 </form>
             </div>
