@@ -35,6 +35,23 @@
     </div>
 </div>
 
+<!-- Uredi časovno zahtevnost -->
+<div class="modal fade" id="editTime-<?php echo $idZgodbe?>">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Uredi časovno zahtevnost</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <?php echo view('partials/formInput', ['type'=>'number', 'id'=>'time', 'value'=>'', 'label'=>''])?>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <card class="card mb-1">
     <div class="card-header d-flex justify-content-between align-items-center" <?php if ($statusZgodbe == 'sprint') { echo 'style="background: lightskyblue;"';} ?>>
         <div>
@@ -106,7 +123,11 @@
         <?php if ($statusZgodbe == 'sprint') { ?>
             <div class="card-subtitle"><b>Sprint: <!-- TODO: Add sprint duration --></b></div>
         <?php } ?>
-        <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </div>
+        <?php if(strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
+            <a class="card-subtitle" data-bs-toggle="modal" data-bs-target="#editTime-<?php echo $idZgodbe?>"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </a>
+        <?php } else {?>
+            <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </div>
+        <?php } ?>
         <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></div>
         <!-- TODO: Reject and accept buttons that can only be seen in 'My tasks' when the story has been assigned but not accepted/rejected -->
     </div>
