@@ -13,6 +13,7 @@ class MyTasksController extends BaseController
         $data = [
             'zgodbe'=>$zgodberework,
         ];
+
         echo view('subpages/projekti/myTasks',$data);
     }
 }

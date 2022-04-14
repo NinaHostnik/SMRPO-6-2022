@@ -63,10 +63,6 @@ class SprintController extends BaseController
             echo view('partials/popup',$popupdata);
             echo view('subpages/sprint/backlog', $data);
         }
-
-
-
-
     }
 
     public function dodajZgodbo(){

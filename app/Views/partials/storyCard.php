@@ -49,7 +49,7 @@
             <?php if ($statusZgodbe != 'zakljucen') { ?>
                 <button class="btn btn-sm btn-outline-dark mb-1 float-end"><b>Uredi</b></button>
             <?php } ?>
-            <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
+            <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1 && $statusZgodbe != 'sprint') { ?>
             <form action="/sprint/dodajzgodbo" method="post">
                 <button class="btn btn-sm btn-outline-dark" ><b>Dodaj v sprint</b></button>
             </form>
