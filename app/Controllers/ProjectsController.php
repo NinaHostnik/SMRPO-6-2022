@@ -30,11 +30,9 @@ class ProjectsController extends BaseController
         $model = new UporabniskeZgodbeModel();
         $zgodbe = $model->pridobiZgodbe(session()->get("projectId"));
         $zgodberework = $this->pridobizgodbe($zgodbe);
-        #var_dump($zgodbe);
         $data = [
             'zgodbe'=>$zgodberework,
         ];
-        #var_dump($data);
         echo view('subpages/projekti/backlog',$data);
     }
 

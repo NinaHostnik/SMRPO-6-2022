@@ -50,7 +50,7 @@ class SprintController extends BaseController
             }
             echo view('subpages/sprint/backlog', $data);        }
         else{
-            var_dump($nezakjucensprint['idSprinta']);
+            # var_dump($nezakjucensprint['idSprinta']);
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($nezakjucensprint['idSprinta']);
             $zgodberework = $this->pridobizgodbe($zgodbe);
 
