@@ -134,7 +134,7 @@ class BaseController extends Controller
     {
         $usermodel = new UserModel();
         $users = $usermodel->readLookup();
-        var_dump($users);
+        #var_dump($users);
 
         return $users;
 
