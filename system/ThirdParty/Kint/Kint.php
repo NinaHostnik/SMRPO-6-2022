@@ -548,17 +548,17 @@ class Kint
      *
      * Functionally equivalent to Kint::dump(1) or Kint::dump(debug_backtrace())
      *
+     * @param mixed ...$args
+     *
      * @return int|string
      */
-    public static function dump()
+    public static function dump(...$args)
     {
         if (false === static::$enabled_mode) {
             return 0;
         }
 
         Utils::normalizeAliases(static::$aliases);
-
-        $args = \func_get_args();
 
         $call_info = static::getCallInfo(static::$aliases, \debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS), \count($args));
 
@@ -654,9 +654,9 @@ class Kint
     }
 
     /**
-     * Returns specific function call info from a stack trace Frame, or null if no match could be found.
+     * Returns specific function call info from a stack trace frame, or null if no match could be found.
      *
-     * @param array $frame The stack trace Frame in question
+     * @param array $frame The stack trace frame in question
      * @param int   $argc  The amount of arguments received
      *
      * @return null|array{parameters:array, modifiers:array} params and modifiers, or null if a specific call could not be determined
