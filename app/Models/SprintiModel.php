@@ -30,7 +30,6 @@ class SprintiModel extends Model{
             $returnDate = date("Y-m-d", strtotime($row[0]['kd'].'+1 day'));
         }
         // preveri ce je nedelja here
-        var_dump(date('l', strtotime($returnDate)));
         if (date('l', strtotime($returnDate)) == 'Sunday') {
             $returnDate = date("Y-m-d", strtotime($returnDate.'+1 day'));
         }

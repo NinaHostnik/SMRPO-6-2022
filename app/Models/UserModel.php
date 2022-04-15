@@ -10,7 +10,6 @@ class UserModel extends Model{
     protected $beforeUpdate = ['beforeUpdate'];
 
     protected function beforeInsert(array $data){
-        var_dump($data);
         //hash password
         $data = $this->passwordHash($data);
 

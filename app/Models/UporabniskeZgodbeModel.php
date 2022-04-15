@@ -64,7 +64,10 @@ class UporabniskeZgodbeModel extends Model{
 
     function pridobiZgodbeSprinta($idSprinta){
         $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE sprint = ".$idSprinta);
-        var_dump($query);
         return $query->getResultArray();
+    }
+
+    function saveTime($idZgodbe, $time) {
+        $query = $this->db-> query("UPDATE uporabniskeZgodbe SET casovnaZahtevnost =".$time."  WHERE idZgodbe = ".$idZgodbe);
     }
 }

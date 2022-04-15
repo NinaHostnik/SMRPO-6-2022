@@ -48,7 +48,6 @@ class UsersController extends BaseController
                     'permissions' => $this->request->getVar('permissions'),
                     'password' => $pass,
                 ];
-                var_dump($newdata);
                 $model->save($newdata);
 
                 $popupdata = ['popup' => 'Uporabnik je bil uspešno narejen.'];
