@@ -64,7 +64,6 @@ class UporabniskeZgodbeModel extends Model{
 
     function pridobiZgodbeSprinta($idSprinta){
         $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE sprint = ".$idSprinta);
-        var_dump($query);
         return $query->getResultArray();
     }
 }
