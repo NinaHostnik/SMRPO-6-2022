@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\NalogeModel;
+use App\Models\UporabniskeZgodbeModel;
+use App\Models\UserModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -76,10 +79,10 @@ class BaseController extends Controller
         ];
 
         foreach ($roles as $role):
-            $data['roles'] = array($role['project'] => $role['role']);
+            $data['roles'][$role['project']] = $role['role'];
         endforeach;
 
-        var_dump($data);
+        #var_dump($data['roles']);
         session()->set($data);
         return true;
     }
@@ -89,10 +92,51 @@ class BaseController extends Controller
         #var_dump($roles);
         $data = [];
         foreach ($roles as $role):
-            #session()->set(strval($role['project']), $role['role']);
-            $data['roles'] = array($role['project'] => $role['role']);
+            $data['roles'][$role['project']] = $role['role'];
         endforeach;
 
+        session()->set($data);
+
         return true;
+    }
+
+    public function pridobizgodbe($zgodbe){
+        $modelnaloge = new NalogeModel();
+        $modelusers = new UserModel();
+
+        $users = $modelusers->findAll();
+        #var_dump(session()->get("projectId"));
+        $i = 0;
+        foreach ($zgodbe as $zgodba){
+            $naloge = $modelnaloge->pridobiNalogeZgodbe($zgodbe[$i]['idZgodbe']);
+            #var_dump($naloge);
+            #echo '<br>';
+
+            if($naloge != null){
+                $indexnaloge = 0;
+                foreach ($naloge as $naloga){
+                    if(isset($naloge[$i]['clan_ekipe'])){
+                        $naloge[$indexnaloge]['clan_ekipe_name'] = ($modelusers->find($naloge[$indexnaloge]['clan_ekipe']))['username'];
+                    }
+                    $indexnaloge = $indexnaloge +1;
+                }
+                $zgodbe[$i]["naloge"] = $naloge;
+            }
+            else{
+                $zgodbe[$i]["naloge"] = [];
+            }
+            $i = $i+1;
+        }
+        return $zgodbe;
+    }
+
+    public function pridobiUporabnike()
+    {
+        $usermodel = new UserModel();
+        $users = $usermodel->readLookup();
+        var_dump($users);
+
+        return $users;
+
     }
 }

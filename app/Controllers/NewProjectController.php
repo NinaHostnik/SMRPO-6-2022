@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\ProjectMembersModel;
 use App\Models\ProjectModel;
 use App\Models\UserModel;
 
@@ -30,6 +31,11 @@ class NewProjectController extends BaseController
                 $projectName = $this->request->getVar('projectName');
                 $projectDescription = $this->request->getVar('projectDescription');
                 $error = $pmodel->callStoringProcedure($projectName, $projectDescription, $users, $roles);
+
+                $projectsmembermodel = new ProjectMembersModel();
+                $userroles = $projectsmembermodel->getrole(session()->get('id'));
+                $this->setUserSessionRoles($userroles);
+
                 if (!$error) {
                     session()->setFlashdata(['feedback' => 'projekt']);
                     (new ProjectsController)->allProjects();

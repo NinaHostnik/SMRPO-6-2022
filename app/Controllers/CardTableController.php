@@ -12,9 +12,13 @@ class CardTableController extends BaseController
 
         $uri = service('uri');
         $id = $uri->getSegment('2');
+        $model = new ProjectModel();
+        $project = $model->find($id);
         $data = [
-            'id'=>$id
+            'projectId'=>$id,
+            'projectName'=>$project['ime']
         ];
+        session()->set($data);
 
         $feedbackAlert = session()->get('feedback');
 
@@ -26,6 +30,6 @@ class CardTableController extends BaseController
             echo view('partials/popup', $popupdata);
         }
 
-        echo view('subpages/cardTable/cardTable', $data);
+        return redirect()->to('/Pbacklog');
     }
 }

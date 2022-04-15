@@ -26,8 +26,8 @@ class UporabniskeZgodbeModel extends Model{
     function preveriCeJeZeIme(string $naslov, $idProjekta){  #ce je ze ime v bazi vrne true
         $table = 'uporabniskeZgodbe';
         $query=$this->db-> query("SELECT * FROM ".$table." WHERE UPPER(naslov)=UPPER('". $naslov."') AND idProjekta = ".$idProjekta);
-        $id = $query->getResultArray();
-        if($id==NULL){
+        $rezultatiQuery = $query->getResultArray();
+        if($rezultatiQuery==NULL){
             return false;
         }
         return true;
@@ -55,5 +55,16 @@ class UporabniskeZgodbeModel extends Model{
         $query = $this->db-> query("SELECT COUNT(*) + 1 AS c from uporabniskeZgodbe WHERE idProjekta = ".$idProjekta);
         $result = $query->getResultArray()[0]['c'];
         return $result;
+    }
+
+    function pridobiZgodbe($idProjekta){
+        $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE idProjekta = ".$idProjekta);
+        return $query->getResultArray();
+    }
+
+    function pridobiZgodbeSprinta($idSprinta){
+        $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE sprint = ".$idSprinta);
+        var_dump($query);
+        return $query->getResultArray();
     }
 }

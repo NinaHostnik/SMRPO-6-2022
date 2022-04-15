@@ -36,6 +36,16 @@ class DodajanjeUporabniskihZgodbController extends BaseController
         echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
     }
     */
+    public function preberiSprejemne($stTestov){
+        $izhodniString=$this->request->getVar('sprejemniTest0');
+        for ($i=1; $i<=$stTestov; $i++){
+            $test=$this->request->getVar('sprejemniTest'.$i);
+            if($test!=NULL){
+                $izhodniString=$izhodniString.' ;'.$test;
+            } 
+        }
+        return $izhodniString;
+    } 
     public function dodajanjeZgodbe(){
         $uri = service('uri');
         $model=new UporabniskeZgodbeModel();
@@ -43,9 +53,10 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $ime=$this->request->getVar('zgodbaIme');
             $besedilo=$this->request->getVar('zgodbaBesedilo');
             $prioriteta=$this->request->getVar('prioriteta');
-            $sprejemniTesti=$this->request->getVar('sprejemniTesti');
+            $stSprejemnihTestov=$this->request->getVar('stSprejemnihTestov');
+            $sprejemniTesti=$this->preberiSprejemne($stSprejemnihTestov);
             $poslovnaVrednost=$this->request->getVar('poslovnaVrednost');
-            $idProjekta=$uri->getSegment('2');
+            $idProjekta=session()->get('projectId');
             $idOsebe=$this->request->getVar('idOsebe');
             $zeIme=$model->preveriCeJeZeIme($ime, $idProjekta);
             $zgodba=[
@@ -152,7 +163,7 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                     if($lahkoZapise){
                         echo $model->zapisiVBazo($zgodba);
                         session()->setFlashdata(['feedback' => 'zgodba']);
-                        return redirect()->to('/cardTable/'.$idProjekta);
+                        return redirect()->to('/Pbacklog');
                     }
                     else{
                         echo("Nimate dostopa do zapisa, kontaktirajte projektnega vodjo/skrbnika metodologije");
@@ -160,7 +171,8 @@ class DodajanjeUporabniskihZgodbController extends BaseController
                 }
             }
         } else {
-            $data["ime"]= '#'.$model->pridobiZaporednoSt($uri->getSegment('2')).':';
+            #$data["ime"]= '#'.$model->pridobiZaporednoSt($uri->getSegment('2')).':';
+            $data["ime"]=NULL;
             $data["besedilo"]=NULL;
             $data["sprejemniTesti"]=NULL;
             $data["poslovnaVrednost"]=NULL;
@@ -169,11 +181,11 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $data["shouldHave"]=NULL;
             $data["couldHave"]=NULL;
             $data["wontHave"]=NULL;
-            $data["idProjekta"] = $uri->getSegment('2');
+            $data["idProjekta"] = session()->get('projectId');
             #$data["idProjekta"]=7;
             $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
             echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
         }
-    }       
+    }      
 }

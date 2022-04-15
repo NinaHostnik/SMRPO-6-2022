@@ -1,7 +1,19 @@
 <?= $this->extend('layouts/frame') ?>
 
 <?= $this->section('content') ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+    var i=1;
+    function dodajVrstico(){
+        document.getElementById("stSprejemnihTestov").value = i;
+        $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="sprejemniTest'+i+'" placeholder="Vnesite sprejemni test" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+        i++;
+    }
+    $(document).on('click', '.btn_remove', function(){  
+           var button_id = $(this).attr("id");   
+           $('#row'+button_id+'').remove();  
+      });  
+ </script>
 <div class="container content-box">
     <form class="form-control" method="post">
         <?php echo $opozorilo?>
@@ -15,7 +27,15 @@
         <textarea class="form-control" name="zgodbaBesedilo" id="zgodbaBesedilo" rows="10" maxlength="8000"><?php echo $besedilo?></textarea>
         </div>
         <!-- Sprejemni testi input -->
-        <?php echo view("partials/formInput",['label'=>'Sprejemni Testi', "id"=>"sprejemniTesti", 'type'=>'text','value'=>$sprejemniTesti])?>
+        <!-- <#?php echo view("partials/formInput",['label'=>'Sprejemni Testi', "id"=>"sprejemniTesti", 'type'=>'text','value'=>$sprejemniTesti])?> -->
+        <div class="table-responsive">  
+            <table class="table table-bordered" id="dynamic_field">  
+                <tr>  
+                    <td><input type="text" name="sprejemniTest0" placeholder="Vnesite sprejemni test" class="form-control name_list" /></td>  
+                    <td><button type="button" name="add" id="add" class="btn btn-success" onclick="dodajVrstico()">Add More</button></td>  
+                </tr>  
+            </table>
+        </div>  
         <!-- Prioriteta input -->
         <select id="prioriteta" name="prioriteta">
             <option value="" <?php echo $default?> hidden>Prioriteta</option>
@@ -31,6 +51,7 @@
         <label for="poslovnaVrednost">Poslovna vrednost</label>
         <!--hidden input field za id projekta -->
         <input type="hidden" id="idProjekta" name="idProjekta" value=<?php echo $idProjekta?>>
+        <input type="hidden" id="stSprejemnihTestov" name="stSprejemnihTestov" value="0">
         <!--hidden input field za id osebe -->
         <input type="hidden" id="idOsebe" name="idOsebe" value=<?php echo $idOsebe?>>
         <!-- Submit button -->
