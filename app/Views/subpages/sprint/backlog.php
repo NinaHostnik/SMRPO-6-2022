@@ -18,15 +18,16 @@
     </div>
     <div class="row">
         <div class="col-lg-6 card card-body">
-            <?php foreach ($zgodbe as $zgodba): ?>
+            <?php foreach ($zgodbeInProgress as $zgodbaP): ?>
                 <?php echo view('partials/storyCard',
-                    ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
-                        'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
-                        'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'],'naloge'=>$zgodba['naloge'],'uporabniki'=>$uporabniki ]) ?>
+                    ['naslov'=>$zgodbaP['naslov'], 'statusZgodbe'=>$zgodbaP['statusZgodbe'], 'prioriteta'=>$zgodbaP['prioriteta'], 'poslovnaVrednost'=>$zgodbaP['poslovnaVrednost'], 'idZgodbe'=>$zgodbaP['idZgodbe'],
+                        'besedilo'=>$zgodbaP['besedilo'], 'sprejemniTesti'=>$zgodbaP['sprejemniTesti'],
+                        'casovnaZahtevnost'=>$zgodbaP['casovnaZahtevnost'],'naloge'=>$zgodbaP['naloge'],'uporabniki'=>$uporabniki ]) ?>
             <?php endforeach; ?>
         </div>
         <div class="col-lg-6 card card-body">
             <!-- TODO: Show stories that are in the sprint and have all tasks complete -->
+
         </div>
     </div>
 </div>

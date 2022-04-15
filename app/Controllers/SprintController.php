@@ -55,11 +55,31 @@ class SprintController extends BaseController
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($nezakjucensprint['idSprinta']);
             $zgodberework = $this->pridobizgodbe($zgodbe);
 
+            # separate stories into inProgress and acceptanceReady
+            $accReady = [];
+            $inProgress = [];
+            foreach($zgodberework as $zg):
+                $stAll = count($zg['naloge']);
+                $stDone = 0;
+                foreach ($zg['naloge'] as $naloga):
+                    var_dump($naloga);
+                    if ($naloga['dokoncan'] === 'D') {
+                        $stDone += 1;
+                    }
+                endforeach;
+                if ($stAll === $stDone) {
+                    $accReady += $zg;
+                } else {
+                    $inProgress += $zg;
+                }
+            endforeach;
+
             $data = [
-                'sprint'=>$nezakjucensprint,
-                'nezakjucen'=>true,
-                'zgodbe'=>$zgodberework,
-                'uporabniki'=>$this->pridobiUporabnike(),
+                'sprint' => $nezakjucensprint,
+                'nezakjucen' => true,
+                'zgodbeAccReady' => $accReady,
+                'zgodbeInProgress' => $inProgress,
+                'uporabniki' => $this->pridobiUporabnike(),
             ];
             $popupdata = ['popup' => 'Zakjučite sprint preden začete novega'];
             echo view('partials/popup',$popupdata);

@@ -131,9 +131,9 @@
             <div class="card-subtitle"><b>Sprint: <!-- TODO: Add sprint duration --></b></div>
         <?php } ?>
         <?php if(strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
-            <a class="card-subtitle" data-bs-toggle="modal" data-bs-target="#editTime-<?php echo $idZgodbe?>"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </a>
+            <div class="card-subtitle" data-bs-toggle="modal" data-bs-target="#editTime-<?php echo $idZgodbe?>"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </div>
         <?php } else {?>
-            <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </div>
+            <div class="card-subtitle"><b>Časovna zahtevnost: </b><?php echo $casovnaZahtevnost ?></div>
         <?php } ?>
         <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></div>
         <!-- TODO: Reject and accept buttons that can only be seen in 'My tasks' when the story has been assigned but not accepted/rejected -->
