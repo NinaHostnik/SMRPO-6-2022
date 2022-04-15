@@ -39,19 +39,31 @@ if(session()->get('lastLogin')!=null) {
         </div>
     </ul>
 <?php // only show this part if we're in a project
-    if (session()->get('projectId') != null) { ?>
+    if (strpos(current_url(), 'Pbacklog') > -1 || strpos(current_url(), 'Sbacklog') > -1 || strpos(current_url(), 'MyTasks') > -1) { ?>
         <ul class="navbar navbar-light bg-secondary mt-0">
             <div class="container-fluid justify-content-start">
                 <span class="navbar-brand"><?php echo session()->get('projectName') ?></span>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="Pbacklog"><b>Seznam zahtev</b></a>
+                        <?php if (strpos(current_url(), 'Pbacklog') > -1) { ?>
+                            <a class="nav-link text-light" href="Pbacklog"><b>Seznam zahtev</b></a>
+                        <?php } else { ?>
+                            <a class="nav-link text-dark" href="Pbacklog"><b>Seznam zahtev</b></a>
+                        <?php } ?>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="Sbacklog"><b>Sprint</b></a>
+                        <?php if (strpos(current_url(), 'Sbacklog') > -1) { ?>
+                            <a class="nav-link text-light" href="Sbacklog"><b>Seznam zahtev</b></a>
+                        <?php } else { ?>
+                            <a class="nav-link text-dark" href="Sbacklog"><b>Seznam zahtev</b></a>
+                        <?php } ?>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="MyTasks"><b>Moje zgodbe</b></a>
+                        <?php if (strpos(current_url(), 'MyTasks') > -1) { ?>
+                            <a class="nav-link text-light" href="MyTasks"><b>Moje naloge</b></a>
+                        <?php } else { ?>
+                            <a class="nav-link text-dark" href="MyTasks"><b>Moje naloge</b></a>
+                        <?php } ?>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#"><b>Burn-Down</b></a>
@@ -59,8 +71,7 @@ if(session()->get('lastLogin')!=null) {
                 </ul>
             </div>
         </ul>
-<?php   }
-    ?>
+<?php   } ?>
 </nav>
 
 

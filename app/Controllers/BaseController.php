@@ -129,4 +129,14 @@ class BaseController extends Controller
         }
         return $zgodbe;
     }
+
+    public function pridobiUporabnike()
+    {
+        $usermodel = new UserModel();
+        $users = $usermodel->readLookup();
+        var_dump($users);
+
+        return $users;
+
+    }
 }

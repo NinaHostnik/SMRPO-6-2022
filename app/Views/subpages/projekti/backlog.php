@@ -26,7 +26,7 @@
             <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
                      'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
-                     'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'] ]) ?>
+                     'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'], 'uporabniki'=>$uporabniki ]) ?>
             <?php } ?>
             <?php endforeach; ?>
         </div>
@@ -36,7 +36,7 @@
                 <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
                      'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
-                     'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'] ]) ?>
+                     'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'],'uporabniki'=>$uporabniki ]) ?>
                 <?php } ?>
             <?php endforeach; ?>
         </div>

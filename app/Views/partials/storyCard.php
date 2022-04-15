@@ -10,8 +10,15 @@
                     <?php echo view('partials/formInput', ['type'=>'hidden', 'id'=>'idZgodbe', 'value'=>$idZgodbe, 'label'=>'']) ?>
                     <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskName', 'value'=>'', 'label'=>'Naloga']) ?>
                     <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskTime', 'value'=>'', 'label'=>'Časovna zahtevnost']) ?>
-                    <?php echo view('partials/formInput', ['type'=>'text', 'id'=>'taskMember', 'value'=>'', 'label'=>'Zadolženi član']) ?>
                     <!-- TODO: Add select to assign a team member -->
+                    <div class="form-outline mb-4">
+                        <select class="form-control" name="taskMember" id="taskMember">
+                        <?php foreach ($uporabniki as $uporabnik): ?>
+                            <option value=<?php echo $uporabnik['id'] ?>><?php echo $uporabnik['username'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
+                        <label for="taskMember">Zadolžen član</label>
+                    </div>
                     <?php echo view('partials/formButton', ['name'=>'Dodaj nalogo']) ?>
                 </form>
             </div>
@@ -29,6 +36,23 @@
             <div class="modal-body">
                 <form>
 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Uredi časovno zahtevnost -->
+<div class="modal fade" id="editTime-<?php echo $idZgodbe?>">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Uredi časovno zahtevnost</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <?php echo view('partials/formInput', ['type'=>'number', 'id'=>'time', 'value'=>'', 'label'=>''])?>
                 </form>
             </div>
         </div>
@@ -106,7 +130,11 @@
         <?php if ($statusZgodbe == 'sprint') { ?>
             <div class="card-subtitle"><b>Sprint: <!-- TODO: Add sprint duration --></b></div>
         <?php } ?>
-        <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </div>
+        <?php if(strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
+            <a class="card-subtitle" data-bs-toggle="modal" data-bs-target="#editTime-<?php echo $idZgodbe?>"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </a>
+        <?php } else {?>
+            <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </div>
+        <?php } ?>
         <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></div>
         <!-- TODO: Reject and accept buttons that can only be seen in 'My tasks' when the story has been assigned but not accepted/rejected -->
     </div>

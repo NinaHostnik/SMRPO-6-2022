@@ -32,6 +32,7 @@ class ProjectsController extends BaseController
         $zgodberework = $this->pridobizgodbe($zgodbe);
         $data = [
             'zgodbe'=>$zgodberework,
+            'uporabniki'=>$this->pridobiUporabnike(),
         ];
         echo view('subpages/projekti/backlog',$data);
     }
@@ -41,7 +42,6 @@ class ProjectsController extends BaseController
         $opis_naloge = $this->request->getVar('taskName');
         $ocena_casa  = $this->request->getVar('taskTime');
         $clan_ekipe = $this->request->getVar('taskMember');
-
         $model = new NalogeModel();
         $newdata = [
             'zgodba_id' => $zgodba_id,
