@@ -187,5 +187,14 @@ class DodajanjeUporabniskihZgodbController extends BaseController
             $data["opozorilo"]=NULL;
             echo view('subpages/dodajanjeUporabniskihZgodb/dodajanjeUporabniskihZgodb', $data);
         }
-    }      
+    }
+
+    public function urediCas(){
+        $model = new UporabniskeZgodbeModel();
+        $cas = $this->request->getVar('time');
+        $zgodbaId = $this->request->getVar('idZgodbe');
+        $model->saveTime($zgodbaId, $cas);
+
+        return redirect()->to('/Pbacklog');
+    }
 }

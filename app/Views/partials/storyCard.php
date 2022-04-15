@@ -51,7 +51,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="/Pbacklog/urediCas" method="post">
+                    <!-- Hidden form to get story ID -->
+                    <?php echo view('partials/formInput', ['type' => 'hidden', 'id' => 'idZgodbe', 'value'=>$idZgodbe, 'label'=>''])?>
                     <?php echo view('partials/formInput', ['type'=>'number', 'id'=>'time', 'value'=>'', 'label'=>''])?>
                 </form>
             </div>
@@ -131,9 +133,15 @@
             <div class="card-subtitle"><b>Sprint: <!-- TODO: Add sprint duration --></b></div>
         <?php } ?>
         <?php if(strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
-            <div class="card-subtitle" data-bs-toggle="modal" data-bs-target="#editTime-<?php echo $idZgodbe?>"><b>Časovna zahtevnost: </b> <?php echo $casovnaZahtevnost ?> </div>
+            <b>Časovna zahtevnost: </b> <?php if ($casovnaZahtevnost) echo $casovnaZahtevnost; else echo '/' ?>
+            <a class="card-subtitle" data-bs-toggle="modal" data-bs-target="#editTime-<?php echo $idZgodbe?>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                </svg>
+            </a>
         <?php } else {?>
-            <div class="card-subtitle"><b>Časovna zahtevnost: </b><?php echo $casovnaZahtevnost ?></div>
+            <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php if ($casovnaZahtevnost) echo $casovnaZahtevnost; else echo '/' ?> </div>
         <?php } ?>
         <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></div>
         <!-- TODO: Reject and accept buttons that can only be seen in 'My tasks' when the story has been assigned but not accepted/rejected -->
