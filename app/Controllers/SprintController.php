@@ -38,7 +38,6 @@ class SprintController extends BaseController
         if($nezakjucensprint == null){
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($trenutnisprint['idSprinta']);
             $zgodberework = $this->pridobizgodbe($zgodbe);
-
             $data = [
                 'sprint'=>$trenutnisprint,
                 'nezakjucen'=>false,
@@ -56,21 +55,20 @@ class SprintController extends BaseController
             $zgodberework = $this->pridobizgodbe($zgodbe);
 
             # separate stories into inProgress and acceptanceReady
-            $accReady = [];
-            $inProgress = [];
+            $accReady = array();
+            $inProgress = array();
             foreach($zgodberework as $zg):
                 $stAll = count($zg['naloge']);
                 $stDone = 0;
                 foreach ($zg['naloge'] as $naloga):
-                    var_dump($naloga);
                     if ($naloga['dokoncan'] === 'D') {
                         $stDone += 1;
                     }
                 endforeach;
                 if ($stAll === $stDone) {
-                    $accReady += $zg;
+                    $accReady[] = $zg;
                 } else {
-                    $inProgress += $zg;
+                    $inProgress[] = $zg;
                 }
             endforeach;
 

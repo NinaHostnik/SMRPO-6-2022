@@ -26,8 +26,12 @@
             <?php endforeach; ?>
         </div>
         <div class="col-lg-6 card card-body">
-            <!-- TODO: Show stories that are in the sprint and have all tasks complete -->
-
+            <?php foreach ($zgodbeAccReady as $zgodbaA): ?>
+                <?php echo view('partials/storyCard',
+                    ['naslov'=>$zgodbaA['naslov'], 'statusZgodbe'=>$zgodbaA['statusZgodbe'], 'prioriteta'=>$zgodbaA['prioriteta'], 'poslovnaVrednost'=>$zgodbaA['poslovnaVrednost'], 'idZgodbe'=>$zgodbaA['idZgodbe'],
+                        'besedilo'=>$zgodbaA['besedilo'], 'sprejemniTesti'=>$zgodbaA['sprejemniTesti'],
+                        'casovnaZahtevnost'=>$zgodbaA['casovnaZahtevnost'],'naloge'=>$zgodbaA['naloge'],'uporabniki'=>$uporabniki ]) ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
