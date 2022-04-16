@@ -3,9 +3,14 @@
 <?= $this->section('content') ?>
 <div class="container project-box">
 
-    <div class="row text-center">
+    <div class="row">
         <div class="col-lg-12 card card-header">
-            <h4>Sprint: <?php echo $sprint['zacetniDatum'].' - '.$sprint['koncniDatum'].'('.$sprint['trenutniStatus'].')' ?></h4>
+            <div class="d-flex justify-content-between align-items-center">
+                <h4>Sprint: <?php echo $sprint['zacetniDatum'].' - '.$sprint['koncniDatum'].'('.$sprint['trenutniStatus'].')' ?></h4>
+                <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
+                    <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeSprintov">Nov sprint</a>
+                <?php } ?>
+            </div>
         </div>
     </div>
     <div class="row">
