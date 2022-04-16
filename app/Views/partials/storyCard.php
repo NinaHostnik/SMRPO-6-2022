@@ -64,7 +64,7 @@
 <card class="card mb-1">
     <div class="card-header d-flex justify-content-between align-items-center" <?php if ($statusZgodbe == 'sprint') { echo 'style="background: lightskyblue;"';} ?>>
         <div>
-            <div class="card-title"><b><?php echo $naslov?> (<?php echo $statusZgodbe ?>)</b></div>
+            <div class="card-title" style="overflow-wrap: break-word"><b><?php echo $naslov?> (<?php echo $statusZgodbe ?>)</b></div>
             <div class="card-subtitle text-muted"><b>Odgovorna oseba: <?php echo session()->get('username') ?></b></div>
             <div class="card-subtitle text-muted"><b>Prioriteta: <?php echo $prioriteta ?> | Poslovna vrednost: <?php echo $poslovnaVrednost ?></b></div>
         </div>
@@ -96,16 +96,19 @@
     <div class="card-body tab-content" id="tabContent">
         <div class="tab-pane fade show active" id="nav-main-<?php echo $idZgodbe?>" role="tabpanel">
             <p><?php echo $besedilo ?></p>
-            <ul style="list-style-type:none;">
             <!-- Sprejemni testi -->
-                <!-- TODO: Write them out as an array (Waiting on Beni) -->
-                <li style="color: mediumblue"># <?php echo $sprejemniTesti?></li>
+            <ul style="list-style-type:none;">
+                <?php $tests = explode(';', $sprejemniTesti);
+                    foreach ($tests as $test):
+                        echo '<li style="color: mediumblue"> # ' .$test . '</li>';
+                    endforeach;
+                ?>
             </ul>
         </div>
         <div class="tab-pane fade" id="nav-tasks-<?php echo $idZgodbe?>" role="tabpanel">
             <ul class="list-group">
                 <?php foreach ($naloge as $naloga):?>
-                    <li class="list-group-item" style="background-color: rgba(50, 205, 50, 0.5)">
+                    <li class="list-group-item" <?php if ($naloga['dokoncan'] == 'D') echo 'style="background-color: rgba(50, 205, 50, 0.5)"' ?> >
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h6 class="card-text"><?php echo $naloga['opis_naloge'] ?></h6>
