@@ -53,9 +53,9 @@ if(session()->get('lastLogin')!=null) {
                     </li>
                     <li class="nav-item">
                         <?php if (strpos(current_url(), 'Sbacklog') > -1) { ?>
-                            <a class="nav-link text-light" href="Sbacklog"><b>Seznam zahtev</b></a>
+                            <a class="nav-link text-light" href="Sbacklog"><b>Sprint</b></a>
                         <?php } else { ?>
-                            <a class="nav-link text-dark" href="Sbacklog"><b>Seznam zahtev</b></a>
+                            <a class="nav-link text-dark" href="Sbacklog"><b>Sprint</b></a>
                         <?php } ?>
                     </li>
                     <li class="nav-item">
