@@ -32,21 +32,23 @@
                         <div class="card-subtitle"><?php echo session()->get('username') ?> <a class="card-title">(Sprosti nalogo)</a></div>
                     </div>
                     <div>
-                        <!-- TODO: if the subtask is marked 'active' show currently commented button -->
-                        <button class="btn btn-sm btn-success">Začni z delom</button>
-                        <!--<button class="btn btn-sm btn-danger">Končaj z delom</button>-->
+                        <?php if ($naloga['aktiven'] == 'N') : ?>
+                            <button class="btn btn-sm btn-success">Začni z delom</button>
+                        <?php else : ?>
+                            <button class="btn btn-sm btn-danger">Končaj z delom</button>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <!-- TODO: only show when subtask is 'active' -->
                 <hr>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="card-text"><b>Vpisovanje ur</b></div>
-                    <div>
-                        <input type="number" min="1" id="vpisiUre">
-                        <button class="btn btn-sm btn-outline-dark">Vpiši ure</button>
+                <?php if ($naloga['aktiven'] == 'N') : ?>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="card-text"><b>Vpisovanje ur</b></div>
+                        <div>
+                            <input type="number" min="1" id="vpisiUre">
+                            <button class="btn btn-sm btn-outline-dark">Vpiši ure</button>
+                        </div>
                     </div>
-                </div>
-                <!-- END TODO -->
+                <?php endif; ?>
             </div>
         <?php endforeach; ?>
 
