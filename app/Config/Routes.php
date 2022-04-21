@@ -51,6 +51,7 @@ $routes->match(['get','post'], '/SpremeniStatus/(:any)/(:num)', 'MyTasksControll
 $routes->match(['get','post'], '/Sbacklog', 'SprintController::backlog', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Pbacklog/dodajzgodbo', 'ProjectsController::dodajNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Pbacklog/urediCas', 'DodajanjeUporabniskihZgodbController::urediCas', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/admin/deleteUser', 'UsersController::deleteUser', ['filter' => 'LoginAuth']);
 
 
 

@@ -237,6 +237,16 @@ class UsersController extends BaseController
         }
     }
 
+    function ascend_user() {
+
+    }
+
+    function deleteUser() {
+        $userModel = new UserModel();
+        $users = $userModel->getAllUsers();
+        $data['users'] = $users;
+        echo view('subpages/userList/userlist', $data);
+    }
 
 
 }

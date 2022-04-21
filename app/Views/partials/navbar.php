@@ -30,7 +30,7 @@ if(session()->get('lastLogin')!=null) {
                                 <a class="dropdown-item" href="/admin/createUser">Dodaj uporabnika</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="/admin/removeUser">Odstrani uporabnika</a>
+                                <a class="dropdown-item" href="/admin/deleteUser">Odstrani uporabnika</a>
                             </li>
                         <?php } ?>
                         <li><hr class="dropdown-divider" /></li>
