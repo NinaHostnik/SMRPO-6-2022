@@ -67,4 +67,18 @@ class UporabniskeZgodbeModel extends Model{
         var_dump($query);
         return $query->getResultArray();
     }
+    function sprejmiNalogo($idNaloge, $idUporabnika){
+        $query=$this->db->query("SELECT * FROM naloge WHERE clan_ekipe=".$idUporabnika." AND id=".$idNaloge);
+        $rezultat=$query->getResultArray();
+        if($rezultat!=NULL){
+            $query=$this->db->query("UPDATE naloge SET potrjen='D' WHERE id=".$idNaloge);
+        }     
+    }
+    function zavrniNalogo($idNaloge, $idUporabnika){
+        $query=$this->db->query("SELECT * FROM naloge WHERE clan_ekipe=".$idUporabnika." AND id=".$idNaloge);
+        $rezultat=$query->getResultArray();
+        if($rezultat!=NULL){
+            $query=$this->db->query("UPDATE naloge SET clan_ekipe=NULL, potrjen='N' WHERE id=".$idNaloge);
+        }     
+    }
 }
