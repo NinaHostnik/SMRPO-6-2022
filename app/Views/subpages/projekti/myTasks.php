@@ -14,12 +14,9 @@
     <div class="row">
         <div class="col-lg-6 card card-body">
             <!-- TODO: Write out cards that have been assigned to user and accepted -->
-            <?php foreach ($zgodbe as $zgodba): ?>
-                <?php echo view('partials/storyCard',
-                    ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
-                        'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
-                        'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'],'naloge'=>$zgodba['naloge']]) ?>
-            <?php endforeach; ?>
+              <?php  echo view('partials/taskCard', ['naslovZgodbe' => 'Testna zgodba', 'statusZgodbe' => 'sprint',
+                    'odgovorniZgodba' => 'MojcaPokraculja', 'opis' => 'Testna naloga', 'odgovorni' => 'JanezNovak', 'idZgodbe' => '1']); ?>
+
         </div>
         <div class="col-lg-6 card card-body">
             <!-- TODO: Write out cards that have been assigned to user and are pending response -->

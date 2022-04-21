@@ -2,26 +2,25 @@
 
 namespace App\Controllers;
 
+use App\Models\NalogeModel;
 use App\Models\UporabniskeZgodbeModel;
 
 class MyTasksController extends BaseController
 {
     public function myTasks() {
-        $model = new UporabniskeZgodbeModel();
+        $zgodbeModel = new UporabniskeZgodbeModel();
+        $nalogeModel = new NalogeModel();
         $userID = session()->get('id');
         $projectID = session()->get('projectId');
-        #$zgodbe = $model->getMyStories($userID, $projectID);
-        $zgodbeNalog = $model->getMyStoryTasks($userID, $projectID);
-        $naloge = $model->getMyTasks($userID, $projectID);
-        var_dump($zgodbeNalog);
-        var_dump($naloge);
-        $zgodbe = $model->pridobiZgodbe(session()->get("projectId"));
+        $mojeZgodbe = $zgodbeModel->getMyStories($userID, $projectID);
+        $zgodbeNalog = $zgodbeModel->getMyStoryTasks($userID, $projectID);
+        $naloge = $nalogeModel->pridobiMojeNaloge($userID, $projectID);
+        $zgodbe = $zgodbeModel->pridobiZgodbe(session()->get("projectId"));
 
 
         $zgodberework = $this->pridobizgodbe($zgodbe);
-        #var_dump($zgodberework);
         $data = [
-            'zgodbe'=>$zgodbe,
+            'zgodbe'=>$zgodberework,
         ];
 
         echo view('subpages/projekti/myTasks',$data);

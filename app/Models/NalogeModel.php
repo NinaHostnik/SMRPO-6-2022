@@ -11,13 +11,13 @@ class NalogeModel extends Model
         $query = $this->db->query("SELECT * from naloge WHERE zgodba_id = ".$idZgodbe);
         return $query->getResultArray();
     }
-    function pridobiNalogoPoImenu($ime,$zgodba){
+    function pridobiNalogoPoImenu($ime,$zgodba) {
         $query = $this->db->query("SELECT * from naloge WHERE opis_naloge = '$ime' AND zgodba_id = '$zgodba'");
         var_dump($query);
         return $query->getResultArray();
     }
 
-    function qetMyTasks($userID, $projectID) {
+    function pridobiMojeNaloge($userID, $projectID) {
         $query = $this->db-> query("SELECT * FROM naloge WHERE clan_ekipe = '".$userID."' AND zgodba_id IN (SELECT idZgodbe FROM uporabniskeZgodbe WHERE idProjekta ='".$projectID."')");
         return $query->getResultArray();
     }

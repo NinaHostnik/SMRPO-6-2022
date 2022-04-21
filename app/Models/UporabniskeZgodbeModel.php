@@ -93,11 +93,6 @@ class UporabniskeZgodbeModel extends Model{
         return $query->getResultArray();
     }
 
-    function qetMyTasks($userID, $projectID) {
-        $query = $this->db-> query("SELECT * FROM naloge WHERE clan_ekipe = '".$userID."' AND zgodba_id IN (SELECT idZgodbe FROM uporabniskeZgodbe WHERE idProjekta ='".$projectID."')");
-        return $query->getResultArray();
-    }
-
     function getMyStoryTasks($userID, $projectID) {
         $query = $this->db-> query("SELECT * FROM uporabniskeZgodbe WHERE idProjekta = '".$projectID."' AND idZgodbe IN (SELECT zgodba_id FROM naloge WHERE clan_ekipe = ".$userID.")");
         return $query->getResultArray();
