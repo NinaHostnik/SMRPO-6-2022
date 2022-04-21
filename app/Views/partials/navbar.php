@@ -24,9 +24,13 @@ if(session()->get('lastLogin')!=null) {
                         <li>
                             <a class="dropdown-item" href="/profile">Profil</a>
                         </li>
+                        <li><hr class="dropdown-divider" /></li>
                         <?php if (session()->get('permissions') == 0) { ?>
                             <li>
                                 <a class="dropdown-item" href="/admin/createUser">Dodaj uporabnika</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/admin/removeUser">Odstrani uporabnika</a>
                             </li>
                         <?php } ?>
                         <li><hr class="dropdown-divider" /></li>
@@ -51,6 +55,7 @@ if(session()->get('lastLogin')!=null) {
                             <a class="nav-link text-dark" href="Pbacklog"><b>Seznam zahtev</b></a>
                         <?php } ?>
                     </li>
+                    <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1 || strpos(session()->get('roles')[session()->get('projectId')], 'C') > -1) { ?>
                     <li class="nav-item">
                         <?php if (strpos(current_url(), 'Sbacklog') > -1) { ?>
                             <a class="nav-link text-light" href="Sbacklog"><b>Sprint</b></a>
@@ -65,6 +70,7 @@ if(session()->get('lastLogin')!=null) {
                             <a class="nav-link text-dark" href="MyTasks"><b>Moje naloge</b></a>
                         <?php } ?>
                     </li>
+                    <?php } ?>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#"><b>Burn-Down</b></a>
                     </li>
