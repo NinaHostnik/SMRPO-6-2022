@@ -14,8 +14,10 @@
     <div class="row">
         <div class="col-lg-6 card card-body">
             <!-- TODO: Write out cards that have been assigned to user and accepted -->
-              <?php  echo view('partials/taskCard', ['naslovZgodbe' => 'Testna zgodba', 'statusZgodbe' => 'sprint',
-                    'odgovorniZgodba' => 'MojcaPokraculja', 'opis' => 'Testna naloga', 'odgovorni' => 'JanezNovak', 'idZgodbe' => '1']); ?>
+            <?php foreach ($zgodbe as $zgodba):
+                echo view('partials/taskCard', ['zgodba' => $zgodba, 'naloge' => $zgodba['naloge'], 'odgovorni' => $zgodba['odgovorni']]);
+            endforeach; ?>
+
 
         </div>
         <div class="col-lg-6 card card-body">

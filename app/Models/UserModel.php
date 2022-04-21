@@ -38,4 +38,9 @@ class UserModel extends Model{
         return $query->getResultArray();
     }
 
+    public function getUserById($userID) {
+        $query = $this->db->query("SELECT username FROM users WHERE id = ".$userID);
+        return $query->getResultArray();
+    }
+
 }
