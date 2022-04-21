@@ -23,11 +23,11 @@ class NalogeModel extends Model
     }
 
     function activateWork($taskId) {
-        $this->db->query("CALL change_work_status('". $taskId.";");
+        $this->db->query("CALL change_work_status(". $taskId.");");
     }
 
     function finishWork($taskId) {
-        $this->db->query("CALL save_time('". $taskId.";");
+        $this->db->query("CALL save_time(". $taskId.");");
     }
 
 }
