@@ -12,4 +12,9 @@ class NalogeModel extends Model
         return $query->getResultArray();
     }
 
+    function qetMyTasks($userID, $projectID) {
+        $query = $this->db-> query("SELECT * FROM naloge WHERE clan_ekipe = '".$userID."' AND zgodba_id IN (SELECT idZgodbe FROM uporabniskeZgodbe WHERE idProjekta ='".$projectID."')");
+        return $query->getResultArray();
+    }
+
 }

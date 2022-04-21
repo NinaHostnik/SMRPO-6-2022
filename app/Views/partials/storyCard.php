@@ -1,13 +1,3 @@
-<!-- Add task -->
-<?php var_dump('addTask-'.$idZgodbe);
-echo view('partials/modalForms/ustvariAliDodajNalogo',
-    ['modalID' => 'addTask-'.$idZgodbe, 'idZgodbe' => $idZgodbe, 'title' => 'Dodaj novo nalogo', 'action' => '/Pbacklog/dodajzgodbo',
-        'taskNameValue' => '', 'taskTimeValue' => '', 'buttonName' => 'Dodaj nalogo']) ?>
-
-<!-- Edit task -->
-<?php echo view('partials/modalForms/ustvariAliDodajNalogo',
-    ['modalID' => 'editTask-'.$idZgodbe, 'idZgodbe' => $idZgodbe, 'title' => 'Uredi nalogo', 'action' => '/Pbacklog/dodajzgodbo',
-        'taskNameValue' => '', 'taskTimeValue' => '', 'buttonName' => 'Uredi nalogo']) ?>
 
 <div class="modal fade" id="editStory-<?php echo $idZgodbe?>">
     <div class="modal-dialog">
@@ -68,8 +58,9 @@ echo view('partials/modalForms/ustvariAliDodajNalogo',
         <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></div>
     </div>
 </card>
-<?php } else { ?>
+<?php } elseif (strpos(current_url(), 'MyTasks') > -1) { ?>
 
+<?php } else { ?>
 <!-- Other -->
 <card class="card mb-1">
     <div class="card-header d-flex justify-content-between align-items-center" <?php if ($statusZgodbe == 'sprint') { echo 'style="background: lightskyblue;"';} ?>>

@@ -71,12 +71,19 @@ class UporabniskeZgodbeModel extends Model{
         $query = $this->db-> query("UPDATE uporabniskeZgodbe SET casovnaZahtevnost =".$time."  WHERE idZgodbe = ".$idZgodbe);
     }
 
-    function getMine($username) {
-        /* Get all stories that are assigned to user or have subtasks assigned to user.
-           params: username
-           returns: an array of stories
-        */
-        $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE idUporabnika = ");
+    function getMyStories($userID, $projectID) {
+        # gets all tasks assigned to user on current project
+        $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE idUporabnika = ".$userID." AND idProjekta = ".$projectID);
+        return $query->getResultArray();
+    }
 
+    function qetMyTasks($userID, $projectID) {
+        $query = $this->db-> query("SELECT * FROM naloge WHERE clan_ekipe = '".$userID."' AND zgodba_id IN (SELECT idZgodbe FROM uporabniskeZgodbe WHERE idProjekta ='".$projectID."')");
+        return $query->getResultArray();
+    }
+
+    function getMyStoryTasks($userID, $projectID) {
+        $query = $this->db-> query("SELECT * FROM uporabniskeZgodbe WHERE idProjekta = '".$projectID."' AND idZgodbe IN (SELECT zgodba_id FROM naloge WHERE clan_ekipe = ".$userID.")");
+        return $query->getResultArray();
     }
 }
