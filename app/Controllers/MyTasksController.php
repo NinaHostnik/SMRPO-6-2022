@@ -76,4 +76,20 @@ class MyTasksController extends BaseController
 
         $this->myTasks();
     }
+    public function sprejmiNalogo(){
+        
+    }
+    public function zavrniNalogo(){
+        
+    }
+    public function potrdiZgodbo(){
+        $zgodbeModel = new UporabniskeZgodbeModel();
+        $zgodbaId=0;
+        $koncaneVseNaloge=$zgodbeModel->soVseNalogeKoncane($zgodbaId);
+        $uporabnik=session()->get('id');
+        $jeProduktniVodja=jeProduktniVodja($uporabnik, $idProjekta);
+        if($koncaneVseNaloge && $jeProduktniVodja){
+            $zgodbeModel->potrdiZgodbo($zgodbaId);
+        }
+    }
 }
