@@ -44,16 +44,18 @@
                         <!-- TODO: Beni's problem -->
                         <div class="card-subtitle"><?php echo session()->get('username') ?> <a class="card-title">(Sprosti nalogo)</a></div>
                     </div>
-                    <div>
-                        <?php if ($naloga['aktiven'] == 'N') : ?>
-                            <button class="btn btn-sm btn-success" onclick="spremeniStatus()">Začni z delom</button>
-                        <?php else : ?>
-                            <button class="btn btn-sm btn-danger">Končaj z delom</button>
-                        <?php endif; ?>
-                    </div>
+<!--                    --><?php //if ($naloga['aktiven'] == 'N' && $zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
+                        <div>
+                            <?php if ($naloga['aktiven'] == 'N') : ?>
+                                <button class="btn btn-sm btn-success" onclick="spremeniStatus('<?php echo $naloga['aktiven'] ?>', <?php echo $naloga['id'] ?>)">Začni z delom</button>
+                            <?php else : ?>
+                                <button class="btn btn-sm btn-danger" onclick="spremeniStatus('<?php echo $naloga['aktiven'] ?>', <?php echo $naloga['id'] ?>)">Končaj z delom</button>
+                            <?php endif; ?>
+                        </div>
+<!--                    --><?php //endif; ?>
                 </div>
                 <hr>
-                <?php if ($naloga['aktiven'] == 'N') : ?>
+                <?php if ($naloga['aktiven'] == 'N' && $zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="card-text"><b>Vpisovanje ur</b></div>
                         <div>
@@ -67,19 +69,11 @@
 
     </div>
     <script>
-        function spremeniStatus() {
-            var status = '<?php echo $naloga['aktiven'] ?>';
-            var taskId = <?php echo $naloga['id'] ?>;
+        function spremeniStatus(status, taskId) {
+            //var status = '<?php //echo $naloga['aktiven'] ?>//';
+            //var taskId = <?php //echo $naloga['id'] ?>//;
 
-            window.location.href = "<?php echo site_url('SpremeniStatus');?>";
-
-           // jQuery.ajax({
-           //     type: "POST",
-           //     url: 'SpremeniStatus',
-           //     dataType: 'json',
-           //     data: {functionname: 'changeStatus', arguments: [status, taskId]}
-           // });
-           // var fml =  "<?php //echo $this->changeStatus();?>//";
+            window.location.href = "<?php echo site_url('SpremeniStatus/');?>" + status + '/' + taskId;
         }
     </script>
 </card>
