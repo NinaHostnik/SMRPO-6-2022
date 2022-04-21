@@ -46,7 +46,7 @@
                     </div>
                     <div>
                         <?php if ($naloga['aktiven'] == 'N') : ?>
-                            <button class="btn btn-sm btn-success">Začni z delom</button>
+                            <button class="btn btn-sm btn-success" onclick="spremeniStatus()">Začni z delom</button>
                         <?php else : ?>
                             <button class="btn btn-sm btn-danger">Končaj z delom</button>
                         <?php endif; ?>
@@ -66,4 +66,20 @@
         <?php endforeach; ?>
 
     </div>
+    <script>
+        function spremeniStatus() {
+            var status = '<?php echo $naloga['aktiven'] ?>';
+            var taskId = <?php echo $naloga['id'] ?>;
+
+            window.location.href = "<?php echo site_url('SpremeniStatus');?>";
+
+           // jQuery.ajax({
+           //     type: "POST",
+           //     url: 'SpremeniStatus',
+           //     dataType: 'json',
+           //     data: {functionname: 'changeStatus', arguments: [status, taskId]}
+           // });
+           // var fml =  "<?php //echo $this->changeStatus();?>//";
+        }
+    </script>
 </card>

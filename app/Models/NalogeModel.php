@@ -22,4 +22,12 @@ class NalogeModel extends Model
         return $query->getResultArray();
     }
 
+    function activateWork($taskId) {
+        $this->db->query("CALL change_work_status('". $taskId.";");
+    }
+
+    function finishWork($taskId) {
+        $this->db->query("CALL save_time('". $taskId.";");
+    }
+
 }
