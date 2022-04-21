@@ -70,4 +70,13 @@ class UporabniskeZgodbeModel extends Model{
     function saveTime($idZgodbe, $time) {
         $query = $this->db-> query("UPDATE uporabniskeZgodbe SET casovnaZahtevnost =".$time."  WHERE idZgodbe = ".$idZgodbe);
     }
+
+    function getMine($username) {
+        /* Get all stories that are assigned to user or have subtasks assigned to user.
+           params: username
+           returns: an array of stories
+        */
+        $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE idUporabnika = ");
+
+    }
 }
