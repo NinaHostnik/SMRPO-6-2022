@@ -42,7 +42,7 @@
 
     #overlay.active{
         opacity: 1;
-        pointer-events: all;
+        pointer-events: none;
     }
 </style>
 
