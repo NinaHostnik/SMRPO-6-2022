@@ -18,7 +18,8 @@ class ProjectsController extends BaseController
         $feedbackAlert = session()->get('feedback');
         if ($feedbackAlert == 'projekt') {
             $popupdata = ['popup' => 'Projekt je bil dodan.'];
-            echo view('partials/popup', $popupdata);
+            session()->setFlashdata($popupdata);
+            #echo view('partials/popup', $popupdata);
         }
 
         echo view('subpages/projekti/projects', $data);
@@ -37,23 +38,45 @@ class ProjectsController extends BaseController
         echo view('subpages/projekti/backlog',$data);
     }
 
-    public function dodajZgodbo(){
-        $zgodba_id = $this->request->getVar('idZgodbe');
-        $opis_naloge = $this->request->getVar('taskName');
-        $ocena_casa  = $this->request->getVar('taskTime');
-        $clan_ekipe = $this->request->getVar('taskMember');
-        $model = new NalogeModel();
-        $newdata = [
-            'zgodba_id' => $zgodba_id,
-            'opis_naloge' => $opis_naloge,
-            'ocena_casa' => $ocena_casa,
-            'clan_ekipe' => $clan_ekipe,
-            'potrjen' => 'N',
-        ];
-        $model->save($newdata);
-        session()->setFlashdata(['popup'=>'naloga uspešno dodana']);
-        return redirect()->to('/Pbacklog');
+    public function dodajNalogo(){
 
+        $rules = [
+            'idZgodbe' => 'required',
+            'taskName' => 'required|doesntExistTask[taskName,idZgodbe]',
+            'taskTime' => 'required|is_natural_no_zero',
+        ];
+
+        $errors = [
+            'taskName' => [
+                'doesntExistTask' => 'Naloga z tem imenom že obstaja.'
+            ],
+        ];
+
+        if (!$this->validate($rules, $errors)) {
+            session()->setFlashdata(["errordata"=>$this->validator]);
+            session()->setFlashdata(["idZgodbe"=>$this->request->getVar('idZgodbe')]);
+
+            return redirect()->to('/Pbacklog');
+
+
+        } else {
+            $zgodba_id = $this->request->getVar('idZgodbe');
+            $opis_naloge = $this->request->getVar('taskName');
+            $ocena_casa = $this->request->getVar('taskTime');
+            $clan_ekipe = $this->request->getVar('taskMember');
+
+            $model = new NalogeModel();
+            $newdata = [
+                'zgodba_id' => $zgodba_id,
+                'opis_naloge' => $opis_naloge,
+                'ocena_casa' => $ocena_casa,
+                'clan_ekipe' => $clan_ekipe,
+                'potrjen' => 'N',
+            ];
+            $model->save($newdata);
+            session()->setFlashdata(['popup' => 'naloga uspešno dodana']);
+            return redirect()->to('/Pbacklog');
+        }
     }
 
 }

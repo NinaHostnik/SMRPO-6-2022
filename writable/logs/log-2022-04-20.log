@@ -1,0 +1,351 @@
+CRITICAL - 2022-04-20 10:40:41 --> Undefined index: naslov
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 48, Array)
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-20 10:41:13 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\smrpo\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\smrpo\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(48): CodeIgniter\Model->__call('where', Array)
+#3 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#4 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#6 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#8 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#9 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-04-20 10:43:41 --> Unknown column 'taskName' in 'where clause'
+CRITICAL - 2022-04-20 10:43:41 --> Call to a member function getFirstRow() on bool
+#0 C:\xampp\htdocs\smrpo\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#1 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(50): CodeIgniter\BaseModel->first()
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#3 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#4 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#5 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#8 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-04-20 13:43:10 --> Call to a member function listErrors() on array
+#0 C:\xampp\htdocs\smrpo\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('partials/storyC...', Array, true)
+#3 C:\xampp\htdocs\smrpo\app\Views\subpages\projekti\backlog.php(38): view('partials/storyC...', Array)
+#4 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/projek...', Array, true)
+#7 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(37): view('subpages/projek...', Array)
+#8 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->backlog()
+#9 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#10 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-04-20 13:58:40 --> Unknown column 'taskName' in 'where clause'
+CRITICAL - 2022-04-20 13:58:40 --> Call to a member function getFirstRow() on bool
+#0 C:\xampp\htdocs\smrpo\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#1 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(49): CodeIgniter\BaseModel->first()
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('asdafdsfsdfs22', 'taskName', Array, NULL)
+#3 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'asdafdsfsdfs22', Array, Array)
+#4 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#5 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#8 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-04-20 13:59:14 --> Unknown column 'taskName' in 'where clause'
+CRITICAL - 2022-04-20 13:59:14 --> Call to a member function getFirstRow() on bool
+#0 C:\xampp\htdocs\smrpo\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#1 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(49): CodeIgniter\BaseModel->first()
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('ssa1', 'taskName', Array, NULL)
+#3 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'ssa1', Array, Array)
+#4 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#5 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#8 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-04-20 14:00:56 --> Unknown column 'taskName' in 'where clause'
+CRITICAL - 2022-04-20 14:00:56 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(49): App\Models\NalogeModel->pridobiNalogoPoImenu('dodaj')
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-20 14:03:41 --> Unknown column 'taskName' in 'where clause'
+CRITICAL - 2022-04-20 14:03:41 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(49): App\Models\NalogeModel->pridobiNalogoPoImenu('dodaj')
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-20 14:04:00 --> Unknown column 'dodaj' in 'where clause'
+CRITICAL - 2022-04-20 14:04:00 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(49): App\Models\NalogeModel->pridobiNalogoPoImenu('dodaj')
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-20 14:04:20 --> Unknown column 'dodaj' in 'where clause'
+CRITICAL - 2022-04-20 14:04:20 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(49): App\Models\NalogeModel->pridobiNalogoPoImenu('dodaj')
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-20 14:06:04 --> syntax error, unexpected end of file
+#0 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Nalo...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Nalo...')
+#3 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(47): spl_autoload_call('App\\Models\\Nalo...')
+#4 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#5 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#6 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#8 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#9 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#10 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-04-20 14:06:15 --> Unknown column 'dodaj' in 'where clause'
+CRITICAL - 2022-04-20 14:06:15 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(49): App\Models\NalogeModel->pridobiNalogoPoImenu('dodaj')
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-20 14:07:35 --> Unknown column 'dodaj' in 'where clause'
+CRITICAL - 2022-04-20 14:07:35 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Validation\UserRules.php(49): App\Models\NalogeModel->pridobiNalogoPoImenu('dodaj')
+#1 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(292): App\Validation\UserRules->doesntExistTask('dodaj', 'taskName', Array, NULL)
+#2 C:\xampp\htdocs\smrpo\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('taskName', 'taskName', 'dodaj', Array, Array)
+#3 C:\xampp\htdocs\smrpo\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(54): CodeIgniter\Controller->validate(Array, Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->dodajNalogo()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-20 14:56:32 --> Undefined variable: data
+#0 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 57, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->createUser()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:10:21 --> syntax error, unexpected 'echo' (T_ECHO)
+#0 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\smrpo\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-20 15:15:40 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\smrpo\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\smrpo\system\Model.php(130): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\smrpo\system\BaseModel.php(523): CodeIgniter\Model->doFind(false, NULL)
+#3 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(151): CodeIgniter\BaseModel->find(NULL)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-20 15:18:13 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(152): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 152, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:19:55 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(152): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 152, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:20:09 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(152): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 152, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:20:33 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(153): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 153, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:22:16 --> Use of undefined constant nuil - assumed 'nuil' (this will throw an Error in a future version of PHP)
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:22:39 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:23:02 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:24:43 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:25:17 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:25:41 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:26:21 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(155): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 155, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:30:33 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:32:33 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-04-20 15:32:48 --> Unknown column 'uporabniskeZgodbe.id' in 'where clause'
+CRITICAL - 2022-04-20 15:32:48 --> Call to a member function getFirstRow() on bool
+#0 C:\xampp\htdocs\smrpo\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '20')
+#1 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(154): CodeIgniter\BaseModel->find('20')
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-04-20 15:35:37 --> Undefined index: casovnaZahtevnost
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:36:32 --> There is no data to update.
+#0 C:\xampp\htdocs\smrpo\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\smrpo\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\smrpo\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(157): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-20 15:41:40 --> There is no data to update.
+#0 C:\xampp\htdocs\smrpo\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\smrpo\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\smrpo\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(158): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-20 15:46:56 --> There is no data to update.
+#0 C:\xampp\htdocs\smrpo\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\smrpo\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\smrpo\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(157): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-20 15:47:23 --> There is no data to update.
+#0 C:\xampp\htdocs\smrpo\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\smrpo\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\smrpo\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(157): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-20 15:52:29 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(157): App\Models\UporabniskeZgodbeModel->updateSprint('20', '20')
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-20 15:53:18 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(157): App\Models\UporabniskeZgodbeModel->updateSprint('20', '20')
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
