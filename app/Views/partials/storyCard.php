@@ -21,6 +21,12 @@
                     </div>
                     <?php echo view('partials/formButton', ['name'=>'Dodaj nalogo']) ?>
                 </form>
+                <?php
+                if(session()->has('errordata')){
+                    $validation = session()->getFlashdata('errordata');
+                    echo $validation->listErrors();
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -77,6 +83,7 @@
             <?php } ?>
             <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1 && $statusZgodbe != 'sprint') { ?>
             <form action="/sprint/dodajzgodbo" method="post">
+                <?php echo view('partials/formInput', ['type' => 'hidden', 'id' => 'idZgodbe', 'value'=>$idZgodbe, 'label'=>''])?>
                 <button class="btn btn-sm btn-outline-dark" ><b>Dodaj v sprint</b></button>
             </form>
             <?php } ?>

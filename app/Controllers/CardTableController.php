@@ -24,10 +24,10 @@ class CardTableController extends BaseController
 
         if ($feedbackAlert == 'zgodba') {
             $popupdata = ['popup' => 'Zgodba je bila dodana'];
-            echo view('partials/popup', $popupdata);
+            session()->setFlashdata($popupdata);
         } else if ($feedbackAlert == 'sprint') {
             $popupdata = ['popup' => 'Sprint je bil dodan.'];
-            echo view('partials/popup', $popupdata);
+            session()->setFlashdata($popupdata);
         }
 
         return redirect()->to('/Pbacklog');

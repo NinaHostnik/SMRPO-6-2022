@@ -1,6 +1,15 @@
 <?= $this->extend('layouts/frame'); ?>
 
 <?= $this->section('content') ?>
+
+<?php if (session()->has('errordata')):?>
+    <script>
+        $(document).ready(function(){
+            $("#addTask-<?php echo session()->getFlashdata('idZgodbe')?>").modal('show');
+        });
+    </script>
+<?php endif; ?>
+
 <div class="container project-box">
     <div class="row">
         <div class="col-lg-6 card card-header">
@@ -42,6 +51,11 @@
         </div>
     </div>
 </div>
+
+
+
 <?= $this->endSection() ?>
+
+
 
 

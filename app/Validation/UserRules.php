@@ -1,7 +1,10 @@
 <?php
 namespace App\Validation;
 
+use App\Models\NalogeModel;
+use App\Models\UporabniskeZgodbeModel;
 use App\Models\UserModel;
+
 
 class UserRules{
 
@@ -38,6 +41,18 @@ class UserRules{
     public function niPrejsnje(string $str, string $field, array $data){
         $passhash = session()->get('password');
         return !password_verify($data[$field],$passhash);
+    }
+
+    public function doesntExistTask(string $str, string $fields, array $data){
+        $model = new NalogeModel();
+
+        $naloga = $model->pridobiNalogoPoImenu($data['taskName'],$data['idZgodbe']);
+
+        if (!$naloga){
+            return true;
+        }
+
+        return false;
     }
 }
 

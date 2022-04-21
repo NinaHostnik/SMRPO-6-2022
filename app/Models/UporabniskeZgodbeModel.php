@@ -3,6 +3,8 @@
 use CodeIgniter\Model;
 
 class UporabniskeZgodbeModel extends Model{
+    protected $table = 'uporabniskeZgodbe';
+    protected $allowedFields = ['idZgodbe ', 'idProjekta ', 'naslov','besedilo','prioriteta','poslovnaVrednost','statusZgodbe ','casovnaZahtevnost','sprejemniTesti', 'sprint','potrjen'];
 
     function zapisiVBazo(array $data){
         $table = 'uporabniskeZgodbe';
@@ -69,5 +71,19 @@ class UporabniskeZgodbeModel extends Model{
 
     function saveTime($idZgodbe, $time) {
         $query = $this->db-> query("UPDATE uporabniskeZgodbe SET casovnaZahtevnost =".$time."  WHERE idZgodbe = ".$idZgodbe);
+        return $query;
+
+    }
+
+    function pridobiZgodbo($idZgodbe)
+    {
+        $query = $this->db->query("SELECT * from uporabniskeZgodbe WHERE idZgodbe = " . $idZgodbe);
+        return $query->getResultArray();
+    }
+
+    function updateSprint($idZgodbe, $sprint)
+    {
+        $query = $this->db->query("UPDATE uporabniskeZgodbe SET sprint = ? WHERE idZgodbe = ?",array($sprint,$idZgodbe));
+        return $query;
     }
 }

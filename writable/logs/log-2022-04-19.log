@@ -1,0 +1,46 @@
+CRITICAL - 2022-04-19 13:02:46 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(39): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 39, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-19 13:19:42 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(39): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 39, Array)
+#1 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#2 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-19 13:27:51 --> Undefined variable: zgodbeInProgress
+#0 C:\xampp\htdocs\smrpo\app\Views\subpages\sprint\backlog.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/sprint...', Array, true)
+#4 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(57): view('subpages/sprint...', Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-19 13:32:16 --> Undefined variable: zgodbeInProgress
+#0 C:\xampp\htdocs\smrpo\app\Views\subpages\sprint\backlog.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/sprint...', Array, true)
+#4 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(57): view('subpages/sprint...', Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-19 13:42:10 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\smrpo\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\smrpo\system\Model.php(130): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\smrpo\system\BaseModel.php(523): CodeIgniter\Model->doFind(false, NULL)
+#3 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(151): CodeIgniter\BaseModel->find(NULL)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->dodajZgodbo()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
