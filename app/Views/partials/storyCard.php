@@ -31,7 +31,6 @@
         </div>
     </div>
 </div>
-
 <div class="modal fade" id="editStory-<?php echo $idZgodbe?>">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -49,24 +48,51 @@
 </div>
 
 <!-- Uredi časovno zahtevnost -->
-<div class="modal fade" id="editTime-<?php echo $idZgodbe?>">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Uredi časovno zahtevnost</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form action="/Pbacklog/urediCas" method="post">
-                    <!-- Hidden form to get story ID -->
-                    <?php echo view('partials/formInput', ['type' => 'hidden', 'id' => 'idZgodbe', 'value'=>$idZgodbe, 'label'=>''])?>
-                    <?php echo view('partials/formInput', ['type'=>'number', 'id'=>'time', 'value'=>'', 'label'=>''])?>
-                </form>
-            </div>
+<?php echo view('partials/modalForms/urediCasovnoZahtevnost', ['idZgodbe' => $idZgodbe]) ?>
+
+<!-- Story card if the user is a Product Owner ('V') -->
+<?php if (strpos(session()->get('roles')[session()->get('projectId')], 'V') > -1) { ?>
+<card class="card mb-1">
+    <!-- Card header: Story title and status, Designated developer, Priority, Business value -->
+    <div class="card-header d-flex justify-content-between align-items-center" <?php if ($statusZgodbe == 'sprint') { echo 'style="background: lightskyblue;"';} ?>>
+        <div>
+            <div class="card-title" style="overflow-wrap: break-word"><b><?php echo $naslov?> (<?php echo $statusZgodbe ?>)</b></div>
+            <div class="card-subtitle text-muted"><b>Odgovorna oseba: <?php echo session()->get('username') ?></b></div>
+            <div class="card-subtitle text-muted"><b>Prioriteta: <?php echo $prioriteta ?> | Poslovna vrednost: <?php echo $poslovnaVrednost ?></b></div>
+        </div>
+        <!-- Hidden form to get story ID -->
+        <?php echo view('partials/formInput', ['type' => 'hidden', 'id' => $idZgodbe, 'value'=>'', 'label'=>''])?>
+        <div>
+            <!-- TODO: Hide 'Uredi' if story is marked as complete (to be tested) -->
+            <?php if ($statusZgodbe != 'zakljucen') { ?>
+                <button class="btn btn-sm btn-outline-dark mb-1 float-end"><b>Uredi</b></button>
+            <?php } ?>
         </div>
     </div>
-</div>
+    <!-- Card body: Base description and acceptance tests -->
+    <div class="card-body">
+        <p><?php echo $besedilo ?></p>
+        <!-- Sprejemni testi -->
+        <ul style="list-style-type:none;">
+            <?php $tests = explode(';', $sprejemniTesti);
+            foreach ($tests as $test):
+                echo '<li style="color: mediumblue"> # ' .$test . '</li>';
+            endforeach;
+            ?>
+        </ul>
+    </div>
+    <!-- Card footer: Sprint (if applicable), Time estimate, Time spent -->
+    <div class="card-footer">
+        <?php if ($statusZgodbe == 'sprint') { ?>
+            <div class="card-subtitle"><b>Sprint: <!-- TODO: Add sprint duration --></b></div>
+        <?php } ?>
+        <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php if ($casovnaZahtevnost) echo $casovnaZahtevnost; else echo '/' ?> </div>
+        <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></div>
+    </div>
+</card>
+<?php } else { ?>
 
+<!-- Other -->
 <card class="card mb-1">
     <div class="card-header d-flex justify-content-between align-items-center" <?php if ($statusZgodbe == 'sprint') { echo 'style="background: lightskyblue;"';} ?>>
         <div>
@@ -121,7 +147,8 @@
                                 <h6 class="card-text"><?php echo $naloga['opis_naloge'] ?></h6>
                                 <p class="card-text text-primary"><?php echo $naloga['clan_ekipe_name'] ?></p>
                             </div>
-                            <button class="btn btn-sm btn-outline-dark float-end">Uredi</button>
+                            <!-- TODO: make this work -->
+                            <button type="button" class="btn btn-sm btn-outline-dark float-end" data-bs-toggle="modal" data-bs-target="#editTask-<?php $naloga['id']?>">Uredi</button>
                         </div>
                     </li>
                 <?php endforeach;?>
@@ -166,3 +193,4 @@
     </div>
     <?php } ?>
 </card>
+<?php } ?>
