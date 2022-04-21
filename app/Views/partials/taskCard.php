@@ -44,7 +44,7 @@
                         <!-- TODO: Beni's problem -->
                         <div class="card-subtitle"><?php echo session()->get('username') ?> <a class="card-title">(Sprosti nalogo)</a></div>
                     </div>
-<!--                    --><?php //if ($naloga['aktiven'] == 'N' && $zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
+                    <?php if ($naloga['aktiven'] == 'N' && $zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
                         <div>
                             <?php if ($naloga['aktiven'] == 'N') : ?>
                                 <button class="btn btn-sm btn-success" onclick="spremeniStatus('<?php echo $naloga['aktiven'] ?>', <?php echo $naloga['id'] ?>)">Začni z delom</button>
@@ -52,7 +52,7 @@
                                 <button class="btn btn-sm btn-danger" onclick="spremeniStatus('<?php echo $naloga['aktiven'] ?>', <?php echo $naloga['id'] ?>)">Končaj z delom</button>
                             <?php endif; ?>
                         </div>
-<!--                    --><?php //endif; ?>
+                    <?php endif; ?>
                 </div>
                 <hr>
                 <?php if ($naloga['aktiven'] == 'N' && $zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
