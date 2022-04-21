@@ -65,4 +65,15 @@ class MyTasksController extends BaseController
         endforeach;
         return $zgodbe;
     }
+
+    public function changeStatus($status, $taskId) {
+        $model = new NalogeModel();
+        if ($status == 'D') {
+            $model->activateWork($taskId);
+        } else {
+            $model->finishWork($taskId);
+        }
+
+        $this->myTasks();
+    }
 }

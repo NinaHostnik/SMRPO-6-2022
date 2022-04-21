@@ -56,7 +56,7 @@ class ProjectsController extends BaseController
             session()->setFlashdata(["errordata"=>$this->validator]);
             session()->setFlashdata(["idZgodbe"=>$this->request->getVar('idZgodbe')]);
 
-            return redirect()->to('/Pbacklog');
+            return redirect()->back();
 
 
         } else {
@@ -75,7 +75,7 @@ class ProjectsController extends BaseController
             ];
             $model->save($newdata);
             session()->setFlashdata(['popup' => 'naloga uspešno dodana']);
-            return redirect()->to('/Pbacklog');
+            return redirect()->back();
         }
     }
 

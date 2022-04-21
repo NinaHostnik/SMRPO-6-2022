@@ -28,3 +28,45 @@ CRITICAL - 2022-04-21 07:25:31 --> Undefined variable: uporabniki
 #11 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #12 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #13 {main}
+ERROR - 2022-04-21 14:27:06 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 14:31:23 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 14:39:29 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 14:40:56 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 14:53:55 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:01:00 --> Unknown column 'ocena_casa' in 'field list'
+CRITICAL - 2022-04-21 15:05:51 --> syntax error, unexpected 'endif' (T_ENDIF)
+#0 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(226): CodeIgniter\View\View->render('layouts/frame', Array, true)
+#2 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/sprint...', Array, true)
+#3 C:\xampp\htdocs\smrpo\app\Controllers\SprintController.php(78): view('subpages/sprint...', Array)
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\SprintController->backlog()
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SprintController))
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-04-21 15:06:11 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:06:54 --> Unknown column 'ocena_casa' in 'field list'
+CRITICAL - 2022-04-21 15:06:54 --> Undefined variable: popup
+#0 C:\xampp\htdocs\smrpo\app\Views\partials\popup.php(53): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 53, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\View\View.php(424): CodeIgniter\View\View->render('partials/popup', NULL, true)
+#4 C:\xampp\htdocs\smrpo\app\Views\layouts\frame.php(31): CodeIgniter\View\View->include('partials/popup')
+#5 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\smrpo\system\View\View.php(226): CodeIgniter\View\View->render('layouts/frame', Array, true)
+#8 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/projek...', Array, true)
+#9 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(38): view('subpages/projek...', Array)
+#10 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->backlog()
+#11 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#12 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+ERROR - 2022-04-21 15:07:55 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:08:45 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:09:15 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:09:58 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:10:28 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:11:39 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:13:03 --> Unknown column 'ocena_casa' in 'field list'
+ERROR - 2022-04-21 15:34:09 --> Unknown column 'ocena_casa' in 'field list'

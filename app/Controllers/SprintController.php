@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\NalogeModel;
 use App\Models\ProjectModel;
 use App\Models\SprintiModel;
 use App\Models\UporabniskeZgodbeModel;
@@ -168,4 +169,5 @@ class SprintController extends BaseController
         }
 
     }
+
 }
