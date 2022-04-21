@@ -3,6 +3,8 @@
 use CodeIgniter\Model;
 
 class UporabniskeZgodbeModel extends Model{
+    protected $table = 'uporabniskeZgodbe';
+    protected $allowedFields = ['idZgodbe ', 'idProjekta ', 'naslov','besedilo','prioriteta','poslovnaVrednost','statusZgodbe ','casovnaZahtevnost','sprejemniTesti', 'sprint','potrjen'];
 
     function zapisiVBazo(array $data){
         $table = 'uporabniskeZgodbe';
@@ -64,7 +66,35 @@ class UporabniskeZgodbeModel extends Model{
 
     function pridobiZgodbeSprinta($idSprinta){
         $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE sprint = ".$idSprinta);
-        var_dump($query);
+        return $query->getResultArray();
+    }
+
+    function saveTime($idZgodbe, $time) {
+        $query = $this->db-> query("UPDATE uporabniskeZgodbe SET casovnaZahtevnost =".$time."  WHERE idZgodbe = ".$idZgodbe);
+        return $query;
+
+    }
+
+    function pridobiZgodbo($idZgodbe)
+    {
+        $query = $this->db->query("SELECT * from uporabniskeZgodbe WHERE idZgodbe = " . $idZgodbe);
+        return $query->getResultArray();
+    }
+
+    function updateSprint($idZgodbe, $sprint)
+    {
+        $query = $this->db->query("UPDATE uporabniskeZgodbe SET sprint = ? WHERE idZgodbe = ?",array($sprint,$idZgodbe));
+        return $query;
+    }
+
+    function getMyStories($userID, $projectID) {
+        # gets all tasks assigned to user on current project
+        $query = $this->db-> query("SELECT * from uporabniskeZgodbe WHERE idUporabnika = ".$userID." AND idProjekta = ".$projectID);
+        return $query->getResultArray();
+    }
+
+    function getMyStoryTasks($userID, $projectID) {
+        $query = $this->db-> query("SELECT * FROM uporabniskeZgodbe WHERE idProjekta = '".$projectID."' AND idZgodbe IN (SELECT zgodba_id FROM naloge WHERE clan_ekipe = ".$userID.")");
         return $query->getResultArray();
     }
     function sprejmiNalogo($idNaloge, $idUporabnika){

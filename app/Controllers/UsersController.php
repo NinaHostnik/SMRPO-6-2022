@@ -48,12 +48,12 @@ class UsersController extends BaseController
                     'permissions' => $this->request->getVar('permissions'),
                     'password' => $pass,
                 ];
-                var_dump($newdata);
                 $model->save($newdata);
 
                 $popupdata = ['popup' => 'Uporabnik je bil uspešno narejen.'];
+                session()->setFlashdata($popupdata);
                 $data = [];
-                echo view('partials/popup',$popupdata);
+                #echo view('partials/popup',$popupdata);
                 echo view('subpages/ustvarjanjeUporabnika/userCreate', $data);
             }
         } else {
@@ -167,10 +167,11 @@ class UsersController extends BaseController
                 session()->set('password', $this->request->getPost('passwordNew'));
 
                 $popupdata = ['popup' => 'Uporabnik je bil uspešno spremenjen.'];
+                session()->setFlashdata($popupdata);
                 $data = [];
 
 
-                echo view('partials/popup',$popupdata);
+                #echo view('partials/popup',$popupdata);
                 echo view('user_update', $data);
             }
 

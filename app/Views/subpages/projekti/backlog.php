@@ -1,6 +1,15 @@
 <?= $this->extend('layouts/frame'); ?>
 
 <?= $this->section('content') ?>
+
+<?php if (session()->has('errordata')):?>
+    <script>
+        $(document).ready(function(){
+            $("#addTask-<?php echo session()->getFlashdata('idZgodbe')?>").modal('show');
+        });
+    </script>
+<?php endif; ?>
+
 <div class="container project-box">
     <div class="row">
         <div class="col-lg-6 card card-header">
@@ -26,7 +35,7 @@
             <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
                      'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
-                     'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'], 'uporabniki'=>$uporabniki ]) ?>
+                     'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'], 'uporabniki'=>$uporabniki]) ?>
             <?php } ?>
             <?php endforeach; ?>
         </div>
@@ -42,6 +51,11 @@
         </div>
     </div>
 </div>
+
+
+
 <?= $this->endSection() ?>
+
+
 
 

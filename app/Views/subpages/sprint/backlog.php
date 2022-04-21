@@ -3,9 +3,14 @@
 <?= $this->section('content') ?>
 <div class="container project-box">
 
-    <div class="row text-center">
+    <div class="row">
         <div class="col-lg-12 card card-header">
-            <h4>Sprint: <?php echo $sprint['zacetniDatum'].' - '.$sprint['koncniDatum'].'('.$sprint['trenutniStatus'].')' ?></h4>
+            <div class="d-flex justify-content-between align-items-center">
+                <h4>Sprint: <?php echo $sprint['zacetniDatum'].' - '.$sprint['koncniDatum'].'('.$sprint['trenutniStatus'].')' ?></h4>
+                <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
+                    <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeSprintov">Nov sprint</a>
+                <?php } ?>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -18,15 +23,20 @@
     </div>
     <div class="row">
         <div class="col-lg-6 card card-body">
-            <?php foreach ($zgodbe as $zgodba): ?>
+            <?php foreach ($zgodbeInProgress as $zgodbaP): ?>
                 <?php echo view('partials/storyCard',
-                    ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
-                        'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
-                        'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'],'naloge'=>$zgodba['naloge'],'uporabniki'=>$uporabniki ]) ?>
+                    ['naslov'=>$zgodbaP['naslov'], 'statusZgodbe'=>$zgodbaP['statusZgodbe'], 'prioriteta'=>$zgodbaP['prioriteta'], 'poslovnaVrednost'=>$zgodbaP['poslovnaVrednost'], 'idZgodbe'=>$zgodbaP['idZgodbe'],
+                        'besedilo'=>$zgodbaP['besedilo'], 'sprejemniTesti'=>$zgodbaP['sprejemniTesti'],
+                        'casovnaZahtevnost'=>$zgodbaP['casovnaZahtevnost'],'naloge'=>$zgodbaP['naloge'],'uporabniki'=>$uporabniki ]) ?>
             <?php endforeach; ?>
         </div>
         <div class="col-lg-6 card card-body">
-            <!-- TODO: Show stories that are in the sprint and have all tasks complete -->
+            <?php foreach ($zgodbeAccReady as $zgodbaA): ?>
+                <?php echo view('partials/storyCard',
+                    ['naslov'=>$zgodbaA['naslov'], 'statusZgodbe'=>$zgodbaA['statusZgodbe'], 'prioriteta'=>$zgodbaA['prioriteta'], 'poslovnaVrednost'=>$zgodbaA['poslovnaVrednost'], 'idZgodbe'=>$zgodbaA['idZgodbe'],
+                        'besedilo'=>$zgodbaA['besedilo'], 'sprejemniTesti'=>$zgodbaA['sprejemniTesti'],
+                        'casovnaZahtevnost'=>$zgodbaA['casovnaZahtevnost'],'naloge'=>$zgodbaA['naloge'],'uporabniki'=>$uporabniki ]) ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

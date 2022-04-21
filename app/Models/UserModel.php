@@ -10,7 +10,6 @@ class UserModel extends Model{
     protected $beforeUpdate = ['beforeUpdate'];
 
     protected function beforeInsert(array $data){
-        var_dump($data);
         //hash password
         $data = $this->passwordHash($data);
 
@@ -36,6 +35,11 @@ class UserModel extends Model{
     {
         $query = $this->db->query("SELECT id, username FROM users");
 
+        return $query->getResultArray();
+    }
+
+    public function getUserById($userID) {
+        $query = $this->db->query("SELECT username FROM users WHERE id = ".$userID);
         return $query->getResultArray();
     }
 
