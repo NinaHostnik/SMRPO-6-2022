@@ -83,7 +83,7 @@ echo view('partials/modalForms/ustvariAliDodajNalogo',
         <div>
             <!-- TODO: Hide 'Uredi' if story is marked as complete (to be tested)-->
             <?php if ($statusZgodbe != 'zakljucen') { ?>
-                <button class="btn btn-sm btn-outline-dark mb-1 float-end"><b>Uredi</b></button>
+                <a role="button" class="btn btn-sm btn-outline-dark mb-1 float-end" data-bs-toggle="modal" data-bs-target="#editStory-<?php echo $idZgodbe?>"><b>Uredi</b></a>
             <?php } ?>
             <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1 && $statusZgodbe != 'sprint') { ?>
             <form action="/sprint/dodajzgodbo" method="post">
