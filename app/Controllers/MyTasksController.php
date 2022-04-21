@@ -21,7 +21,7 @@ class MyTasksController extends BaseController
         $zgodbe = $zgodbeModel->pridobiZgodbe(session()->get("projectId"));
 
         $stories1 = $this->addResponsibleAdults($zgodbeNalog, $userModel);
-        $stories2 = $this->addTasksToStory($zgodbeNalog, $naloge);
+        $stories2 = $this->addTasksToStory($stories1, $naloge);
         #print_r($stories);
         #var_dump($stories);
 
@@ -61,6 +61,7 @@ class MyTasksController extends BaseController
                 $username = $usermodel->getUserById($user_id);
                 $zgodbe[$i] += array('odgovorni' => $username);
             }
+            $i++;
         endforeach;
         return $zgodbe;
     }
