@@ -156,7 +156,7 @@
                     <!-- TODO: Add modal with task information onclick. -->
                     <!-- TODO: Add edit task button. (includes delete and assign) -->
                     <!-- TODO: Add an accept/reject task button. -->
-                    <?php if ($statusZgodbe != 'zakljucen') { ?>
+                    <?php if ($statusZgodbe != 'zakljucen' && $statusZgodbe === 'sprint') { ?>
                         <!-- hide if the story is marked complete -->
                         <li id="addTask" class="list-group-item" data-bs-toggle="modal" data-bs-target="#addTask-<?php echo $idZgodbe ?>">
                             <b>(+) Dodaj nalogo</b>

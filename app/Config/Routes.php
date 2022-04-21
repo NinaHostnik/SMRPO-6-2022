@@ -50,6 +50,7 @@ $routes->match(['get','post'], '/MyTasks', 'MyTasksController::myTasks', ['filte
 $routes->match(['get','post'], '/Sbacklog', 'SprintController::backlog', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Pbacklog/dodajzgodbo', 'ProjectsController::dodajNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Pbacklog/urediCas', 'DodajanjeUporabniskihZgodbController::urediCas', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/admin/deleteUser', 'UsersController::deleteUser', ['filter' => 'LoginAuth']);
 
 
 

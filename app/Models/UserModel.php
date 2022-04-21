@@ -43,4 +43,8 @@ class UserModel extends Model{
         return $query->getResultArray();
     }
 
+    public function getAllUsers() {
+        $query = $this->db->query("SELECT id, username, permissions FROM users");
+        return $query->getResultArray();
+    }
 }
