@@ -7,7 +7,19 @@
             </div>
             <div class="modal-body">
                 <h6><b>Odgovorna oseba: </b> <?php echo $odgovorni ?></h6>
+                <h6><b>Status zgodbe: </b> <?php echo $zgodba['statusZgodbe']?></h6>
                 <h6><b>Prioriteta: </b><?php echo $zgodba['prioriteta']?> <b> | Poslovna vrednost: </b> <?php echo $zgodba['poslovnaVrednost'] ?></h6>
+                <hr>
+                <p><?php echo $zgodba['besedilo'] ?></p>
+                <p>
+                    <?php $tests = explode(';', $zgodba['sprejemniTesti']);
+                    foreach ($tests as $test):
+                        echo '<li style="color: mediumblue; list-style-type: none;"> # ' .$test . '</li>';
+                    endforeach; ?>
+                </p>
+                <hr>
+                <h6><b>Časovna zahtevnost: </b> <?php if ($zgodba['casovnaZahtevnost']) echo $zgodba['casovnaZahtevnost']; else echo '/' ?> </h6>
+                <h6><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></h6>
             </div>
         </div>
     </div>

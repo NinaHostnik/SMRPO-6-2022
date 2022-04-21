@@ -42,6 +42,7 @@ if(session()->get('lastLogin')!=null) {
             </ul>
         </div>
     </ul>
+
 <?php // only show this part if we're in a project
     if (strpos(current_url(), 'Pbacklog') > -1 || strpos(current_url(), 'Sbacklog') > -1 || strpos(current_url(), 'MyTasks') > -1) { ?>
         <ul class="navbar navbar-light bg-secondary mt-0">
