@@ -98,7 +98,7 @@ class SprintController extends BaseController
                     $inProgress[] = $zg;
                 }
             endforeach;
-            var_dump($inProgress);
+            // var_dump($inProgress);
             $data = [
                 'sprint' => $nezakjucensprint,
                 'nezakjucen' => true,
@@ -150,11 +150,11 @@ class SprintController extends BaseController
                     $prabljencas=$prabljencas+$zgodba['casovnaZahtevnost'];
                 endforeach;
             }
-            var_dump($idZgodbe);
+            // var_dump($idZgodbe);
             $dodanazgodba = $zgodbemodel->pridobiZgodbo($idZgodbe);
-            var_dump($dodanazgodba);
+            // var_dump($dodanazgodba);
             if($prabljencas+$dodanazgodba[0]['casovnaZahtevnost'] <= $trenutnisprint['hitrost']){
-                var_dump($trenutnisprint['idSprinta']);
+                // var_dump($trenutnisprint['idSprinta']);
                 $zgodbemodel->updateSprint($idZgodbe,$trenutnisprint['idSprinta']);
                 session()->setFlashdata(['popup'=>'uspešno']);
                 return redirect()->to('/Sbacklog');

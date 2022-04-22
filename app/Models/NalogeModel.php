@@ -13,7 +13,7 @@ class NalogeModel extends Model
     }
     function pridobiNalogoPoImenu($ime,$zgodba) {
         $query = $this->db->query("SELECT * from naloge WHERE opis_naloge = '$ime' AND zgodba_id = '$zgodba'");
-        var_dump($query);
+        // var_dump($query);
         return $query->getResultArray();
     }
 
