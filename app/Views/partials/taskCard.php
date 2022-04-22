@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <h6><b>Odgovorna oseba: </b> <?php echo $odgovorni ?></h6>
+                <h6><b>Odgovorna oseba: </b> <?php echo $zgodba['odgovorni'] ?></h6>
                 <h6><b>Status zgodbe: </b> <?php echo $zgodba['statusZgodbe']?></h6>
                 <h6><b>Prioriteta: </b><?php echo $zgodba['prioriteta']?> <b> | Poslovna vrednost: </b> <?php echo $zgodba['poslovnaVrednost'] ?></h6>
                 <hr>
@@ -30,7 +30,7 @@
     <div class="card-header d-flex justify-content-between align-items-center" <?php if ($zgodba['statusZgodbe'] == 'sprint') { echo 'style="background: lightskyblue;"';} ?>>
         <div>
             <h5 class="card-title" style="overflow-wrap: break-word"><b><?php echo $zgodba['naslov']?> (<?php echo $zgodba['statusZgodbe'] ?>)</b></h5>
-            <div class="card-subtitle"><b>Odgovorna oseba: </b><?php echo $odgovorni?></div>
+            <div class="card-subtitle"><b>Odgovorna oseba: </b><?php echo $zgodba['odgovorni']?></div>
             <a class="card-subtitle text-muted" data-bs-toggle="modal" data-bs-target="#storyInfo-<?php echo $zgodba['idZgodbe']?>">Poglej podrobnosti</a>
         </div>
     </div>
