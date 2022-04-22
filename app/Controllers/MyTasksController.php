@@ -82,19 +82,26 @@ class MyTasksController extends BaseController
         return redirect()->back();
     }
     public function sprejmiNalogo(){
-        
+        #TODO obvestila uporabniku za sprejeto/zavrnjeno/error
+        $model= new UporabniskeZgodbeModel();
+        $uporabnik=session()->get('id');
+        $naloga = $uri->getSegment('2');
+        $model->sprejmiNalogo($naloga, $uporabnik);
     }
     public function zavrniNalogo(){
-        
+        $model= new UporabniskeZgodbeModel();
+        $uporabnik=session()->get('id');
+        $naloga = $uri->getSegment('2');
+        $model->zavrniNalogo($naloga, $uporabnik);
     }
     public function potrdiZgodbo(){
         $zgodbeModel = new UporabniskeZgodbeModel();
         $zgodbaId=0;
         $koncaneVseNaloge=$zgodbeModel->soVseNalogeKoncane($zgodbaId);
         $uporabnik=session()->get('id');
-        $jeProduktniVodja=jeProduktniVodja($uporabnik, $idProjekta);
+        $jeProduktniVodja=$zgodbeModel->jeProduktniVodja($uporabnik, $idProjekta);
         if($koncaneVseNaloge && $jeProduktniVodja){
-            $zgodbeModel->potrdiZgodbo($zgodbaId);
+            $zgodbeModel->potrdiZgodboModel($zgodbaId);
         }
     }
 }

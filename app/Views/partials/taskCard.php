@@ -43,6 +43,7 @@
                         <div class="card-title"><b><?php echo $naloga['opis_naloge'] ?></b></div>
                         <!-- TODO: Beni's problem -->
                         <div class="card-subtitle"><?php echo session()->get('username') ?> <a class="card-title">(Sprosti nalogo)</a></div>
+                        <!-- end of Beni's problem -->
                     </div>
                     <?php if ($naloga['aktiven'] == 'N' && $zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
                         <div>
@@ -74,6 +75,12 @@
             //var taskId = <?php //echo $naloga['id'] ?>//;
 
             window.location.href = "<?php echo site_url('SpremeniStatus/');?>" + status + '/' + taskId;
+        }
+        function sprejmiNalogo(uporabnik, taskId) {
+            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + status ;
+        }
+        function zavrniNalogo(uporabnik, taskId) {
+            window.location.href = "<?php echo site_url('ZavrniZgodbo/');?>" + status;
         }
     </script>
 </card>
