@@ -25,7 +25,7 @@
     endif;
     ?>
 
-    <?= $this->include('partials/navbar') ?>
+    <!--<?//= $this->include('partials/navbar') ?>-->
     <?= $this->renderSection('content') ?>
 
 

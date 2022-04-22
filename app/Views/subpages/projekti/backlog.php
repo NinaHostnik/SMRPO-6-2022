@@ -34,7 +34,7 @@
             <?php if ($zgodba['statusZgodbe'] != 'zakljucen') { ?>
             <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
-                     'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
+                     'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'], 'odgovorni' => '/',
                      'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'], 'uporabniki'=>$uporabniki]) ?>
             <?php } ?>
             <?php endforeach; ?>
@@ -44,7 +44,7 @@
                 <?php if ($zgodba['statusZgodbe'] == 'zakljucen') { ?>
                 <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
-                     'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'],
+                     'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'], 'odgovorni' => '/',
                      'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'],'uporabniki'=>$uporabniki ]) ?>
                 <?php } ?>
             <?php endforeach; ?>
