@@ -121,7 +121,7 @@ class UporabniskeZgodbeModel extends Model{
     function soVseNalogeKoncane($idUporabniskeZgodbe){
         $query=$this->db_>query("SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe);
         $stNalog=count($query->getResultsArray());
-        $query=("SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe." AND dokoncan='D'");
+        $query=$this->db_>query("SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe." AND dokoncan='D'");
         $stKoncanihNalog=count($query->getResultArray());
         if($stNalog==$stKoncanihNalog){
             return true;

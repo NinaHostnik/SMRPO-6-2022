@@ -115,7 +115,7 @@ class BaseController extends Controller
             if($naloge != null){
                 $indexnaloge = 0;
                 foreach ($naloge as $naloga){
-                    if(isset($naloge[$i]['clan_ekipe'])){
+                    if(isset($naloge[$indexnaloge]['clan_ekipe'])){
                         $naloge[$indexnaloge]['clan_ekipe_name'] = ($modelusers->find($naloge[$indexnaloge]['clan_ekipe']))['username'];
                     }
                     $indexnaloge = $indexnaloge +1;
@@ -134,7 +134,6 @@ class BaseController extends Controller
     {
         $usermodel = new UserModel();
         $users = $usermodel->readLookup();
-        #var_dump($users);
 
         return $users;
 
