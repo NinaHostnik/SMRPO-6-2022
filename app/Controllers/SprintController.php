@@ -15,6 +15,7 @@ class SprintController extends BaseController
     public function backlog(){
         $idZgodbe = $this->request->getVar('surname');
         $model = new SprintiModel();
+        $userModel = new UserModel();
         $sprints = $model->getSprints(session()->get("projectId"));
         $trenutnisprint = null;
         $nezakjucensprint = null;
@@ -44,7 +45,8 @@ class SprintController extends BaseController
 
         if($nezakjucensprint == null){
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($trenutnisprint['idSprinta']);
-            $zgodberework = $this->pridobizgodbe($zgodbe);
+            $fin = $this->addResponsibleAdults($zgodbe, $userModel);
+            $zgodberework = $this->pridobizgodbe($fin);
 
             # separate stories into inProgress and acceptanceReady
             $accReady = array();
@@ -77,11 +79,11 @@ class SprintController extends BaseController
             }
             echo view('subpages/sprint/backlog', $data);        }
         else{
-            # var_dump($nezakjucensprint['idSprinta']);
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($nezakjucensprint['idSprinta']);
-            $zgodberework = $this->pridobizgodbe($zgodbe);
+            $fin = $this->addResponsibleAdults($zgodbe, $userModel);
+            $zgodberework = $this->pridobizgodbe($fin);
 
-            # separate stories into inProgress and acceptanceReady
+
             $accReady = array();
             $inProgress = array();
             foreach($zgodberework as $zg):
@@ -98,7 +100,6 @@ class SprintController extends BaseController
                     $inProgress[] = $zg;
                 }
             endforeach;
-            // var_dump($inProgress);
             $data = [
                 'sprint' => $nezakjucensprint,
                 'nezakjucen' => true,
@@ -110,6 +111,21 @@ class SprintController extends BaseController
             session()->setFlashdata($popupdata);
             echo view('subpages/sprint/backlog', $data);
         }
+    }
+
+    function addResponsibleAdults($zgodbe, $usermodel) {
+        $i = 0;
+        foreach ($zgodbe as $zgodba):
+            $user_id = $zgodba['idUporabnika'];
+            if ($user_id === null) {
+                $zgodbe[$i]['odgovorni'] = '/';
+            } else {
+                $username = $usermodel->getUserById($user_id);
+                $zgodbe[$i]['odgovorni'] = $username[0]['username'];
+            }
+            $i++;
+        endforeach;
+        return $zgodbe;
     }
 
     public function dodajZgodbo(){

@@ -35,7 +35,7 @@
             <?php foreach ($zgodbeInProgress as $zgodbaP): ?>
                 <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodbaP['naslov'], 'statusZgodbe'=>$zgodbaP['statusZgodbe'], 'prioriteta'=>$zgodbaP['prioriteta'], 'poslovnaVrednost'=>$zgodbaP['poslovnaVrednost'], 'idZgodbe'=>$zgodbaP['idZgodbe'],
-                        'besedilo'=>$zgodbaP['besedilo'], 'sprejemniTesti'=>$zgodbaP['sprejemniTesti'],
+                        'besedilo'=>$zgodbaP['besedilo'], 'sprejemniTesti'=>$zgodbaP['sprejemniTesti'], 'odgovorni' => $zgodbaP['odgovorni'],
                         'casovnaZahtevnost'=>$zgodbaP['casovnaZahtevnost'],'naloge'=>$zgodbaP['naloge'],'uporabniki'=>$uporabniki ]) ?>
             <?php endforeach; ?>
         </div>
@@ -43,7 +43,7 @@
             <?php foreach ($zgodbeAccReady as $zgodbaA): ?>
                 <?php echo view('partials/storyCard',
                     ['naslov'=>$zgodbaA['naslov'], 'statusZgodbe'=>$zgodbaA['statusZgodbe'], 'prioriteta'=>$zgodbaA['prioriteta'], 'poslovnaVrednost'=>$zgodbaA['poslovnaVrednost'], 'idZgodbe'=>$zgodbaA['idZgodbe'],
-                        'besedilo'=>$zgodbaA['besedilo'], 'sprejemniTesti'=>$zgodbaA['sprejemniTesti'],
+                        'besedilo'=>$zgodbaA['besedilo'], 'sprejemniTesti'=>$zgodbaA['sprejemniTesti'], 'odgovorni' => $zgodbaA['odgovorni'],
                         'casovnaZahtevnost'=>$zgodbaA['casovnaZahtevnost'],'naloge'=>$zgodbaA['naloge'],'uporabniki'=>$uporabniki ]) ?>
             <?php endforeach; ?>
         </div>
