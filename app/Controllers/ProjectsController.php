@@ -47,10 +47,10 @@ class ProjectsController extends BaseController
         foreach ($zgodbe as $zgodba):
             $user_id = $zgodba['idUporabnika'];
             if ($user_id === null) {
-                $zgodbe[$i] += array('odgovorni' => '/');
+                $zgodbe[$i]['odgovorni'] = '/';
             } else {
                 $username = $usermodel->getUserById($user_id);
-                $zgodbe[$i] += array('odgovorni' => $username);
+                $zgodbe[$i]['odgovorni'] = $username[0]['username'];
             }
             $i++;
         endforeach;
