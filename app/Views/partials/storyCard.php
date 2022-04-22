@@ -97,7 +97,7 @@
         <div class="card-header d-flex justify-content-between align-items-center" <?php if ($statusZgodbe == 'sprint') { echo 'style="background: lightskyblue;"';} ?>>
             <div>
                 <div class="card-title" style="overflow-wrap: break-word"><b><?php echo $naslov?> (<?php echo $statusZgodbe ?>)</b></div>
-                <div class="card-subtitle text-muted"><b>Odgovorna oseba: <?php echo session()->get('username') ?></b></div>
+                <div class="card-subtitle text-muted"><b>Odgovorna oseba: <?php echo $odgovorni ?></b></div>
                 <div class="card-subtitle text-muted"><b>Prioriteta: <?php echo $prioriteta ?> | Poslovna vrednost: <?php echo $poslovnaVrednost ?></b></div>
             </div>
             <!-- Hidden form to get story ID -->

@@ -22,8 +22,6 @@ class MyTasksController extends BaseController
 
         $stories1 = $this->addResponsibleAdults($zgodbeNalog, $userModel);
         $stories2 = $this->addTasksToStory($stories1, $naloge);
-        #print_r($stories);
-        #var_dump($stories);
 
 
 

@@ -29,13 +29,32 @@ class ProjectsController extends BaseController
 
     public function backlog(){
         $model = new UporabniskeZgodbeModel();
+        $userModel = new UserModel();
         $zgodbe = $model->pridobiZgodbe(session()->get("projectId"));
-        $zgodberework = $this->pridobizgodbe($zgodbe);
+        $fin = $this->addResponsibleAdults($zgodbe, $userModel);
+        $zgodberework = $this->pridobizgodbe($fin);
+
+
         $data = [
             'zgodbe'=>$zgodberework,
             'uporabniki'=>$this->pridobiUporabnike(),
         ];
         echo view('subpages/projekti/backlog',$data);
+    }
+
+    function addResponsibleAdults($zgodbe, $usermodel) {
+        $i = 0;
+        foreach ($zgodbe as $zgodba):
+            $user_id = $zgodba['idUporabnika'];
+            if ($user_id === null) {
+                $zgodbe[$i] += array('odgovorni' => '/');
+            } else {
+                $username = $usermodel->getUserById($user_id);
+                $zgodbe[$i] += array('odgovorni' => $username);
+            }
+            $i++;
+        endforeach;
+        return $zgodbe;
     }
 
     public function dodajNalogo(){
