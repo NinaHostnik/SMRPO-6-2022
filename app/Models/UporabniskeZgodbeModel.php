@@ -102,7 +102,14 @@ class UporabniskeZgodbeModel extends Model{
         $rezultat=$query->getResultArray();
         if($rezultat!=NULL){
             $query=$this->db->query("UPDATE naloge SET potrjen='D' WHERE id=".$idNaloge);
-        }     
+        }
+        else{
+            $query=$this->db->query("SELECT * FROM naloge WHERE clan_ekipe=NULL AND id=".$idNaloge);
+            $rezultat=$query->getResultArray();
+            if($rezultat!=NULL){
+                $query=$this->db->query("UPDATE naloge SET potrjen='D', clan_ekipe=".$idUporabnika." WHERE id=".$idNaloge);
+            }
+        }
     }
     function zavrniNalogo($idNaloge, $idUporabnika){
         $query=$this->db->query("SELECT * FROM naloge WHERE clan_ekipe=".$idUporabnika." AND id=".$idNaloge);
@@ -110,5 +117,26 @@ class UporabniskeZgodbeModel extends Model{
         if($rezultat!=NULL){
             $query=$this->db->query("UPDATE naloge SET clan_ekipe=NULL, potrjen='N' WHERE id=".$idNaloge);
         }     
+    }
+    function soVseNalogeKoncane($idUporabniskeZgodbe){
+        $query=$this->db_>query("SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe);
+        $stNalog=count($query->getResultsArray());
+        $query="SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe." AND dokoncan='D'");
+        $stKoncanihNalog=count($query->getResultArray());
+        if($stNalog==$stKoncanihNalog){
+            return true;
+        }
+        return false;
+    }
+    function jeProduktniVodja($idUporabnika, $idProjekta){
+        $query=$this->db_>query("SELECT * FROM project_members WHERE project_id=".$idProjekta." AND user_id=".$idUporabnika." AND role='V'");
+        $rezultat=$query->getResultArray();
+        if($rezultat!=NULL){
+            return true;
+        }
+        return false;
+    }
+    function potrdiZgodbo($idZgodbe){
+
     }
 }

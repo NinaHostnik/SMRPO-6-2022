@@ -47,7 +47,7 @@ $routes->match(['get','post'], '/Pbacklog', 'ProjectsController::backlog', ['fil
 $routes->match(['get','post'], '/sprint/dodajzgodbo', 'SprintController::dodajZgodbo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/sprint', 'SprintController::backlog', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/MyTasks', 'MyTasksController::myTasks', ['filter' => 'LoginAuth']);
-$routes->match(['get','post'], '/SpremeniStatus', 'MyTasksController::changeStatus');
+$routes->match(['get','post'], '/SpremeniStatus/(:any)/(:num)', 'MyTasksController::changeStatus', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Sbacklog', 'SprintController::backlog', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Pbacklog/dodajzgodbo', 'ProjectsController::dodajNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Pbacklog/urediCas', 'DodajanjeUporabniskihZgodbController::urediCas', ['filter' => 'LoginAuth']);

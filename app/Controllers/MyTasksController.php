@@ -66,14 +66,35 @@ class MyTasksController extends BaseController
         return $zgodbe;
     }
 
-    public function changeStatus($status, $taskId) {
+    public function changeStatus() {
+        $uri = service('uri');
+
+        $status = $uri->getSegment('2');
+        $taskId = $uri->getSegment('3');
+
         $model = new NalogeModel();
-        if ($status == 'D') {
+        if ($status == 'N') {
             $model->activateWork($taskId);
         } else {
             $model->finishWork($taskId);
         }
 
-        $this->myTasks();
+        return redirect()->back();
+    }
+    public function sprejmiNalogo(){
+        
+    }
+    public function zavrniNalogo(){
+        
+    }
+    public function potrdiZgodbo(){
+        $zgodbeModel = new UporabniskeZgodbeModel();
+        $zgodbaId=0;
+        $koncaneVseNaloge=$zgodbeModel->soVseNalogeKoncane($zgodbaId);
+        $uporabnik=session()->get('id');
+        $jeProduktniVodja=jeProduktniVodja($uporabnik, $idProjekta);
+        if($koncaneVseNaloge && $jeProduktniVodja){
+            $zgodbeModel->potrdiZgodbo($zgodbaId);
+        }
     }
 }
