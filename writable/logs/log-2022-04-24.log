@@ -1,0 +1,12 @@
+CRITICAL - 2022-04-24 15:05:38 --> Undefined variable: popup
+#0 C:\xampp\htdocs\smrpo\app\Views\layouts\frame.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 89, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\View\View.php(226): CodeIgniter\View\View->render('layouts/frame', Array, true)
+#4 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/projek...', Array, true)
+#5 C:\xampp\htdocs\smrpo\app\Controllers\ProjectsController.php(42): view('subpages/projek...', Array)
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\ProjectsController->backlog()
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProjectsController))
+#8 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
