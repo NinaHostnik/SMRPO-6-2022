@@ -58,7 +58,7 @@
 <script>
     const overlay = document.getElementById('overlay')
 
-    overlay.addEventListener('click',() => {
+    document.body.addEventListener('click',() => {
         console.log('clicked')
         const popup = document.querySelectorAll('.popup.active')
         popup.forEach(popup=>{
