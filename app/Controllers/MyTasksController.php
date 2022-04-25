@@ -29,7 +29,6 @@ class MyTasksController extends BaseController
         $data = [
             'zgodbe'=>$stories2,
         ];
-
         echo view('subpages/projekti/myTasks',$data);
     }
 
@@ -81,16 +80,20 @@ class MyTasksController extends BaseController
     }
     public function sprejmiNalogo(){
         #TODO obvestila uporabniku za sprejeto/zavrnjeno/error
+        $uri = service('uri');
         $model= new UporabniskeZgodbeModel();
         $uporabnik=session()->get('id');
         $naloga = $uri->getSegment('2');
         $model->sprejmiNalogo($naloga, $uporabnik);
+        return redirect()->back();
     }
     public function zavrniNalogo(){
+        $uri = service('uri');
         $model= new UporabniskeZgodbeModel();
         $uporabnik=session()->get('id');
         $naloga = $uri->getSegment('2');
         $model->zavrniNalogo($naloga, $uporabnik);
+        return redirect()->back();
     }
     public function potrdiZgodbo(){
         $zgodbeModel = new UporabniskeZgodbeModel();

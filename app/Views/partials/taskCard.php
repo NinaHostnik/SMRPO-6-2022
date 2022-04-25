@@ -41,8 +41,14 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
                         <div class="card-title"><b><?php echo $naloga['opis_naloge'] ?></b></div>
-                        <!-- TODO: Beni's problem -->
-                        <div class="card-subtitle"><?php echo session()->get('username') ?> <a class="card-title">(Sprosti nalogo)</a></div>
+                        <!-- TODO: Beni's problem TODO: da se gumbi pojavjo sam ce je zgodba nesprejeta pa da se lah zavrne ce je to uporabnik kermu je dodeljena-->
+                        <div class="card-subtitle"><?php echo session()->get('username') ?></div>
+                        <?php if($naloga['potrjen']== 'N') :?> 
+                            <button class="btn btn-sm btn-success" onclick="sprejmiNalogo(<?php echo $naloga['id'] ?>)">Sprejmi Nalogo</button>
+                            <button class="btn btn-sm btn-danger" onclick="zavrniNalogo(<?php echo $naloga['id'] ?>)">Zavrni Nalogo</button>
+                        <?php else : ?>
+                            <button class="btn btn-sm btn-danger" onclick="zavrniNalogo(<?php echo $naloga['id'] ?>)">Zavrni Nalogo</button>
+                        <?php endif; ?>
                         <!-- end of Beni's problem -->
                     </div>
                     <?php if ($zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
@@ -76,11 +82,11 @@
 
             window.location.href = "<?php echo site_url('SpremeniStatus/');?>" + status + '/' + taskId;
         }
-        function sprejmiNalogo(uporabnik, taskId) {
-            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + status ;
+        function sprejmiNalogo(idNaloge) {
+            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idNaloge ;
         }
-        function zavrniNalogo(uporabnik, taskId) {
-            window.location.href = "<?php echo site_url('ZavrniZgodbo/');?>" + status;
+        function zavrniNalogo(idNaloge) {
+            window.location.href = "<?php echo site_url('ZavrniZgodbo/');?>" + idNaloge;
         }
     </script>
 </card>
