@@ -83,6 +83,9 @@ class ProjectsController extends BaseController
             $opis_naloge = $this->request->getVar('taskName');
             $ocena_casa = $this->request->getVar('taskTime');
             $clan_ekipe = $this->request->getVar('taskMember');
+            if($clan_ekipe=="brez"){
+                $clan_ekipe=null;
+            }
 
             $model = new NalogeModel();
             $newdata = [
