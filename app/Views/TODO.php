@@ -51,7 +51,7 @@ TODO popravki
 
 #- handle zaključevanje sprinta !!!
 #- dodaj velocity na kartico k sprintu
-#- ali je ocenjevanje časovne zahtevnosti v urah ali točkah - Done (napisou v urah pa je uredu)
+#DONE- ali je ocenjevanje časovne zahtevnosti v urah ali točkah - Done (napisou v urah pa je uredu)
 
 #Seznam zahtev
 #- placeholder v katerem sprintu so bile sprejete
