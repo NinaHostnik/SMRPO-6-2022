@@ -34,17 +34,13 @@
         <div class="col-lg-6 card card-body">
             <?php foreach ($zgodbeInProgress as $zgodbaP): ?>
                 <?php echo view('partials/storyCard',
-                    ['naslov'=>$zgodbaP['naslov'], 'statusZgodbe'=>$zgodbaP['statusZgodbe'], 'prioriteta'=>$zgodbaP['prioriteta'], 'poslovnaVrednost'=>$zgodbaP['poslovnaVrednost'], 'idZgodbe'=>$zgodbaP['idZgodbe'],
-                        'besedilo'=>$zgodbaP['besedilo'], 'sprejemniTesti'=>$zgodbaP['sprejemniTesti'], 'odgovorni' => $zgodbaP['odgovorni'],
-                        'casovnaZahtevnost'=>$zgodbaP['casovnaZahtevnost'],'naloge'=>$zgodbaP['naloge'],'uporabniki'=>$uporabniki ]) ?>
+                    ['zgodba'=>$zgodbaP, 'uporabniki'=>$uporabniki]) ?>
             <?php endforeach; ?>
         </div>
         <div class="col-lg-6 card card-body">
             <?php foreach ($zgodbeAccReady as $zgodbaA): ?>
                 <?php echo view('partials/storyCard',
-                    ['naslov'=>$zgodbaA['naslov'], 'statusZgodbe'=>$zgodbaA['statusZgodbe'], 'prioriteta'=>$zgodbaA['prioriteta'], 'poslovnaVrednost'=>$zgodbaA['poslovnaVrednost'], 'idZgodbe'=>$zgodbaA['idZgodbe'],
-                        'besedilo'=>$zgodbaA['besedilo'], 'sprejemniTesti'=>$zgodbaA['sprejemniTesti'], 'odgovorni' => $zgodbaA['odgovorni'],
-                        'casovnaZahtevnost'=>$zgodbaA['casovnaZahtevnost'],'naloge'=>$zgodbaA['naloge'],'uporabniki'=>$uporabniki ]) ?>
+                    ['zgodba'=>$zgodbaA, 'uporabniki'=>$uporabniki]) ?>
             <?php endforeach; ?>
         </div>
     </div>

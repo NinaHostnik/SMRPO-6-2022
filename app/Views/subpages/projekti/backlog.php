@@ -33,9 +33,7 @@
             <?php foreach ($zgodbe as $zgodba): ?>
             <?php if ($zgodba['statusZgodbe'] != 'zakljucen') { ?>
             <?php echo view('partials/storyCard',
-                    ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
-                     'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'], 'odgovorni' => $zgodba['odgovorni'],
-                     'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'], 'uporabniki'=>$uporabniki]) ?>
+                    ['zgodba'=>$zgodba, 'uporabniki'=>$uporabniki]) ?>
             <?php } ?>
             <?php endforeach; ?>
         </div>
@@ -43,9 +41,7 @@
             <?php foreach ($zgodbe as $zgodba): ?>
                 <?php if ($zgodba['statusZgodbe'] == 'zakljucen') { ?>
                 <?php echo view('partials/storyCard',
-                    ['naslov'=>$zgodba['naslov'], 'statusZgodbe'=>$zgodba['statusZgodbe'], 'prioriteta'=>$zgodba['prioriteta'], 'poslovnaVrednost'=>$zgodba['poslovnaVrednost'], 'idZgodbe'=>$zgodba['idZgodbe'],
-                     'besedilo'=>$zgodba['besedilo'], 'sprejemniTesti'=>$zgodba['sprejemniTesti'], 'odgovorni' => $zgodba['odgovorni'],
-                     'casovnaZahtevnost'=>$zgodba['casovnaZahtevnost'], 'naloge'=>$zgodba['naloge'],'uporabniki'=>$uporabniki ]) ?>
+                        ['zgodba'=>$zgodba, 'uporabniki'=>$uporabniki]) ?>
                 <?php } ?>
             <?php endforeach; ?>
         </div>

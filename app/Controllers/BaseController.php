@@ -114,16 +114,22 @@ class BaseController extends Controller
 
             if($naloge != null){
                 $indexnaloge = 0;
+                $workSeconds = 0;
                 foreach ($naloge as $naloga){
                     if(isset($naloge[$indexnaloge]['clan_ekipe'])){
                         $naloge[$indexnaloge]['clan_ekipe_name'] = ($modelusers->find($naloge[$indexnaloge]['clan_ekipe']))['username'];
+                    } else {
+                        $naloge[$indexnaloge]['clan_ekipe_name'] = 'Ni dodeljena';
                     }
+                    $workSeconds = $workSeconds + $naloga['cas_dela'];
                     $indexnaloge = $indexnaloge +1;
                 }
                 $zgodbe[$i]["naloge"] = $naloge;
+                $zgodbe[$i]["deloSkupaj"] = round($workSeconds/ 3600).'h '.round($workSeconds/ 60 % 60).'min';
             }
             else{
                 $zgodbe[$i]["naloge"] = [];
+                $zgodbe[$i]["deloSkupaj"] = '0h 0min';
             }
             $i = $i+1;
         }
