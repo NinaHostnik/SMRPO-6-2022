@@ -185,7 +185,7 @@
             <?php } else {?>
                 <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php if ($zgodba['casovnaZahtevnost']) echo $zgodba['casovnaZahtevnost'].'h'; else echo '/' ?> </div>
             <?php } ?>
-            <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b><?php echo $zgodba['deloSkupaj'] ?> / <?php echo $zgodba['casovnaZahtevnost'].'h' ?></b></div>
+            <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b><?php echo $zgodba['deloSkupaj'] ?> / <?php echo $zgodba['ocenaSkupaj'].'h' ?></b></div>
             <!-- TODO: Reject and accept buttons that can only be seen in 'My tasks' when the story has been assigned but not accepted/rejected -->
         </div>
         <!-- TODO: only show the two buttons if we're in 'My tasks', the story has been assigned to the user and has not yet been accepted -->
