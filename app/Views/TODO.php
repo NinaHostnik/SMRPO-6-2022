@@ -34,16 +34,16 @@
 TODO popravki
 #- prikaži datum v formatu dd.mm.yyyy
 #- zlovdaj stran sprint tudi če ni aktivnega sprinta !!!!
-#- dodaj da je pri nalogah časovna zahtevnost v urah - Done
-#- naloga se lahko doda brez zadolženega člana - Done
+# yes DONE: dodaj da je pri nalogah časovna zahtevnost v urah
+# yes DONE: naloga se lahko doda brez zadolženega člana
 
 #Seznam nalog
-#- naloge morajo biti oštevilčene - Done
-#- v seznamu se mora videti koliko ur je še do konca naloge
+# yes DONE: naloge morajo biti oštevilčene
+# yes DONE: v seznamu se mora videti koliko ur je še do konca naloge
 #- spodaj mora biti seštevek koliko ur je še do konca
-#- najprej se napiše začetna ocena zahtevnosti
+# yes DONE: najprej se napiše začetna ocena zahtevnosti
 #- nato se odšteva
-#- doda se še delo
+# yes DONE: doda se še delo
 #- username naj bo zraven imena naloge
 
 #- handle zaključevanje sprinta !!!
@@ -56,4 +56,4 @@ TODO popravki
 #- fix blue coloration for sprint bug
 #- razmak zgodbami ki so v sprintu in tistimi ki niso
 
-#- ure se vpisujejo za vsak dan posebej
+# yes DONE: ure se vpisujejo za vsak dan posebej
