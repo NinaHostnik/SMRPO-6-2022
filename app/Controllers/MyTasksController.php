@@ -92,6 +92,12 @@ class MyTasksController extends BaseController
         $model= new UporabniskeZgodbeModel();
         $uporabnik=session()->get('id');
         $naloga = $uri->getSegment('2');
+        $nalogeModel = new NalogeModel();
+        $status=$nalogeModel->pridobiAktivnostNaloge($naloga);
+        var_dump($status);
+        if($status){
+            $nalogeModel->finishWork($naloga);
+        }
         $model->zavrniNalogo($naloga, $uporabnik);
         return redirect()->back();
     }

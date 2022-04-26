@@ -31,8 +31,11 @@
 # yes DONE: ustvarjanje projekta: član razvojne skupine je lahko tudi scrum master
 # yes DONE: prikaži napako, če se ime projekta podvaja
 
+
+
+
 TODO popravki
-#- prikaži datum v formatu dd.mm.yyyy
+#DONE - prikaži datum v formatu dd.mm.yyyy
 #- zlovdaj stran sprint tudi če ni aktivnega sprinta !!!!
 # yes DONE: dodaj da je pri nalogah časovna zahtevnost v urah
 # yes DONE: naloga se lahko doda brez zadolženega člana

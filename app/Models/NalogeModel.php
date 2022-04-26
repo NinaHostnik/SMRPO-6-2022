@@ -30,4 +30,13 @@ class NalogeModel extends Model
         $this->db->query("CALL save_time(". $taskId.");");
     }
 
+    function pridobiAktivnostNaloge($idNaloge){
+        $query=$this->db->query("SELECT * FROM naloge WHERE id=".$idNaloge." AND aktiven='D'");
+        $rezultat=$query->getResultArray();
+        if($rezultat==null){
+            return FALSE;
+        }
+        return TRUE;
+    }
+
 }

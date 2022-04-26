@@ -43,23 +43,23 @@
                         <div class="card-title"><b><?php echo $naloga['opis_naloge'] ?></b></div>
                         <!-- TODO: Beni's problem TODO: da se gumbi pojavjo sam ce je zgodba nesprejeta pa da se lah zavrne ce je to uporabnik kermu je dodeljena-->
                         <div class="card-subtitle"><?php echo session()->get('username') ?></div>
+                    </div>
+                    <div>
                         <?php if($naloga['potrjen']== 'N') :?> 
                             <button class="btn btn-sm btn-success" onclick="sprejmiNalogo(<?php echo $naloga['id'] ?>)">Sprejmi Nalogo</button>
                             <button class="btn btn-sm btn-danger" onclick="zavrniNalogo(<?php echo $naloga['id'] ?>)">Zavrni Nalogo</button>
                         <?php else : ?>
                             <button class="btn btn-sm btn-danger" onclick="zavrniNalogo(<?php echo $naloga['id'] ?>)">Zavrni Nalogo</button>
                         <?php endif; ?>
-                        <!-- end of Beni's problem -->
-                    </div>
+                    <!-- end of Beni's problem -->
                     <?php if ($zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
-                        <div>
                             <?php if ($naloga['aktiven'] == 'N') : ?>
                                 <button class="btn btn-sm btn-success" onclick="spremeniStatus('<?php echo $naloga['aktiven'] ?>', <?php echo $naloga['id'] ?>)">Začni z delom</button>
                             <?php else : ?>
                                 <button class="btn btn-sm btn-danger" onclick="spremeniStatus('<?php echo $naloga['aktiven'] ?>', <?php echo $naloga['id'] ?>)">Končaj z delom</button>
                             <?php endif; ?>
-                        </div>
                     <?php endif; ?>
+                </div>
                 </div>
             </div>
         <?php endforeach; ?>
