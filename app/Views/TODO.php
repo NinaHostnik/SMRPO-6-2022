@@ -36,7 +36,7 @@
 
 TODO popravki
 #DONE - prikaži datum v formatu dd.mm.yyyy
-#- zlovdaj stran sprint tudi če ni aktivnega sprinta !!!!
+#DONE- zlovdaj stran sprint tudi če ni aktivnega sprinta !!!!
 # yes DONE: dodaj da je pri nalogah časovna zahtevnost v urah
 # yes DONE: naloga se lahko doda brez zadolženega člana
 

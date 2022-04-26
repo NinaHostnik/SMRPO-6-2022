@@ -100,7 +100,7 @@ class UporabniskeZgodbeModel extends Model{
     function sprejmiNalogo($idNaloge, $idUporabnika){
         $query=$this->db->query("SELECT * FROM naloge WHERE clan_ekipe=".$idUporabnika." AND id=".$idNaloge."AND potrjen='N'");
         if($query!=TRUE){
-            $query=$this->db->query("UPDATE naloge SET potrjen='D' WHERE id=".$idNaloge);
+            $query=$this->db->query("UPDATE naloge SET potrjen='D', clan_ekipe=".$idUporabnika." WHERE id=".$idNaloge);
         }
         else{
             $query=$this->db->query("SELECT * FROM naloge WHERE clan_ekipe=NULL AND id=".$idNaloge."AND potrjen='N'");

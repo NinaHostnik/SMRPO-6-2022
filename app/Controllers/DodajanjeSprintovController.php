@@ -36,8 +36,8 @@ class DodajanjeSprintovController extends BaseController
             $speed=$this->request->getVar('speed');
             $start=$this->request->getVar('start');
             $end=$this->request->getVar('end');
-            $idProjekta=$uri->getSegment('2');
-            $idOsebe=$this->request->getVar('idOsebe');
+            $idProjekta=session()->get("projectId");
+            $idOsebe=session()->get('id');
 
             $prekrivanje=$model->preveriZaPrekrivanje($start, $idProjekta);
             $sprint=[
@@ -108,11 +108,11 @@ class DodajanjeSprintovController extends BaseController
             $data["speed"]=NULL;
             $data["start"]=NULL;
             $data["end"]=NULL;
-            $data["idProjekta"]=$uri->getSegment('2');
+            $data["idProjekta"]=session()->get("projectId");
             #$data["idProjekta"]=6;
             $data["idOsebe"]=session()->get('id');
             $data["opozorilo"]=NULL;
-            $data["datum"]= $model->getFirstAvailableDate($uri->getSegment('2'));
+            $data["datum"]= $model->getFirstAvailableDate(session()->get("projectId"));
             echo view('subpages/dodajanjeSprinta/dodajanjeSprinta', $data);
         }
     }       

@@ -15,7 +15,11 @@
     <div class="row">
         <div class="col-lg-12 card card-header">
             <div class="d-flex justify-content-between align-items-center">
+                <?php if ($niSprinta):?>
+                <h4>Sprint: Trenutno ni sprinta</h4>
+                <?php else :?>
                 <h4>Sprint: <?php echo date("d.m.Y", strtotime($sprint['zacetniDatum'])).' - '.date("d.m.Y", strtotime($sprint['koncniDatum'])).' ( '.$sprint['trenutniStatus'].' )' ?></h4>
+                <?php endif?>
                 <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
                     <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeSprintov">Nov sprint</a>
                 <?php } ?>

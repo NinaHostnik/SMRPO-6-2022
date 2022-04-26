@@ -150,6 +150,9 @@
                                     <span class="card-text text-primary"><?php echo $naloga['clan_ekipe_name'] ?> </span>
                                     <span><?php echo 'ocena: '.$naloga['ocena_casa'].'h' ?></span>
                                     <span><?php echo 'delo: '. round($naloga['cas_dela']/ 3600).'h '.round($naloga['cas_dela']/ 60 % 60).'min' ?></span>
+                                    <?php if($naloga['clan_ekipe_name']=="Ni dodeljena"): ?>
+                                        <button class="btn btn-sm btn-success" onclick="sprejmiNalogo(<?php echo $naloga['id'] ?>)">Sprejmi Nalogo</button>
+                                    <?php endif?>
                                 </div>
                                 <?php $stevilka++?>
                                 <!-- TODO: make this work -->
@@ -199,3 +202,9 @@
         <?php } ?>
     </card>
 <?php } ?>
+
+<script>
+        function sprejmiNalogo(idNaloge) {
+            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idNaloge ;
+        }
+</script>

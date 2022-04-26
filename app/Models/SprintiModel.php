@@ -24,9 +24,10 @@ class SprintiModel extends Model{
     function getFirstAvailableDate(string $idProjekta) {
         $table = 'sprinti';
         $query = $this->db-> query("SELECT MAX(koncniDatum) AS kd FROM ".$table." WHERE idProjekta=".$idProjekta);
-        $row = $query->getResultArray();
+        #$row = $query->getResultArray();
         $returnDate = date("Y-m-d");
-        if ($row != NULL) {
+        if ($query != FALSE) {
+            $row = $query->getResultArray();
             $returnDate = date("Y-m-d", strtotime($row[0]['kd'].'+1 day'));
         }
         // preveri ce je nedelja here

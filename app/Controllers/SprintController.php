@@ -39,11 +39,47 @@ class SprintController extends BaseController
         $zgodbemodel = new UporabniskeZgodbeModel();
 
         if ($trenutnisprint == null && $nezakjucensprint== null){
+            $zgodbemodel = new UporabniskeZgodbeModel();
             session()->setFlashdata(['popup'=>'sprint trenutno ni aktiven']);
-            return redirect()->to('/Pbacklog');
+            $zgodbe = null;#$zgodbemodel->pridobiZgodbeSprinta($trenutnisprint['idSprinta']);
+            $fin =null; #$this->addResponsibleAdults($zgodbe, $userModel);
+            $zgodberework =null; #$this->pridobizgodbe($fin);
+
+            # separate stories into inProgress and acceptanceReady
+            $accReady = array();
+            $inProgress = array();
+            #foreach($zgodberework as $zg):
+                #$stAll = count($zg['naloge']);
+                #$stDone = 0;
+                #foreach ($zg['naloge'] as $naloga):
+                    #if ($naloga['dokoncan'] === 'D') {
+                        #$stDone += 1;
+                    #}
+                #endforeach;
+                #if ($stAll === $stDone) {
+                    #$accReady[] = $zg;
+                #} else {
+                    #$inProgress[] = $zg;
+                #}
+            #endforeach;
+
+            $data = [
+                'sprint'=>$trenutnisprint,
+                'nezakjucen'=>false,
+                'zgodbeAccReady' => $accReady,
+                'zgodbeInProgress' => $inProgress,
+                'uporabniki'=>$this->pridobiUporabnike(),
+                'niSprinta'=>true,
+            ];
+            if(session()->has('popup')){
+                $popupdata = ['popup' => session()->getFlashdata('popup')];
+                echo view('partials/popup',$popupdata);
+            }
+            echo view('subpages/sprint/backlog', $data);
+            #return redirect()->to('/Pbacklog');
         }
 
-        if($nezakjucensprint == null){
+        else if($nezakjucensprint == null){
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($trenutnisprint['idSprinta']);
             $fin = $this->addResponsibleAdults($zgodbe, $userModel);
             $zgodberework = $this->pridobizgodbe($fin);
@@ -72,6 +108,7 @@ class SprintController extends BaseController
                 'zgodbeAccReady' => $accReady,
                 'zgodbeInProgress' => $inProgress,
                 'uporabniki'=>$this->pridobiUporabnike(),
+                'niSprinta'=>false,
             ];
             if(session()->has('popup')){
                 $popupdata = ['popup' => session()->getFlashdata('popup')];
@@ -106,6 +143,7 @@ class SprintController extends BaseController
                 'zgodbeAccReady' => $accReady,
                 'zgodbeInProgress' => $inProgress,
                 'uporabniki' => $this->pridobiUporabnike(),
+                'niSprinta'=>false,
             ];
             $popupdata = ['popup' => 'Zakjučite sprint preden začete novega'];
             session()->setFlashdata($popupdata);
