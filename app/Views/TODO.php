@@ -30,3 +30,30 @@
 ## PROJECT
 # yes DONE: ustvarjanje projekta: član razvojne skupine je lahko tudi scrum master
 # yes DONE: prikaži napako, če se ime projekta podvaja
+
+TODO popravki
+#- prikaži datum v formatu dd.mm.yyyy
+#- zlovdaj stran sprint tudi če ni aktivnega sprinta !!!!
+#- dodaj da je pri nalogah časovna zahtevnost v urah - Done
+#- naloga se lahko doda brez zadolženega člana - Done
+
+#Seznam nalog
+#- naloge morajo biti oštevilčene - Done
+#- v seznamu se mora videti koliko ur je še do konca naloge
+#- spodaj mora biti seštevek koliko ur je še do konca
+#- najprej se napiše začetna ocena zahtevnosti
+#- nato se odšteva
+#- doda se še delo
+#- username naj bo zraven imena naloge
+
+#- handle zaključevanje sprinta !!!
+#- dodaj velocity na kartico k sprintu
+#- ali je ocenjevanje časovne zahtevnosti v urah ali točkah - Done (napisou v urah pa je uredu)
+
+#Seznam zahtev
+#- placeholder v katerem sprintu so bile sprejete
+#- ločen zavihek za won't have this time
+#- fix blue coloration for sprint bug
+#- razmak zgodbami ki so v sprintu in tistimi ki niso
+
+#- ure se vpisujejo za vsak dan posebej
