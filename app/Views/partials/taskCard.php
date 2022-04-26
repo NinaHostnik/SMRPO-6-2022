@@ -61,16 +61,6 @@
                         </div>
                     <?php endif; ?>
                 </div>
-                <hr>
-                <?php if ($naloga['aktiven'] == 'N' && $zgodba['idUporabnika'] && $zgodba['statusZgodbe'] != 'zakljucen') : ?>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="card-text"><b>Vpisovanje ur</b></div>
-                        <div>
-                            <input type="number" min="1" id="vpisiUre">
-                            <button class="btn btn-sm btn-outline-dark">Vpiši ure</button>
-                        </div>
-                    </div>
-                <?php endif; ?>
             </div>
         <?php endforeach; ?>
 
