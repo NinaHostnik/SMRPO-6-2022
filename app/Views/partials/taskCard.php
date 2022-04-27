@@ -36,11 +36,13 @@
     </div>
     <!-- Card body: Base description and acceptance tests -->
     <div class="card-body">
+    <?php $stevilka=1?>
         <?php foreach ($naloge as $naloga): ?>
             <div class="list-group-item">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <div class="card-title"><b><?php echo $naloga['opis_naloge'] ?></b></div>
+                        <div class="card-title"><b><?php echo($stevilka)?>. <?php echo $naloga['opis_naloge'] ?></b></div>
+                        <?php $stevilka++?>
                         <!-- TODO: Beni's problem TODO: da se gumbi pojavjo sam ce je zgodba nesprejeta pa da se lah zavrne ce je to uporabnik kermu je dodeljena-->
                         <div class="card-subtitle"><?php echo session()->get('username') ?></div>
                     </div>

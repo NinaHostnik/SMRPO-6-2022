@@ -146,8 +146,7 @@
                         <li class="list-group-item" <?php if ($naloga['dokoncan'] == 'D') echo 'style="background-color: rgba(50, 205, 50, 0.5)"' ?> >
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h6 class="card-text"><?php echo $stevilka?>. <?php echo $naloga['opis_naloge'] ?></h6>
-                                    <span class="card-text text-primary"><?php echo $naloga['clan_ekipe_name'] ?> </span>
+                                    <h6 class="card-text"><?php echo $stevilka?>. <?php echo $naloga['opis_naloge'] ?> (<span class="card-text text-primary"><?php echo $naloga['clan_ekipe_name'] ?></span>)</h6>
                                     <span><?php echo 'ocena: '.$naloga['ocena_casa'].'h' ?></span>
                                     <span><?php echo 'delo: '. round($naloga['cas_dela']/ 3600).'h '.round($naloga['cas_dela']/ 60 % 60).'min' ?></span>
                                     <?php if($naloga['clan_ekipe_name']=="Ni dodeljena"): ?>

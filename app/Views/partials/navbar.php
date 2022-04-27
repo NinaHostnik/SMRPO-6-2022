@@ -19,6 +19,9 @@ if(session()->get('lastLogin')!=null) {
                         <?php if (session()->get('permissions') == 0) {
                             echo '(admin)';
                         } ?>
+                        <?php if (session()->get('permissions') == 2) {
+                            echo '(naročnik)';
+                        } ?>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
