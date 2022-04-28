@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\NalogeModel;
 use App\Models\UporabniskeZgodbeModel;
 use App\Models\UserModel;
+use App\Models\SprintiModel;
 
 class MyTasksController extends BaseController
 {
@@ -104,12 +105,17 @@ class MyTasksController extends BaseController
     }
     public function potrdiZgodbo(){
         $zgodbeModel = new UporabniskeZgodbeModel();
+        $model= new SprintiModel();
         $uri = service('uri');
         $zgodbaId=$uri->getSegment('2');
         $koncaneVseNaloge=$zgodbeModel->soVseNalogeKoncane($zgodbaId);
         $uporabnik=session()->get('id');
         $idProjekta=session()->get('projectId');
         $jeProduktniVodja=$zgodbeModel->jeProduktniVodja($uporabnik, $idProjekta);
+        $jeSkrbnik=$model->preveriStatusUporabnika($uporabnik);
+        if($jeProduktniVodja || $jeSkrbnik){
+            $jeProduktniVodja=true;
+        }
         if($koncaneVseNaloge && $jeProduktniVodja){
             $zgodbeModel->potrdiZgodboModel($zgodbaId);
             session()->setFlashdata(['popup'=>'Zgodba potrjena']);
