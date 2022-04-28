@@ -83,7 +83,7 @@ class UporabniskeZgodbeModel extends Model{
 
     function updateSprint($idZgodbe, $sprint)
     {
-        $query = $this->db->query("UPDATE uporabniskeZgodbe SET sprint = ? WHERE idZgodbe = ?",array($sprint,$idZgodbe));
+        $query = $this->db->query("UPDATE uporabniskeZgodbe SET sprint = ?, statusZgodbe=? WHERE idZgodbe = ?",array($sprint, "sprint", $idZgodbe));
         return $query;
     }
 
