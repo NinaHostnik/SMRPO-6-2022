@@ -75,5 +75,10 @@ class SprintiModel extends Model{
         return $query->getResultArray();
     }
 
+    public function getSprint($sprintId): array {
+        $query=$this->db-> query("SELECT * FROM sprinti WHERE idSprinta = ".$sprintId);
+        return $query->getResultArray()[0];
+    }
+
 
 }

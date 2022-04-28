@@ -84,8 +84,8 @@
         </div>
         <!-- Card footer: Sprint (if applicable), Time estimate, Time spent -->
         <div class="card-footer">
-            <?php if ($zgodba['statusZgodbe'] == 'sprint') { ?>
-                <div class="card-subtitle"><b>Sprint: <!-- TODO: Add sprint duration --></b></div>
+            <?php if ($zgodba['statusZgodbe'] != 'backlog') { ?>
+                <div class="card-subtitle"><b>Sprint:</b> <?php echo $zgodba['sprint'] ?></div>
             <?php } ?>
             <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php if ($zgodba['casovnaZahtevnost']) echo $zgodba['casovnaZahtevnost'].'h'; else echo '/' ?> </div>
             <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b>0h / 18h</b></div>
@@ -173,8 +173,8 @@
             </div>
         </div>
         <div class="card-footer">
-            <?php if ($zgodba['statusZgodbe'] == 'sprint') { ?>
-                <div class="card-subtitle"><b>Sprint: <!-- TODO: Add sprint duration --></b></div>
+            <?php if ($zgodba['statusZgodbe'] != 'backlog') { ?>
+                <div class="card-subtitle"><b>Sprint:</b> <?php echo $zgodba['sprint'] ?></div>
             <?php } ?>
             <?php if(strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
                 <b>Časovna zahtevnost: </b> <?php if ($zgodba['casovnaZahtevnost']) echo $zgodba['casovnaZahtevnost'].'h'; else echo '/' ?>

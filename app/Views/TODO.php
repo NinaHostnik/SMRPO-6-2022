@@ -50,11 +50,11 @@ TODO popravki
 # yes DONE: username naj bo zraven imena naloge
 
 #- handle zaključevanje sprinta !!!
-#- dodaj velocity na kartico k sprintu
+# yes DONE: dodaj velocity na kartico k sprintu
 #DONE- ali je ocenjevanje časovne zahtevnosti v urah ali točkah - Done (napisou v urah pa je uredu)
 
 #Seznam zahtev
-#- placeholder v katerem sprintu so bile sprejete
+# yes DONE: placeholder v katerem sprintu so bile sprejete
 #- ločen zavihek za won't have this time
 #- fix blue coloration for sprint bug
 #- razmak zgodbami ki so v sprintu in tistimi ki niso
