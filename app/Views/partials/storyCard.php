@@ -192,6 +192,7 @@
             <?php if ($jeVodja):?>
             <?php if ($zgodba['prpravlenNaSprejetje']):?>
                 <button class="btn btn-sm btn-success" onclick="sprejmiZgodbo(<?php echo $zgodba['idZgodbe']?>)">Sprejmi Zgodbo</button>
+                <button class="btn btn-sm btn-danger" onclick="zavrniZgodbo(<?php echo $zgodba['idZgodbe'] ?>)">Zavrni Zgodbo</button>
             <?php endif ?>
             <?php endif ?>
             <?php endif ?>
@@ -214,6 +215,9 @@
             window.location.href = "<?php echo site_url('SprejmiNalogo/');?>" + idNaloge ;
         }
         function sprejmiZgodbo(idZgodbe) {
+            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idZgodbe ;
+        }
+        function zavrniZgodbo(idZgodbe) {
             window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idZgodbe ;
         }
 </script>
