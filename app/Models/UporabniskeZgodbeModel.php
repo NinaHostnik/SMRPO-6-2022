@@ -83,7 +83,7 @@ class UporabniskeZgodbeModel extends Model{
 
     function updateSprint($idZgodbe, $sprint)
     {
-        $query = $this->db->query("UPDATE uporabniskeZgodbe SET sprint = ? WHERE idZgodbe = ?",array($sprint,$idZgodbe));
+        $query = $this->db->query("UPDATE uporabniskeZgodbe SET sprint = ?, statusZgodbe=? WHERE idZgodbe = ?",array($sprint, "sprint", $idZgodbe));
         return $query;
     }
 
@@ -117,9 +117,9 @@ class UporabniskeZgodbeModel extends Model{
         }     
     }
     function soVseNalogeKoncane($idUporabniskeZgodbe){
-        $query=$this->db_>query("SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe);
-        $stNalog=count($query->getResultsArray());
-        $query=$this->db_>query("SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe." AND dokoncan='D'");
+        $query=$this->db->query("SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe);
+        $stNalog=count($query->getResultArray());
+        $query=$this->db->query("SELECT * FROM naloge WHERE zgodba_id=".$idUporabniskeZgodbe." AND dokoncan='D'");
         $stKoncanihNalog=count($query->getResultArray());
         if($stNalog==$stKoncanihNalog){
             return true;
@@ -127,7 +127,7 @@ class UporabniskeZgodbeModel extends Model{
         return false;
     }
     function jeProduktniVodja($idUporabnika, $idProjekta){
-        $query=$this->db_>query("SELECT * FROM project_members WHERE project_id=".$idProjekta." AND user_id=".$idUporabnika." AND role='V'");
+        $query=$this->db->query("SELECT * FROM project_members WHERE project_id=".$idProjekta." AND user_id=".$idUporabnika." AND role='V'");
         $rezultat=$query->getResultArray();
         if($rezultat!=NULL){
             return true;
@@ -135,6 +135,7 @@ class UporabniskeZgodbeModel extends Model{
         return false;
     }
     function potrdiZgodboModel($idZgodbe){
-
+        $query=$this->db->query("UPDATE uporabniskeZgodbe SET potrjen='D', statusZgodbe='zakljucen' WHERE idZgodbe=".$idZgodbe);
+        var_dump($query);
     }
 }

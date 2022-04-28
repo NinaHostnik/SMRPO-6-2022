@@ -38,5 +38,14 @@ class NalogeModel extends Model
         }
         return TRUE;
     }
-
+    function zakljuciNalogo($idNaloge){
+        $query=$this->db->query("UPDATE naloge SET dokoncan='D' WHERE id=".$idNaloge);
+    }
+    function preveriCeJeNalogaMoja($idNaloge, $idUporabnika){
+        $query=$this->db->query("SELECT * FROM naloge WHERE id=".$idNaloge." AND clan_ekipe=".$idUporabnika);
+        if($query==false){
+            return false;
+        }
+        return true;
+    }
 }

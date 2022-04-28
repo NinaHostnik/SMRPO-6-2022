@@ -85,6 +85,7 @@ class MyTasksController extends BaseController
         $uporabnik=session()->get('id');
         $naloga = $uri->getSegment('2');
         $model->sprejmiNalogo($naloga, $uporabnik);
+        session()->setFlashdata(['popup'=>'Sprejeli ste nalogo']);
         return redirect()->back();
     }
     public function zavrniNalogo(){
@@ -94,21 +95,44 @@ class MyTasksController extends BaseController
         $naloga = $uri->getSegment('2');
         $nalogeModel = new NalogeModel();
         $status=$nalogeModel->pridobiAktivnostNaloge($naloga);
-        var_dump($status);
         if($status){
             $nalogeModel->finishWork($naloga);
         }
         $model->zavrniNalogo($naloga, $uporabnik);
+        session()->setFlashdata(['popup'=>'Zavrnili ste nalogo']);
         return redirect()->back();
     }
     public function potrdiZgodbo(){
         $zgodbeModel = new UporabniskeZgodbeModel();
-        $zgodbaId=0;
+        $uri = service('uri');
+        $zgodbaId=$uri->getSegment('2');
         $koncaneVseNaloge=$zgodbeModel->soVseNalogeKoncane($zgodbaId);
         $uporabnik=session()->get('id');
+        $idProjekta=session()->get('projectId');
         $jeProduktniVodja=$zgodbeModel->jeProduktniVodja($uporabnik, $idProjekta);
         if($koncaneVseNaloge && $jeProduktniVodja){
             $zgodbeModel->potrdiZgodboModel($zgodbaId);
+            session()->setFlashdata(['popup'=>'Zgodba potrjena']);
         }
+        return redirect()->back();
+    }
+    function zakljuciNalogo(){
+        $uri = service('uri');
+        $idNaloge=$uri->getSegment('2');
+        $nalogeModel = new NalogeModel();
+        $status=$nalogeModel->pridobiAktivnostNaloge($idNaloge);
+        $idUporabnika=session()->get('id');
+        $jeNalogaMoja=$nalogeModel->preveriCeJeNalogaMoja($idNaloge, $idUporabnika);
+        if($jeNalogaMoja){
+            if($status){
+                $nalogeModel->finishWork($idNaloge);
+            }
+            $nalogeModel->zakljuciNalogo($idNaloge);
+            session()->setFlashdata(['popup'=>'Naloga zaključena']);
+        }
+        else{
+            session()->setFlashdata(['popup'=>'Ne morete zaključiti naloge, ki ni vaša']);
+        }
+        return redirect()->back();
     }
 }
