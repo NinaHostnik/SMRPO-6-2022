@@ -54,9 +54,11 @@ $routes->match(['get','post'], '/Pbacklog/urediCas', 'DodajanjeUporabniskihZgodb
 $routes->match(['get','post'], '/SprejmiNalogo/(:num)', 'MyTasksController::sprejmiNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ZavrniNalogo/(:num)', 'MyTasksController::zavrniNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/SprejmiZgodbo/(:num)', 'MyTasksController::potrdiZgodbo', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/ZavrniZgodbo/(:num)', 'MyTasksController::zavrniZgodbo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/zakljuciNalogo/(:num)', 'MyTasksController::zakljuciNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/admin/listUser', 'UsersController::listUser', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/deleteUser/(:num)', 'UsersController::deleteUser', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/ascendUser/(:num)', 'UsersController::ascendUser', ['filter' => 'LoginAuth']);
 
 
 

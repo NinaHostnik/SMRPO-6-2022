@@ -52,4 +52,9 @@ class UserModel extends Model{
         $query = $this->db->query("UPDATE users SET active = 'N' WHERE id = ".$id);
         return $query;
     }
+
+    public function ascendUser($id) {
+        $query = $this->db->query("UPDATE users SET permissions = 0 WHERE id = ".$id);
+        return $query;
+    }
 }

@@ -138,4 +138,9 @@ class UporabniskeZgodbeModel extends Model{
         $query=$this->db->query("UPDATE uporabniskeZgodbe SET potrjen='D', statusZgodbe='zakljucen' WHERE idZgodbe=".$idZgodbe);
         var_dump($query);
     }
+
+    function zavrniZgodboModel($idZgodbe){
+        $query=$this->db->query("UPDATE uporabniskeZgodbe SET statusZgodbe='backlog', sprint = NULL WHERE idZgodbe=".$idZgodbe);
+        var_dump($query);
+    }
 }

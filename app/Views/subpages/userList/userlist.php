@@ -21,7 +21,10 @@
                                     } ?>
                                 </h6>
                             </div>
-                            <button class="btn btn-danger" onclick="odstrani(<?php echo $user['id'] ?>)">Odstrani uporabnika</button>
+                            <div>
+                                <button class="btn btn-success" onclick="ascension(<?php echo $user['id'] ?>)">Povišaj uporabnika</button>
+                                <button class="btn btn-danger" onclick="odstrani(<?php echo $user['id'] ?>)">Odstrani uporabnika</button>
+                            </div>
                         </div>
                     </li>
                 <?php endforeach; ?>
@@ -30,6 +33,9 @@
         <script>
             function odstrani(id) {
                 window.location.href = "<?php echo site_url('deleteUser/');?>" + id;
+            }
+            function ascension(id) {
+                window.location.href = "<?php echo site_url('ascendUser/');?>" + id;
             }
         </script>
     </div>

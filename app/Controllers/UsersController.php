@@ -237,8 +237,17 @@ class UsersController extends BaseController
         }
     }
 
-    function ascend_user() {
+    function ascendUser() {
+        $uri = service('uri');
+        $id = $uri->getSegment('2');
 
+        $userModel = new UserModel();
+        $userModel->ascendUser($id);
+
+        $popupdata = ['popup' => 'Uporabnik je bil povišan.'];
+        session()->setFlashdata($popupdata);
+
+        return $this->listUser();
     }
 
     function listUser() {

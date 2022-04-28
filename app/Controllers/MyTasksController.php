@@ -116,6 +116,16 @@ class MyTasksController extends BaseController
         }
         return redirect()->back();
     }
+
+    public function zavrniZgodbo(){
+        $zgodbeModel = new UporabniskeZgodbeModel();
+        $uri = service('uri');
+        $zgodbaId=$uri->getSegment('2');
+        $zgodbeModel->zavrniZgodboModel($zgodbaId);
+        session()->setFlashdata(['popup'=>'Zgodba zavrnjena.']);
+        return redirect()->back();
+    }
+
     function zakljuciNalogo(){
         $uri = service('uri');
         $idNaloge=$uri->getSegment('2');

@@ -218,6 +218,6 @@
             window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idZgodbe ;
         }
         function zavrniZgodbo(idZgodbe) {
-            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idZgodbe ;
+            window.location.href = "<?php echo site_url('ZavrniZgodbo/');?>" + idZgodbe ;
         }
 </script>
