@@ -69,14 +69,13 @@
     </div>
     <script>
         function spremeniStatus(status, taskId) {
-            //var status = '<?php //echo $naloga['aktiven'] ?>//';
-            //var taskId = <?php //echo $naloga['id'] ?>//;
-
             window.location.href = "<?php echo site_url('SpremeniStatus/');?>" + status + '/' + taskId;
         }
+
         function sprejmiNalogo(idNaloge) {
             window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idNaloge ;
         }
+
         function zavrniNalogo(idNaloge) {
             window.location.href = "<?php echo site_url('ZavrniZgodbo/');?>" + idNaloge;
         }

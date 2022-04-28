@@ -241,11 +241,24 @@ class UsersController extends BaseController
 
     }
 
-    function deleteUser() {
+    function listUser() {
         $userModel = new UserModel();
         $users = $userModel->getAllUsers();
         $data['users'] = $users;
         echo view('subpages/userList/userlist', $data);
+    }
+
+    function deleteUser() {
+        $uri = service('uri');
+        $id = $uri->getSegment('2');
+
+        $userModel = new UserModel();
+        $userModel->deactivateUser($id);
+
+        $popupdata = ['popup' => 'Uporabnik je bil izbrisan.'];
+        session()->setFlashdata($popupdata);
+
+        return $this->listUser();
     }
 
 

@@ -33,7 +33,7 @@ class UserModel extends Model{
 
     public function readLookup(): array
     {
-        $query = $this->db->query("SELECT id, username FROM users");
+        $query = $this->db->query("SELECT id, username FROM users WHERE active = 'D'");
 
         return $query->getResultArray();
     }
@@ -44,7 +44,12 @@ class UserModel extends Model{
     }
 
     public function getAllUsers() {
-        $query = $this->db->query("SELECT id, username, permissions FROM users");
+        $query = $this->db->query("SELECT id, username, permissions FROM users WHERE active = 'D'");
         return $query->getResultArray();
+    }
+
+    public function deactivateUser($id) {
+        $query = $this->db->query("UPDATE users SET active = 'N' WHERE id = ".$id);
+        return $query;
     }
 }

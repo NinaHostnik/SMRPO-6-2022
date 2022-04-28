@@ -21,12 +21,17 @@
                                     } ?>
                                 </h6>
                             </div>
-                            <button class="btn btn-danger">Odstrani uporabnika</button>
+                            <button class="btn btn-danger" onclick="odstrani(<?php echo $user['id'] ?>)">Odstrani uporabnika</button>
                         </div>
                     </li>
                 <?php endforeach; ?>
             </ul>
         </div>
+        <script>
+            function odstrani(id) {
+                window.location.href = "<?php echo site_url('deleteUser/');?>" + id;
+            }
+        </script>
     </div>
 
 <?= $this->endSection() ?>

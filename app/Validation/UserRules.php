@@ -16,6 +16,7 @@ class UserRules{
         }
 
         $user = $model->where('username', $data['username'])
+                        ->where('active', 'D')
                       ->first();
 
         if (!$user){
