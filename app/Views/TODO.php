@@ -47,7 +47,7 @@ TODO popravki
 # yes DONE: najprej se napiše začetna ocena zahtevnosti
 #- nato se odšteva
 # yes DONE: doda se še delo
-#- username naj bo zraven imena naloge
+#DONE- username naj bo zraven imena naloge
 
 #- handle zaključevanje sprinta !!!
 #- dodaj velocity na kartico k sprintu
