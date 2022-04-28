@@ -24,6 +24,11 @@
                     <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeSprintov">Nov sprint</a>
                 <?php } ?>
             </div>
+            <?php if (!$niSprinta):?>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6>Hitrost (v točkah): <?php echo $sprint['hitrost'] ?></h6>
+                </div>
+            <?php endif?>
         </div>
     </div>
     <div class="row">

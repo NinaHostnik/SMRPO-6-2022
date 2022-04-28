@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\NalogeModel;
+use App\Models\SprintiModel;
 use App\Models\UporabniskeZgodbeModel;
 use App\Models\UserModel;
 use CodeIgniter\Controller;
@@ -10,6 +11,7 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use DateTime;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -103,14 +105,24 @@ class BaseController extends Controller
     public function pridobizgodbe($zgodbe){
         $modelnaloge = new NalogeModel();
         $modelusers = new UserModel();
+        $modelsprint = new SprintiModel();
 
         $users = $modelusers->findAll();
-        #var_dump(session()->get("projectId"));
         $i = 0;
         foreach ($zgodbe as $zgodba){
             $naloge = $modelnaloge->pridobiNalogeZgodbe($zgodbe[$i]['idZgodbe']);
-            #var_dump($naloge);
-            #echo '<br>';
+            if ($zgodba['sprint']) {
+                $sprint = $modelsprint->getSprint($zgodba['sprint']);
+                $zacDatum = DateTime::createFromFormat('Y-m-d', $sprint['zacetniDatum']);
+                $konDatum = DateTime::createFromFormat('Y-m-d', $sprint['koncniDatum']);
+                if ($zgodba['statusZgodbe'] == 'sprint') {
+                    $zgodbe[$i]["sprint"] = $zacDatum->format('d.m.Y').' - '.$konDatum->format('d.m.Y');
+                } else if ($zgodba['statusZgodbe'] == 'zakljucen') {
+                    $zgodbe[$i]["sprint"] = 'Sprejeto v sprintu: '.$zacDatum->format('d.m.Y').' - '.$konDatum->format('d.m.Y');
+                }
+            } else {
+                $zgodbe[$i]["sprint"] = '/';
+            }
 
             if($naloge != null){
                 $indexnaloge = 0;
