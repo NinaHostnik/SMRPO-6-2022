@@ -1,6 +1,6 @@
 # TODO: posamezni sprejemni testi v zgodbi se morajo dodajati v alinejah (vsak svojo)
 # BUG: dodaj zahtevo, da si uporabnik ob prvi prijavi spremeni geslo (ali pa ga sam naredi)
-# no DONE: koledar popravi v slo format datume (dd.mm.yyyy namesto dd/mm/yyyy)
+#I guess DONE: koledar popravi v slo format datume (dd.mm.yyyy namesto dd/mm/yyyy)
 # idk DONE: debug prikaz validacijskih errorjev
 
 ## UI
@@ -56,7 +56,7 @@ TODO popravki
 #Seznam zahtev
 # yes DONE: placeholder v katerem sprintu so bile sprejete
 #- ločen zavihek za won't have this time
-#- fix blue coloration for sprint bug
+#DONE- fix blue coloration for sprint bug
 #- razmak zgodbami ki so v sprintu in tistimi ki niso
 
 # yes DONE: ure se vpisujejo za vsak dan posebej

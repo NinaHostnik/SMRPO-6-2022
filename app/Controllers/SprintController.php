@@ -100,7 +100,7 @@ class SprintController extends BaseController
                         $stDone += 1;
                     }
                 endforeach;
-                if ($stAll === $stDone) {
+                if ($stAll === $stDone && $stAll!=0) {
                     $zg['prpravlenNaSprejetje']=true;
                     $accReady[] = $zg;
                 } else {
@@ -141,7 +141,7 @@ class SprintController extends BaseController
                         $stDone += 1;
                     }
                 endforeach;
-                if ($stAll === $stDone) {
+                if ($stAll === $stDone && $stAll!=0) {
                     $zg['prpravlenNaSprejetje']=true;
                     $accReady[] = $zg;
                 } else {
