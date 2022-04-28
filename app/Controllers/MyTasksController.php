@@ -95,7 +95,6 @@ class MyTasksController extends BaseController
         $naloga = $uri->getSegment('2');
         $nalogeModel = new NalogeModel();
         $status=$nalogeModel->pridobiAktivnostNaloge($naloga);
-        var_dump($status);
         if($status){
             $nalogeModel->finishWork($naloga);
         }
@@ -113,6 +112,26 @@ class MyTasksController extends BaseController
         $jeProduktniVodja=$zgodbeModel->jeProduktniVodja($uporabnik, $idProjekta);
         if($koncaneVseNaloge && $jeProduktniVodja){
             $zgodbeModel->potrdiZgodboModel($zgodbaId);
+            session()->setFlashdata(['popup'=>'Zgodba potrjena']);
+        }
+        return redirect()->back();
+    }
+    function zakljuciNalogo(){
+        $uri = service('uri');
+        $idNaloge=$uri->getSegment('2');
+        $nalogeModel = new NalogeModel();
+        $status=$nalogeModel->pridobiAktivnostNaloge($idNaloge);
+        $idUporabnika=session()->get('id');
+        $jeNalogaMoja=$nalogeModel->preveriCeJeNalogaMoja($idNaloge, $idUporabnika);
+        if($jeNalogaMoja){
+            if($status){
+                $nalogeModel->finishWork($idNaloge);
+            }
+            $nalogeModel->zakljuciNalogo($idNaloge);
+            session()->setFlashdata(['popup'=>'Naloga zaključena']);
+        }
+        else{
+            session()->setFlashdata(['popup'=>'Ne morete zaključiti naloge, ki ni vaša']);
         }
         return redirect()->back();
     }

@@ -55,6 +55,7 @@ $routes->match(['get','post'], '/admin/deleteUser', 'UsersController::deleteUser
 $routes->match(['get','post'], '/SprejmiNalogo/(:num)', 'MyTasksController::sprejmiNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ZavrniNalogo/(:num)', 'MyTasksController::zavrniNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/SprejmiZgodbo/(:num)', 'MyTasksController::potrdiZgodbo', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/zakljuciNalogo/(:num)', 'MyTasksController::zakljuciNalogo', ['filter' => 'LoginAuth']);
 
 
 

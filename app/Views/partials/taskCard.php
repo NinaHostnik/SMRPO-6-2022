@@ -46,11 +46,13 @@
                         <!-- TODO: Beni's problem TODO: da se gumbi pojavjo sam ce je zgodba nesprejeta pa da se lah zavrne ce je to uporabnik kermu je dodeljena-->
                         <div class="card-subtitle"><?php echo session()->get('username') ?></div>
                     </div>
+                    <?php if($naloga['dokoncan']!="D"): ?>
                     <div>
                         <?php if($naloga['potrjen']== 'N') :?> 
                             <button class="btn btn-sm btn-success" onclick="sprejmiNalogo(<?php echo $naloga['id'] ?>)">Sprejmi Nalogo</button>
                             <button class="btn btn-sm btn-danger" onclick="zavrniNalogo(<?php echo $naloga['id'] ?>)">Zavrni Nalogo</button>
                         <?php else : ?>
+                            <button class="btn btn-sm btn-success" onclick="zakljuciNalogo(<?php echo $naloga['id'] ?>)">Zaključi Nalogo</button>
                             <button class="btn btn-sm btn-danger" onclick="zavrniNalogo(<?php echo $naloga['id'] ?>)">Zavrni Nalogo</button>
                         <?php endif; ?>
                     <!-- end of Beni's problem -->
@@ -62,6 +64,7 @@
                             <?php endif; ?>
                     <?php endif; ?>
                 </div>
+                <?php endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -79,6 +82,9 @@
         }
         function zavrniNalogo(idNaloge) {
             window.location.href = "<?php echo site_url('ZavrniNalogo/');?>" + idNaloge;
+        }
+        function zakljuciNalogo(idNaloge) {
+            window.location.href = "<?php echo site_url('zakljuciNalogo/');?>" + idNaloge;
         }
     </script>
 </card>
