@@ -43,11 +43,11 @@ TODO popravki
 #Seznam nalog
 # yes DONE: naloge morajo biti oštevilčene
 # yes DONE: v seznamu se mora videti koliko ur je še do konca naloge
-#- spodaj mora biti seštevek koliko ur je še do konca
+# yes DONE: spodaj mora biti seštevek koliko ur je še do konca
 # yes DONE: najprej se napiše začetna ocena zahtevnosti
-#- nato se odšteva
+# yes DONE: nato se odšteva
 # yes DONE: doda se še delo
-#- username naj bo zraven imena naloge
+# yes DONE: username naj bo zraven imena naloge
 
 #- handle zaključevanje sprinta !!!
 #- dodaj velocity na kartico k sprintu
