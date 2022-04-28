@@ -16,9 +16,13 @@ class SprintController extends BaseController
         $idZgodbe = $this->request->getVar('surname');
         $model = new SprintiModel();
         $userModel = new UserModel();
+        $zgodbemodel = new UporabniskeZgodbeModel();
         $sprints = $model->getSprints(session()->get("projectId"));
         $trenutnisprint = null;
         $nezakjucensprint = null;
+        $idUporabnika=session()->get('id');
+        $idProjekta=session()->get('projectId');
+        $jeProduktniVodja=$zgodbemodel->jeProduktniVodja($idUporabnika, $idProjekta);
 
         $date_now = new DateTime();
         #var_dump($sprints);
@@ -36,8 +40,6 @@ class SprintController extends BaseController
                 break;
             }
         endforeach;
-        $zgodbemodel = new UporabniskeZgodbeModel();
-
         if ($trenutnisprint == null && $nezakjucensprint== null){
             $zgodbemodel = new UporabniskeZgodbeModel();
             session()->setFlashdata(['popup'=>'sprint trenutno ni aktiven']);
@@ -70,11 +72,14 @@ class SprintController extends BaseController
                 'zgodbeInProgress' => $inProgress,
                 'uporabniki'=>$this->pridobiUporabnike(),
                 'niSprinta'=>true,
+                'kraj'=>"sprint",
+                'jeVodja'=>$jeProduktniVodja,
             ];
             if(session()->has('popup')){
                 $popupdata = ['popup' => session()->getFlashdata('popup')];
                 echo view('partials/popup',$popupdata);
             }
+            #var_dump($data);
             echo view('subpages/sprint/backlog', $data);
             #return redirect()->to('/Pbacklog');
         }
@@ -96,8 +101,10 @@ class SprintController extends BaseController
                     }
                 endforeach;
                 if ($stAll === $stDone) {
+                    $zg['prpravlenNaSprejetje']=true;
                     $accReady[] = $zg;
                 } else {
+                    $zg['prpravlenNaSprejetje']=false;
                     $inProgress[] = $zg;
                 }
             endforeach;
@@ -109,11 +116,14 @@ class SprintController extends BaseController
                 'zgodbeInProgress' => $inProgress,
                 'uporabniki'=>$this->pridobiUporabnike(),
                 'niSprinta'=>false,
+                'kraj'=>"sprint",
+                'jeVodja'=>$jeProduktniVodja,
             ];
             if(session()->has('popup')){
                 $popupdata = ['popup' => session()->getFlashdata('popup')];
                 echo view('partials/popup',$popupdata);
             }
+            #var_dump($data);
             echo view('subpages/sprint/backlog', $data);        }
         else{
             $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($nezakjucensprint['idSprinta']);
@@ -132,8 +142,10 @@ class SprintController extends BaseController
                     }
                 endforeach;
                 if ($stAll === $stDone) {
+                    $zg['prpravlenNaSprejetje']=true;
                     $accReady[] = $zg;
                 } else {
+                    $zg['prpravlenNaSprejetje']=false;
                     $inProgress[] = $zg;
                 }
             endforeach;
@@ -144,7 +156,10 @@ class SprintController extends BaseController
                 'zgodbeInProgress' => $inProgress,
                 'uporabniki' => $this->pridobiUporabnike(),
                 'niSprinta'=>false,
+                'kraj'=>"sprint",
+                'jeVodja'=>$jeProduktniVodja,
             ];
+            #var_dump($data);
             $popupdata = ['popup' => 'Zakjučite sprint preden začete novega'];
             session()->setFlashdata($popupdata);
             echo view('subpages/sprint/backlog', $data);

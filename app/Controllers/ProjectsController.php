@@ -38,6 +38,7 @@ class ProjectsController extends BaseController
         $data = [
             'zgodbe'=>$zgodberework,
             'uporabniki'=>$this->pridobiUporabnike(),
+            'kraj'=>"backlog",
         ];
         echo view('subpages/projekti/backlog',$data);
     }

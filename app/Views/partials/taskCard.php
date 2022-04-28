@@ -75,10 +75,10 @@
             window.location.href = "<?php echo site_url('SpremeniStatus/');?>" + status + '/' + taskId;
         }
         function sprejmiNalogo(idNaloge) {
-            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idNaloge ;
+            window.location.href = "<?php echo site_url('SprejmiNalogo/');?>" + idNaloge ;
         }
         function zavrniNalogo(idNaloge) {
-            window.location.href = "<?php echo site_url('ZavrniZgodbo/');?>" + idNaloge;
+            window.location.href = "<?php echo site_url('ZavrniNalogo/');?>" + idNaloge;
         }
     </script>
 </card>

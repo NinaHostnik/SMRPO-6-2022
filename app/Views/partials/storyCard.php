@@ -188,6 +188,13 @@
                 <div class="card-subtitle"><b>Časovna zahtevnost: </b> <?php if ($zgodba['casovnaZahtevnost']) echo $zgodba['casovnaZahtevnost'].'h'; else echo '/' ?> </div>
             <?php } ?>
             <div class="card-subtitle"><b>Ure</b> (opravljene/ostale): <b><?php echo $zgodba['deloSkupaj'] ?> / <?php echo $zgodba['ocenaSkupaj'].'h' ?></b></div>
+            <?php if ($kraj=="sprint"):?>
+            <?php if ($jeVodja):?>
+            <?php if ($zgodba['prpravlenNaSprejetje']):?>
+                <button class="btn btn-sm btn-success" onclick="sprejmiZgodbo(<?php echo $zgodba['idZgodbe']?>)">Sprejmi Zgodbo</button>
+            <?php endif ?>
+            <?php endif ?>
+            <?php endif ?>
             <!-- TODO: Reject and accept buttons that can only be seen in 'My tasks' when the story has been assigned but not accepted/rejected -->
         </div>
         <!-- TODO: only show the two buttons if we're in 'My tasks', the story has been assigned to the user and has not yet been accepted -->
@@ -204,6 +211,9 @@
 
 <script>
         function sprejmiNalogo(idNaloge) {
-            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idNaloge ;
+            window.location.href = "<?php echo site_url('SprejmiNalogo/');?>" + idNaloge ;
+        }
+        function sprejmiZgodbo(idZgodbe) {
+            window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idZgodbe ;
         }
 </script>

@@ -85,6 +85,7 @@ class MyTasksController extends BaseController
         $uporabnik=session()->get('id');
         $naloga = $uri->getSegment('2');
         $model->sprejmiNalogo($naloga, $uporabnik);
+        session()->setFlashdata(['popup'=>'Sprejeli ste nalogo']);
         return redirect()->back();
     }
     public function zavrniNalogo(){
@@ -99,16 +100,20 @@ class MyTasksController extends BaseController
             $nalogeModel->finishWork($naloga);
         }
         $model->zavrniNalogo($naloga, $uporabnik);
+        session()->setFlashdata(['popup'=>'Zavrnili ste nalogo']);
         return redirect()->back();
     }
     public function potrdiZgodbo(){
         $zgodbeModel = new UporabniskeZgodbeModel();
-        $zgodbaId=0;
+        $uri = service('uri');
+        $zgodbaId=$uri->getSegment('2');
         $koncaneVseNaloge=$zgodbeModel->soVseNalogeKoncane($zgodbaId);
         $uporabnik=session()->get('id');
+        $idProjekta=session()->get('projectId');
         $jeProduktniVodja=$zgodbeModel->jeProduktniVodja($uporabnik, $idProjekta);
         if($koncaneVseNaloge && $jeProduktniVodja){
             $zgodbeModel->potrdiZgodboModel($zgodbaId);
         }
+        return redirect()->back();
     }
 }
