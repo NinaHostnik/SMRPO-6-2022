@@ -24,9 +24,12 @@ class SprintController extends BaseController
         $idUporabnika=session()->get('id');
         $idProjekta=session()->get('projectId');
         $jeProduktniVodja=$zgodbemodel->jeProduktniVodja($idUporabnika, $idProjekta);
-
         $date_now = new DateTime("now", new DateTimeZone('Europe/Ljubljana'));
-        #var_dump($sprints);
+        $jeSkrbnik=$model->preveriStatusUporabnika($idUporabnika);
+        if($jeProduktniVodja || $jeSkrbnik){
+            $jeProduktniVodja=true;
+        }
+
         foreach ($sprints as $sprint):
             $sprintstart = new DateTime($sprint['zacetniDatum']);
             $sprintend = new DateTime($sprint['koncniDatum']);
@@ -240,6 +243,46 @@ class SprintController extends BaseController
             return redirect()->to('/Sbacklog');
         }
 
+    }
+    function koncajSprint(){
+        $sprintModel=new SprintiModel();
+        $idUporabnika=session()->get('id');
+        $jeSkrbnik=$sprintModel->preveriStatusUporabnika($idUporabnika);
+        $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($nezakjucensprint['idSprinta']);
+        $fin = $this->addResponsibleAdults($zgodbe, $userModel);
+        $zgodberework = $this->pridobizgodbe($fin);
+        $accReady = array();
+        $inProgress = array();
+        $uri = service('uri');
+        $idSprinta=$uri->getSegment('2');;
+        foreach($zgodberework as $zg):
+            $stAll = count($zg['naloge']);
+            $stDone = 0;
+            foreach ($zg['naloge'] as $naloga):
+                if ($naloga['dokoncan'] === 'D') {
+                    $stDone += 1;
+                }
+            endforeach;
+            if ($stAll === $stDone && $stAll!=0) {
+                $accReady[] = $zg;
+            } else {
+                $inProgress[] = $zg;
+            }
+        endforeach;
+        if($jeSkrbnik && $accReady==[]){
+            foreach ($inProgress as $zgodbaVBacklog):
+                $sprintModel->vrziZgodboIzSprinta($zgodbaVBacklog['idZgodbe']);
+            endforeach;
+            $sprintModel->koncajSprint($idSprinta);
+            session()->setFlashdata(['popup'=>'Sprint končan']);
+        }
+        elseif(!$jeSkrbnik){
+            session()->setFlashdata(['popup'=>'Niste skrbnik metodologije']);
+        }
+        elseif($accReady!=[]){
+            session()->setFlashdata(['popup'=>'Prosimo obravnavajte zgodbe, ki so pripravljene na sprejem']);
+        }
+        return redirect()->to('/Pbacklog');
     }
 
 }

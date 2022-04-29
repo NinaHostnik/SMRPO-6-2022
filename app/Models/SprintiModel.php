@@ -79,6 +79,10 @@ class SprintiModel extends Model{
         $query=$this->db-> query("SELECT * FROM sprinti WHERE idSprinta = ".$sprintId);
         return $query->getResultArray()[0];
     }
-
-
+    function vrziZgodboIzSprinta($idZgodbe){
+        $query=$this->db->query("UPDATE uporabniskeZgodbe SET statusZgodbe='backlog', sprint=0 WHERE idZgodbe=".$idZgodbe);
+    }
+    function koncajSprint($idSprinta){
+        $query=$this->db->query("UPDATE sprinti SET trenutniStatus='zakljucen' WHERE idSprinta=".$idSprinta);
+    }
 }
