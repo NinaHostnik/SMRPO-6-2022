@@ -19,10 +19,16 @@
                 <h4>Sprint: Trenutno ni sprinta</h4>
                 <?php else :?>
                 <h4>Sprint: <?php echo date("d.m.Y", strtotime($sprint['zacetniDatum'])).' - '.date("d.m.Y", strtotime($sprint['koncniDatum'])).' ( '.$sprint['trenutniStatus'].' )' ?></h4>
-                <?php endif?>
                 <?php if (strpos(session()->get('roles')[session()->get('projectId')], 'S') > -1) { ?>
                     <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/dodajanjeSprintov">Nov sprint</a>
                 <?php } ?>
+                <?php
+                $date_now = new DateTime("now", new DateTimeZone('Europe/Ljubljana'));
+                $sprintend = new DateTime($sprint['koncniDatum']);
+                if (($date_now>$sprintend) && empty($zgodbeAccReady)): ?>
+                    <a class="btn btn-outline-light gradient-custom-2 me-4" role="button" href="/koncajSprint/<?php echo $sprint['idSprinta']?>">Koncaj Sprint</a>
+                <?php endif; ?>
+                <?php endif?>
             </div>
             <?php if (!$niSprinta):?>
                 <div class="d-flex justify-content-between align-items-center">
