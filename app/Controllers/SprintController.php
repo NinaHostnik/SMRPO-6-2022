@@ -8,6 +8,7 @@ use App\Models\SprintiModel;
 use App\Models\UporabniskeZgodbeModel;
 use App\Models\UserModel;
 use DateTime;
+use DateTimeZone;
 
 class SprintController extends BaseController
 {
@@ -24,7 +25,7 @@ class SprintController extends BaseController
         $idProjekta=session()->get('projectId');
         $jeProduktniVodja=$zgodbemodel->jeProduktniVodja($idUporabnika, $idProjekta);
 
-        $date_now = new DateTime();
+        $date_now = new DateTime("now", new DateTimeZone('Europe/Ljubljana'));
         #var_dump($sprints);
         foreach ($sprints as $sprint):
             $sprintstart = new DateTime($sprint['zacetniDatum']);
@@ -39,8 +40,10 @@ class SprintController extends BaseController
                 $trenutnisprint=$sprint;
                 break;
             }
+
         endforeach;
         if ($trenutnisprint == null && $nezakjucensprint== null){
+
             $zgodbemodel = new UporabniskeZgodbeModel();
             session()->setFlashdata(['popup'=>'sprint trenutno ni aktiven']);
             $zgodbe = null;#$zgodbemodel->pridobiZgodbeSprinta($trenutnisprint['idSprinta']);

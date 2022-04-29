@@ -58,7 +58,7 @@
         <div class="card-header d-flex justify-content-between align-items-center" <?php if ($zgodba['statusZgodbe'] == 'sprint') { echo 'style="background: lightskyblue;"';} ?>>
             <div>
                 <div class="card-title" style="overflow-wrap: break-word"><b><?php echo $zgodba['naslov']?> (<?php echo $zgodba['statusZgodbe'] ?>)</b></div>
-                <div class="card-subtitle text-muted"><b>Odgovorna oseba: <?php echo $zgodba['$odgovorni'] ?></b></div>
+                <div class="card-subtitle text-muted"><b>Odgovorna oseba: <?php echo $zgodba['odgovorni'] ?></b></div>
                 <div class="card-subtitle text-muted"><b>Prioriteta: <?php echo $zgodba['prioriteta'] ?> | Poslovna vrednost: <?php echo $zgodba['poslovnaVrednost'] ?></b></div>
             </div>
             <!-- Hidden form to get story ID -->
