@@ -139,7 +139,7 @@ class BaseController extends Controller
                     $zgodbe[$i]["ocenaSkupaj"] = $zgodbe[$i]["ocenaSkupaj"] + $naloga['ocena_casa'];
                 }
                 $zgodbe[$i]["naloge"] = $naloge;
-                $zgodbe[$i]["deloSkupaj"] = round($workSeconds/ 3600).'h '.round($workSeconds/ 60 % 60).'min';
+                $zgodbe[$i]["deloSkupaj"] = round($workSeconds/ 3600).'h '.round(round($workSeconds/60) % 60).'min';
             }
             else{
                 $zgodbe[$i]["naloge"] = [];
