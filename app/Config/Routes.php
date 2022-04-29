@@ -54,11 +54,15 @@ $routes->match(['get','post'], '/Pbacklog/urediCas', 'DodajanjeUporabniskihZgodb
 $routes->match(['get','post'], '/SprejmiNalogo/(:num)', 'MyTasksController::sprejmiNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ZavrniNalogo/(:num)', 'MyTasksController::zavrniNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/SprejmiZgodbo/(:num)', 'MyTasksController::potrdiZgodbo', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/ZavrniZgodbo/(:num)', 'MyTasksController::zavrniZgodbo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/zakljuciNalogo/(:num)', 'MyTasksController::zakljuciNalogo', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/admin/listUser', 'UsersController::listUser', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/deleteUser/(:num)', 'UsersController::deleteUser', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ascendUser/(:num)', 'UsersController::ascendUser', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/koncajSprint/(:num)', 'SprintController::koncajSprint', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/editUser/(:num)', 'UsersController::editUser', ['filter' => 'AdminAuth']);
+$routes->match(['get','post'], '/odpriSprint/(:num)', 'MyTasksController::odpriNalogo', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/NotNow', 'ProjectsController::notNow', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/Sbacklog/zavrniZgodbo', 'MyTasksController::zavrniZgodbo', ['filter' => 'LoginAuth']);
 
 

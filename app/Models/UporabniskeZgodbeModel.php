@@ -145,4 +145,9 @@ class UporabniskeZgodbeModel extends Model{
         $shrani = $besedilo.' Razlog za zavrnitev: '.$komentar;
         $newquery=$this->db->query("UPDATE uporabniskeZgodbe SET statusZgodbe='backlog', sprint = 0, besedilo = '".$shrani."' WHERE idZgodbe=".$idZgodbe.";");
     }
+
+    function getWontHaveThisTime($idProjekta) {
+        $query = $this->db->query("SELECT * FROM uporabniskeZgodbe WHERE idProjekta = ".$idProjekta." AND prioriteta = 'WontHave'");
+        return $query->getResultArray();
+    }
 }

@@ -44,6 +44,11 @@ class UserRules{
         return !password_verify($data[$field],$passhash);
     }
 
+    public function verifyCurrent(string $str, string $field, array $data){
+        $passhash = session()->get('password');
+        return password_verify($data[$field],$passhash);
+    }
+
     public function doesntExistTask(string $str, string $fields, array $data){
         $model = new NalogeModel();
 

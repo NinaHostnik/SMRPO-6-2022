@@ -47,7 +47,7 @@ if(session()->get('lastLogin')!=null) {
     </ul>
 
 <?php // only show this part if we're in a project
-    if (strpos(current_url(), 'Pbacklog') > -1 || strpos(current_url(), 'Sbacklog') > -1 || strpos(current_url(), 'MyTasks') > -1) { ?>
+    if (strpos(current_url(), 'Pbacklog') > -1 || strpos(current_url(), 'Sbacklog') > -1 || strpos(current_url(), 'MyTasks') > -1 || strpos(current_url(), 'NotNow') > -1) { ?>
         <ul class="navbar navbar-light bg-secondary mt-0">
             <div class="container-fluid justify-content-start">
                 <span class="navbar-brand"><?php echo session()->get('projectName') ?></span>
@@ -76,7 +76,11 @@ if(session()->get('lastLogin')!=null) {
                     </li>
                     <?php } ?>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#"><b>Burn-Down</b></a>
+                        <?php if (strpos(current_url(), 'NotNow') > -1) { ?>
+                            <a class="nav-link text-light" href="NotNow"><b>Prihodnje verzije</b></a>
+                        <?php } else { ?>
+                            <a class="nav-link text-dark" href="NotNow"><b>Prihodnje verzije</b></a>
+                        <?php } ?>
                     </li>
                 </ul>
             </div>

@@ -151,4 +151,19 @@ class MyTasksController extends BaseController
         }
         return redirect()->back();
     }
+    function odpriNalogo(){
+        $uri = service('uri');
+        $idNaloge=$uri->getSegment('2');
+        $nalogeModel = new NalogeModel();
+        $idUporabnika=session()->get('id');
+        $jeNalogaMoja=$nalogeModel->preveriCeJeNalogaMoja($idNaloge, $idUporabnika);
+        if($jeNalogaMoja){
+            $nalogeModel->odpriNalogo($idNaloge);
+            session()->setFlashdata(['popup'=>'Naloga spet odprta']);
+        }
+        else{
+            session()->setFlashdata(['popup'=>'Ne morete zaključiti naloge, ki ni vaša']);
+        }
+        return redirect()->back();
+    }
 }
