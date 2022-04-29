@@ -125,9 +125,9 @@ class MyTasksController extends BaseController
 
     public function zavrniZgodbo(){
         $zgodbeModel = new UporabniskeZgodbeModel();
-        $uri = service('uri');
-        $zgodbaId=$uri->getSegment('2');
-        $zgodbeModel->zavrniZgodboModel($zgodbaId);
+        $zgodbaId=$this->request->getVar('idZgodbe');
+        $komentar=$this->request->getVar('komentar');
+        $zgodbeModel->zavrniZgodboModel($zgodbaId, $komentar);
         session()->setFlashdata(['popup'=>'Zgodba zavrnjena.']);
         return redirect()->back();
     }
