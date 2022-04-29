@@ -63,7 +63,7 @@ TODO popravki
 
 #ZADNJI POPRAVKI:
 #2 Urejanje uporabnikov
-- administrator lahko ureja podatke uporabnikov, ne le sistemske pravice
+- administrator lahko ureja podatke uporabnikov, ne le sistemske pravice -> JURE
 
 #27 Seznam zahtev
 - won't have this time v ločenem zavihku (dodaj)

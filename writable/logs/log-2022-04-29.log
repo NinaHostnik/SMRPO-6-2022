@@ -1,0 +1,29 @@
+CRITICAL - 2022-04-29 03:43:17 --> Invalid file: user_update_admin.php
+#0 C:\xampp\htdocs\smrpo\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user_update_adm...')
+#1 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('user_update_adm...', Array, true)
+#2 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(331): view('user_update_adm...', Array)
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->editUser()
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-29 03:44:10 --> Invalid file: updateUser/user_update_admin.php
+#0 C:\xampp\htdocs\smrpo\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('updateUser/user...')
+#1 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('updateUser/user...', Array, true)
+#2 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(331): view('updateUser/user...', Array)
+#3 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->editUser()
+#4 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-29 03:44:30 --> Undefined index: email
+#0 C:\xampp\htdocs\smrpo\app\Views\subpages\updateUser\user_update_admin.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 40, Array)
+#1 C:\xampp\htdocs\smrpo\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smrpo\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\smrpo\system\Common.php(1089): CodeIgniter\View\View->render('subpages/update...', Array, true)
+#4 C:\xampp\htdocs\smrpo\app\Controllers\UsersController.php(331): view('subpages/update...', Array)
+#5 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(832): App\Controllers\UsersController->editUser()
+#6 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+#7 C:\xampp\htdocs\smrpo\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\smrpo\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
