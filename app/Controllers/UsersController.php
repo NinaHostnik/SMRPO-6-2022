@@ -270,5 +270,73 @@ class UsersController extends BaseController
         return $this->listUser();
     }
 
+    function editUser() {
+        $uri = service('uri');
+        $id = $uri->getSegment('2');
+
+        helper(['form']);
+
+        if ($this->request->getMethod() == 'post') {
+
+            $rules = [
+                'newusername' => 'required',
+                'firstName' => 'required',
+                'lastName' => 'required',
+                'email' => 'required',
+                'password' => 'required|verifyCurrent[password]',
+                'passwordNew' => 'required|greater_than_equal_to_str[12]|less_than_equal_to_str[128]',
+                'passwordCheck' => 'required|matches[passwordNew]',
+            ];
+
+            $errors = [
+                'password' => [
+                    'validateUser' => 'Uporabniško ime in geslo se ne ujemata',
+                    'verifyCurrent' => 'Administratorsko geslo ni pravilno'
+
+                ],
+            ];
+
+            if (!$this->validate($rules, $errors)) {
+                $model = new UserModel();
+
+                $data['validation'] = $this->validator;
+                $data['user'] = $model->find($id);
+
+                echo view('subpages/updateUser/user_update_admin', $data);
+
+
+            } else {
+                $model = new UserModel();
+                $newprofile = [
+                    'username' => $this->request->getPost('newusername'),
+                    'password' => $this->request->getPost('passwordNew'),
+                    'mail' => $this->request->getPost('email'),
+                    'ime' => $this->request->getPost('firstName'),
+                    'priimek' => $this->request->getPost('lastName'),
+                ];
+                $model->update($id, $newprofile);
+
+                $popupdata = ['popup' => 'Uporabnik je bil uspešno spremenjen.'];
+
+
+                session()->setFlashdata($popupdata);
+                $data = [];
+
+
+                #echo view('partials/popup',$popupdata);
+                return redirect()->to('admin/listUser');
+            }
+
+        } else {
+            $model = new UserModel();
+
+            $data = [
+                'user' => $model->find($id),
+            ];
+
+            echo view('subpages/updateUser/user_update_admin', $data);
+        }
+    }
+
 
 }

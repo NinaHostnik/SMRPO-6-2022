@@ -60,3 +60,21 @@ TODO popravki
 #- razmak zgodbami ki so v sprintu in tistimi ki niso
 
 # yes DONE: ure se vpisujejo za vsak dan posebej
+
+#ZADNJI POPRAVKI:
+#2 Urejanje uporabnikov
+<<<<<<< HEAD
+- administrator lahko ureja podatke uporabnikov, ne le sistemske pravice -> JURE
+=======
+#- administrator lahko ureja podatke uporabnikov, ne le sistemske pravice
+>>>>>>> 33a12d114c178668d03f5afa2e3851fa73dc0c36
+
+#27 Seznam zahtev
+#- won't have this time v ločenem zavihku (dodaj)
+
+#20 Zaključevanje nalog 
+#-DONE: dodaj možnost, da se naloga spet odpre
+
+#26 Zavračanje zgodb
+#- pri zavrnitvi se mora vpisati razlog (možnost vnosa večih vrstic)
+#- doda se pod komentarje ali opis (posebna sekcija)

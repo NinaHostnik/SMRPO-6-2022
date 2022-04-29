@@ -64,6 +64,8 @@
                             <?php endif; ?>
                     <?php endif; ?>
                 </div>
+                <?php else: ?>
+                    <button class="btn btn-sm btn-success" onclick="odpriNalogo(<?php echo $naloga['id'] ?>)">Ponovno odpri Nalogo</button>
                 <?php endif; ?>
                 </div>
             </div>
@@ -84,6 +86,9 @@
         }
         function zakljuciNalogo(idNaloge) {
             window.location.href = "<?php echo site_url('zakljuciNalogo/');?>" + idNaloge;
+        }
+        function odpriNalogo(idNaloge) {
+            window.location.href = "<?php echo site_url('odpriSprint/');?>" + idNaloge;
         }
     </script>
 </card>
