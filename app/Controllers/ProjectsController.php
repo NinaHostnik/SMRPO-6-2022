@@ -32,8 +32,8 @@ class ProjectsController extends BaseController
         $userModel = new UserModel();
         $zgodbe = $model->pridobiZgodbe(session()->get("projectId"));
         $fin = $this->addResponsibleAdults($zgodbe, $userModel);
-
         $zgodberework = $this->pridobizgodbe($fin);
+
 
         $data = [
             'zgodbe'=>$zgodberework,
