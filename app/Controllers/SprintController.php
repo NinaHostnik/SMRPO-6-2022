@@ -243,6 +243,7 @@ class SprintController extends BaseController
     }
     function koncajSprint(){
         $sprintModel=new SprintiModel();
+        $zgodbemodel=new UporabniskeZgodbeModel();
         $idUporabnika=session()->get('id');
         $jeSkrbnik=$sprintModel->preveriStatusUporabnika($idUporabnika);
         $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($nezakjucensprint['idSprinta']);
