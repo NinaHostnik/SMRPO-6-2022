@@ -48,4 +48,7 @@ class NalogeModel extends Model
         }
         return true;
     }
+    function odpriNalogo($idNaloge){
+        $query=$this->db->query("UPDATE naloge SET dokoncan='N' WHERE id=".$idNaloge);
+    }
 }
