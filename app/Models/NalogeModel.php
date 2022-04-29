@@ -39,7 +39,7 @@ class NalogeModel extends Model
         return TRUE;
     }
     function zakljuciNalogo($idNaloge){
-        $query=$this->db->query("UPDATE naloge SET dokoncan='D' WHERE id=".$idNaloge);
+        $query=$this->db->query("UPDATE naloge SET dokoncan='D', ocena_casa=0 WHERE id=".$idNaloge);
     }
     function preveriCeJeNalogaMoja($idNaloge, $idUporabnika){
         $query=$this->db->query("SELECT * FROM naloge WHERE id=".$idNaloge." AND clan_ekipe=".$idUporabnika);
@@ -49,6 +49,6 @@ class NalogeModel extends Model
         return true;
     }
     function odpriNalogo($idNaloge){
-        $query=$this->db->query("UPDATE naloge SET dokoncan='N' WHERE id=".$idNaloge);
+        $query=$this->db->query("UPDATE naloge SET dokoncan='N', ocena_casa=1 WHERE id=".$idNaloge);
     }
 }
