@@ -249,8 +249,25 @@ class SprintController extends BaseController
         $zgodbemodel=new UporabniskeZgodbeModel();
         $idUporabnika=session()->get('id');
         $jeSkrbnik=$sprintModel->preveriStatusUporabnika($idUporabnika);
+        $sprints = $sprintModel->getSprints(session()->get("projectId"));
+        $date_now = new DateTime("now", new DateTimeZone('Europe/Ljubljana'));
+        foreach ($sprints as $sprint):
+            $sprintstart = new DateTime($sprint['zacetniDatum']);
+            $sprintend = new DateTime($sprint['koncniDatum']);
+
+            if($sprintend<$date_now && $sprint['trenutniStatus']!='zakjucen'){
+                $nezakjucensprint = $sprint;
+                break;
+            }
+
+            if($sprintend>=$date_now && $sprintstart<=$date_now){
+                $trenutnisprint=$sprint;
+                break;
+            }
+
+        endforeach;
         $zgodbe = $zgodbemodel->pridobiZgodbeSprinta($nezakjucensprint['idSprinta']);
-        $fin = $this->addResponsibleAdults($zgodbe, $userModel);
+        $fin = $this->addResponsibleAdults($zgodbe, $zgodbemodel);
         $zgodberework = $this->pridobizgodbe($fin);
         $accReady = array();
         $inProgress = array();
