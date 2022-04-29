@@ -60,7 +60,7 @@ $routes->match(['get','post'], '/admin/listUser', 'UsersController::listUser', [
 $routes->match(['get','post'], '/deleteUser/(:num)', 'UsersController::deleteUser', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/ascendUser/(:num)', 'UsersController::ascendUser', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/koncajSprint/(:num)', 'SprintController::koncajSprint', ['filter' => 'LoginAuth']);
-
+$routes->match(['get','post'], '/NotNow', 'ProjectsController::notNow', ['filter' => 'LoginAuth']);
 
 
 /*

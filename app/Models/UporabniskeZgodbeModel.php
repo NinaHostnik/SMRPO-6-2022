@@ -143,4 +143,9 @@ class UporabniskeZgodbeModel extends Model{
         $query=$this->db->query("UPDATE uporabniskeZgodbe SET statusZgodbe='backlog', sprint = NULL WHERE idZgodbe=".$idZgodbe);
         #var_dump($query);
     }
+
+    function getWontHaveThisTime($idProjekta) {
+        $query = $this->db->query("SELECT * FROM uporabniskeZgodbe WHERE idProjekta = ".$idProjekta." AND prioriteta = 'WontHave'");
+        return $query->getResultArray();
+    }
 }
