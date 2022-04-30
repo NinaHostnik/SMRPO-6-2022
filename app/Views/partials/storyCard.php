@@ -97,7 +97,7 @@
         </div>
         <!-- Card body: Base description and acceptance tests -->
         <div class="card-body">
-            <p><?php echo $zgodba['besedilo'] ?></p>
+            <p style="white-space: pre-line"><?php echo $zgodba['besedilo'] ?></p>
             <!-- Sprejemni testi -->
             <ul style="list-style-type:none;">
                 <?php $tests = explode(';', $zgodba['sprejemniTesti']);
@@ -154,7 +154,7 @@
         </div>
         <div class="card-body tab-content" id="tabContent">
             <div class="tab-pane fade show active" id="nav-main-<?php echo $zgodba['idZgodbe']?>" role="tabpanel">
-                <p><?php echo $zgodba['besedilo'] ?></p>
+                <p style="white-space: pre-line"><?php echo $zgodba['besedilo'] ?></p>
                 <!-- Sprejemni testi -->
                 <ul style="list-style-type:none;">
                     <?php $tests = explode(';', $zgodba['sprejemniTesti']);
