@@ -143,7 +143,7 @@ class UporabniskeZgodbeModel extends Model{
         $query=$this->db->query("SELECT besedilo FROM uporabniskeZgodbe WHERE idZgodbe=".$idZgodbe.";");
         $besedilo=$query->getResultArray()[0]['besedilo'];
         $shrani = $besedilo.' 
-        Razlog za zavrnitev: 
+        <b>Razlog za zavrnitev:</b> 
         '.$komentar;
         $newquery=$this->db->query("UPDATE uporabniskeZgodbe SET statusZgodbe='backlog', sprint = 0, besedilo = '".$shrani."' WHERE idZgodbe=".$idZgodbe.";");
     }
