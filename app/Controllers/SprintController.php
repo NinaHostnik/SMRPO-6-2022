@@ -201,7 +201,7 @@ class SprintController extends BaseController
             $sprintstart = new DateTime($sprint['zacetniDatum']);
             $sprintend = new DateTime($sprint['koncniDatum']);
 
-            if($sprintend<$date_now && $sprint['trenutniStatus']!='zakjucen'){
+            if($sprintend<$date_now && $sprint['trenutniStatus']!='zakljucen'){
                 $nezakjucensprint = $sprint;
                 break;
             }
