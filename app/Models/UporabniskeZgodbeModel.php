@@ -139,8 +139,17 @@ class UporabniskeZgodbeModel extends Model{
         #var_dump($query);
     }
 
-    function zavrniZgodboModel($idZgodbe){
-        $query=$this->db->query("UPDATE uporabniskeZgodbe SET statusZgodbe='backlog', sprint = NULL WHERE idZgodbe=".$idZgodbe);
-        #var_dump($query);
+    function zavrniZgodboModel($idZgodbe, $komentar){
+        $query=$this->db->query("SELECT besedilo FROM uporabniskeZgodbe WHERE idZgodbe=".$idZgodbe.";");
+        $besedilo=$query->getResultArray()[0]['besedilo'];
+        $shrani = $besedilo.' 
+        <b>Razlog za zavrnitev:</b> 
+        '.$komentar;
+        $newquery=$this->db->query("UPDATE uporabniskeZgodbe SET statusZgodbe='backlog', sprint = 0, besedilo = '".$shrani."' WHERE idZgodbe=".$idZgodbe.";");
+    }
+
+    function getWontHaveThisTime($idProjekta) {
+        $query = $this->db->query("SELECT * FROM uporabniskeZgodbe WHERE idProjekta = ".$idProjekta." AND prioriteta = 'WontHave'");
+        return $query->getResultArray();
     }
 }

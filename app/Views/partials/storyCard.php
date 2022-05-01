@@ -32,6 +32,31 @@
         </div>
     </div>
 </div>
+<!-- Zavrni zgodbo -->
+<div class="modal fade" id="zavrniModal-<?php echo $zgodba['idZgodbe']?>">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Zavrni zgodbo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/Sbacklog/zavrniZgodbo" method="post">
+                    <?php echo view('partials/formTextarea', ["label"=>"Razlog za zavrnitev", 'id'=>'komentar', 'rows'=>'5', 'maxlength'=>'3000'])?>
+                    <!-- Hidden form to get story ID -->
+                    <?php echo view('partials/formInput', ['type' => 'hidden', 'id' => 'idZgodbe', 'value'=>$zgodba['idZgodbe'], 'label'=>''])?>
+                    <?php echo view('partials/formButton', ['name'=>'Zavrni zgodbo']) ?>
+                </form>
+                <?php
+                if(session()->has('errordata')){
+                    $validation = session()->getFlashdata('errordata');
+                    echo $validation->listErrors();
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="editStory-<?php echo $zgodba['idZgodbe']?>">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -72,7 +97,7 @@
         </div>
         <!-- Card body: Base description and acceptance tests -->
         <div class="card-body">
-            <p><?php echo $zgodba['besedilo'] ?></p>
+            <p style="white-space: pre-line"><?php echo $zgodba['besedilo'] ?></p>
             <!-- Sprejemni testi -->
             <ul style="list-style-type:none;">
                 <?php $tests = explode(';', $zgodba['sprejemniTesti']);
@@ -129,7 +154,7 @@
         </div>
         <div class="card-body tab-content" id="tabContent">
             <div class="tab-pane fade show active" id="nav-main-<?php echo $zgodba['idZgodbe']?>" role="tabpanel">
-                <p><?php echo $zgodba['besedilo'] ?></p>
+                <p style="white-space: pre-line"><?php echo $zgodba['besedilo'] ?></p>
                 <!-- Sprejemni testi -->
                 <ul style="list-style-type:none;">
                     <?php $tests = explode(';', $zgodba['sprejemniTesti']);
@@ -192,7 +217,7 @@
             <?php if ($jeVodja):?>
             <?php if ($zgodba['prpravlenNaSprejetje']):?>
                 <button class="btn btn-sm btn-success" onclick="sprejmiZgodbo(<?php echo $zgodba['idZgodbe']?>)">Sprejmi Zgodbo</button>
-                <button class="btn btn-sm btn-danger" onclick="zavrniZgodbo(<?php echo $zgodba['idZgodbe'] ?>)">Zavrni Zgodbo</button>
+                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#zavrniModal-<?php echo $zgodba['idZgodbe']?>">Zavrni Zgodbo</button>
             <?php endif ?>
             <?php endif ?>
             <?php endif ?>
@@ -211,13 +236,12 @@
 <?php } ?>
 
 <script>
+        var i=1;
         function sprejmiNalogo(idNaloge) {
             window.location.href = "<?php echo site_url('SprejmiNalogo/');?>" + idNaloge ;
         }
+
         function sprejmiZgodbo(idZgodbe) {
             window.location.href = "<?php echo site_url('SprejmiZgodbo/');?>" + idZgodbe ;
-        }
-        function zavrniZgodbo(idZgodbe) {
-            window.location.href = "<?php echo site_url('ZavrniZgodbo/');?>" + idZgodbe ;
         }
 </script>

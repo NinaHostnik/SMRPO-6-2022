@@ -43,6 +43,21 @@ class ProjectsController extends BaseController
         echo view('subpages/projekti/backlog',$data);
     }
 
+    public function notNow() {
+        $storyModel = new UporabniskeZgodbeModel();
+        $userModel = new UserModel();
+        $zgodbe = $storyModel->getWontHaveThisTime(session()->get('projectId'));
+        $fin = $this->addResponsibleAdults($zgodbe, $userModel);
+        $zgodberework = $this->pridobizgodbe($fin);
+
+        $data = [
+            'zgodbe'=>$zgodberework,
+            'uporabniki'=>$this->pridobiUporabnike(),
+            'kraj'=>"notNow",
+        ];
+        echo view('subpages/projekti/notNow', $data);
+    }
+
     function addResponsibleAdults($zgodbe, $usermodel) {
         $i = 0;
         foreach ($zgodbe as $zgodba):
@@ -57,6 +72,8 @@ class ProjectsController extends BaseController
         endforeach;
         return $zgodbe;
     }
+
+
 
     public function dodajNalogo(){
 

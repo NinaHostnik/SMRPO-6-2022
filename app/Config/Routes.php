@@ -62,6 +62,9 @@ $routes->match(['get','post'], '/ascendUser/(:num)', 'UsersController::ascendUse
 $routes->match(['get','post'], '/koncajSprint/(:num)', 'SprintController::koncajSprint', ['filter' => 'LoginAuth']);
 $routes->match(['get','post'], '/editUser/(:num)', 'UsersController::editUser', ['filter' => 'AdminAuth']);
 $routes->match(['get','post'], '/odpriSprint/(:num)', 'MyTasksController::odpriNalogo', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/NotNow', 'ProjectsController::notNow', ['filter' => 'LoginAuth']);
+$routes->match(['get','post'], '/Sbacklog/zavrniZgodbo', 'MyTasksController::zavrniZgodbo', ['filter' => 'LoginAuth']);
+
 
 
 /*
